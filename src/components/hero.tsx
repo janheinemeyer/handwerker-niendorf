@@ -25,27 +25,27 @@ export function Hero() {
             style={{ animationDelay: "0.05s" }}
           >
             <span className="h-px w-10 bg-accent" />
-            Meisterbetrieb · Hamburg-Niendorf
+            Handwerker-Vermittlung · Hamburg-Niendorf
           </p>
 
           <h1
             className="rise mt-6 font-display text-[clamp(2.6rem,8vw,5.6rem)] font-extrabold uppercase leading-[0.92] tracking-tight"
             style={{ animationDelay: "0.12s" }}
           >
-            Sauberes
+            Den richtigen
             <br />
-            Handwerk.
+            Handwerker
             <br />
-            <span className="text-accent">Termintreu.</span>
+            <span className="text-accent">finden.</span>
           </h1>
 
           <p
             className="rise mt-8 max-w-md text-lg leading-relaxed text-ink-soft"
             style={{ animationDelay: "0.2s" }}
           >
-            Renovierung, Trockenbau, Maler-, Fliesen- und Montagearbeiten aus
-            einer Hand. Fester Ansprechpartner, klarer Festpreis, besenreine
-            Übergabe.
+            Wir vermitteln Ihnen passende, geprüfte Handwerksbetriebe aus Hamburg
+            und Umgebung – für Renovierung, Maler-, Trockenbau-, Fliesen- und
+            Montagearbeiten. Eine Anfrage, mehrere passende Betriebe.
           </p>
 
           <div
@@ -76,14 +76,14 @@ export function Hero() {
           style={{ animationDelay: "0.36s" }}
         >
           <div className="absolute -top-3 left-6 bg-accent px-3 py-1 font-display text-[0.7rem] font-bold uppercase tracking-wider text-paper">
-            seit 2009
+            unverbindlich
           </div>
           <dl className="divide-y divide-line">
             {[
-              ["Projekte / Jahr", "180+"],
-              ["Im Umkreis", "Hamburg West"],
+              ["Für Anfragende", "kostenlos"],
+              ["Vermittlungsgebiet", "Hamburg & Umgebung"],
               ["Reaktionszeit", "< 24 Std."],
-              ["Festpreis-Garantie", "Ja"],
+              ["Betriebe", "geprüft"],
             ].map(([k, v]) => (
               <div
                 key={k}

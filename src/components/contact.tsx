@@ -12,15 +12,15 @@ export function Contact() {
             starten
           </h2>
           <p className="mt-8 max-w-sm text-lg leading-relaxed text-ink-soft">
-            Schildern Sie kurz Ihr Vorhaben. Wir melden uns binnen 24 Stunden mit
-            einem Vorschlag für einen Termin vor Ort.
+            Schildern Sie kurz Ihr Vorhaben. Wir melden uns binnen 24 Stunden und
+            vermitteln Ihnen passende Betriebe aus der Region.
           </p>
 
           <dl className="mt-12 space-y-px border border-line bg-line">
             {[
               ["Telefon", "040 123 456", "tel:+4940123456"],
               ["E-Mail", "hallo@handwerk-niendorf.de", "mailto:hallo@handwerk-niendorf.de"],
-              ["Gebiet", "Niendorf · Lokstedt · Eimsbüttel", null],
+              ["Vermittlungsgebiet", "Hamburg & Umgebung", null],
               ["Zeiten", "Mo–Fr 7–18 Uhr", null],
             ].map(([label, value, href]) => (
               <div

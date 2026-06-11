@@ -2,7 +2,7 @@ const services = [
   {
     no: "01",
     title: "Renovierung & Modernisierung",
-    body: "Vom Altbau-Refresh bis zur Komplettrenovierung der Wohnung — koordiniert, gewerkeübergreifend, aus einer Hand.",
+    body: "Vom Altbau-Refresh bis zur Komplettrenovierung der Wohnung — passende Betriebe für jedes Gewerk.",
     tags: ["Wände", "Böden", "Decken"],
   },
   {
@@ -32,7 +32,7 @@ const services = [
   {
     no: "06",
     title: "Reparaturen",
-    body: "Der zuverlässige Handwerker für die kleinen Dinge — schnell terminiert, fair abgerechnet.",
+    body: "Auch für kleinere Aufträge finden wir den passenden Betrieb — schnell und fair.",
     tags: ["Schäden", "Wartung", "Notfall"],
   },
 ];
@@ -45,12 +45,13 @@ export function Services() {
           <div>
             <p className="label text-accent">01 — Leistungen</p>
             <h2 className="mt-4 max-w-xl font-display text-[clamp(2rem,5vw,3.4rem)] font-extrabold uppercase leading-[0.95]">
-              Was wir können
+              Wofür wir vermitteln
             </h2>
           </div>
           <p className="max-w-xs text-ink-soft">
-            Sechs Gewerke, ein Ansprechpartner. Größere Projekte koordinieren wir
-            inklusive Elektrik und Sanitär über Partnerbetriebe.
+            Sechs Gewerke. Für jedes vermitteln wir Ihnen passende, geprüfte
+            Betriebe aus der Region – auch für größere Vorhaben über mehrere
+            Gewerke.
           </p>
         </div>
 
