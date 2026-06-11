@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 /*
@@ -64,10 +64,32 @@ function Segmented<T extends string>({
   options: { value: T; label: string }[];
   onChange: (v: T) => void;
 }) {
+  const groupRef = useRef<HTMLDivElement>(null);
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const next = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[
+      e.key
+    ];
+    if (!next) return;
+    e.preventDefault();
+    const idx = options.findIndex((o) => o.value === value);
+    const target = (idx + next + options.length) % options.length;
+    onChange(options[target].value);
+    groupRef.current
+      ?.querySelectorAll<HTMLButtonElement>('[role="radio"]')
+      [target]?.focus();
+  };
+
   return (
     <fieldset>
       <legend className="label text-ink-soft">{label}</legend>
-      <div className="mt-2 flex flex-wrap gap-2" role="radiogroup" aria-label={label}>
+      <div
+        ref={groupRef}
+        className="mt-2 flex flex-wrap gap-2"
+        role="radiogroup"
+        aria-label={label}
+        onKeyDown={onKeyDown}
+      >
         {options.map((o) => {
           const active = o.value === value;
           return (
@@ -76,6 +98,7 @@ function Segmented<T extends string>({
               type="button"
               role="radio"
               aria-checked={active}
+              tabIndex={active ? 0 : -1}
               onClick={() => onChange(o.value)}
               className={`border px-3.5 py-2 text-sm font-medium transition-colors ${
                 active
@@ -165,9 +188,7 @@ export function CarportCalculator() {
     const solarCost = solar ? SOLAR[type] : 0;
     const permitCost = permit ? PERMIT : 0;
 
-    const total = regional + regionDelta + solarCost + permitCost;
-
-    const rows: { label: string; value: number }[] = [
+    const rawRows: { label: string; value: number }[] = [
       { label: "Grundpreis (Carport + Dach)", value: structure },
       ...(fundament ? [{ label: "Fundament", value: fundament }] : []),
       ...(aufbau ? [{ label: "Aufbau durch Fachbetrieb", value: aufbau }] : []),
@@ -179,7 +200,12 @@ export function CarportCalculator() {
       ...(permitCost ? [{ label: "Baugenehmigung", value: permitCost }] : []),
     ];
 
-    return { total, low: total * 0.9, high: total * 1.15, rows };
+    // Round each row to €100 and derive the total from the rounded rows, so the
+    // displayed breakdown always adds up exactly to the shown Richtwert.
+    const rows = rawRows.map((r) => ({ label: r.label, value: round100(r.value) }));
+    const total = rows.reduce((sum, r) => sum + r.value, 0);
+
+    return { total, low: round100(total * 0.9), high: round100(total * 1.15), rows };
   }, [
     type,
     material,
@@ -285,14 +311,16 @@ export function CarportCalculator() {
       {/* Result */}
       <div className="flex flex-col bg-ink p-6 text-paper sm:p-8">
         <p className="label text-accent">Geschätzte Kosten</p>
-        <p className="mt-3 font-display text-3xl font-extrabold leading-none sm:text-4xl">
-          {eur(calc.low)}
-          <span className="text-paper/50"> – </span>
-          {eur(calc.high)}
-        </p>
-        <p className="mt-2 text-xs text-paper/50">
-          Richtwert: {eur(calc.total)} · inkl. gewählter Optionen
-        </p>
+        <div role="status" aria-live="polite">
+          <p className="mt-3 font-display text-3xl font-extrabold leading-none sm:text-4xl">
+            {eur(calc.low)}
+            <span className="text-paper/50"> – </span>
+            {eur(calc.high)}
+          </p>
+          <p className="mt-2 text-xs text-paper/50">
+            Richtwert: {eur(calc.total)} · inkl. gewählter Optionen
+          </p>
+        </div>
 
         <dl className="mt-6 space-y-2 border-t border-white/10 pt-5 text-sm">
           {calc.rows.map((r) => (
