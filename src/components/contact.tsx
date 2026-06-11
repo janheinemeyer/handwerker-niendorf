@@ -20,7 +20,7 @@ export function Contact() {
             {[
               ["Telefon", "040 123 456", "tel:+4940123456"],
               ["E-Mail", "hallo@handwerk-niendorf.de", "mailto:hallo@handwerk-niendorf.de"],
-              ["Vermittlungsgebiet", "Niendorf · Lokstedt · Eimsbüttel", null],
+              ["Vermittlungsgebiet", "Hamburg & Umgebung", null],
               ["Zeiten", "Mo–Fr 7–18 Uhr", null],
             ].map(([label, value, href]) => (
               <div
