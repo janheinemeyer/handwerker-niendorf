@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <div className="flex flex-col justify-between gap-10 sm:flex-row sm:items-start">
           <div>
-            <Link href="#top" className="flex items-center gap-3">
+            <Link href="/#top" className="flex items-center gap-3">
               <span className="grid h-9 w-9 place-items-center bg-accent font-display text-lg font-extrabold text-paper">
                 H
               </span>
@@ -53,7 +53,7 @@ export function SiteFooter() {
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-paper/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Handwerk Niendorf. Alle Rechte vorbehalten.</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-paper">
+            <Link href="/impressum" className="hover:text-paper">
               Impressum
             </Link>
             <Link href="/datenschutz" className="hover:text-paper">
