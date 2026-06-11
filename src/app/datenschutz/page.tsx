@@ -305,7 +305,19 @@ export default function DatenschutzPage() {
             angegebenen Kontaktdaten (Name, E-Mail-Adresse, ggf. Telefonnummer,
             gewünschte Leistung und Ihre Nachricht) zwecks Bearbeitung der
             Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
-            Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+          </P>
+          <P>
+            <strong>Weitergabe an Dienstleister.</strong> Diese Website ist ein
+            Vermittlungsangebot. Um Ihre Anfrage bearbeiten zu können, geben wir
+            die von Ihnen übermittelten Daten an einen oder mehrere passende,
+            rechtlich selbstständige Dienstleister (Handwerksbetriebe) weiter,
+            damit diese mit Ihnen Kontakt aufnehmen und Ihnen ein Angebot
+            unterbreiten können. Diese Dienstleister verarbeiten Ihre Daten als
+            eigenständig Verantwortliche im Sinne der DSGVO. Rechtsgrundlage für
+            die Weitergabe ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung
+            vorvertraglicher Maßnahmen) sowie Ihre Einwilligung nach Art. 6 Abs.
+            1 lit. a DSGVO, die Sie mit dem Absenden des Formulars erteilen und
+            jederzeit mit Wirkung für die Zukunft widerrufen können.
           </P>
           <P>
             Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1
