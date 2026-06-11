@@ -139,8 +139,9 @@ export function ContactForm() {
           className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--accent)]"
         />
         <span>
-          Ich bin mit der Verarbeitung meiner Angaben zur Bearbeitung der
-          Anfrage einverstanden. Es gilt die{" "}
+          Ich bin damit einverstanden, dass meine Angaben gespeichert und zur
+          Bearbeitung meiner Anfrage an passende Dienstleister weitergegeben
+          werden. Es gilt die{" "}
           <Link
             href="/datenschutz"
             target="_blank"
