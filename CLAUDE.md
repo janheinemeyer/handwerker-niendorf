@@ -63,6 +63,48 @@ Industrial / editorial workshop aesthetic — do not introduce generic SaaS styl
 - A fixed SVG grain overlay (`body::before`) sits at `z-0`; page content runs at
   `z-10`. Keep new full-bleed sections aware of this stacking.
 
+## Authoring a Ratgeber / SEO page
+
+Keyword/SEO landing pages live at `src/app/ratgeber/<slug>/page.tsx` and are
+assembled from reusable blocks in `src/components/ratgeber/` (barrel:
+`@/components/ratgeber`). **Don't hand-roll the chrome or JSON-LD — use the
+blocks**, so structure, styling and structured data stay consistent.
+
+- `RatgeberArticle` — page shell: header, breadcrumb (+ `BreadcrumbList`
+  JSON-LD), `<h1>`, "Aktualisiert" date, footer. Props: `title`, `breadcrumb`
+  (`Crumb[]`), `updated`, `children`.
+- `Faq` — accordion **and** `FAQPage` JSON-LD generated from the *same* `items`
+  array, so schema can never drift from what's shown. Pass `FaqItem[]`.
+- `Breadcrumb` — visible trail + `BreadcrumbList` JSON-LD (the shell renders it
+  for you).
+- `CostTable` (`head`, `rows`), `CtaBand` (`headline`, `text`, optional
+  `ctaLabel`/`ctaHref`/`note`), and prose `H2`/`H3`/`P`/`TlDr`.
+
+Minimal page skeleton:
+
+```tsx
+import { RatgeberArticle, TlDr, H2, P, CostTable, Faq, type FaqItem } from "@/components/ratgeber";
+
+export const metadata = { title: "…", description: "…", alternates: { canonical: "/ratgeber/<slug>" } };
+const faqs: FaqItem[] = [{ q: "…", a: "…" }];
+
+export default function Page() {
+  return (
+    <RatgeberArticle title={<>…</>} updated="… 2026"
+      breadcrumb={[{ name: "Start", href: "/" }, { name: "Ratgeber", href: "/ratgeber" }, { name: "…", href: "/ratgeber/<slug>" }]}>
+      <TlDr>Direct answer with the keyword and a concrete number range.</TlDr>
+      {/* body: H2/P/CostTable sections */}
+      <Faq items={faqs} heading="Häufige Fragen zu …" />
+    </RatgeberArticle>
+  );
+}
+```
+
+SEO/GEO conventions: open with a `TlDr` direct answer (keyword + number), use
+question-shaped `H2` ids, include machine-readable `CostTable`s, and always a
+`Faq`. A page-specific interactive widget (e.g. the carport
+`CarportCalculator`) is a separate Client Component dropped into the body.
+
 ## Environment
 
 Copy `.env.local.example` → `.env.local` and set `SUPABASE_URL` +
