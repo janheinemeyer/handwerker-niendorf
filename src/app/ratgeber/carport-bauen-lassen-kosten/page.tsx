@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { CarportCalculator } from "@/components/carport-calculator";
 
 export const metadata: Metadata = {
   title: "Carport bauen lassen: Kosten 2026 (Preise, Tabellen & Rechner)",
@@ -193,26 +194,17 @@ export default function CarportKostenPage() {
             </p>
           </div>
 
-          {/* Calculator placeholder */}
-          <section
-            id="rechner"
-            aria-label="Carport-Kostenrechner"
-            className="mt-10 border border-dashed border-line-strong bg-paper-2/30 p-8 text-center"
-          >
+          {/* Interactive cost calculator */}
+          <section id="rechner" aria-label="Carport-Kostenrechner" className="mt-10">
             <p className="label text-accent">Carport-Kostenrechner</p>
-            <h2 className="mt-3 font-display text-xl font-bold">
+            <h2 className="mt-3 font-display text-xl font-bold sm:text-2xl">
               Was kostet Ihr Carport? Jetzt berechnen.
             </h2>
-            <p className="mx-auto mt-3 max-w-md text-sm text-ink-soft">
+            <p className="mt-3 max-w-md text-sm text-ink-soft">
               Größe, Material und Ausstattung wählen und in wenigen Sekunden eine
               realistische Kostenschätzung erhalten.
             </p>
-            <div className="mx-auto mt-6 grid max-w-md gap-2 text-left text-sm text-ink-soft/70">
-              <div className="flex items-center gap-2 border border-line bg-paper px-4 py-3">
-                <span className="h-2 w-2 bg-accent" /> Platzhalter – Rechner folgt
-              </div>
-            </div>
-            {/* TODO: interactive cost calculator component goes here */}
+            <CarportCalculator />
           </section>
 
           <H2 id="preise">Was kostet ein Carport? Preise nach Typ &amp; Größe</H2>
