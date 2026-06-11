@@ -17,13 +17,13 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Handwerk Niendorf · Renovierung, Sanierung & Montage in Hamburg",
+  title: "Handwerk Niendorf · Handwerker finden in Hamburg",
   description:
-    "Ihr Handwerksbetrieb aus Hamburg-Niendorf: Renovierung, Trockenbau, Maler-, Fliesen- und Montagearbeiten. Sauber, termintreu, fair. Jetzt unverbindlich anfragen.",
+    "Wir vermitteln Ihnen geprüfte Handwerksbetriebe aus Hamburg-Niendorf und Umgebung – für Renovierung, Maler-, Trockenbau-, Fliesen- und Montagearbeiten. Kostenlos und unverbindlich anfragen.",
   openGraph: {
     title: "Handwerk Niendorf",
     description:
-      "Renovierung, Sanierung & Montage aus Hamburg-Niendorf. Sauber, termintreu, fair.",
+      "Geprüfte Handwerksbetriebe aus Hamburg-Niendorf finden. Kostenlos und unverbindlich.",
     locale: "de_DE",
     type: "website",
   },

@@ -15,8 +15,8 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-paper/60">
-              Meisterbetrieb für Renovierung, Sanierung und Montage in
-              Hamburg-Niendorf.
+              Vermittlung von geprüften Handwerksbetrieben in Hamburg-Niendorf
+              und Umgebung.
             </p>
           </div>
 

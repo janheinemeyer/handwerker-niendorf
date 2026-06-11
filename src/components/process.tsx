@@ -2,22 +2,22 @@ const steps = [
   {
     no: "01",
     title: "Anfrage",
-    body: "Sie schildern Ihr Vorhaben — online, telefonisch oder per Foto. Wir melden uns binnen 24 Stunden.",
+    body: "Sie schildern Ihr Vorhaben — online, telefonisch oder per Foto. Kostenlos und unverbindlich.",
   },
   {
     no: "02",
-    title: "Termin vor Ort",
-    body: "Wir schauen uns die Lage an, beraten ehrlich und nehmen alles Nötige auf.",
+    title: "Wir vermitteln",
+    body: "Wir leiten Ihre Anfrage an passende, geprüfte Betriebe aus der Region weiter.",
   },
   {
     no: "03",
-    title: "Festpreis-Angebot",
-    body: "Sie erhalten ein nachvollziehbares Angebot mit klarem Umfang und festem Preis.",
+    title: "Angebote vergleichen",
+    body: "Die Betriebe melden sich bei Ihnen — Sie vergleichen Angebote und Termine in Ruhe.",
   },
   {
     no: "04",
-    title: "Ausführung",
-    body: "Sauber, termintreu und besenrein. Ein Ansprechpartner von Anfang bis Übergabe.",
+    title: "Direkt beauftragen",
+    body: "Sie beauftragen den Betrieb Ihrer Wahl. Vertrag und Ausführung liegen direkt beim Betrieb.",
   },
 ];
 
@@ -27,7 +27,7 @@ export function Process() {
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <p className="label text-accent">02 — Ablauf</p>
         <h2 className="mt-4 max-w-2xl font-display text-[clamp(2rem,5vw,3.4rem)] font-extrabold uppercase leading-[0.95]">
-          In vier Schritten zur fertigen Arbeit
+          In vier Schritten zum richtigen Betrieb
         </h2>
 
         <ol className="mt-16 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
