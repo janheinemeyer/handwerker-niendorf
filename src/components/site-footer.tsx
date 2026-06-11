@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <div className="flex flex-col justify-between gap-10 sm:flex-row sm:items-start">
           <div>
-            <Link href="#top" className="flex items-center gap-3">
+            <Link href="/#top" className="flex items-center gap-3">
               <span className="grid h-9 w-9 place-items-center bg-accent font-display text-lg font-extrabold text-paper">
                 H
               </span>
