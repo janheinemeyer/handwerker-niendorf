@@ -56,7 +56,7 @@ export function SiteFooter() {
             <Link href="#" className="hover:text-paper">
               Impressum
             </Link>
-            <Link href="#" className="hover:text-paper">
+            <Link href="/datenschutz" className="hover:text-paper">
               Datenschutz
             </Link>
           </div>

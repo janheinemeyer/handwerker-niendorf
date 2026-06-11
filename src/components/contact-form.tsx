@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { submitContact, type ContactState } from "@/app/actions";
@@ -139,7 +140,15 @@ export function ContactForm() {
         />
         <span>
           Ich bin mit der Verarbeitung meiner Angaben zur Bearbeitung der
-          Anfrage einverstanden. *
+          Anfrage einverstanden. Es gilt die{" "}
+          <Link
+            href="/datenschutz"
+            target="_blank"
+            className="text-accent underline-offset-2 hover:underline"
+          >
+            Datenschutzerklärung
+          </Link>
+          . *
         </span>
       </label>
       <FieldError msg={state.errors?.consent} />
