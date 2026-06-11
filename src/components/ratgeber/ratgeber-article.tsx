@@ -22,7 +22,7 @@ export function RatgeberArticle({
     <>
       <SiteHeader />
       <main className="relative z-10 flex-1 border-t border-line-strong">
-        <article className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
+        <article className="ratgeber py-14 sm:py-20">
           <Breadcrumb items={breadcrumb} />
           <h1 className="mt-6 font-display text-[clamp(2rem,5.5vw,3.4rem)] font-extrabold uppercase leading-[0.98]">
             {title}
