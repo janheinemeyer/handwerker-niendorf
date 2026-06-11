@@ -1,0 +1,46 @@
+import Link from "next/link";
+
+const nav = [
+  { href: "#leistungen", label: "Leistungen" },
+  { href: "#ablauf", label: "Ablauf" },
+  { href: "#betrieb", label: "Betrieb" },
+  { href: "#kontakt", label: "Kontakt" },
+];
+
+export function SiteHeader() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-line-strong bg-paper/85 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+        <Link href="#top" className="group flex items-center gap-3">
+          <span className="grid h-9 w-9 place-items-center bg-accent font-display text-lg font-extrabold text-paper transition-transform group-hover:-rotate-6">
+            H
+          </span>
+          <span className="font-display text-sm font-bold tracking-tight">
+            HANDWERK
+            <span className="text-accent">.</span>NIENDORF
+          </span>
+        </Link>
+
+        <nav className="hidden items-center gap-8 md:flex">
+          {nav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="label text-ink-soft transition-colors hover:text-accent"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <a
+          href="tel:+4940123456"
+          className="group hidden items-center gap-2 bg-ink px-4 py-2.5 font-sans text-sm font-semibold text-paper transition-colors hover:bg-accent sm:flex"
+        >
+          <span className="h-1.5 w-1.5 bg-accent transition-colors group-hover:bg-paper" />
+          040 123 456
+        </a>
+      </div>
+    </header>
+  );
+}

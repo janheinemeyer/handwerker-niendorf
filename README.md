@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Handwerk Niendorf
 
-## Getting Started
+Marketing one-pager for a tradesman/craftsman business in Hamburg-Niendorf —
+German-language landing page with a working contact form that stores submissions
+in Supabase.
 
-First, run the development server:
+Built with Next.js 16 (App Router), React 19, Tailwind CSS v4, and TypeScript.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.local.example .env.local   # then fill in your Supabase values
+npm run dev                         # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The page renders without any configuration. The contact form only **stores**
+submissions once Supabase is configured (see below); until then it validates
+input and returns a friendly "service unavailable" message on submit.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Supabase setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The contact form writes to a `contact_submissions` table from the server using
+the service-role key.
 
-## Learn More
+1. Create (or pick) a Supabase project.
+2. Apply the migration in `supabase/migrations/0001_contact_submissions.sql`
+   — e.g. paste it into the Supabase SQL editor, or run `supabase db push` if
+   you use the CLI.
+3. Set the env vars in `.env.local`:
+   - `SUPABASE_URL` — `https://<project-ref>.supabase.co`
+   - `SUPABASE_SERVICE_ROLE_KEY` — from Project Settings → API
+4. Restart `npm run dev`. Submissions now land in `contact_submissions`.
 
-To learn more about Next.js, take a look at the following resources:
+> The table has Row Level Security enabled with **no policies**: only the
+> service role (server-side) can write to it. Don't expose the service-role key
+> to the browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command         | Description                                          |
+| --------------- | ---------------------------------------------------- |
+| `npm run dev`   | Dev server with Turbopack                            |
+| `npm run build` | Production build (type-checks + prerenders the page) |
+| `npm run lint`  | ESLint                                               |
+| `npm start`     | Serve the production build                           |
 
-## Deploy on Vercel
+## Before launch
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Phone, email, address, statistics and date figures are placeholders. The
+Impressum and Datenschutz footer links are stubs — German sites legally require
+both before going live.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+Deploys cleanly to Vercel. Add `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` as
+Environment Variables in the Vercel project before deploying.
