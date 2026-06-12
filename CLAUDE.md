@@ -105,12 +105,6 @@ question-shaped `H2` ids, include machine-readable `CostTable`s, and always a
 `Faq`. A page-specific interactive widget (e.g. the carport
 `CarportCalculator`) is a separate Client Component dropped into the body.
 
-**Layout / breakout:** `RatgeberArticle` renders its children into a named-line
-grid (`.ratgeber` in `globals.css`) — prose sits in a readable ~48rem column,
-while blocks marked `className="breakout"` widen to ~64rem. `CostTable` and
-`CtaBand` already break out; add `breakout` to any other wide block (e.g. a
-calculator section). Must be a **direct child** of the article to take effect.
-
 ## Environment
 
 Copy `.env.local.example` → `.env.local` and set `SUPABASE_URL` +
