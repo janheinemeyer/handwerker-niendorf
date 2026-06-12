@@ -90,3 +90,27 @@ body::before {
     animation: none;
   }
 }
+
+/*
+  Ratgeber/SEO article layout: a centered, readable prose column (~48rem) with
+  an opt-in wider "breakout" track (~64rem) for interactive/visual blocks
+  (calculator, cost tables, CTA bands). Uses a named-line grid instead of 100vw
+  math so it never triggers a horizontal scrollbar.
+*/
+.ratgeber {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem, 1fr)
+    [wide-start] minmax(0, 8rem)
+    [content-start] min(48rem, 100% - 2.5rem) [content-end]
+    minmax(0, 8rem) [wide-end]
+    minmax(1.25rem, 1fr) [full-end];
+}
+
+.ratgeber > * {
+  grid-column: content;
+}
+
+.ratgeber > .breakout {
+  grid-column: wide;
+}

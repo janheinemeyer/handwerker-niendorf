@@ -1,7 +1,7 @@
 /** Hairline cost/comparison table used across Ratgeber pages. */
 export function CostTable({ head, rows }: { head: string[]; rows: string[][] }) {
   return (
-    <div className="mt-6 overflow-x-auto border border-line">
+    <div className="breakout mt-6 overflow-x-auto border border-line">
       <table className="w-full border-collapse text-sm">
         <thead>
           <tr className="bg-paper-2/70">

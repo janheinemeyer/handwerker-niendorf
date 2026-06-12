@@ -88,7 +88,7 @@ export default function CarportKostenPage() {
       </TlDr>
 
       {/* Interactive cost calculator */}
-      <section id="rechner" aria-label="Carport-Kostenrechner" className="mt-10">
+      <section id="rechner" aria-label="Carport-Kostenrechner" className="breakout mt-10">
         <p className="label text-accent">Carport-Kostenrechner</p>
         <h2 className="mt-3 font-display text-xl font-bold sm:text-2xl">
           Was kostet Ihr Carport? Jetzt berechnen.

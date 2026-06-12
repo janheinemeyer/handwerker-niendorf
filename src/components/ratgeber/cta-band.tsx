@@ -15,7 +15,7 @@ export function CtaBand({
   note?: string;
 }) {
   return (
-    <div className="mt-10 border border-line-strong bg-ink p-7 text-paper sm:p-9">
+    <div className="breakout mt-10 border border-line-strong bg-ink p-7 text-paper sm:p-9">
       <h3 className="font-display text-xl font-bold sm:text-2xl">{headline}</h3>
       <p className="mt-3 max-w-xl text-paper/70">{text}</p>
       <Link
