@@ -37,7 +37,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "11 kW oder 22 kW – was ist besser?",
-    a: "Für ein Einfamilienhaus reicht eine 11-kW-Wallbox in der Regel aus: Sie lädt ein E-Auto über Nacht voll und ist nur meldepflichtig. Eine 22-kW-Wallbox lädt schneller, ist aber genehmigungspflichtig und teurer – sinnvoll vor allem bei mehreren Fahrzeugen oder kurzen Standzeiten.",
+    a: "Für ein Einfamilienhaus reicht eine 11-kW-Wallbox in der Regel aus: Sie lädt ein E-Auto über Nacht voll und ist nur meldepflichtig. Eine 22-kW-Wallbox lädt nur schneller, wenn auch das Fahrzeug 22 kW Wechselstrom laden kann – viele E-Autos sind auf 11 kW begrenzt. Sie ist zudem genehmigungspflichtig und teurer, sinnvoll vor allem bei entsprechenden Fahrzeugen oder kurzen Standzeiten.",
   },
   {
     q: "Muss ich die Wallbox anmelden?",
@@ -45,7 +45,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Gibt es 2026 noch eine Förderung für Wallboxen?",
-    a: "Eine bundesweite KfW-Förderung für private Wallboxen gibt es seit dem Auslaufen des Programms 442 nicht mehr. Einige Bundesländer, Kommunen, Stadtwerke und Energieversorger fördern jedoch individuell. Zusätzlich lassen sich die Montagekosten steuerlich absetzen.",
+    a: "Eine bundesweite KfW-Förderung für private Wallboxen gibt es seit dem Auslaufen des Programms 442 nicht mehr. Einige Bundesländer, Kommunen, Stadtwerke und Energieversorger fördern jedoch individuell. Alternativ – nicht zusätzlich für dieselbe Maßnahme – lassen sich die Montagekosten über § 35a EStG steuerlich absetzen, sofern dafür keine öffentliche Förderung genutzt wurde.",
   },
   {
     q: "Kann ich die Wallbox-Installation von der Steuer absetzen?",
@@ -139,10 +139,12 @@ export default function WallboxKostenPage() {
       <P>
         Für das Einfamilienhaus ist eine <strong>11-kW-Wallbox</strong> meist die
         richtige Wahl: Sie lädt ein E-Auto über Nacht voll, ist genehmigungsfrei
-        und günstiger. Eine <strong>22-kW-Wallbox</strong> lädt doppelt so schnell,
-        ist aber genehmigungspflichtig, braucht einen stärkeren Hausanschluss und
-        kostet mehr – sinnvoll bei mehreren Fahrzeugen oder sehr kurzen
-        Ladezeiten.
+        und günstiger. Eine <strong>22-kW-Wallbox</strong> lädt nur dann
+        schneller, wenn auch Ihr Fahrzeug 22 kW Wechselstrom (AC) laden kann –
+        viele E-Autos sind onboard auf 11 kW begrenzt und profitieren nicht. Sie
+        ist zudem genehmigungspflichtig, braucht einen stärkeren Hausanschluss
+        und kostet mehr – sinnvoll vor allem bei entsprechend ausgestatteten
+        Fahrzeugen, mehreren Autos oder sehr kurzen Ladezeiten.
       </P>
 
       <H2 id="anmeldung">Anmeldung & Genehmigung (in Hamburg)</H2>
@@ -154,15 +156,27 @@ export default function WallboxKostenPage() {
         der ausführende Elektriker für Sie. Ohne ordnungsgemäße Anmeldung drohen
         Probleme mit dem Netzbetreiber und dem Versicherungsschutz.
       </P>
+      <P>
+        <strong>§ 14a EnWG:</strong> Seit 2024 gelten Wallboxen mit mehr als 4,2
+        kW Anschlussleistung – also auch 11-kW-Geräte – als steuerbare
+        Verbrauchseinrichtungen. Der Netzbetreiber darf die Ladeleistung bei
+        Netzengpässen vorübergehend reduzieren (netzorientierte Steuerung); im
+        Gegenzug profitieren Sie von reduzierten Netzentgelten. Wallbox und ein
+        Steuergerät müssen dafür vorbereitet sein – planen Sie das mit dem
+        Elektriker ein.
+      </P>
 
       <H2 id="foerderung">Förderung & Steuer 2026</H2>
       <P>
         Eine bundesweite KfW-Förderung für private Wallboxen gibt es seit dem
         Auslaufen des Programms 442 nicht mehr. Einige Bundesländer, Kommunen und
         Stadtwerke fördern jedoch weiterhin – ein Blick auf die aktuellen Programme
-        Ihres Energieversorgers lohnt sich. Unabhängig davon können Sie über{" "}
-        <strong>§ 35a EStG</strong> 20 % der Arbeitskosten (max. 1.200 € pro Jahr)
-        als Handwerkerleistung von der Steuer absetzen.
+        Ihres Energieversorgers lohnt sich. Alternativ – aber nicht zusätzlich für
+        dieselbe Maßnahme – können Sie über <strong>§ 35a EStG</strong> 20 % der
+        Arbeitskosten (max. 1.200 € pro Jahr) als Handwerkerleistung absetzen. Der
+        Steuerabzug ist ausgeschlossen, wenn Sie für die Arbeiten bereits eine
+        öffentliche Förderung (z. B. zinsverbilligte Darlehen oder steuerfreie
+        Zuschüsse) genutzt haben.
       </P>
 
       <CtaBand
