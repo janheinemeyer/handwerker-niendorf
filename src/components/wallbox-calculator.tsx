@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import { Segmented, Toggle, eur, round100 } from "@/components/calculator-ui";
+import { RequestButton } from "@/components/request/request-button";
 
 /*
   Wallbox-Kostenrechner — parametric estimate.
@@ -30,6 +30,18 @@ const STAND = 400; // freistehender Standfuß
 const BREAKTHROUGH = 400; // Wanddurchbruch / Außenverlegung
 const PANEL = 1500; // Zählerschrank modernisieren
 const REGION_SURCHARGE = 0.15;
+
+// Readable names for the request summary.
+const TYPE_NAME: Record<Type, string> = { basis: "Basis", smart: "Smart (App / PV)" };
+const CABLE_NAME: Record<Cable, string> = {
+  kurz: "Kabelweg kurz (< 5 m)",
+  mittel: "Kabelweg mittel (5–15 m)",
+  lang: "Kabelweg lang (15–30 m)",
+};
+const MOUNT_NAME: Record<Mount, string> = {
+  wand: "Wandmontage",
+  stand: "Standfuß (freistehend)",
+};
 
 export function WallboxCalculator() {
   const [power, setPower] = useState<Power>("11");
@@ -69,6 +81,27 @@ export function WallboxCalculator() {
 
     return { total, low: round100(total * 0.9), high: round100(total * 1.15), rows };
   }, [power, type, cable, mount, breakthrough, panel, region]);
+
+  const request = useMemo(() => {
+    const extras = [
+      breakthrough && "Wanddurchbruch / Außenverlegung",
+      panel && "Zählerschrank modernisieren",
+    ].filter(Boolean) as string[];
+    const parts = [
+      `${power} kW · ${TYPE_NAME[type]}`,
+      CABLE_NAME[cable],
+      MOUNT_NAME[mount],
+    ];
+    if (extras.length) parts.push(extras.join(", "));
+    if (region) parts.push("Ballungsraum");
+    return {
+      service: "Wallbox / Ladestation",
+      source: "wallbox-calculator",
+      summary: parts.join(" · "),
+      estimate: `${eur(calc.low)} – ${eur(calc.high)}`,
+      details: { power, type, cable, mount, breakthrough, panel, region },
+    };
+  }, [power, type, cable, mount, breakthrough, panel, region, calc.low, calc.high]);
 
   return (
     <div className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
@@ -159,13 +192,13 @@ export function WallboxCalculator() {
           ))}
         </dl>
 
-        <Link
-          href="/#kontakt"
+        <RequestButton
+          context={request}
           className="group mt-7 inline-flex items-center justify-center gap-3 bg-accent px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide text-paper transition-colors hover:bg-paper hover:text-ink"
         >
           Passende Elektriker anfragen
           <span className="transition-transform group-hover:translate-x-1">→</span>
-        </Link>
+        </RequestButton>
         <p className="mt-3 text-xs leading-relaxed text-paper/40">
           Unverbindliche Schätzung (Stand: Juni 2026), kein Angebot. Reale Preise
           hängen von Kabelweg, Zustand der Hausinstallation und Region ab.

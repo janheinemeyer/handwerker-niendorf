@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import { Segmented, Toggle, eur, round100 } from "@/components/calculator-ui";
+import { RequestButton } from "@/components/request/request-button";
 
 /*
   Terrassenüberdachung-Kostenrechner — parametric estimate.
@@ -34,6 +34,23 @@ const PERMIT = 200;
 const REGION_SURCHARGE = 0.2;
 
 const nfArea = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 });
+
+// Readable names for the request summary.
+const BUILD_NAME: Record<Build, string> = {
+  "holz-poly": "Holz + Polycarbonat",
+  "alu-poly": "Alu + Polycarbonat",
+  "alu-glas": "Alu + Glas (VSG)",
+  lamelle: "Lamellendach",
+};
+const FOUNDATION_NAME: Record<Foundation, string> = {
+  vorhanden: "Fundament vorhanden",
+  punkt: "Punktfundament",
+  platte: "Bodenplatte",
+};
+const ASSEMBLY_NAME: Record<Assembly, string> = {
+  fach: "Aufbau vom Fachbetrieb",
+  selbst: "Selbstaufbau",
+};
 
 export function TerrassenCalculator() {
   const [width, setWidth] = useState<Width>("4");
@@ -94,6 +111,58 @@ export function TerrassenCalculator() {
     heizung,
     region,
     permit,
+  ]);
+
+  const request = useMemo(() => {
+    const extras = [
+      markise && "Markise / Beschattung",
+      led && "LED-Beleuchtung",
+      waende && "Seitenwände",
+      heizung && "Heizstrahler",
+    ].filter(Boolean) as string[];
+    const parts = [
+      `${width} × ${depth} m (${nfArea.format(calc.area)} m²)`,
+      BUILD_NAME[build],
+      FOUNDATION_NAME[foundation],
+      ASSEMBLY_NAME[assembly],
+    ];
+    if (extras.length) parts.push("Ausstattung: " + extras.join(", "));
+    if (region) parts.push("Ballungsraum");
+    if (permit) parts.push("inkl. Baugenehmigung");
+    return {
+      service: "Terrassenüberdachung",
+      source: "terrassen-calculator",
+      summary: parts.join(" · "),
+      estimate: `${eur(calc.low)} – ${eur(calc.high)}`,
+      details: {
+        width,
+        depth,
+        build,
+        assembly,
+        foundation,
+        markise,
+        led,
+        waende,
+        heizung,
+        region,
+        permit,
+      },
+    };
+  }, [
+    width,
+    depth,
+    build,
+    assembly,
+    foundation,
+    markise,
+    led,
+    waende,
+    heizung,
+    region,
+    permit,
+    calc.area,
+    calc.low,
+    calc.high,
   ]);
 
   return (
@@ -205,13 +274,13 @@ export function TerrassenCalculator() {
           ))}
         </dl>
 
-        <Link
-          href="/#kontakt"
+        <RequestButton
+          context={request}
           className="group mt-7 inline-flex items-center justify-center gap-3 bg-accent px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide text-paper transition-colors hover:bg-paper hover:text-ink"
         >
           Passende Angebote anfragen
           <span className="transition-transform group-hover:translate-x-1">→</span>
-        </Link>
+        </RequestButton>
         <p className="mt-3 text-xs leading-relaxed text-paper/40">
           Unverbindliche Schätzung (Stand: Juni 2026), kein Angebot. Reale Preise
           hängen von Ausführung, Statik, Untergrund und Region ab.

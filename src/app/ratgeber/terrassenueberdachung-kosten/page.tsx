@@ -162,6 +162,8 @@ export default function TerrassenueberdachungKostenPage() {
         headline="Lieber gleich konkrete Preise?"
         text="Statt mit Richtwerten zu rechnen, erhalten Sie von uns kostenlos und unverbindlich passende Angebote geprüfter Betriebe aus Ihrer Region."
         ctaLabel="Angebote anfragen"
+        service="Terrassenüberdachung"
+        source="terrassen-page"
       />
 
       <H2 id="genehmigung">
@@ -259,6 +261,8 @@ export default function TerrassenueberdachungKostenPage() {
         headline="Jetzt passende Betriebe für Ihr Terrassendach finden"
         text="Schildern Sie kurz Ihr Vorhaben – wir vermitteln Ihnen kostenlos und unverbindlich geprüfte Betriebe aus Hamburg und Umgebung, die Ihnen ein konkretes Angebot machen."
         ctaLabel="Angebote anfragen"
+        service="Terrassenüberdachung"
+        source="terrassen-page"
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">

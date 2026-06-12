@@ -303,8 +303,10 @@ export default function DatenschutzPage() {
             Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden
             Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort
             angegebenen Kontaktdaten (Name, E-Mail-Adresse, ggf. Telefonnummer,
-            gewünschte Leistung und Ihre Nachricht) zwecks Bearbeitung der
-            Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+            PLZ/Ort, gewünschte Leistung, gewünschter Zeitraum sowie – bei
+            Nutzung eines Kostenrechners – die von Ihnen gewählten Angaben und
+            die unverbindliche Kostenschätzung) zwecks Bearbeitung der Anfrage
+            und für den Fall von Anschlussfragen bei uns gespeichert.
           </P>
           <P>
             <strong>Weitergabe an Dienstleister.</strong> Diese Website ist ein

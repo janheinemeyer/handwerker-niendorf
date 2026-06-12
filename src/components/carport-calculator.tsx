@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import Link from "next/link";
+import { RequestButton } from "@/components/request/request-button";
 
 /*
   Carport-Kostenrechner — parametric estimate.
@@ -22,6 +22,31 @@ const SIZE_LABEL: Record<Type, string> = {
   einzel: "Einzel · ~15 m²",
   doppel: "Doppel · ~30 m²",
   gross: "Groß · ~45 m²",
+};
+
+// Readable names for the request summary.
+const TYPE_NAME: Record<Type, string> = {
+  einzel: "Einzelcarport",
+  doppel: "Doppelcarport",
+  gross: "Großcarport",
+};
+const MATERIAL_NAME: Record<Material, string> = {
+  holz: "Holz",
+  stahl: "Stahl",
+  alu: "Aluminium",
+};
+const ROOF_NAME: Record<Roof, string> = {
+  flach: "Flachdach",
+  sattel: "Satteldach",
+};
+const FOUNDATION_NAME: Record<Foundation, string> = {
+  keines: "Fundament vorhanden",
+  punkt: "Punktfundament",
+  platte: "Bodenplatte",
+};
+const ASSEMBLY_NAME: Record<Assembly, string> = {
+  fach: "Aufbau vom Fachbetrieb",
+  selbst: "Selbstaufbau",
 };
 
 // Base structure, delivered, flat roof, no foundation/assembly/extras.
@@ -221,6 +246,61 @@ export function CarportCalculator() {
     permit,
   ]);
 
+  const request = useMemo(() => {
+    const extras = [
+      storage && "Geräteraum",
+      power && "Strom & Licht",
+      green && "Dachbegrünung",
+      walls && "Seitenwände",
+      solar && "Solar-Dach",
+    ].filter(Boolean) as string[];
+    const parts = [
+      TYPE_NAME[type],
+      MATERIAL_NAME[material],
+      ROOF_NAME[roof],
+      FOUNDATION_NAME[foundation],
+      ASSEMBLY_NAME[assembly],
+    ];
+    if (extras.length) parts.push("Ausstattung: " + extras.join(", "));
+    if (region) parts.push("Ballungsraum");
+    if (permit) parts.push("inkl. Baugenehmigung");
+    return {
+      service: "Carport",
+      source: "carport-calculator",
+      summary: parts.join(" · "),
+      estimate: `${eur(calc.low)} – ${eur(calc.high)}`,
+      details: {
+        type,
+        material,
+        roof,
+        foundation,
+        assembly,
+        storage,
+        power,
+        green,
+        solar,
+        walls,
+        region,
+        permit,
+      },
+    };
+  }, [
+    type,
+    material,
+    roof,
+    foundation,
+    assembly,
+    storage,
+    power,
+    green,
+    solar,
+    walls,
+    region,
+    permit,
+    calc.low,
+    calc.high,
+  ]);
+
   return (
     <div className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
       {/* Inputs */}
@@ -331,13 +411,13 @@ export function CarportCalculator() {
           ))}
         </dl>
 
-        <Link
-          href="/#kontakt"
+        <RequestButton
+          context={request}
           className="group mt-7 inline-flex items-center justify-center gap-3 bg-accent px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide text-paper transition-colors hover:bg-paper hover:text-ink"
         >
           Passende Angebote anfragen
           <span className="transition-transform group-hover:translate-x-1">→</span>
-        </Link>
+        </RequestButton>
         <p className="mt-3 text-xs leading-relaxed text-paper/40">
           Unverbindliche Schätzung (Stand: Juni 2026), kein Angebot. Reale Preise
           hängen von Ausführung, Untergrund und Region ab.
