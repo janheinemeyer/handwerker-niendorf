@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useId } from "react";
 import { useFormStatus } from "react-dom";
 import { submitContact, type ContactState } from "@/app/actions";
 import type { RequestPrefill } from "./types";
@@ -60,6 +60,10 @@ export function RequestForm({
   onClose?: () => void;
 }) {
   const [state, formAction] = useActionState(submitContact, initial);
+  // Unique per form instance so the always-mounted homepage form and the modal
+  // form don't share DOM ids (which would let a modal label focus a background
+  // field and escape the focus trap).
+  const uid = useId();
 
   if (state.ok) {
     return (
@@ -70,9 +74,12 @@ export function RequestForm({
         <h3 className="mt-6 font-display text-2xl font-bold">Eingegangen.</h3>
         <p className="mt-3 max-w-sm text-ink-soft">{state.message}</p>
         {onClose && (
+          // autoFocus keeps focus inside the dialog after the submit button
+          // unmounts, preserving the focus trap.
           <button
             type="button"
             onClick={onClose}
+            autoFocus
             className="mt-6 border-b-2 border-ink/30 py-1 font-sans text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
           >
             Schließen
@@ -133,27 +140,27 @@ export function RequestForm({
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="label mb-2 block text-ink-soft">
+          <label htmlFor={`${uid}-name`} className="label mb-2 block text-ink-soft">
             Name *
           </label>
-          <input id="name" name="name" autoComplete="name" className={inputClass} />
+          <input id={`${uid}-name`} name="name" autoComplete="name" className={inputClass} />
           <FieldError msg={state.errors?.name} />
         </div>
         <div>
-          <label htmlFor="phone" className="label mb-2 block text-ink-soft">
+          <label htmlFor={`${uid}-phone`} className="label mb-2 block text-ink-soft">
             Telefon
           </label>
-          <input id="phone" name="phone" autoComplete="tel" className={inputClass} />
+          <input id={`${uid}-phone`} name="phone" autoComplete="tel" className={inputClass} />
           <FieldError msg={state.errors?.phone} />
         </div>
       </div>
 
       <div>
-        <label htmlFor="email" className="label mb-2 block text-ink-soft">
+        <label htmlFor={`${uid}-email`} className="label mb-2 block text-ink-soft">
           E-Mail *
         </label>
         <input
-          id="email"
+          id={`${uid}-email`}
           name="email"
           type="email"
           autoComplete="email"
@@ -164,11 +171,11 @@ export function RequestForm({
 
       {!prefill.service && (
         <div>
-          <label htmlFor="service" className="label mb-2 block text-ink-soft">
+          <label htmlFor={`${uid}-service`} className="label mb-2 block text-ink-soft">
             Leistung
           </label>
           <select
-            id="service"
+            id={`${uid}-service`}
             name="service"
             className={inputClass}
             defaultValue=""
@@ -187,11 +194,11 @@ export function RequestForm({
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="plz" className="label mb-2 block text-ink-soft">
+          <label htmlFor={`${uid}-plz`} className="label mb-2 block text-ink-soft">
             PLZ *
           </label>
           <input
-            id="plz"
+            id={`${uid}-plz`}
             name="plz"
             inputMode="numeric"
             maxLength={5}
@@ -201,11 +208,11 @@ export function RequestForm({
           <FieldError msg={state.errors?.plz} />
         </div>
         <div>
-          <label htmlFor="ort" className="label mb-2 block text-ink-soft">
+          <label htmlFor={`${uid}-ort`} className="label mb-2 block text-ink-soft">
             Ort
           </label>
           <input
-            id="ort"
+            id={`${uid}-ort`}
             name="ort"
             autoComplete="address-level2"
             className={inputClass}
@@ -214,10 +221,10 @@ export function RequestForm({
       </div>
 
       <div>
-        <label htmlFor="zeitraum" className="label mb-2 block text-ink-soft">
+        <label htmlFor={`${uid}-zeitraum`} className="label mb-2 block text-ink-soft">
           Zeitraum
         </label>
-        <select id="zeitraum" name="zeitraum" className={inputClass} defaultValue="">
+        <select id={`${uid}-zeitraum`} name="zeitraum" className={inputClass} defaultValue="">
           <option value="">Bitte wählen…</option>
           {zeitraumOptions.map((o) => (
             <option key={o} value={o}>
@@ -228,11 +235,11 @@ export function RequestForm({
       </div>
 
       <div>
-        <label htmlFor="message" className="label mb-2 block text-ink-soft">
+        <label htmlFor={`${uid}-message`} className="label mb-2 block text-ink-soft">
           Ihr Vorhaben / Anmerkungen
         </label>
         <textarea
-          id="message"
+          id={`${uid}-message`}
           name="message"
           rows={4}
           defaultValue={messagePrefill}

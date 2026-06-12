@@ -21,6 +21,17 @@ const schema = z.object({
   consent: z.literal("on", {
     error: "Bitte stimmen Sie der Datenverarbeitung zu.",
   }),
+}).superRefine((data, ctx) => {
+  // Calculator requests carry structured `details`; for those the message may
+  // be empty. Generic/homepage requests have no details, so require a short
+  // description — otherwise the lead is just contact data + a broad service.
+  if (!data.details && (data.message?.length ?? 0) < 10) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["message"],
+      message: "Bitte beschreiben Sie kurz Ihr Vorhaben (min. 10 Zeichen).",
+    });
+  }
 });
 
 export type ContactState = {
