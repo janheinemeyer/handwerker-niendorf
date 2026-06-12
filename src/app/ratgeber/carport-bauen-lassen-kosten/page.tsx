@@ -157,6 +157,8 @@ export default function CarportKostenPage() {
         headline="Lieber gleich konkrete Preise?"
         text="Statt mit Richtwerten zu rechnen, erhalten Sie von uns kostenlos und unverbindlich passende Angebote geprüfter Carport-Betriebe aus Ihrer Region."
         ctaLabel="Carport-Angebote anfragen"
+        service="Carport"
+        source="carport-page"
       />
 
       <H2 id="genehmigung">
@@ -235,6 +237,8 @@ export default function CarportKostenPage() {
         headline="Jetzt passende Carport-Betriebe finden"
         text="Schildern Sie kurz Ihr Vorhaben – wir vermitteln Ihnen kostenlos und unverbindlich geprüfte Betriebe aus Hamburg und Umgebung, die Ihnen ein konkretes Angebot machen."
         ctaLabel="Carport-Angebote anfragen"
+        service="Carport"
+        source="carport-page"
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">

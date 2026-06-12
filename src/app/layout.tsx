@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
+import { RequestProvider } from "@/lib/request-context";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -39,7 +40,9 @@ export default function RootLayout({
       lang="de"
       className={`${display.variable} ${hanken.variable} h-full`}
     >
-      <body className="relative min-h-full flex flex-col">{children}</body>
+      <body className="relative min-h-full flex flex-col">
+        <RequestProvider>{children}</RequestProvider>
+      </body>
     </html>
   );
 }

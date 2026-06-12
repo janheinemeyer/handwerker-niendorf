@@ -7,14 +7,31 @@ const schema = z.object({
   name: z.string().trim().min(2, "Bitte geben Sie Ihren Namen an."),
   email: z.email("Bitte geben Sie eine gültige E-Mail an."),
   phone: z.string().trim().max(40).optional(),
-  service: z.string().trim().max(80).optional(),
-  message: z
+  plz: z
     .string()
     .trim()
-    .min(10, "Bitte beschreiben Sie Ihr Vorhaben (min. 10 Zeichen)."),
+    .regex(/^\d{5}$/, "Bitte geben Sie eine gültige PLZ an (5 Ziffern)."),
+  ort: z.string().trim().max(80).optional(),
+  zeitraum: z.string().trim().max(80).optional(),
+  service: z.string().trim().max(80).optional(),
+  source: z.string().trim().max(80).optional(),
+  estimate: z.string().trim().max(80).optional(),
+  details: z.string().max(4000).optional(),
+  message: z.string().trim().max(4000).optional(),
   consent: z.literal("on", {
     error: "Bitte stimmen Sie der Datenverarbeitung zu.",
   }),
+}).superRefine((data, ctx) => {
+  // Calculator requests carry structured `details`; for those the message may
+  // be empty. Generic/homepage requests have no details, so require a short
+  // description — otherwise the lead is just contact data + a broad service.
+  if (!data.details && (data.message?.length ?? 0) < 10) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["message"],
+      message: "Bitte beschreiben Sie kurz Ihr Vorhaben (min. 10 Zeichen).",
+    });
+  }
 });
 
 export type ContactState = {
@@ -43,7 +60,18 @@ export async function submitContact(
     return { ok: false, message: "Bitte prüfen Sie Ihre Eingaben.", errors };
   }
 
-  const { name, email, phone, service, message } = parsed.data;
+  const { name, email, phone, plz, ort, zeitraum, service, source, estimate, details, message } =
+    parsed.data;
+
+  // `details` is a JSON string from the calculator; parse it defensively.
+  let detailsJson: unknown = null;
+  if (details) {
+    try {
+      detailsJson = JSON.parse(details);
+    } catch {
+      detailsJson = null;
+    }
+  }
 
   try {
     const supabase = createAdminClient();
@@ -51,8 +79,14 @@ export async function submitContact(
       name,
       email,
       phone: phone || null,
+      plz,
+      ort: ort || null,
+      zeitraum: zeitraum || null,
       service: service || null,
-      message,
+      source: source || null,
+      estimate: estimate || null,
+      details: detailsJson,
+      message: message || null,
     });
 
     if (error) {

@@ -183,6 +183,8 @@ export default function WallboxKostenPage() {
         headline="Lieber gleich konkrete Preise?"
         text="Statt mit Richtwerten zu rechnen, erhalten Sie von uns kostenlos und unverbindlich passende Angebote geprüfter Elektriker aus Ihrer Region."
         ctaLabel="Elektriker anfragen"
+        service="Wallbox / Ladestation"
+        source="wallbox-page"
       />
 
       <H2 id="pv">Wallbox mit Photovoltaik kombinieren</H2>
@@ -245,6 +247,8 @@ export default function WallboxKostenPage() {
         headline="Jetzt passende Elektriker für Ihre Wallbox finden"
         text="Schildern Sie kurz Ihr Vorhaben – wir vermitteln Ihnen kostenlos und unverbindlich geprüfte Elektriker aus Hamburg und Umgebung, die Ihnen ein konkretes Angebot machen."
         ctaLabel="Elektriker anfragen"
+        service="Wallbox / Ladestation"
+        source="wallbox-page"
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">

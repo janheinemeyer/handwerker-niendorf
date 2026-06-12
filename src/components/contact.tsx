@@ -1,4 +1,4 @@
-import { ContactForm } from "./contact-form";
+import { RequestForm } from "./request/request-form";
 
 export function Contact() {
   return (
@@ -46,7 +46,7 @@ export function Contact() {
         </div>
 
         <div className="border border-line-strong bg-paper p-6 sm:p-8">
-          <ContactForm />
+          <RequestForm prefill={{ source: "homepage-kontakt" }} />
         </div>
       </div>
     </section>
