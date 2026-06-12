@@ -14,11 +14,20 @@ export function LeadRow({ lead, created }: { lead: Lead; created: string }) {
       ? (lead.status as LeadStatus)
       : "new",
   );
+  const [failed, setFailed] = useState(false);
   const [pending, startTransition] = useTransition();
 
   const onStatusChange = (next: LeadStatus) => {
+    const previous = status;
     setStatus(next);
-    startTransition(() => updateLeadStatus(lead.id, next));
+    setFailed(false);
+    startTransition(async () => {
+      const res = await updateLeadStatus(lead.id, next);
+      if (!res.ok) {
+        setStatus(previous); // roll back the optimistic change
+        setFailed(true);
+      }
+    });
   };
 
   const hasDetails = lead.details && Object.keys(lead.details).length > 0;
@@ -70,6 +79,11 @@ export function LeadRow({ lead, created }: { lead: Lead; created: string }) {
               </option>
             ))}
           </select>
+          {failed && (
+            <span className="ml-2 text-xs font-medium text-accent">
+              nicht gespeichert
+            </span>
+          )}
         </td>
         <td className="px-3 py-3 text-right">
           {expandable && (

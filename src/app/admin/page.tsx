@@ -6,9 +6,12 @@ import type { Lead } from "./types";
 // Reads live data and is auth-gated — never cache/prerender.
 export const dynamic = "force-dynamic";
 
+const PAGE_LIMIT = 200;
+
 const df = new Intl.DateTimeFormat("de-DE", {
   dateStyle: "short",
   timeStyle: "short",
+  timeZone: "Europe/Berlin",
 });
 
 function Notice({ title, body }: { title: string; body: string }) {
@@ -22,16 +25,21 @@ function Notice({ title, body }: { title: string; body: string }) {
 
 export default async function AdminPage() {
   let leads: Lead[] | null = null;
+  let total = 0;
   let errorMsg: string | null = null;
 
   try {
     const supabase = createAdminClient();
-    const { data, error } = await supabase
+    const { data, error, count } = await supabase
       .from("contact_submissions")
-      .select("*")
-      .order("created_at", { ascending: false });
+      .select("*", { count: "exact" })
+      .order("created_at", { ascending: false })
+      .limit(PAGE_LIMIT);
     if (error) errorMsg = error.message;
-    else leads = (data ?? []) as Lead[];
+    else {
+      leads = (data ?? []) as Lead[];
+      total = count ?? leads.length;
+    }
   } catch (e) {
     errorMsg = e instanceof Error ? e.message : "Unbekannter Fehler.";
   }
@@ -53,7 +61,7 @@ export default async function AdminPage() {
         <div className="flex items-baseline justify-between gap-4">
           <h1 className="font-display text-2xl font-bold sm:text-3xl">Anfragen</h1>
           {leads && (
-            <span className="label text-ink-soft">{leads.length} gesamt</span>
+            <span className="label text-ink-soft">{total} gesamt</span>
           )}
         </div>
 
@@ -97,6 +105,11 @@ export default async function AdminPage() {
                 </tbody>
               </table>
             </div>
+          )}
+          {leads && leads.length < total && (
+            <p className="mt-3 text-xs text-ink-soft">
+              Zeige die neuesten {leads.length} von {total} Anfragen.
+            </p>
           )}
         </div>
       </main>
