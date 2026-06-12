@@ -15,7 +15,11 @@ on:
 
 jobs:
   fix-codex-review:
-    if: github.event.review.user.login == 'chatgpt-codex-connector[bot]'
+    # Same-repo PRs only: a fork PR could name its branch "main" and, with
+    # checkout defaulting to this repository, Claude would commit to our main.
+    if: >-
+      github.event.review.user.login == 'chatgpt-codex-connector[bot]' &&
+      github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
 
     permissions:
@@ -47,8 +51,9 @@ jobs:
             pull request #${{ github.event.pull_request.number }} in this repository.
 
             Your task: address that review.
-            1. Read the inline review comments and the review summary:
-               `gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/comments`
+            1. Read the inline comments from THIS review (not the whole PR, to
+               avoid re-processing earlier, already-fixed findings):
+               `gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/reviews/${{ github.event.review.id }}/comments`
             2. Fix each valid finding with the smallest safe change. Preserve the
                existing architecture and code style. If a finding is wrong or not
                applicable, do NOT change code for it — explain why instead.
