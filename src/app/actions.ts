@@ -73,37 +73,42 @@ export async function submitContact(
     }
   }
 
+  const record = {
+    name,
+    email,
+    phone: phone || null,
+    plz,
+    ort: ort || null,
+    zeitraum: zeitraum || null,
+    service: service || null,
+    source: source || null,
+    estimate: estimate || null,
+    details: detailsJson,
+    message: message || null,
+  };
+
+  // Source of truth for now: log the lead so it lands in the server (Vercel)
+  // function logs — no email or database infrastructure required. Search the
+  // logs for "[lead]".
+  console.log(
+    "[lead] Neue Anfrage:",
+    JSON.stringify({ receivedAt: new Date().toISOString(), ...record }),
+  );
+
+  // Best-effort persistence: also store in Supabase if it's configured, but
+  // never fail the submission because of it — the log above already captured
+  // the lead.
   try {
     const supabase = createAdminClient();
-    const { error } = await supabase.from("contact_submissions").insert({
-      name,
-      email,
-      phone: phone || null,
-      plz,
-      ort: ort || null,
-      zeitraum: zeitraum || null,
-      service: service || null,
-      source: source || null,
-      estimate: estimate || null,
-      details: detailsJson,
-      message: message || null,
-    });
-
-    if (error) {
-      console.error("contact insert failed:", error);
-      return {
-        ok: false,
-        message:
-          "Speichern fehlgeschlagen. Bitte versuchen Sie es später erneut.",
-      };
-    }
+    const { error } = await supabase
+      .from("contact_submissions")
+      .insert(record);
+    if (error) console.error("[lead] Supabase insert failed:", error.message);
   } catch (err) {
-    console.error(err);
-    return {
-      ok: false,
-      message:
-        "Der Anfrage-Dienst ist derzeit nicht erreichbar. Bitte rufen Sie uns an.",
-    };
+    console.warn(
+      "[lead] Nicht in Supabase gespeichert (nur Log):",
+      err instanceof Error ? err.message : err,
+    );
   }
 
   return {
