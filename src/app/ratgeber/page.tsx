@@ -15,6 +15,11 @@ const articles = [
     title: "Carport bauen lassen: Kosten 2026",
     desc: "Preise nach Typ, Material und Aufbau – mit Kostenrechner, Tabellen und FAQ.",
   },
+  {
+    href: "/ratgeber/terrassenueberdachung-kosten",
+    title: "Terrassenüberdachung: Kosten 2026",
+    desc: "Preise nach Größe, Material und Montage – mit Kostenrechner, Tabellen und FAQ.",
+  },
 ];
 
 export default function RatgeberIndex() {
