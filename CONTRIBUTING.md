@@ -66,12 +66,14 @@ post-coding gate — fill it in honestly.
 
 - **`CI` workflow** (`npm run lint` + `npm run build`) runs on every PR, including
   fork PRs. It needs no secrets, so it works from a fork.
-- The build prerenders `/`; a render-time or type error fails it. Get it green
-  locally first.
-- **Note on `@claude`:** the Claude Code GitHub action requires repository
-  secrets, which GitHub does not expose to PRs opened from forks. So `@claude`
-  automation runs for branches pushed to this repo, not from external forks —
-  fork PRs are reviewed by a maintainer normally.
+- The build prerenders `/`; a render-time or type error fails it. Run
+  `npm run lint && npm run build` green locally first.
+- **Note on `@claude`:** the Claude Code action is triggered by comment and
+  review events, which run in **this** repository — where
+  `CLAUDE_CODE_OAUTH_TOKEN` lives — so it works on fork PRs too. It only runs
+  when the commenter has write access here: an external contributor's own
+  `@claude` mention is ignored, but a **maintainer** can comment `@claude` on a
+  fork PR to invoke it.
 
 ## Keeping your fork in sync
 

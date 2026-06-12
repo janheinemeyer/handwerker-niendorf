@@ -38,12 +38,13 @@ fork workflow needs codified rules to merge safely.
 model arrives, add a `SYSTEM_MAP` and ubiquitous-language entries for lead
 statuses; when contributor volume grows, consider a `docs-gate`-style CI check.
 
-## 2026-06-12 — Verification gate is `npm run build`, and it needs no secrets
+## 2026-06-12 — Verification gate is `npm run lint` + `npm run build`, and it needs no secrets
 
-**Decision:** Treat `npm run build` as the single mechanical gate (type-check +
-static prerender of `/`). Keep the Supabase client construction lazy
-(`createAdminClient()` reads env at call time, inside the Server Action) so the
-build never requires `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY`.
+**Decision:** Treat `npm run lint` + `npm run build` as the mechanical gate
+(lint, type-check + static prerender of `/`) — the same two steps `ci.yml` runs,
+each able to fail the check independently. Keep the Supabase client construction
+lazy (`createAdminClient()` reads env at call time, inside the Server Action) so
+the build never requires `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY`.
 
 **Why:** Fork PRs from external contributors do not get repository secrets in CI.
 A build that needed secrets would fail every fork PR. A lazy client keeps CI green
