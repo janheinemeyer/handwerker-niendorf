@@ -20,6 +20,11 @@ const articles = [
     title: "Terrassenüberdachung: Kosten 2026",
     desc: "Preise nach Größe, Material und Montage – mit Kostenrechner, Tabellen und FAQ.",
   },
+  {
+    href: "/ratgeber/wallbox-installieren-kosten",
+    title: "Wallbox installieren lassen: Kosten 2026",
+    desc: "Preise für Gerät, Elektriker und Kabelweg – mit Kostenrechner, Förderung und Anmeldung.",
+  },
 ];
 
 export default function RatgeberIndex() {
