@@ -40,7 +40,7 @@ jobs:
           additional_permissions: |
             actions: read
 
-          claude_args: '--allowed-tools Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*)'
+          claude_args: '--allowed-tools Edit,Write,MultiEdit,Read,Glob,Grep,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*)'
 
           prompt: |
             The Codex bot (chatgpt-codex-connector) just submitted a review on
