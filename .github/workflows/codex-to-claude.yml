@@ -1,0 +1,58 @@
+name: Fix Codex review
+
+# When the Codex bot submits a PR review, run Claude Code directly to address
+# the findings on that PR's branch.
+#
+# We invoke the action with a `prompt` instead of posting an "@claude" comment,
+# because comments created with the default GITHUB_TOKEN do NOT trigger other
+# workflows (GitHub's anti-recursion rule) — so a comment-bridge into claude.yml
+# would silently do nothing.
+
+on:
+  pull_request_review:
+    types:
+      - submitted
+
+jobs:
+  fix-codex-review:
+    if: github.event.review.user.login == 'chatgpt-codex-connector[bot]'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1
+
+      - name: Run Claude Code
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+
+          additional_permissions: |
+            actions: read
+
+          claude_args: '--allowed-tools Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(pnpm:*),Bash(yarn:*)'
+
+          prompt: |
+            The Codex bot (chatgpt-codex-connector) just submitted a review on
+            pull request #${{ github.event.pull_request.number }} in this repository.
+
+            Your task: address that review.
+            1. Read the inline review comments and the review summary:
+               `gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/comments`
+            2. Fix each valid finding with the smallest safe change. Preserve the
+               existing architecture and code style. If a finding is wrong or not
+               applicable, do NOT change code for it — explain why instead.
+            3. Make sure `npm run lint` and `npm run build` both pass.
+            4. Commit directly to this PR's branch
+               (${{ github.event.pull_request.head.ref }}) and post one short
+               comment summarizing what you changed and what you skipped.
