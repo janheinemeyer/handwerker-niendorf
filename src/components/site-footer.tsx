@@ -19,35 +19,6 @@ export function SiteFooter() {
               und Umgebung.
             </p>
           </div>
-
-          <div className="grid grid-cols-2 gap-10 text-sm">
-            <div>
-              <p className="label text-paper/40">Adresse</p>
-              <address className="mt-3 not-italic leading-relaxed text-paper/80">
-                Musterstraße 12
-                <br />
-                22455 Hamburg
-              </address>
-            </div>
-            <div>
-              <p className="label text-paper/40">Kontakt</p>
-              <ul className="mt-3 space-y-2 text-paper/80">
-                <li>
-                  <a href="tel:+4940123456" className="hover:text-accent">
-                    040 123 456
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:hallo@handwerk-niendorf.de"
-                    className="hover:text-accent"
-                  >
-                    hallo@handwerk-niendorf.de
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-paper/50 sm:flex-row sm:items-center sm:justify-between">
