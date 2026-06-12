@@ -8,6 +8,9 @@ import { submitContact, type ContactState } from "@/app/actions";
 const initial: ContactState = { ok: false, message: "" };
 
 const serviceOptions = [
+  "Carport",
+  "Terrassenüberdachung",
+  "Wallbox / Ladestation",
   "Renovierung & Modernisierung",
   "Maler & Lackierer",
   "Trockenbau",
