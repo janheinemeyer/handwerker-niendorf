@@ -1,3 +1,11 @@
+import Link from "next/link";
+
+const ratgeber = [
+  ["Carport-Kosten", "/ratgeber/carport-bauen-lassen-kosten"],
+  ["Terrassenüberdachung", "/ratgeber/terrassenueberdachung-kosten"],
+  ["Wallbox installieren", "/ratgeber/wallbox-installieren-kosten"],
+];
+
 const services = [
   {
     no: "01",
@@ -87,6 +95,31 @@ export function Services() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-14 flex flex-col gap-5 border border-line bg-paper-2/40 p-7 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+          <div>
+            <p className="label text-accent">Kostenrechner & Ratgeber</p>
+            <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
+              Was kostet Ihr Vorhaben? Rechnen Sie es vorab durch – kostenlos und
+              unverbindlich, mit konkreten Preisspannen für Hamburg.
+            </p>
+          </div>
+          <ul className="flex flex-wrap gap-x-5 gap-y-3 font-display text-sm font-bold sm:justify-end">
+            {ratgeber.map(([label, href]) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="group inline-flex items-center gap-1.5 border-b-2 border-ink/20 pb-0.5 transition-colors hover:border-accent hover:text-accent"
+                >
+                  {label}
+                  <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                    →
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
