@@ -18,7 +18,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:py-32">
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.4fr_1fr] lg:content-center lg:items-end lg:py-16 lg:min-h-[calc(100svh-4.0625rem)]">
         <div>
           <p
             className="rise label flex items-center gap-3 text-accent"
@@ -29,7 +29,7 @@ export function Hero() {
           </p>
 
           <h1
-            className="rise mt-6 font-display text-[clamp(2.6rem,8vw,5.6rem)] font-extrabold uppercase leading-[0.92] tracking-tight"
+            className="rise mt-6 font-display text-[clamp(2.4rem,7vw,4.75rem)] font-extrabold uppercase leading-[0.92] tracking-tight"
             style={{ animationDelay: "0.12s" }}
           >
             Den richtigen
@@ -40,7 +40,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="rise mt-8 max-w-md text-lg leading-relaxed text-ink-soft"
+            className="rise mt-6 max-w-md text-lg leading-relaxed text-ink-soft"
             style={{ animationDelay: "0.2s" }}
           >
             Wir vermitteln Ihnen passende, geprüfte Handwerksbetriebe aus Hamburg
@@ -49,7 +49,7 @@ export function Hero() {
           </p>
 
           <div
-            className="rise mt-10 flex flex-wrap items-center gap-4"
+            className="rise mt-8 flex flex-wrap items-center gap-4"
             style={{ animationDelay: "0.28s" }}
           >
             <Link
