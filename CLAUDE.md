@@ -89,7 +89,12 @@ blocks**, so structure, styling and structured data stay consistent.
 
 - `RatgeberArticle` — page shell: header, breadcrumb (+ `BreadcrumbList`
   JSON-LD), `<h1>`, "Aktualisiert" date, footer. Props: `title`, `breadcrumb`
-  (`Crumb[]`), `updated`, `children`.
+  (`Crumb[]`), `updated`, `children`. It **auto-renders an "Auch interessant"
+  cross-link block** (`RelatedRatgeber`) to sibling pages — you don't add it per
+  page. The siblings come from the catalog in `src/lib/ratgeber.ts`
+  (`RATGEBER_PAGES`); **register every new Ratgeber page there** (href/title/blurb)
+  so it links to the others and they link back. Pages not in the catalog render
+  no cross-links (e.g. the `/ratgeber` index, which lists everything itself).
 - `Faq` — accordion **and** `FAQPage` JSON-LD generated from the *same* `items`
   array, so schema can never drift from what's shown. Pass `FaqItem[]`.
 - `Breadcrumb` — visible trail + `BreadcrumbList` JSON-LD (the shell renders it
