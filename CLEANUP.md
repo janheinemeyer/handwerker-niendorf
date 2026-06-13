@@ -5,15 +5,20 @@ Pick these up in their own focused PRs — not as drive-bys. Newest first.
 
 ---
 
-## 2026-06-13 — Hamburg carport size: 30 m² vs 50 m² contradiction
+## 2026-06-13 — Hamburg carport size on the cost page is wrong (30 m² / § 60)
 
 **What:** `carport-bauen-lassen-kosten/page.tsx` (Genehmigung section, ~line 171)
-says Hamburg carports are verfahrensfrei "häufig rund 30 m²". The correct Hamburg
-figure is **50 m²** (§ 60 HBauO), as stated on the new
-`carport-baugenehmigung-hamburg` page. The site currently contradicts itself.
+says Hamburg carports are verfahrensfrei "häufig rund 30 m²" and cites the
+Landesbauordnung loosely. The correct Hamburg rule (per the new
+`carport-baugenehmigung-hamburg` page, verified June 2026) is **up to 50 m² und
+3 m Wandhöhe je zugehörigem Hauptgebäude, vorhandene Stellplätze angerechnet**,
+under **§ 61 HBauO** (the new Hamburgische Bauordnung in force since 01.01.2026 —
+the provision moved from § 60 to § 61). The site currently contradicts itself and
+cites the obsolete paragraph.
 
-**Fix:** Correct the one figure on the cost page (and link it to the new
-permit page for the authoritative detail).
+**Fix:** Correct the figure + paragraph on the cost page and link it to the new
+permit page for the authoritative detail. While there, sanity-check any other
+ratgeber page that cites § 60 HBauO or pre-2026 figures.
 
 **Why deferred:** That line is outside the scope of the permit-page PR
 (surgical-changes rule); fixing it there would have mixed an edit to an unrelated

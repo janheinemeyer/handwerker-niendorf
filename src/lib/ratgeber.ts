@@ -57,7 +57,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   {
     href: "/ratgeber/carport-baugenehmigung-hamburg",
     title: "Carport-Baugenehmigung Hamburg",
-    blurb: "Wann ist ein Carport genehmigungsfrei? § 60 HBauO, Grenzabstände & Ablauf.",
+    blurb: "Wann ist ein Carport genehmigungsfrei? § 61 HBauO, Grenzabstände & Ablauf.",
     topic: "Baugenehmigung Carport",
   },
 ];

@@ -14,12 +14,12 @@ import {
 export const metadata: Metadata = {
   title: "Carport-Baugenehmigung Hamburg: Wann genehmigungsfrei? (2026)",
   description:
-    "Braucht ein Carport in Hamburg eine Baugenehmigung? Nach § 60 HBauO ist er bis 50 m² und 3 m verfahrensfrei. Grenzabstände, Bezirksamt, Ablauf und Kosten – kompakt für Hamburg & Niendorf erklärt.",
+    "Braucht ein Carport in Hamburg eine Baugenehmigung? Nach § 61 HBauO (seit 2026) ist er bis 50 m² und 3 m je Hauptgebäude verfahrensfrei. Grenzabstände, Bezirksamt, Ablauf und Kosten – kompakt für Hamburg & Niendorf erklärt.",
   alternates: { canonical: "/ratgeber/carport-baugenehmigung-hamburg" },
   openGraph: {
     title: "Carport-Baugenehmigung in Hamburg: Wann genehmigungsfrei?",
     description:
-      "§ 60 HBauO: Carport bis 50 m² und 3 m verfahrensfrei. Grenzabstände, Ablauf und Kosten für Hamburg.",
+      "§ 61 HBauO: Carport bis 50 m² und 3 m je Hauptgebäude verfahrensfrei. Grenzabstände, Ablauf und Kosten für Hamburg.",
     locale: "de_DE",
     type: "article",
   },
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Braucht ein Carport in Hamburg eine Baugenehmigung?",
-    a: "Meist nicht. Nach § 60 der Hamburgischen Bauordnung (HBauO) ist ein Carport im Innenbereich verfahrensfrei – also ohne Baugenehmigung zulässig –, solange er 50 m² Bruttogrundfläche und 3 m mittlere Wandhöhe nicht überschreitet. Erst darüber, oder im Außenbereich, wird eine Baugenehmigung nötig.",
+    a: "Meist nicht. Nach § 61 der Hamburgischen Bauordnung (HBauO, neue Fassung seit 01.01.2026) ist ein Carport im Innenbereich verfahrensfrei – also ohne Baugenehmigung zulässig –, solange er je zugehörigem Hauptgebäude 50 m² Bruttogrundfläche und 3 m Wandhöhe nicht überschreitet. Flächen vorhandener Stellplätze werden dabei angerechnet. Erst darüber, oder im Außenbereich, wird in der Regel eine Genehmigung nötig.",
   },
   {
     q: "Wie groß darf ein Carport in Hamburg ohne Genehmigung sein?",
-    a: "Bis 50 m² Bruttogrundfläche und 3 m mittlere Wandhöhe. Das reicht in der Regel auch für ein Doppelcarport. Maßgeblich ist die überdachte Fläche; eine seitliche Abstellecke oder ein Geräteanbau zählt mit.",
+    a: "Bis 50 m² Bruttogrundfläche und 3 m Wandhöhe – je zugehörigem Hauptgebäude. Das reicht in der Regel auch für ein Doppelcarport. Maßgeblich ist die überdachte Fläche; eine seitliche Abstellecke oder ein Geräteanbau zählt mit, und bereits vorhandene Stellplatzflächen werden auf die 50 m² angerechnet. Für ein Carport ohne zugehöriges Hauptgebäude (etwa auf einem unbebauten Grundstück) gilt die Verfahrensfreiheit nicht.",
   },
   {
     q: "Darf ein Carport in Hamburg direkt an die Grundstücksgrenze?",
@@ -40,7 +40,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Brauche ich für ein grenznahes Carport die Zustimmung des Nachbarn?",
-    a: "Wenn Sie die 3-m- und 9-m-Regel des § 6 HBauO einhalten, ist keine Nachbarzustimmung nötig. Erst wenn Sie die vorgeschriebenen Abstandsflächen unterschreiten, müssen die betroffenen Nachbarn schriftlich zustimmen.",
+    a: "Wenn Sie die 3-m- und 9-m-Regel des § 6 HBauO einhalten, ist keine Nachbarzustimmung nötig. Unterschreiten Sie dagegen die vorgeschriebenen Abstandsflächen, reicht die Zustimmung des Nachbarn allein nicht aus: Dann muss zusätzlich eine Abweichung beantragt und vom Bauamt genehmigt werden – auch bei sonst verfahrensfreien Vorhaben.",
   },
   {
     q: "Wo beantrage ich eine Carport-Baugenehmigung in Hamburg?",
@@ -48,7 +48,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet eine Carport-Baugenehmigung in Hamburg?",
-    a: "Ist der Carport verfahrensfrei, fallen keine Genehmigungsgebühren an. Ist eine Baugenehmigung nötig, liegen die Amtsgebühren je nach Bausumme meist zwischen 50 € und 500 €; hinzu kommen ggf. Kosten für prüffähige Bauvorlagen.",
+    a: "Ist der Carport verfahrensfrei, fallen keine Genehmigungsgebühren an. Ist eine Baugenehmigung nötig, richten sich die Amtsgebühren nach der Baugebührenordnung (BauGebO) und der Bausumme; es gilt eine Mindestgebühr. Kalkulieren Sie für ein Carport in der Regel mehrere Hundert Euro, hinzu kommen ggf. Kosten für prüffähige Bauvorlagen.",
   },
   {
     q: "Was passiert, wenn ich ohne Genehmigung baue?",
@@ -77,40 +77,46 @@ export default function CarportGenehmigungHamburgPage() {
       ]}
     >
       <TlDr>
-        In Hamburg ist ein Carport nach <strong>§ 60 HBauO verfahrensfrei</strong>{" "}
-        – also ohne Baugenehmigung zulässig – bis{" "}
-        <strong>50 m² Bruttogrundfläche</strong> und <strong>3 m</strong>{" "}
-        mittlerer Wandhöhe im Innenbereich. Direkt an die Grundstücksgrenze darf
-        er bis <strong>9 m Länge</strong> und 3 m Höhe (§ 6 HBauO). Größer, höher
-        oder im Außenbereich? Dann ist eine Baugenehmigung beim Bezirksamt nötig
-        (für Niendorf: <strong>Bezirksamt Eimsbüttel</strong>) – seit 2024
-        ausschließlich digital.
+        In Hamburg ist ein Carport nach <strong>§ 61 HBauO verfahrensfrei</strong>{" "}
+        (neue Bauordnung seit 01.01.2026) – also ohne Baugenehmigung zulässig – bis{" "}
+        <strong>50 m² Bruttogrundfläche</strong> und <strong>3 m Wandhöhe</strong>{" "}
+        je zugehörigem Hauptgebäude im Innenbereich. Wichtig: Flächen vorhandener
+        Stellplätze werden auf die 50 m² angerechnet. Direkt an die
+        Grundstücksgrenze darf er bis <strong>9 m Länge</strong> und 3 m mittlerer
+        Wandhöhe (§ 6 HBauO). Größer, höher oder im Außenbereich? Dann ist in der
+        Regel eine Baugenehmigung beim Bezirksamt nötig (für Niendorf:{" "}
+        <strong>Bezirksamt Eimsbüttel</strong>) – seit 2024 ausschließlich digital.
       </TlDr>
 
       <H2 id="genehmigungspflicht">
         Braucht ein Carport in Hamburg eine Baugenehmigung?
       </H2>
       <P>
-        In den meisten Fällen nicht. Hamburg behandelt Carports nach § 60 der
+        In den meisten Fällen nicht. Hamburg behandelt Carports nach § 61 der
         Hamburgischen Bauordnung (HBauO) als <strong>verfahrensfreie</strong>{" "}
-        Bauvorhaben. Verfahrensfrei heißt: Sie brauchen weder eine Baugenehmigung
-        zu beantragen noch das Vorhaben anzuzeigen – vorausgesetzt, der Carport
-        bleibt innerhalb der gesetzlichen Grenzen.
+        Bauvorhaben – die Vorschrift stand bis zur Neufassung der HBauO zum{" "}
+        <strong>1. Januar 2026</strong> in § 60. Verfahrensfrei heißt: Sie
+        brauchen weder eine Baugenehmigung zu beantragen noch das Vorhaben
+        anzuzeigen – vorausgesetzt, der Carport bleibt innerhalb der gesetzlichen
+        Grenzen.
       </P>
       <P>
         Maßgeblich sind zwei Werte: die <strong>Bruttogrundfläche</strong>{" "}
-        (überdachte Fläche) und die <strong>mittlere Wandhöhe</strong>. Solange
-        beide unter den Grenzwerten bleiben und der Carport im Innenbereich –
-        also innerhalb eines im Zusammenhang bebauten Ortsteils – steht, ist er
-        ohne Genehmigung zulässig.
+        (überdachte Fläche) und die <strong>Wandhöhe</strong>. Beide gelten{" "}
+        <strong>je zugehörigem Hauptgebäude</strong>, und{" "}
+        <strong>vorhandene Stellplatzflächen werden angerechnet</strong> – auf
+        einem Grundstück mit bereits offenen Stellplätzen kann die
+        Verfahrensfreiheit also schon vor 50 m² enden. Zusätzlich muss der Carport
+        im Innenbereich – innerhalb eines im Zusammenhang bebauten Ortsteils –
+        stehen.
       </P>
       <CostTable
         head={["Situation", "Genehmigung in Hamburg", "Grundlage"]}
         rows={[
           [
-            "Innenbereich, bis 50 m² & 3 m Höhe",
+            "Innenbereich, bis 50 m² & 3 m, je Hauptgebäude",
             "verfahrensfrei – keine Genehmigung",
-            "§ 60 HBauO",
+            "§ 61 HBauO",
           ],
           [
             "An der Grenze, bis 9 m lang & 3 m hoch",
@@ -119,8 +125,8 @@ export default function CarportGenehmigungHamburgPage() {
           ],
           [
             "Größer als 50 m² oder höher als 3 m",
-            "Baugenehmigung erforderlich",
-            "HBauO",
+            "i. d. R. Genehmigung – im B-Plan-Gebiet ggf. Freistellung",
+            "§§ 61 f. HBauO",
           ],
           [
             "Im Außenbereich (unbebaut)",
@@ -174,15 +180,21 @@ export default function CarportGenehmigungHamburgPage() {
         rows={[
           ["Mittlere Wandhöhe an der Grenze", "max. 3,0 m"],
           ["Länge entlang einer Grenze", "max. 9,0 m"],
-          ["Gesamtlänge grenzständiger Bauten je Grundstück", "max. 15,0 m"],
+          ["Gesamtlänge je Grundstück (alle Bauten ohne eigene Abstandsfläche)", "max. 15,0 m"],
         ]}
       />
       <P>
+        Die 15-m-Grenze zählt dabei alle baulichen Anlagen mit, die die
+        vorgeschriebene Abstandsfläche nicht einhalten – nicht nur die direkt auf
+        der Grenze stehenden. Bestehende Garagen oder Nebengebäude im
+        Abstandsbereich rechnen also mit.
+      </P>
+      <P>
         Halten Sie diese Maße ein, ist <strong>keine Nachbarzustimmung</strong>{" "}
-        nötig. Unterschreiten Sie dagegen die regulären Abstandsflächen, müssen
-        die betroffenen Nachbarn schriftlich zustimmen. Wer auf Nummer sicher
-        gehen will, holt sich die Zustimmung ohnehin schriftlich – das vermeidet
-        Streit, wenn der Nachbar später wechselt.
+        nötig. Unterschreiten Sie dagegen die regulären Abstandsflächen, genügt
+        die Zustimmung des Nachbarn allein nicht: Es muss zusätzlich eine{" "}
+        <strong>Abweichung</strong> beantragt und vom Bauamt genehmigt werden –
+        und zwar auch dann, wenn der Carport ansonsten verfahrensfrei wäre.
       </P>
 
       <CtaBand
@@ -197,10 +209,13 @@ export default function CarportGenehmigungHamburgPage() {
         Wann ist eine Baugenehmigung nötig – und wie läuft sie ab?
       </H2>
       <P>
-        Eine Baugenehmigung brauchen Sie in Hamburg, wenn der Carport{" "}
-        <strong>größer als 50 m²</strong> oder <strong>höher als 3 m</strong>{" "}
-        wird, im <strong>Außenbereich</strong> liegt oder ein Bebauungsplan es
-        ausdrücklich verlangt. Dann gilt:
+        Überschreitet der Carport <strong>50 m²</strong> oder{" "}
+        <strong>3 m Wandhöhe</strong>, liegt im <strong>Außenbereich</strong> oder
+        verlangt es ein Bebauungsplan, ist die Verfahrensfreiheit weg. Das heißt
+        aber nicht automatisch volles Genehmigungsverfahren: Gehört der Carport zu
+        einem Wohngebäude im Geltungsbereich eines qualifizierten Bebauungsplans,
+        kann das <strong>Genehmigungsfreistellungsverfahren (§ 62 HBauO)</strong>{" "}
+        greifen. Ist eine Baugenehmigung nötig, gilt:
       </P>
       <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
         <li>
@@ -233,7 +248,7 @@ export default function CarportGenehmigungHamburgPage() {
         head={["Posten", "Typische Kosten"]}
         rows={[
           ["Verfahrensfreier Carport (Innenbereich)", "keine Genehmigungsgebühr"],
-          ["Amtsgebühr Baugenehmigung", "50 – 500 €"],
+          ["Amtsgebühr Baugenehmigung (BauGebO)", "nach Bausumme, Mindestgebühr"],
           ["Prüffähige Bauvorlagen / Statik (falls nötig)", "300 – 1.500 €"],
         ]}
       />
@@ -264,9 +279,11 @@ export default function CarportGenehmigungHamburgPage() {
       <P>
         Für die meisten Einfamilienhaus-Grundstücke in Niendorf, Lokstedt oder
         Schnelsen bleibt ein Einzel- oder Doppelcarport innerhalb der
-        verfahrensfreien 50 m² – die Genehmigungsfrage entschärft sich damit
-        meist von selbst. Knifflig wird es bei Grenzbebauung, Eckgrundstücken oder
-        einem einschränkenden Bebauungsplan. Im Zweifel lohnt der kurze Anruf beim{" "}
+        verfahrensfreien 50 m² je Hauptgebäude – die Genehmigungsfrage entschärft
+        sich damit meist von selbst. Knifflig wird es bei bereits vorhandenen
+        Stellplätzen (die angerechnet werden), bei Grenzbebauung, Eckgrundstücken
+        oder einem einschränkenden Bebauungsplan. Im Zweifel lohnt der kurze Anruf
+        beim{" "}
         <strong>Bezirksamt Eimsbüttel</strong> oder ein Blick in den
         Bebauungsplan, bevor das Material bestellt wird.
       </P>
@@ -282,11 +299,12 @@ export default function CarportGenehmigungHamburgPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Dieser Beitrag gibt den Stand Juni 2026 wieder und dient der allgemeinen
-        Orientierung – er ersetzt keine Rechtsberatung und keine Auskunft des
-        zuständigen Bauamts. Im Einzelfall können Bebauungsplan, Abstandsflächen
-        oder örtliche Satzungen abweichende Anforderungen stellen. Verbindlich ist
-        immer die Auskunft des Bezirksamts.
+        Dieser Beitrag gibt den Stand Juni 2026 wieder (neue HBauO seit 01.01.2026)
+        und dient der allgemeinen Orientierung – er ersetzt keine Rechtsberatung
+        und keine Auskunft des zuständigen Bauamts. Im Einzelfall können
+        Bebauungsplan, Abstandsflächen, angerechnete Stellplätze oder örtliche
+        Satzungen abweichende Anforderungen stellen. Verbindlich ist immer die
+        Auskunft des Bezirksamts.
       </p>
     </RatgeberArticle>
   );
