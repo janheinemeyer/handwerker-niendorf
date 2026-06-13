@@ -54,4 +54,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Preise pro m², die versteckten Unterbau-Kosten & Rechner.",
     topic: "Pflasterarbeiten",
   },
+  {
+    href: "/ratgeber/carport-baugenehmigung-hamburg",
+    title: "Carport-Baugenehmigung Hamburg",
+    blurb: "Wann ist ein Carport genehmigungsfrei? § 61 HBauO, Grenzabstände & Ablauf.",
+    topic: "Baugenehmigung Carport",
+  },
 ];
