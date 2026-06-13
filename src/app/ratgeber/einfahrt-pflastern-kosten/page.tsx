@@ -28,15 +28,15 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was kostet es, eine Einfahrt pflastern zu lassen?",
-    a: "Eine Einfahrt pflastern zu lassen kostet 2026 je nach Material und Untergrund typischerweise 70–150 € pro m² mit Betonpflaster und 150–250 € pro m² mit Naturstein. Eine 40 m² große Einfahrt liegt mit Betonpflaster bei etwa 4.000–6.000 €, mit Naturstein deutlich höher.",
+    a: "Eine Einfahrt pflastern zu lassen kostet 2026 je nach Material und Untergrund typischerweise 90–150 € pro m² mit Betonpflaster und 170–270 € pro m² mit Naturstein – jeweils inklusive Unterbau. Eine 40 m² große Einfahrt liegt mit Betonpflaster bei etwa 4.000–6.500 €, mit Naturstein deutlich höher.",
   },
   {
     q: "Was kostet Pflastern pro m²?",
-    a: "Inklusive Unterbau und Verlegung rechnen Sie mit 70–150 €/m² (Beton) bzw. 150–250 €/m² (Naturstein). Davon entfallen rund 30–60 €/m² auf die reine Verlegung und 20–50 €/m² auf Aushub und Unterbau – diese Nebenkosten machen oft fast die Hälfte des Preises aus.",
+    a: "Inklusive Unterbau und Verlegung rechnen Sie mit 90–150 €/m² (Beton) bzw. 170–270 €/m² (Naturstein). Davon entfallen rund 35–55 €/m² auf die reine Verlegung und etwa 28–45 €/m² auf Aushub und Unterbau – diese Nebenkosten machen oft fast die Hälfte des Preises aus.",
   },
   {
     q: "Was kostet eine Einfahrt mit 40 qm?",
-    a: "Eine 40 m² große, PKW-befahrbare Einfahrt kostet mit Betonpflaster meist 4.500–6.500 €, mit Premium-Beton oder Naturstein 7.000–10.000 € und mehr. Entscheidend sind Material, der Zustand des Untergrunds und ob alte Beläge entfernt werden müssen.",
+    a: "Eine 40 m² große, PKW-befahrbare Einfahrt kostet mit Betonpflaster meist 4.000–6.500 €, mit Premium-Beton oder Naturstein 7.000–11.000 € und mehr. Entscheidend sind Material, der Zustand des Untergrunds und ob alte Beläge entfernt werden müssen.",
   },
   {
     q: "Welche versteckten Kosten gibt es beim Pflastern?",
@@ -44,7 +44,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet der Unterbau bzw. Aushub?",
-    a: "Aushub und Unterbau kosten zusammen etwa 20–50 €/m²: Aushub rund 8–15 €/m², Material und Verdichtung der Tragschicht 20–40 €/m². Bei einer PKW-befahrbaren Einfahrt ist die Tragschicht dicker und frostsicher – das kostet mehr als bei einem reinen Gehweg.",
+    a: "Aushub und Unterbau kosten zusammen etwa 28–45 €/m²: Aushub rund 10–15 €/m², Material und Verdichtung der frostsicheren Tragschicht 18–30 €/m². Bei einer PKW-befahrbaren Einfahrt ist die Tragschicht dicker und frostsicher – das kostet mehr als bei einem reinen Gehweg.",
   },
   {
     q: "Beton- oder Natursteinpflaster – was ist günstiger?",
@@ -52,11 +52,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Spart wasserdurchlässiges Pflaster in Hamburg Gebühren?",
-    a: "Ja. In Hamburg fällt eine Niederschlagswassergebühr von 0,86 € pro m² versiegelter Fläche und Jahr an. Versickerungsfähige Flächen und Rasengittersteine werden nur mit dem halben Flächensatz (50 %) berechnet – durchlässiges Pflaster halbiert also die laufende Gebühr für diese Fläche und ist zudem ökologisch sinnvoll.",
+    a: "Ja, oft. In Hamburg fällt eine Niederschlagswassergebühr von 0,86 € pro m² versiegelter Fläche und Jahr an. Wie viel Sie sparen, hängt aber von der Ausführung ab: an die Kanalisation angeschlossene versickerungsfähige Flächen und Rasengittersteine werden meist mit dem halben Satz (50 %) berechnet; Flächen, deren Regenwasser vollständig vor Ort versickert, können mit 0 % angesetzt werden – normales versiegeltes Pflaster bleibt bei 100 %. Maßgeblich ist die Einstufung von Hamburg Wasser. Eine Versickerung auf dem Grundstück müssen Sie zudem wasserrechtlich anzeigen bzw. genehmigen lassen.",
   },
   {
     q: "Was kostet eine Einfahrt pflastern in Hamburg?",
-    a: "In Hamburg liegen die Galabau-Preise etwas über dem Bundesdurchschnitt. Für eine 40 m² große, befahrbare Einfahrt aus Betonpflaster sollten Sie mit etwa 5.000–7.500 € rechnen. Über unsere Vermittlung erhalten Sie Angebote geprüfter Galabau-Betriebe aus Niendorf und Umgebung.",
+    a: "In Hamburg liegen die Galabau-Preise etwas über dem Bundesdurchschnitt. Für eine 40 m² große, befahrbare Einfahrt aus Betonpflaster sollten Sie mit etwa 4.500–6.500 € rechnen. Über unsere Vermittlung erhalten Sie Angebote geprüfter Galabau-Betriebe aus Niendorf und Umgebung.",
   },
 ];
 
@@ -79,9 +79,10 @@ export default function EinfahrtPflasternKostenPage() {
     >
       <TlDr>
         Eine Einfahrt pflastern zu lassen kostet 2026 typischerweise{" "}
-        <strong>70–150 €/m² mit Beton</strong> und{" "}
-        <strong>150–250 €/m² mit Naturstein</strong>. Eine 40 m² große Einfahrt
-        liegt mit Betonpflaster bei etwa <strong>4.000–6.000 €</strong>.{" "}
+        <strong>90–150 €/m² mit Beton</strong> und{" "}
+        <strong>170–270 €/m² mit Naturstein</strong> – jeweils inklusive Unterbau.
+        Eine 40 m² große Einfahrt liegt mit Betonpflaster bei etwa{" "}
+        <strong>4.000–6.500 €</strong>.{" "}
         <strong>Achtung:</strong> Rund 40–50 % der Kosten stecken im Unterbau
         (Aushub, Tragschicht, Randsteine) – nicht im Pflasterstein. In Hamburg
         kommt die Niederschlagswassergebühr hinzu, die sich mit durchlässigem
@@ -112,12 +113,12 @@ export default function EinfahrtPflasternKostenPage() {
       <CostTable
         head={["Posten", "Typische Kosten", "Anteil"]}
         rows={[
-          ["Aushub & Entsorgung Boden", "13 – 25 €/m²", "Nebenkosten"],
-          ["Unterbau / frostsichere Tragschicht", "20 – 45 €/m²", "Nebenkosten"],
+          ["Aushub & Entsorgung Boden", "15 – 20 €/m²", "Nebenkosten"],
+          ["Unterbau / frostsichere Tragschicht", "18 – 30 €/m²", "Nebenkosten"],
           ["Pflasterbett (Splitt/Sand)", "ca. 8 €/m²", "Nebenkosten"],
-          ["Pflastermaterial", "15 – 100 €/m²", "Stein"],
-          ["Verlegung (Arbeit)", "30 – 60 €/m²", "Arbeit"],
-          ["Randsteine / Einfassung", "10 – 15 €/m²", "Nebenkosten"],
+          ["Pflastermaterial", "20 – 90 €/m²", "Stein"],
+          ["Verlegung (Arbeit)", "35 – 55 €/m²", "Arbeit"],
+          ["Randsteine / Einfassung", "ca. 10 €/m²", "Nebenkosten"],
         ]}
       />
       <P>
@@ -134,10 +135,10 @@ export default function EinfahrtPflasternKostenPage() {
       <CostTable
         head={["Material", "Komplettpreis pro m²", "Eigenschaften"]}
         rows={[
-          ["Betonpflaster (Standard)", "70 – 110 €/m²", "günstig, robust, große Auswahl"],
-          ["Premium-Betonpflaster", "100 – 150 €/m²", "Naturstein-Optik, 40–60 % günstiger als echter Naturstein"],
-          ["Naturstein (Granit, Basalt)", "150 – 250 €/m²", "hochwertig, langlebig, teuer"],
-          ["Versickerungspflaster", "90 – 140 €/m²", "wasserdurchlässig, spart Niederschlagsgebühr"],
+          ["Betonpflaster (Standard)", "90 – 150 €/m²", "günstig, robust, große Auswahl"],
+          ["Premium-Betonpflaster", "130 – 195 €/m²", "Naturstein-Optik, 40–60 % günstiger als echter Naturstein"],
+          ["Naturstein (Granit, Basalt)", "170 – 270 €/m²", "hochwertig, langlebig, teuer"],
+          ["Versickerungspflaster", "110 – 180 €/m²", "wasserdurchlässig, kann die Niederschlagsgebühr senken"],
         ]}
       />
 
@@ -145,9 +146,9 @@ export default function EinfahrtPflasternKostenPage() {
       <CostTable
         head={["Fläche", "Beton (befahrbar)", "Naturstein"]}
         rows={[
-          ["~20 m² (Stellplatz)", "2.500 – 4.000 €", "4.000 – 6.000 €"],
-          ["~40 m² (Einfahrt)", "4.500 – 6.500 €", "7.000 – 10.000 €"],
-          ["~60 m² (groß)", "6.500 – 10.000 €", "10.000 – 15.000 €"],
+          ["~20 m² (Stellplatz)", "2.000 – 3.500 €", "4.000 – 6.000 €"],
+          ["~40 m² (Einfahrt)", "4.000 – 6.500 €", "7.500 – 11.000 €"],
+          ["~60 m² (groß)", "6.000 – 10.000 €", "11.000 – 16.000 €"],
         ]}
       />
 
@@ -179,12 +180,35 @@ export default function EinfahrtPflasternKostenPage() {
         40 m²-Einfahrt kostet so rund 34 €/Jahr laufend.
       </P>
       <P>
-        <strong>Versickerungsfähige Flächen und Rasengittersteine</strong> werden
-        nur mit dem <strong>halben Flächensatz (50 %)</strong> berechnet – mit
-        durchlässigem Pflaster halbieren Sie also die laufende Gebühr für diese
-        Fläche. Das ist nicht nur ökologisch sinnvoll (Regenwasser versickert vor
-        Ort), sondern senkt dauerhaft die Abwasserkosten. Den genauen Flächensatz
-        legt Hamburg Wasser fest; die Anrechnung müssen Sie melden.
+        Wie stark Sie sparen, hängt von der Ausführung ab – pauschal gilt die
+        Halbierung <em>nicht</em>:
+      </P>
+      <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
+        <li>
+          <strong>An die Kanalisation angeschlossene</strong> versickerungsfähige
+          Flächen, Sicker- oder Rasengittersteine: meist <strong>halber
+          Flächensatz (50 %)</strong>.
+        </li>
+        <li>
+          Flächen, deren Regenwasser <strong>vollständig vor Ort versickert</strong>{" "}
+          (keine Einleitung in die Kanalisation): können mit <strong>0 %</strong>{" "}
+          angesetzt werden.
+        </li>
+        <li>
+          Normales, versiegeltes Pflaster mit Anschluss: bleibt bei{" "}
+          <strong>100 %</strong>.
+        </li>
+      </ul>
+      <P>
+        Maßgeblich ist die Einstufung von Hamburg Wasser nach Belag und
+        Entwässerung; die Anrechnung müssen Sie melden.{" "}
+        <strong>Wichtig:</strong> Wer Regenwasser auf dem Grundstück versickern
+        lässt, muss auch das <strong>Wasserrecht</strong> beachten. Häusliche
+        Versickerung auf Wohngrundstücken (in der Regel bis ~250 m²) ist unter
+        Bedingungen – etwa außerhalb von Wasserschutz- und Altlastengebieten –
+        oft genehmigungsfrei, aber bei der zuständigen Behörde{" "}
+        <strong>anzuzeigen</strong>; sonst ist eine wasserrechtliche Erlaubnis
+        nötig. Klären Sie das vor Baubeginn (Angaben ohne Gewähr).
       </P>
 
       <H2 id="sparen">So sparen Sie beim Einfahrt pflastern</H2>
@@ -201,7 +225,7 @@ export default function EinfahrtPflasternKostenPage() {
       <P>
         In Hamburg liegen die Galabau-Preise etwas über dem Bundesdurchschnitt.
         Für eine 40 m² große, befahrbare Einfahrt aus Betonpflaster sollten Sie
-        mit etwa <strong>5.000–7.500 €</strong> rechnen – inklusive Unterbau und
+        mit etwa <strong>4.500–6.500 €</strong> rechnen – inklusive Unterbau und
         Randsteinen. Über unsere Vermittlung erhalten Sie Angebote geprüfter
         Galabau-Betriebe aus Niendorf und Umgebung – so vergleichen Sie reale
         Preise statt Richtwerte.

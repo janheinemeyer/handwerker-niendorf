@@ -41,9 +41,11 @@ const NUTZUNG_NAME: Record<Nutzung, string> = {
 
 const SIZE_M2: Record<Size, number> = { klein: 20, mittel: 40, gross: 60 };
 
-// Per m² Richtwerte.
-const AUSHUB: Record<Nutzung, number> = { begehbar: 12, befahrbar: 18 };
-const UNTERBAU: Record<Nutzung, number> = { begehbar: 25, befahrbar: 42 }; // frostsichere Tragschicht
+// Per m² Richtwerte (Stand Juni 2026). Calibrated so the complete price/m²
+// matches the ranges published on the page: Beton ~90–150, Premium ~130–195,
+// Naturstein ~170–270, Versickerung ~110–180 €/m².
+const AUSHUB: Record<Nutzung, number> = { begehbar: 10, befahrbar: 14 };
+const UNTERBAU: Record<Nutzung, number> = { begehbar: 18, befahrbar: 30 }; // frostsichere Tragschicht
 const PFLASTERBETT = 8;
 const MATERIAL_PER_M2: Record<Material, number> = {
   beton: 20,
@@ -52,13 +54,13 @@ const MATERIAL_PER_M2: Record<Material, number> = {
   versickerung: 30,
 };
 const VERLEGUNG: Record<Material, number> = {
-  beton: 40,
-  premium: 45,
-  naturstein: 60,
-  versickerung: 42,
+  beton: 35,
+  premium: 40,
+  naturstein: 55,
+  versickerung: 38,
 };
-const ENTSORGUNG = 8;
-const RANDSTEINE_PER_M2 = 12;
+const ENTSORGUNG = 6;
+const RANDSTEINE_PER_M2 = 10;
 const ALTE_FLAECHE_PER_M2 = 14; // alten Belag entfernen & entsorgen
 const REGION_SURCHARGE = 0.2;
 const LABOUR_SHARE = 0.6;
