@@ -97,18 +97,24 @@ export async function submitContact(
 
   // Best-effort persistence: also store in Supabase if it's configured, but
   // never fail the submission because of it — the log above already captured
-  // the lead.
+  // the lead. Bound the request so a stalled Supabase (outage/network) can't
+  // keep the Server Action pending until the platform kills it.
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 3000);
   try {
     const supabase = createAdminClient();
     const { error } = await supabase
       .from("contact_submissions")
-      .insert(record);
+      .insert(record)
+      .abortSignal(controller.signal);
     if (error) console.error("[lead] Supabase insert failed:", error.message);
   } catch (err) {
     console.warn(
       "[lead] Nicht in Supabase gespeichert (nur Log):",
       err instanceof Error ? err.message : err,
     );
+  } finally {
+    clearTimeout(timeout);
   }
 
   return {
