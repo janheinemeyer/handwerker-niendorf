@@ -16,6 +16,27 @@ Format:
 
 ---
 
+## 2026-06-13 — Regulatory ("Genehmigung") Ratgeber pages share the cost-page catalog
+
+**Decision:** The new `carport-baugenehmigung-hamburg` page is informational
+(building-law / permit), not a cost page, but it is still registered in
+`RATGEBER_PAGES` like the cost pages — so it cross-links, appears in the footer,
+homepage band and sitemap, and feeds the Organization `knowsAbout` schema (topic
+`"Baugenehmigung Carport"`).
+
+**Why:** One catalog is the single discovery/cross-link surface (see CLAUDE.md).
+Splitting regulatory pages into a separate catalog would duplicate that wiring and
+break the auto cross-links between a topic's cost page and its permit page — which
+is exactly the internal-link cluster we want (carport-kosten ↔ carport-genehmigung).
+
+**Alternatives considered:** A separate catalog / `kind` field to segregate page
+types — rejected as premature (rule of 3; only one regulatory page exists). Revisit
+if regulatory pages grow enough to warrant their own index or schema treatment.
+
+**Consequences:** `RatgeberPage.blurb`/`title` are now intentionally not all
+cost-flavoured. If a future surface wants to filter cost vs. regulatory pages, add
+a `kind` field then — not before.
+
 ## 2026-06-12 — Adopt a lean, fork-friendly process ported from eas-guardians
 
 **Decision:** Port the *spirit* of the eas-guardians AI-development process — not
