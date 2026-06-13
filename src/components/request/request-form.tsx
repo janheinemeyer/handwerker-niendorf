@@ -11,6 +11,7 @@ const initial: ContactState = { ok: false, message: "" };
 const serviceOptions = [
   "Carport",
   "Terrassenüberdachung",
+  "Wintergarten",
   "Wallbox / Ladestation",
   "Renovierung & Modernisierung",
   "Maler & Lackierer",

@@ -42,4 +42,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
     topic: "Badsanierung",
   },
+  {
+    href: "/ratgeber/wintergarten-kosten",
+    title: "Wintergarten: Kosten",
+    blurb: "Kalt- oder Warmwintergarten – Preise pro m², Genehmigung & Rechner.",
+    topic: "Wintergarten",
+  },
 ];
