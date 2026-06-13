@@ -32,14 +32,6 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-
-        <a
-          href="tel:+4940123456"
-          className="group hidden items-center gap-2 bg-ink px-4 py-2.5 font-sans text-sm font-semibold text-paper transition-colors hover:bg-accent sm:flex"
-        >
-          <span className="h-1.5 w-1.5 bg-accent transition-colors group-hover:bg-paper" />
-          040 123 456
-        </a>
       </div>
     </header>
   );
