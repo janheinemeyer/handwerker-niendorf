@@ -36,4 +36,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Installationskosten, Förderung und Technik im Überblick.",
     topic: "Wallbox-Installation",
   },
+  {
+    href: "/ratgeber/bad-renovieren-kosten",
+    title: "Bad renovieren: Kosten",
+    blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
+    topic: "Badsanierung",
+  },
 ];
