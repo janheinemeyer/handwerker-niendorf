@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import { RequestProvider } from "@/lib/request-context";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -18,6 +19,11 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
+  // Resolves relative canonical/OpenGraph URLs (e.g. the Ratgeber pages'
+  // `canonical: "/ratgeber/..."`) against the production domain instead of the
+  // build-time localhost default. Hardcoded so preview deployments also emit
+  // the canonical production host and don't compete for indexing.
+  metadataBase: new URL(SITE_URL),
   title: "Handwerk Niendorf · Handwerker finden in Hamburg",
   description:
     "Wir vermitteln Ihnen geprüfte Handwerksbetriebe aus Hamburg-Niendorf und Umgebung – für Renovierung, Maler-, Trockenbau-, Fliesen- und Montagearbeiten. Kostenlos und unverbindlich anfragen.",
