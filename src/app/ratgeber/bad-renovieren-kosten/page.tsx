@@ -56,7 +56,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet eine Badsanierung in Hamburg?",
-    a: "In Hamburg liegen die Handwerkerpreise rund 20 % über dem Bundesdurchschnitt. Für ein mittelgroßes Bad (~8 m²) sollten Sie hier mit etwa 15.000–22.000 € für eine Komplettsanierung rechnen. Über unsere Vermittlung erhalten Sie Angebote geprüfter Betriebe aus Niendorf und Umgebung.",
+    a: "In Hamburg liegen die Handwerkerpreise rund 20 % über dem Bundesdurchschnitt. Da die Arbeitsleistung etwa 60 % der Kosten ausmacht, liegt die Gesamtrechnung rund 10–15 % höher: für ein mittelgroßes Bad (~8 m²) etwa 13.500–27.000 € für eine Komplettsanierung. Über unsere Vermittlung erhalten Sie Angebote geprüfter Betriebe aus Niendorf und Umgebung.",
   },
 ];
 
@@ -84,8 +84,9 @@ export default function BadKostenPage() {
         Komplettsanierung rechnen Sie mit{" "}
         <strong>1.500–3.500 € pro m²</strong>; ein mittelgroßes Bad (~8 m²) liegt
         bei <strong>12.000–24.000 €</strong>. Eine reine Teilrenovierung ist ab
-        etwa <strong>700 €/m²</strong> möglich. In Hamburg kommen rund 20 %
-        Ballungsraum-Aufschlag hinzu.
+        etwa <strong>700 €/m²</strong> möglich. In Hamburg liegen vor allem die
+        Handwerkerpreise höher (rund +20 %), was die Gesamtrechnung um etwa
+        10–15 % erhöht.
       </TlDr>
 
       {/* Interactive cost calculator */}
@@ -241,9 +242,10 @@ export default function BadKostenPage() {
       <P>
         In Hamburg liegen die Handwerkerpreise rund 20 % über dem
         Bundesdurchschnitt – bei der hohen Zahl an Altbau- und Mietwohnungen ist
-        die Badsanierung hier ein Dauerthema. Für ein mittelgroßes Bad (~8 m²)
-        sollten Sie mit etwa <strong>15.000–22.000 €</strong> für eine
-        Komplettsanierung rechnen. Über unsere Vermittlung erhalten Sie Angebote
+        die Badsanierung hier ein Dauerthema. Weil die Arbeitsleistung etwa 60 %
+        der Kosten ausmacht, steigt die Gesamtrechnung um rund 10–15 %. Für ein
+        mittelgroßes Bad (~8 m²) sollten Sie mit etwa{" "}
+        <strong>13.500–27.000 €</strong> für eine Komplettsanierung rechnen. Über unsere Vermittlung erhalten Sie Angebote
         geprüfter Bad- und Fliesenbetriebe aus Niendorf und Umgebung – so
         vergleichen Sie reale Preise statt Richtwerte.
       </P>

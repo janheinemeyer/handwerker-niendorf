@@ -9,9 +9,11 @@ import { Segmented, Toggle, round100, eur } from "@/components/calculator-ui";
   Richtwerte synthesized from German cost guides (Stand: Juni 2026): a base
   €/m² driven by scope (Teil-/Komplettsanierung) × Ausstattungsniveau, plus
   cost drivers that competitors usually hide (moving plumbing/electrics, walk-in
-  shower, bathtub, underfloor heating, barrier-free conversion), and a ~20 %
-  Ballungsraum surcharge (labour is ~60 % of a bathroom). Output is a rounded
-  range, not a quote.
+  shower, bathtub, underfloor heating, barrier-free conversion). The Ballungsraum
+  surcharge applies +20 % only to the labour share (~60 % of a bathroom; material
+  and sanitary objects cost the same nationally) → ~12 % on the total. Moving
+  plumbing/layout is a complete-renovation item and is ignored for a partial
+  renovation. Output is a rounded range, not a quote.
 */
 
 type Size = "klein" | "mittel" | "gross";
@@ -51,7 +53,8 @@ const DUSCHE = 1500; // bodengleiche Dusche (Abdichtung, Gefälle, Ablauf)
 const WANNE = 1200; // Badewanne inkl. Einbau
 const FBH_PER_M2 = 120; // Fußbodenheizung
 const BARRIEREFREI = 2500; // altersgerechter Umbau
-const REGION_SURCHARGE = 0.2;
+const REGION_SURCHARGE = 0.2; // Hamburg premium on labour…
+const LABOUR_SHARE = 0.6; // …which is ~60 % of a bathroom → ~12 % on the total
 
 export function BadCalculator() {
   const [size, setSize] = useState<Size>("mittel");
@@ -67,14 +70,17 @@ export function BadCalculator() {
   const calc = useMemo(() => {
     const m2 = SIZE_M2[size];
     const base = BASE_PER_M2[scope][level] * m2;
-    const leit = leitungen ? LEITUNGEN_PER_M2 * m2 : 0;
+    // Moving lines/layout only applies to a complete renovation — by definition
+    // a partial renovation leaves the installation in place.
+    const leit = leitungen && scope === "komplett" ? LEITUNGEN_PER_M2 * m2 : 0;
     const duscheCost = dusche ? DUSCHE : 0;
     const wanneCost = wanne ? WANNE : 0;
     const fbhCost = fbh ? FBH_PER_M2 * m2 : 0;
     const bfCost = barrierefrei ? BARRIEREFREI : 0;
 
     const subtotal = base + leit + duscheCost + wanneCost + fbhCost + bfCost;
-    const regionDelta = region ? subtotal * REGION_SURCHARGE : 0;
+    // +20 % on the labour share (~60 %) — material/sanitary cost the same nationally.
+    const regionDelta = region ? subtotal * LABOUR_SHARE * REGION_SURCHARGE : 0;
 
     const rawRows: { label: string; value: number }[] = [
       { label: `Grundpreis (${SCOPE_NAME[scope]})`, value: base },
@@ -100,7 +106,7 @@ export function BadCalculator() {
 
   const request = useMemo(() => {
     const extras = [
-      leitungen && "Leitungen/Grundriss",
+      leitungen && scope === "komplett" && "Leitungen/Grundriss",
       dusche && "bodengleiche Dusche",
       wanne && "Badewanne",
       fbh && "Fußbodenheizung",
@@ -155,11 +161,13 @@ export function BadCalculator() {
         <fieldset>
           <legend className="label text-ink-soft">Ausstattung & Arbeiten</legend>
           <div className="mt-2 flex flex-wrap gap-2">
-            <Toggle
-              label="Leitungen/Grundriss ändern"
-              checked={leitungen}
-              onChange={setLeitungen}
-            />
+            {scope === "komplett" && (
+              <Toggle
+                label="Leitungen/Grundriss ändern"
+                checked={leitungen}
+                onChange={setLeitungen}
+              />
+            )}
             <Toggle label="Bodengleiche Dusche" checked={dusche} onChange={setDusche} />
             <Toggle label="Badewanne" checked={wanne} onChange={setWanne} />
             <Toggle label="Fußbodenheizung" checked={fbh} onChange={setFbh} />
