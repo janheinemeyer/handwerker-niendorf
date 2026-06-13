@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Breadcrumb, type Crumb } from "./breadcrumb";
+import { RelatedRatgeber } from "./related";
 
 /**
  * Page shell for Ratgeber/SEO articles: header, breadcrumb (+ its JSON-LD),
@@ -18,6 +19,10 @@ export function RatgeberArticle({
   updated?: string;
   children: React.ReactNode;
 }) {
+  // The current page is the last breadcrumb crumb; used to auto cross-link to
+  // sibling Ratgeber pages (excluding this one).
+  const currentHref = breadcrumb[breadcrumb.length - 1]?.href;
+
   return (
     <>
       <SiteHeader />
@@ -31,6 +36,7 @@ export function RatgeberArticle({
             <p className="mt-4 text-sm text-ink-soft">Aktualisiert: {updated}</p>
           )}
           {children}
+          <RelatedRatgeber currentHref={currentHref} />
         </article>
       </main>
       <SiteFooter />
