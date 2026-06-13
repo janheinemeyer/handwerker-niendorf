@@ -18,12 +18,19 @@ Chat lebt — ergänze sie, wenn neue Seiten dazukommen oder sich Zahlen ändern
 | `/ratgeber/wallbox-installieren-kosten` | „Wallbox installieren Kosten" | Energie / Elektro |
 
 Alle drei folgen demselben Muster: **TL;DR mit Zahl → Kostentabellen →
-FAQ (aus PAA-Fragen) → interaktiver Kostenrechner**. Die Infrastruktur steht:
-Template (`RatgeberArticle`), zentraler Katalog (`src/lib/ratgeber.ts`),
-automatische Crosslinks + `knowsAbout`-Schema, Sitemap, interne Verlinkung
-(Footer + Homepage). **Eine neue Seite = eine Katalog-Zeile + eine
-`page.tsx`** — der Rest verdrahtet sich selbst (siehe CLAUDE.md → „Authoring a
-Ratgeber / SEO page").
+FAQ (aus PAA-Fragen) → interaktiver Kostenrechner**. Template
+(`RatgeberArticle`) + zentraler Katalog (`src/lib/ratgeber.ts`) stehen.
+
+**Aus dem Katalog automatisch:** die Crosslinks („Auch interessant") und das
+`knowsAbout`-Schema. **Noch hartcodiert und pro Seite manuell zu pflegen:** die
+Sitemap (`src/app/sitemap.ts`), die `/ratgeber`-Übersicht
+(`src/app/ratgeber/page.tsx`), das Homepage-Ratgeber-Band
+(`src/components/services.tsx`) und die Footer-Spalte
+(`src/components/site-footer.tsx`). → **Verbesserung:** diese Listen ebenfalls
+aus `RATGEBER_PAGES` ableiten, dann verdrahtet sich wirklich alles selbst. Bis
+dahin: eine neue Seite = Katalog-Zeile + `page.tsx` + diese vier Listen
+aktualisieren (siehe Checkliste unten und CLAUDE.md → „Authoring a Ratgeber /
+SEO page").
 
 ## Warum Hamburg/Niendorf zuerst
 
@@ -40,8 +47,11 @@ Bundes-Volumen:
   bei Carport/Wallbox schon umgesetzt).
 
 → Zwei Cluster gezielt ausbauen: **Innen-Renovierung** (Hamburg-Stadt) und
-**Außen/Anbau** (Niendorf/Umland). Jede neue Seite verlinkt automatisch in
-ihren Cluster.
+**Außen/Anbau** (Niendorf/Umland). Die Crosslinks sind aktuell **nicht
+cluster-getrennt** — `RelatedRatgeber` verlinkt jede Seite auf *alle* anderen
+Katalog-Einträge. Sobald beide Cluster gefüllt sind und eine saubere Trennung
+gewünscht ist, braucht es ein `cluster`-Feld im Katalog + Filterung. Bei
+wenigen Seiten ist „alle verlinken" aber ohnehin sinnvoll.
 
 ## Priorisierter Backlog
 
@@ -51,7 +61,8 @@ jeweils mit Hamburg-Aufschlag.
 ### Tier 1 — als Nächstes bauen
 
 **1. Badsanierung / Bad renovieren** — `bad renovieren kosten`, `badsanierung kosten`
-- **Preis-Anker:** 900–3.500 €/m²; Komplettbad ~12 m² ≈ 14.400–42.000 €.
+- **Preis-Anker:** Komplettsanierung ~1.200–3.500 €/m² (Teilrenovierung ab
+  ~700 €/m²); Komplettbad ~12 m² ≈ 14.400–42.000 € (12 × 1.200–3.500).
 - **Fit:** ⭐ perfekt — „Fliesen & Bad" ist bereits Leistung. Innen-Cluster,
   ganzjährig, sehr hoher Lead-Wert.
 - **Hamburg-Winkel:** Altbau-Bäder + Mietobjekte → Dauernachfrage. Stadtweit.
@@ -63,22 +74,7 @@ jeweils mit Hamburg-Aufschlag.
 - **Rechner-Achsen:** Größe (m²), Umfang (Teil-/Komplettsanierung), Ausstattung
   (Standard/gehoben), Fliesenfläche, Barrierefrei ja/nein, Hamburg-Aufschlag.
 
-**2. Wintergarten** — `wintergarten kosten`
-- **Preis-Anker:** 15.000–60.000 €; Kaltwintergarten 1.500–3.000 €/m²,
-  Warmwintergarten 2.500–5.000 €/m².
-- **Fit:** ⭐ sehr gut — Außen-/Anbau-Cluster (direkt neben Terrasse & Carport),
-  hoher Warenkorb.
-- **Hamburg-Winkel:** EFH in Niendorf/Umland; Anbau-Genehmigung Hamburg.
-- **Konkurrenz:** PERGOLUX, handwerk.cloud, MyHammer, Brack — beatbar.
-- **PAA-Seeds:** „Kalt- vs. Warmwintergarten", „Wintergarten 20 qm Kosten",
-  „Baugenehmigung Wintergarten Hamburg", „Förderung Wintergarten", „lohnt sich
-  ein Wintergarten".
-- **Rechner-Achsen:** Typ (kalt/warm), Fläche, Verglasung, Fundament,
-  Beschattung, Hamburg-Aufschlag.
-
-### Tier 2 — bald danach
-
-**3. Wohnung streichen lassen / Maler** — `wohnung streichen lassen kosten`, `maler kosten pro qm`
+**2. Wohnung streichen lassen / Maler** — `wohnung streichen lassen kosten`, `maler kosten pro qm`
 - **Preis-Anker:** 6–12 €/m² (nur Arbeit), 20–35 €/m² inkl. Material;
   30 m² ab ~1.000 €, 50 m² ab ~1.600 €, 75 m² ab ~2.400 €, 100 m² ab ~3.200 €.
 - **Fit:** gut — „Maler & Lackierer" ist Leistung. Innen-Cluster. Niedrigerer
@@ -91,6 +87,21 @@ jeweils mit Hamburg-Aufschlag.
   spachteln Kosten".
 - **Rechner-Achsen:** Wohnfläche/Wandfläche, Räume, Decken ja/nein,
   Vorarbeiten (Spachteln/Tapete entfernen), inkl./ohne Material, Hamburg.
+
+### Tier 2 — bald danach
+
+**3. Wintergarten** — `wintergarten kosten`
+- **Preis-Anker:** 15.000–60.000 €; Kaltwintergarten 1.500–3.000 €/m²,
+  Warmwintergarten 2.500–5.000 €/m².
+- **Fit:** ⭐ sehr gut — Außen-/Anbau-Cluster (direkt neben Terrasse & Carport),
+  hoher Warenkorb.
+- **Hamburg-Winkel:** EFH in Niendorf/Umland; Anbau-Genehmigung Hamburg.
+- **Konkurrenz:** PERGOLUX, handwerk.cloud, MyHammer, Brack — beatbar.
+- **PAA-Seeds:** „Kalt- vs. Warmwintergarten", „Wintergarten 20 qm Kosten",
+  „Baugenehmigung Wintergarten Hamburg", „Förderung Wintergarten", „lohnt sich
+  ein Wintergarten".
+- **Rechner-Achsen:** Typ (kalt/warm), Fläche, Verglasung, Fundament,
+  Beschattung, Hamburg-Aufschlag.
 
 **4. Boden verlegen** — `boden verlegen lassen kosten`, `parkett/laminat/vinyl kosten`
 - **Preis-Anker:** grob 20–80 €/m² je nach Belag + Verlegung (Recherche bei
@@ -142,27 +153,39 @@ Wettbewerbsfeld (Energieberater, Fachportale). Nur mit gründlicher Recherche:
 
 ## Über Kostenseiten hinaus (lokales SEO)
 
-- **Google Business Profile** anlegen/pflegen (Standort, Kategorie, Bewertungen)
-  — der größte lokale Hebel für „Handwerker Niendorf/Hamburg"-Suchen. Braucht
-  echte Kontaktdaten.
-- **`LocalBusiness`-Schema** als Upgrade des bestehenden `Organization`-Schemas,
-  sobald echte Adresse + Telefon vorhanden sind (heute bewusst nur
-  `Organization`, weil Platzhalter-NAP schädlich wäre — siehe `src/lib/schema.ts`).
-- Optionale lokale Landingpage(s) „Handwerker in Hamburg-Niendorf" / Umkreis,
-  falls die Stadtteil-Suche Volumen zeigt (erst per Search Console prüfen).
-- Echte Reviews/Referenzen einsammeln (E-E-A-T).
+- **Google Business Profile (GBP):** ⚠️ **wahrscheinlich nicht nutzbar.** Googles
+  Richtlinien schließen reine **Lead-Generierungs-/Vermittlungs-Unternehmen**
+  ausdrücklich aus; ein Eintrag setzt **direkten persönlichen Kundenkontakt**
+  voraus ([Eligibility](https://support.google.com/business/answer/13763036)).
+  Als Vermittler ohne eigene Ausführung droht hier Sperrung. Erst relevant, wenn
+  sich das Geschäftsmodell zu einem persönlichen Vor-Ort-Dienst ändert.
+- **Stattdessen lokale Hebel, die für eine Plattform zulässig sind:**
+  - lokale Landingpage(s) „Handwerker in Hamburg-Niendorf" / Umkreis, falls die
+    Stadtteil-Suche Volumen zeigt (erst per Search Console prüfen);
+  - lokale Backlinks/Erwähnungen (Stadtteil-Portale, Partnerbetriebe, regionale
+    Verzeichnisse) statt eines GBP-Eintrags;
+  - echte Reviews/Referenzen einsammeln (E-E-A-T).
+- **`LocalBusiness`-Schema:** für eine Vermittlungsplattform **nicht** passend
+  (`LocalBusiness` impliziert einen eigenen Vor-Ort-Dienst). `Organization`
+  (bereits umgesetzt, siehe `src/lib/schema.ts`) ist hier korrekt. Ein Upgrade
+  käme nur in Frage, wenn das Modell zu einem ausführenden Betrieb mit echter
+  Adresse/Telefon wechselt.
 
 ## Wie eine neue Seite entsteht
 
 1. In `src/lib/ratgeber.ts` (`RATGEBER_PAGES`) eintragen
    (`href/title/blurb/topic`) → Crosslinks + `knowsAbout`-Schema kommen
    automatisch.
-2. `src/app/ratgeber/<slug>/page.tsx` nach dem Muster in CLAUDE.md bauen
+2. **Die noch hartcodierten Listen ergänzen** (bis sie aus dem Katalog
+   abgeleitet werden): `src/app/sitemap.ts`, `src/app/ratgeber/page.tsx`
+   (Übersicht), `src/components/services.tsx` (Homepage-Band),
+   `src/components/site-footer.tsx` (Footer-Spalte).
+3. `src/app/ratgeber/<slug>/page.tsx` nach dem Muster in CLAUDE.md bauen
    (TL;DR → Kostentabellen → FAQ aus PAA → Rechner als eigener Client-Component).
-3. FAQ-Fragen **direkt aus den PAA-Seeds** oben formulieren (Featured-Snippet-/
+4. FAQ-Fragen **direkt aus den PAA-Seeds** oben formulieren (Featured-Snippet-/
    GEO-Chance).
-4. „… in Hamburg"-Abschnitt + Ballungsraum-Aufschlag nicht vergessen.
-5. `npm run build` (Gate) → Branch + PR.
+5. „… in Hamburg"-Abschnitt + Ballungsraum-Aufschlag nicht vergessen.
+6. `npm run build` (Gate) → Branch + PR.
 
 ## Quellen (Recherche Juni 2026)
 
