@@ -96,8 +96,11 @@ blocks**, so structure, styling and structured data stay consistent.
   (`href/title/blurb/topic`) so it links to the others and they link back. The
   `topic` also feeds the sitewide **Organization `knowsAbout`** schema
   (`src/lib/schema.ts`, injected in the root layout), so the company's areas of
-  expertise grow automatically too. Pages not in the catalog render no
-  cross-links (e.g. the `/ratgeber` index, which lists everything itself).
+  expertise grow automatically too. The catalog likewise drives the **`/ratgeber`
+  index cards, the homepage Ratgeber band (`services.tsx`), the footer column
+  (`site-footer.tsx`) and the `sitemap.xml`** — so a single catalog entry wires
+  up every discovery surface; you only hand-write the page body. Pages not in the
+  catalog render no cross-link block (e.g. the `/ratgeber` index itself).
 - `Faq` — accordion **and** `FAQPage` JSON-LD generated from the *same* `items`
   array, so schema can never drift from what's shown. Pass `FaqItem[]`.
 - `Breadcrumb` — visible trail + `BreadcrumbList` JSON-LD (the shell renders it

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RATGEBER_PAGES } from "@/lib/ratgeber";
 
 export function SiteFooter() {
   return (
@@ -23,21 +24,13 @@ export function SiteFooter() {
           <nav aria-label="Ratgeber">
             <p className="label text-paper/50">Ratgeber</p>
             <ul className="mt-4 space-y-2.5 text-sm text-paper/70">
-              <li>
-                <Link href="/ratgeber/carport-bauen-lassen-kosten" className="hover:text-paper">
-                  Carport-Kosten
-                </Link>
-              </li>
-              <li>
-                <Link href="/ratgeber/terrassenueberdachung-kosten" className="hover:text-paper">
-                  Terrassenüberdachung-Kosten
-                </Link>
-              </li>
-              <li>
-                <Link href="/ratgeber/wallbox-installieren-kosten" className="hover:text-paper">
-                  Wallbox installieren
-                </Link>
-              </li>
+              {RATGEBER_PAGES.map((p) => (
+                <li key={p.href}>
+                  <Link href={p.href} className="hover:text-paper">
+                    {p.title}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link href="/ratgeber" className="hover:text-paper">
                   Alle Ratgeber

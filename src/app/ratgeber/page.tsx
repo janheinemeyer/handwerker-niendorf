@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RatgeberArticle, P } from "@/components/ratgeber";
+import { RATGEBER_PAGES } from "@/lib/ratgeber";
 
 export const metadata: Metadata = {
   title: "Ratgeber · Kosten & Tipps rund ums Handwerk",
@@ -8,24 +9,6 @@ export const metadata: Metadata = {
     "Ehrliche Kostenüberblicke und Tipps rund um Ihr Handwerksprojekt – mit Rechnern und konkreten Preisen für Hamburg und Umgebung.",
   alternates: { canonical: "/ratgeber" },
 };
-
-const articles = [
-  {
-    href: "/ratgeber/carport-bauen-lassen-kosten",
-    title: "Carport bauen lassen: Kosten 2026",
-    desc: "Preise nach Typ, Material und Aufbau – mit Kostenrechner, Tabellen und FAQ.",
-  },
-  {
-    href: "/ratgeber/terrassenueberdachung-kosten",
-    title: "Terrassenüberdachung: Kosten 2026",
-    desc: "Preise nach Größe, Material und Montage – mit Kostenrechner, Tabellen und FAQ.",
-  },
-  {
-    href: "/ratgeber/wallbox-installieren-kosten",
-    title: "Wallbox installieren lassen: Kosten 2026",
-    desc: "Preise für Gerät, Elektriker und Kabelweg – mit Kostenrechner, Förderung und Anmeldung.",
-  },
-];
 
 export default function RatgeberIndex() {
   return (
@@ -42,7 +25,7 @@ export default function RatgeberIndex() {
       </P>
 
       <ul className="mt-10 grid gap-px border border-line bg-line sm:grid-cols-2">
-        {articles.map((a) => (
+        {RATGEBER_PAGES.map((a) => (
           <li key={a.href} className="flex">
             <Link
               href={a.href}
@@ -52,7 +35,7 @@ export default function RatgeberIndex() {
                 {a.title}
               </h2>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
-                {a.desc}
+                {a.blurb}
               </p>
               <span className="label mt-6 inline-flex items-center gap-2 text-accent">
                 Mehr erfahren

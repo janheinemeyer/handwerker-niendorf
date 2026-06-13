@@ -1,10 +1,5 @@
 import Link from "next/link";
-
-const ratgeber = [
-  ["Carport-Kosten", "/ratgeber/carport-bauen-lassen-kosten"],
-  ["Terrassenüberdachung", "/ratgeber/terrassenueberdachung-kosten"],
-  ["Wallbox installieren", "/ratgeber/wallbox-installieren-kosten"],
-];
+import { RATGEBER_PAGES } from "@/lib/ratgeber";
 
 const services = [
   {
@@ -106,13 +101,13 @@ export function Services() {
             </p>
           </div>
           <ul className="flex flex-wrap gap-x-5 gap-y-3 font-display text-sm font-bold sm:justify-end">
-            {ratgeber.map(([label, href]) => (
-              <li key={href}>
+            {RATGEBER_PAGES.map((p) => (
+              <li key={p.href}>
                 <Link
-                  href={href}
+                  href={p.href}
                   className="group inline-flex items-center gap-1.5 border-b-2 border-ink/20 pb-0.5 transition-colors hover:border-accent hover:text-accent"
                 >
-                  {label}
+                  {p.title}
                   <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
                     →
                   </span>
