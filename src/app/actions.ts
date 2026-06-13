@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { createAdminClient } from "@/lib/supabase";
+import { notifyTelegram, type LeadRecord } from "@/lib/notify";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Bitte geben Sie Ihren Namen an."),
@@ -40,6 +41,35 @@ export type ContactState = {
   errors?: Record<string, string>;
 };
 
+/**
+ * Best-effort Supabase persistence. Returns true on a stored row. Never throws;
+ * bounded with a 3s abort so a stalled DB can't keep the action pending.
+ */
+async function insertLead(record: LeadRecord): Promise<boolean> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 3000);
+  try {
+    const supabase = createAdminClient();
+    const { error } = await supabase
+      .from("contact_submissions")
+      .insert(record)
+      .abortSignal(controller.signal);
+    if (error) {
+      console.error("[lead] Supabase insert failed:", error.message);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.warn(
+      "[lead] Nicht in Supabase gespeichert:",
+      err instanceof Error ? err.message : err,
+    );
+    return false;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 export async function submitContact(
   _prev: ContactState,
   formData: FormData,
@@ -73,37 +103,44 @@ export async function submitContact(
     }
   }
 
-  try {
-    const supabase = createAdminClient();
-    const { error } = await supabase.from("contact_submissions").insert({
-      name,
-      email,
-      phone: phone || null,
-      plz,
-      ort: ort || null,
-      zeitraum: zeitraum || null,
-      service: service || null,
-      source: source || null,
-      estimate: estimate || null,
-      details: detailsJson,
-      message: message || null,
-    });
+  const record: LeadRecord = {
+    name,
+    email,
+    phone: phone || null,
+    plz,
+    ort: ort || null,
+    zeitraum: zeitraum || null,
+    service: service || null,
+    source: source || null,
+    estimate: estimate || null,
+    details: detailsJson,
+    message: message || null,
+  };
 
-    if (error) {
-      console.error("contact insert failed:", error);
-      return {
-        ok: false,
-        message:
-          "Speichern fehlgeschlagen. Bitte versuchen Sie es später erneut.",
-      };
-    }
-  } catch (err) {
-    console.error(err);
-    return {
-      ok: false,
-      message:
-        "Der Anfrage-Dienst ist derzeit nicht erreichbar. Bitte rufen Sie uns an.",
-    };
+  // Deliver the lead to a durable destination: a Telegram push (notification +
+  // persistent chat history) and, if configured, Supabase. Both are best-effort
+  // and run in parallel; neither may fail the submission for the user.
+  const [telegram, stored] = await Promise.all([
+    notifyTelegram(record),
+    insertLead(record),
+  ]);
+
+  if (telegram || stored) {
+    // Captured durably elsewhere — keep logs free of customer PII.
+    console.log("[lead] zugestellt", {
+      source: record.source,
+      service: record.service,
+      plz: record.plz,
+      telegram,
+      stored,
+    });
+  } else {
+    // Last resort: nothing accepted the lead, so the log is the only copy.
+    // Logging full PII is the lesser evil versus silently losing the lead.
+    console.error(
+      "[lead] NICHT zugestellt — Fallback-Log:",
+      JSON.stringify({ receivedAt: new Date().toISOString(), ...record }),
+    );
   }
 
   return {
