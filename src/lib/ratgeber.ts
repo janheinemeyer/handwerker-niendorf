@@ -48,4 +48,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kalt- oder Warmwintergarten – Preise pro m², Genehmigung & Rechner.",
     topic: "Wintergarten",
   },
+  {
+    href: "/ratgeber/einfahrt-pflastern-kosten",
+    title: "Einfahrt pflastern: Kosten",
+    blurb: "Preise pro m², die versteckten Unterbau-Kosten & Rechner.",
+    topic: "Pflasterarbeiten",
+  },
 ];

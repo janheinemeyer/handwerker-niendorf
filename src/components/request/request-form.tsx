@@ -12,6 +12,7 @@ const serviceOptions = [
   "Carport",
   "Terrassenüberdachung",
   "Wintergarten",
+  "Pflasterarbeiten",
   "Wallbox / Ladestation",
   "Renovierung & Modernisierung",
   "Maler & Lackierer",
