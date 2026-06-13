@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import { RequestProvider } from "@/lib/request-context";
 import { SITE_URL } from "@/lib/site";
+import { organizationSchema } from "@/lib/schema";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -47,6 +48,12 @@ export default function RootLayout({
       className={`${display.variable} ${hanken.variable} h-full`}
     >
       <body className="relative min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema()),
+          }}
+        />
         <RequestProvider>{children}</RequestProvider>
       </body>
     </html>
