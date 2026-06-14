@@ -44,19 +44,24 @@ function NumberField({
   unit?: string;
 }) {
   const id = useId();
+  const hintId = `${id}-hint`;
   return (
     <div>
       <label htmlFor={id} className="label text-ink-soft">
         {label}
       </label>
       {hint && (
-        <span className="mt-0.5 block text-xs font-normal normal-case tracking-normal text-ink-soft/60">
+        <span
+          id={hintId}
+          className="mt-0.5 block text-xs font-normal normal-case tracking-normal text-ink-soft/60"
+        >
           {hint}
         </span>
       )}
       <div className="mt-2 flex items-stretch border border-line focus-within:border-ink/40">
         <input
           id={id}
+          aria-describedby={hint ? hintId : undefined}
           type="text"
           inputMode="decimal"
           value={value}
