@@ -2,6 +2,7 @@
 
 import { useId, useMemo, useState } from "react";
 import { RequestButton } from "@/components/request/request-button";
+import { Segmented } from "@/components/calculator-ui";
 import {
   pruefeCarport,
   type Standort,
@@ -29,45 +30,6 @@ const STANDORT_NAME: Record<Standort, string> = {
   unsicher: "unklar",
 };
 
-function Choice<T extends string>({
-  label,
-  value,
-  options,
-  onChange,
-}: {
-  label: string;
-  value: T;
-  options: { value: T; label: string }[];
-  onChange: (v: T) => void;
-}) {
-  return (
-    <fieldset>
-      <legend className="label text-ink-soft">{label}</legend>
-      <div className="mt-2 flex flex-wrap gap-2" role="radiogroup" aria-label={label}>
-        {options.map((o) => {
-          const active = o.value === value;
-          return (
-            <button
-              key={o.value}
-              type="button"
-              role="radio"
-              aria-checked={active}
-              onClick={() => onChange(o.value)}
-              className={`border px-3.5 py-2 text-sm font-medium transition-colors ${
-                active
-                  ? "border-accent bg-accent text-paper"
-                  : "border-line bg-paper text-ink-soft hover:border-ink/40"
-              }`}
-            >
-              {o.label}
-            </button>
-          );
-        })}
-      </div>
-    </fieldset>
-  );
-}
-
 function NumberField({
   label,
   hint,
@@ -82,15 +44,24 @@ function NumberField({
   unit?: string;
 }) {
   const id = useId();
+  const hintId = `${id}-hint`;
   return (
     <div>
       <label htmlFor={id} className="label text-ink-soft">
         {label}
-        {hint && <span className="ml-1 lowercase tracking-normal text-ink-soft/60">{hint}</span>}
       </label>
+      {hint && (
+        <span
+          id={hintId}
+          className="mt-0.5 block text-xs font-normal normal-case tracking-normal text-ink-soft/60"
+        >
+          {hint}
+        </span>
+      )}
       <div className="mt-2 flex items-stretch border border-line focus-within:border-ink/40">
         <input
           id={id}
+          aria-describedby={hint ? hintId : undefined}
           type="text"
           inputMode="decimal"
           value={value}
@@ -165,7 +136,7 @@ export function CarportGenehmigungPruefer() {
     <div className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
       {/* Inputs */}
       <div className="space-y-6 bg-paper p-6 sm:p-8">
-        <Choice<Standort>
+        <Segmented<Standort>
           label="Wo steht der Carport?"
           value={standort}
           onChange={setStandort}
@@ -175,7 +146,7 @@ export function CarportGenehmigungPruefer() {
             { value: "unsicher", label: "Weiß nicht" },
           ]}
         />
-        <Choice<"ja" | "nein">
+        <Segmented<"ja" | "nein">
           label="Steht auf dem Grundstück ein zugehöriges Wohnhaus?"
           value={hauptgebaeude ? "ja" : "nein"}
           onChange={(v) => setHauptgebaeude(v === "ja")}
@@ -185,7 +156,7 @@ export function CarportGenehmigungPruefer() {
           ]}
         />
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid items-end gap-5 sm:grid-cols-2">
           <NumberField
             label="Überdachte Fläche"
             hint="Carport"
@@ -206,7 +177,7 @@ export function CarportGenehmigungPruefer() {
           />
         </div>
 
-        <Choice<"ja" | "nein">
+        <Segmented<"ja" | "nein">
           label="Direkt an die Grundstücksgrenze?"
           value={anGrenze ? "ja" : "nein"}
           onChange={(v) => setAnGrenze(v === "ja")}
@@ -216,7 +187,7 @@ export function CarportGenehmigungPruefer() {
           ]}
         />
         {anGrenze && (
-          <div className="grid max-w-md gap-5 sm:grid-cols-2">
+          <div className="grid max-w-md items-end gap-5 sm:grid-cols-2">
             <NumberField
               label="Länge entlang der Grenze"
               value={laengeAnGrenze}
