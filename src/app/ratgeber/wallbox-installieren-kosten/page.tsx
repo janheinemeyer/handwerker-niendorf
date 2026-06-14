@@ -11,6 +11,7 @@ import {
   type FaqItem,
 } from "@/components/ratgeber";
 import { WallboxCalculator } from "@/components/wallbox-calculator";
+import { Breakout } from "@/components/breakout";
 
 export const metadata: Metadata = {
   title: "Wallbox installieren lassen: Kosten 2026 (Rechner & Hamburg)",
@@ -91,6 +92,7 @@ export default function WallboxKostenPage() {
       </TlDr>
 
       {/* Interactive cost calculator */}
+      <Breakout>
       <section id="rechner" aria-label="Wallbox-Kostenrechner" className="mt-10">
         <p className="label text-accent">Wallbox-Kostenrechner</p>
         <h2 className="mt-3 font-display text-xl font-bold sm:text-2xl">
@@ -102,6 +104,7 @@ export default function WallboxKostenPage() {
         </p>
         <WallboxCalculator />
       </section>
+      </Breakout>
 
       <H2 id="geraet">Was kostet eine Wallbox? Geräte-Preise</H2>
       <P>

@@ -10,6 +10,7 @@ import {
   type FaqItem,
 } from "@/components/ratgeber";
 import { EinfahrtPflasternCalculator } from "@/components/einfahrt-pflastern-calculator";
+import { Breakout } from "@/components/breakout";
 
 export const metadata: Metadata = {
   title: "Einfahrt pflastern: Kosten 2026 (Rechner, Preise & Hamburg)",
@@ -90,6 +91,7 @@ export default function EinfahrtPflasternKostenPage() {
       </TlDr>
 
       {/* Interactive cost calculator */}
+      <Breakout>
       <section id="rechner" aria-label="Einfahrt-Pflastern-Kostenrechner" className="mt-10">
         <p className="label text-accent">Einfahrt-Kostenrechner</p>
         <h2 className="mt-3 font-display text-xl font-bold sm:text-2xl">
@@ -101,6 +103,7 @@ export default function EinfahrtPflasternKostenPage() {
         </p>
         <EinfahrtPflasternCalculator />
       </section>
+      </Breakout>
 
       <H2 id="versteckte-kosten">Die versteckten Kosten: Unterbau statt nur Stein</H2>
       <P>

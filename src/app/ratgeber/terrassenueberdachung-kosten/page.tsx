@@ -11,6 +11,7 @@ import {
   type FaqItem,
 } from "@/components/ratgeber";
 import { TerrassenCalculator } from "@/components/terrassen-calculator";
+import { Breakout } from "@/components/breakout";
 
 export const metadata: Metadata = {
   title: "Terrassenüberdachung: Kosten 2026 (Preise, Rechner & Tabellen)",
@@ -91,6 +92,7 @@ export default function TerrassenueberdachungKostenPage() {
       </TlDr>
 
       {/* Interactive cost calculator */}
+      <Breakout>
       <section
         id="rechner"
         aria-label="Terrassenüberdachung-Kostenrechner"
@@ -106,6 +108,7 @@ export default function TerrassenueberdachungKostenPage() {
         </p>
         <TerrassenCalculator />
       </section>
+      </Breakout>
 
       <H2 id="preise">Was kostet eine Terrassenüberdachung? Preise nach Material</H2>
       <P>

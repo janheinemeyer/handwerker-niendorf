@@ -11,6 +11,7 @@ import {
   type FaqItem,
 } from "@/components/ratgeber";
 import { CarportGenehmigungPruefer } from "@/components/carport-genehmigung-pruefer";
+import { Breakout } from "@/components/breakout";
 
 export const metadata: Metadata = {
   title: "Carport-Baugenehmigung Hamburg: Wann genehmigungsfrei? (2026)",
@@ -90,6 +91,7 @@ export default function CarportGenehmigungHamburgPage() {
       </TlDr>
 
       {/* Interactive permit-situation checker */}
+      <Breakout>
       <section id="pruefer" aria-label="Carport-Genehmigungs-Prüfer" className="mt-10">
         <p className="label text-accent">Genehmigungs-Prüfer</p>
         <h2 className="mt-3 font-display text-xl font-bold sm:text-2xl">
@@ -102,6 +104,7 @@ export default function CarportGenehmigungHamburgPage() {
         </p>
         <CarportGenehmigungPruefer />
       </section>
+      </Breakout>
 
       <H2 id="genehmigungspflicht">
         Braucht ein Carport in Hamburg eine Baugenehmigung?

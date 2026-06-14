@@ -10,6 +10,7 @@ import {
   type FaqItem,
 } from "@/components/ratgeber";
 import { CarportCalculator } from "@/components/carport-calculator";
+import { Breakout } from "@/components/breakout";
 
 export const metadata: Metadata = {
   title: "Carport bauen lassen: Kosten 2026 (Preise, Tabellen & Rechner)",
@@ -88,6 +89,7 @@ export default function CarportKostenPage() {
       </TlDr>
 
       {/* Interactive cost calculator */}
+      <Breakout>
       <section id="rechner" aria-label="Carport-Kostenrechner" className="mt-10">
         <p className="label text-accent">Carport-Kostenrechner</p>
         <h2 className="mt-3 font-display text-xl font-bold sm:text-2xl">
@@ -99,6 +101,7 @@ export default function CarportKostenPage() {
         </p>
         <CarportCalculator />
       </section>
+      </Breakout>
 
       <H2 id="preise">Was kostet ein Carport? Preise nach Typ &amp; Größe</H2>
       <P>

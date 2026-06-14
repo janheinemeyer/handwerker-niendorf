@@ -10,6 +10,7 @@ import {
   type FaqItem,
 } from "@/components/ratgeber";
 import { BadCalculator } from "@/components/bad-calculator";
+import { Breakout } from "@/components/breakout";
 
 export const metadata: Metadata = {
   title: "Bad renovieren: Kosten 2026 (Rechner, Preise & Hamburg)",
@@ -90,6 +91,7 @@ export default function BadKostenPage() {
       </TlDr>
 
       {/* Interactive cost calculator */}
+      <Breakout>
       <section id="rechner" aria-label="Bad-Kostenrechner" className="mt-10">
         <p className="label text-accent">Bad-Kostenrechner</p>
         <h2 className="mt-3 font-display text-xl font-bold sm:text-2xl">
@@ -101,6 +103,7 @@ export default function BadKostenPage() {
         </p>
         <BadCalculator />
       </section>
+      </Breakout>
 
       <H2 id="pro-qm">Was kostet eine Badsanierung? Preise pro m²</H2>
       <P>
