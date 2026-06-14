@@ -16,6 +16,32 @@ Format:
 
 ---
 
+## 2026-06-14 — Carport-Genehmigungs-Prüfer is an orientation tool, not a verdict
+
+**Decision:** The interactive permit checker on `carport-baugenehmigung-hamburg`
+returns a **tendency** (`verfahrensfrei` / `abweichung` / `genehmigung` /
+`pruefen`), never a binding "you do/don't need a permit". The decision logic
+lives in `src/lib/carport-genehmigung.ts` as a pure function; the component
+(`carport-genehmigung-pruefer.tsx`) only collects inputs and renders the result.
+Every outcome carries a disclaimer and routes the user to the Bezirksamt + the
+lead CTA. When inputs don't allow a safe call (e.g. Standort unklar), it returns
+`pruefen` rather than a green light.
+
+**Why:** This is legal logic on rules that changed with the 2026 HBauO and that
+no Hamburg expert has yet signed off (see PR #30 review history). A tool that
+asserted a definitive legal result would be a liability if a user built on a
+wrong "no permit needed". Conservative-by-default + "verbindlich ist das Bauamt"
+keeps it useful without overclaiming — and routing every result into the lead
+CTA is also better for conversion than a bare yes/no.
+
+**Alternatives considered:** A definitive yes/no verdict — rejected (liability).
+Putting the branching in the component — rejected (engineering principle #1:
+domain decisions live in `lib/`).
+
+**Consequences:** If the HBauO thresholds change, edit only the constants/branches
+in `src/lib/carport-genehmigung.ts`. Keep the disclaimer and Bezirksamt routing
+whenever the tool's surface changes.
+
 ## 2026-06-13 — Regulatory ("Genehmigung") Ratgeber pages share the cost-page catalog
 
 **Decision:** The new `carport-baugenehmigung-hamburg` page is informational

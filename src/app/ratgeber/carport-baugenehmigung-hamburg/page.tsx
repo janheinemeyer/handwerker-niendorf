@@ -10,6 +10,7 @@ import {
   Faq,
   type FaqItem,
 } from "@/components/ratgeber";
+import { CarportGenehmigungPruefer } from "@/components/carport-genehmigung-pruefer";
 
 export const metadata: Metadata = {
   title: "Carport-Baugenehmigung Hamburg: Wann genehmigungsfrei? (2026)",
@@ -87,6 +88,20 @@ export default function CarportGenehmigungHamburgPage() {
         Regel eine Baugenehmigung beim Bezirksamt nötig (für Niendorf:{" "}
         <strong>Bezirksamt Eimsbüttel</strong>) – seit 2024 ausschließlich digital.
       </TlDr>
+
+      {/* Interactive permit-situation checker */}
+      <section id="pruefer" aria-label="Carport-Genehmigungs-Prüfer" className="mt-10">
+        <p className="label text-accent">Genehmigungs-Prüfer</p>
+        <h2 className="mt-3 font-display text-xl font-bold sm:text-2xl">
+          Braucht Ihr Carport eine Genehmigung? Erste Einordnung.
+        </h2>
+        <p className="mt-3 max-w-md text-sm text-ink-soft">
+          Ein paar Angaben zu Standort, Größe und Lage genügen für eine erste
+          Einschätzung nach Hamburger Bauordnung – verbindlich ist am Ende immer
+          das Bauamt.
+        </p>
+        <CarportGenehmigungPruefer />
+      </section>
 
       <H2 id="genehmigungspflicht">
         Braucht ein Carport in Hamburg eine Baugenehmigung?
