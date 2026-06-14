@@ -45,7 +45,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Braucht man für ein Carport eine Baugenehmigung?",
-    a: "Das hängt vom Bundesland ab. In vielen Ländern sind Carports bis zu einer bestimmten Größe verfahrensfrei – in Hamburg etwa bis 50 m² Grundfläche und 3 m Wandhöhe je zugehörigem Hauptgebäude (§ 61 HBauO, neue Fassung seit 2026). Maßgeblich ist die jeweilige Landesbauordnung; klären Sie Genehmigungspflicht und Grenzabstände vor Baubeginn mit dem örtlichen Bauamt.",
+    a: "Das hängt vom Bundesland ab. In Hamburg ist ein Carport nach § 61 HBauO (neue Fassung seit 2026) im Innenbereich verfahrensfrei bis 50 m² Grundfläche und 3 m Wandhöhe je zugehörigem Hauptgebäude – wobei bereits vorhandene Stellplatzflächen auf die 50 m² angerechnet werden. Im Außenbereich oder oberhalb dieser Grenzen ist eine Genehmigung nötig. Maßgeblich ist die jeweilige Landesbauordnung; klären Sie Genehmigungspflicht und Grenzabstände vor Baubeginn mit dem örtlichen Bauamt.",
   },
   {
     q: "Was ist günstiger: Carport oder Garage?",
@@ -169,9 +169,10 @@ export default function CarportKostenPage() {
         Ob ein Carport eine Baugenehmigung braucht, regelt die Landesbauordnung
         des jeweiligen Bundeslandes – die Vorgaben unterscheiden sich deutlich.
         In vielen Ländern sind Carports bis zu einer bestimmten Grundfläche und
-        Höhe verfahrensfrei. In Hamburg etwa bis <strong>50 m²</strong>{" "}
-        Bruttogrundfläche und <strong>3 m</strong> Wandhöhe je zugehörigem
-        Hauptgebäude (§ 61 HBauO). Auch bei einem genehmigungsfreien Carport
+        Höhe verfahrensfrei. In Hamburg etwa im Innenbereich bis{" "}
+        <strong>50 m²</strong> Bruttogrundfläche und <strong>3 m</strong>{" "}
+        Wandhöhe je zugehörigem Hauptgebäude (§ 61 HBauO) – vorhandene
+        Stellplätze werden angerechnet. Auch bei einem genehmigungsfreien Carport
         müssen Sie jedoch Grenzabstände zum Nachbarn und örtliche Bebauungspläne
         einhalten – die Details für Hamburg stehen im{" "}
         <Link
