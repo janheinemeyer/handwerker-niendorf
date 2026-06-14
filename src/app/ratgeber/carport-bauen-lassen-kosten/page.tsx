@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   RatgeberArticle,
   TlDr,
@@ -44,7 +45,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Braucht man für ein Carport eine Baugenehmigung?",
-    a: "Das hängt vom Bundesland ab. In vielen Ländern – auch in Hamburg – sind Carports bis zu einer bestimmten Größe (häufig rund 30 m² Grundfläche) verfahrensfrei. Maßgeblich ist die jeweilige Landesbauordnung; klären Sie die Genehmigungspflicht und Grenzabstände vor Baubeginn mit dem örtlichen Bauamt. Die Gebühren liegen meist zwischen 50 € und 500 €.",
+    a: "Das hängt vom Bundesland ab. In vielen Ländern sind Carports bis zu einer bestimmten Größe verfahrensfrei – in Hamburg etwa bis 50 m² Grundfläche und 3 m Wandhöhe je zugehörigem Hauptgebäude (§ 61 HBauO, neue Fassung seit 2026). Maßgeblich ist die jeweilige Landesbauordnung; klären Sie Genehmigungspflicht und Grenzabstände vor Baubeginn mit dem örtlichen Bauamt.",
   },
   {
     q: "Was ist günstiger: Carport oder Garage?",
@@ -167,10 +168,19 @@ export default function CarportKostenPage() {
       <P>
         Ob ein Carport eine Baugenehmigung braucht, regelt die Landesbauordnung
         des jeweiligen Bundeslandes – die Vorgaben unterscheiden sich deutlich.
-        In vielen Ländern, auch in Hamburg, sind Carports bis zu einer bestimmten
-        Grundfläche (häufig rund 30 m²) und Höhe verfahrensfrei. Auch bei einem
-        genehmigungsfreien Carport müssen Sie jedoch Grenzabstände zum Nachbarn
-        und örtliche Bebauungspläne einhalten.
+        In vielen Ländern sind Carports bis zu einer bestimmten Grundfläche und
+        Höhe verfahrensfrei. In Hamburg etwa bis <strong>50 m²</strong>{" "}
+        Bruttogrundfläche und <strong>3 m</strong> Wandhöhe je zugehörigem
+        Hauptgebäude (§ 61 HBauO). Auch bei einem genehmigungsfreien Carport
+        müssen Sie jedoch Grenzabstände zum Nachbarn und örtliche Bebauungspläne
+        einhalten – die Details für Hamburg stehen im{" "}
+        <Link
+          href="/ratgeber/carport-baugenehmigung-hamburg"
+          className="font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          Ratgeber zur Carport-Baugenehmigung in Hamburg
+        </Link>
+        .
       </P>
       <P>
         <strong>Wichtig:</strong> „Verfahrensfrei“ bedeutet nicht „regelfrei“.

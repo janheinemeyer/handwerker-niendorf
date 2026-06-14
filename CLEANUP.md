@@ -5,24 +5,20 @@ Pick these up in their own focused PRs — not as drive-bys. Newest first.
 
 ---
 
-## 2026-06-13 — Hamburg carport size on the cost page is wrong (30 m² / § 60)
+## 2026-06-14 — Terrassenüberdachung page repeats the Hamburg "30 m²" claim
 
-**What:** `carport-bauen-lassen-kosten/page.tsx` (Genehmigung section, ~line 171)
-says Hamburg carports are verfahrensfrei "häufig rund 30 m²" and cites the
-Landesbauordnung loosely. The correct Hamburg rule (per the new
-`carport-baugenehmigung-hamburg` page, verified June 2026) is **up to 50 m² und
-3 m Wandhöhe je zugehörigem Hauptgebäude, vorhandene Stellplätze angerechnet**,
-under **§ 61 HBauO** (the new Hamburgische Bauordnung in force since 01.01.2026 —
-the provision moved from § 60 to § 61). The site currently contradicts itself and
-cites the obsolete paragraph.
+**What:** `terrassenueberdachung-kosten/page.tsx` (FAQ ~line 48 and Genehmigung
+section ~line 176) says "auch in Hamburg … häufig rund 30 m²" — the same wrong
+pattern just fixed on the carport cost page (now § 61 HBauO, 50 m² / 3 m je
+Hauptgebäude). For an überdachte Terrasse the Hamburg verfahrensfrei rule is its
+own case and is **not** automatically the carport/garage 50-m² figure.
 
-**Fix:** Correct the figure + paragraph on the cost page and link it to the new
-permit page for the authoritative detail. While there, sanity-check any other
-ratgeber page that cites § 60 HBauO or pre-2026 figures.
+**Fix:** Verify the correct current Hamburg rule for überdachte Terrassen/Freisitze,
+then correct both spots — and link to a Terrassenüberdachung-Genehmigung page if
+one gets built. Don't reuse the 50 m² carport number blindly.
 
-**Why deferred:** That line is outside the scope of the permit-page PR
-(surgical-changes rule); fixing it there would have mixed an edit to an unrelated
-page into a new-page PR.
+**Why deferred:** Different structure with an uncertain figure; out of scope for
+the carport 30 m² fix, and not worth guessing a number on a legal page.
 
 ## 2026-06-13 — Extract a shared `<Ul>` prose primitive for Ratgeber lists
 
