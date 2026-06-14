@@ -26,8 +26,13 @@ export type CarportEingabe = {
   wandhoehe: number;
   /** Soll der Carport direkt an die Grundstücksgrenze? */
   anGrenze: boolean;
-  /** Länge entlang der Grenze in m (nur relevant, wenn anGrenze). */
+  /** Länge des Carports entlang der Grenze in m (nur relevant, wenn anGrenze). */
   laengeAnGrenze: number;
+  /**
+   * Länge bereits vorhandener grenznaher Bauten (Garage, Nebengebäude) ohne
+   * eigene Abstandsfläche in m – zählt zur 15-m-Gesamtgrenze des § 6 HBauO.
+   */
+  bestandGrenzeLaenge: number;
 };
 
 /** Tendenz des Ergebnisses — steuert auch Symbol/Label in der UI. */
@@ -44,9 +49,13 @@ export type CarportErgebnis = {
 const MAX_FLAECHE = 50; // m² je zugehörigem Hauptgebäude, inkl. angerechneter Stellplätze
 const MAX_WANDHOEHE = 3; // m
 const MAX_GRENZE_LAENGE = 9; // m entlang einer Grenze
+const MAX_GRENZE_GESAMT = 15; // m Summe aller Bauten ohne eigene Abstandsfläche
 
 const nf = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 });
 const fmt = (n: number) => nf.format(n);
+
+/** Optionales Maß: nur ein positiver, endlicher Wert zählt, sonst 0. */
+const optional = (n: number) => (Number.isFinite(n) && n > 0 ? n : 0);
 
 export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
   // Außenbereich: praktisch immer genehmigungspflichtig (§ 35 BauGB).
@@ -82,7 +91,23 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
     };
   }
 
-  const gesamtFlaeche = e.flaecheCarport + e.flaecheStellplaetze;
+  // Pflichtmaße müssen vorliegen, sonst ist keine seriöse (und erst recht keine
+  // grüne) Aussage möglich. `!(x > 0)` fängt leer/0/ungültig (NaN) zugleich ab.
+  const fehlt: string[] = [];
+  if (!(e.flaecheCarport > 0)) fehlt.push("die überdachte Fläche");
+  if (!(e.wandhoehe > 0)) fehlt.push("die Wandhöhe");
+  if (e.anGrenze && !(e.laengeAnGrenze > 0)) fehlt.push("die Länge entlang der Grenze");
+  if (fehlt.length > 0) {
+    return {
+      tendenz: "pruefen",
+      titel: "Bitte Angaben vervollständigen",
+      begruendung: [
+        `Für eine Einordnung fehlt noch ${fehlt.join(" und ")} – bitte ergänzen.`,
+      ],
+    };
+  }
+
+  const gesamtFlaeche = e.flaecheCarport + optional(e.flaecheStellplaetze);
   const flaecheUeber = gesamtFlaeche > MAX_FLAECHE;
   const hoeheUeber = e.wandhoehe > MAX_WANDHOEHE;
 
@@ -108,16 +133,34 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
     };
   }
 
-  // Innerhalb 50 m² und 3 m → grundsätzlich verfahrensfrei. Jetzt die Grenze prüfen.
-  if (e.anGrenze && e.laengeAnGrenze > MAX_GRENZE_LAENGE) {
-    return {
-      tendenz: "abweichung",
-      titel: "Spricht für: Abweichung nötig",
-      begruendung: [
-        `Direkt an der Grenze ist ein Carport nur bis 9 m Länge privilegiert (§ 6 HBauO). Mit ${fmt(e.laengeAnGrenze)} m überschreiten Sie das.`,
+  // Innerhalb 50 m² und 3 m → grundsätzlich verfahrensfrei. Jetzt die Grenze prüfen:
+  // sowohl die 9-m-Einzelgrenze als auch die 15-m-Summe aller Bauten ohne eigene
+  // Abstandsfläche (§ 6 HBauO).
+  if (e.anGrenze) {
+    const gesamtGrenze = e.laengeAnGrenze + optional(e.bestandGrenzeLaenge);
+    const einzelnUeber = e.laengeAnGrenze > MAX_GRENZE_LAENGE;
+    const gesamtUeber = gesamtGrenze > MAX_GRENZE_GESAMT;
+    if (einzelnUeber || gesamtUeber) {
+      const begruendung: string[] = [];
+      if (einzelnUeber) {
+        begruendung.push(
+          `Direkt an der Grenze ist ein Carport nur bis 9 m Länge privilegiert (§ 6 HBauO). Mit ${fmt(e.laengeAnGrenze)} m überschreiten Sie das.`,
+        );
+      }
+      if (gesamtUeber) {
+        begruendung.push(
+          `Zusammen mit bestehenden grenznahen Bauten (${fmt(optional(e.bestandGrenzeLaenge))} m) ergeben sich ${fmt(gesamtGrenze)} m – über der 15-m-Gesamtgrenze des § 6 HBauO für Bauten ohne eigene Abstandsfläche.`,
+        );
+      }
+      begruendung.push(
         "Dann müssen entweder die regulären Abstandsflächen eingehalten oder eine Abweichung beantragt und vom Bauamt genehmigt werden – die Zustimmung des Nachbarn allein genügt nicht.",
-      ],
-    };
+      );
+      return {
+        tendenz: "abweichung",
+        titel: "Spricht für: Abweichung nötig",
+        begruendung,
+      };
+    }
   }
 
   const begruendung = e.anGrenze

@@ -105,10 +105,16 @@ function NumberField({
   );
 }
 
-/** Parse a German-formatted number ("2,5" or "2.5"); empty/invalid → 0. */
+/**
+ * Parse a German-formatted number ("2,5" or "2.5"). Empty/invalid → NaN (not 0),
+ * so the lib can tell a missing measurement from a real zero and avoid showing a
+ * green result for an unknown value. Note `Number("")` is 0, hence the empty guard.
+ */
 function parseNum(v: string): number {
-  const n = Number(v.replace(",", ".").trim());
-  return Number.isFinite(n) && n > 0 ? n : 0;
+  const t = v.replace(",", ".").trim();
+  if (t === "") return NaN;
+  const n = Number(t);
+  return Number.isFinite(n) ? n : NaN;
 }
 
 export function CarportGenehmigungPruefer() {
@@ -119,6 +125,7 @@ export function CarportGenehmigungPruefer() {
   const [wandhoehe, setWandhoehe] = useState("2,5");
   const [anGrenze, setAnGrenze] = useState(false);
   const [laengeAnGrenze, setLaengeAnGrenze] = useState("5");
+  const [bestandGrenzeLaenge, setBestandGrenzeLaenge] = useState("0");
 
   const eingabe = useMemo(
     () => ({
@@ -129,8 +136,9 @@ export function CarportGenehmigungPruefer() {
       wandhoehe: parseNum(wandhoehe),
       anGrenze,
       laengeAnGrenze: parseNum(laengeAnGrenze),
+      bestandGrenzeLaenge: parseNum(bestandGrenzeLaenge),
     }),
-    [standort, hauptgebaeude, flaecheCarport, flaecheStellplaetze, wandhoehe, anGrenze, laengeAnGrenze],
+    [standort, hauptgebaeude, flaecheCarport, flaecheStellplaetze, wandhoehe, anGrenze, laengeAnGrenze, bestandGrenzeLaenge],
   );
 
   const ergebnis = useMemo(() => pruefeCarport(eingabe), [eingabe]);
@@ -142,14 +150,16 @@ export function CarportGenehmigungPruefer() {
       `${fmtIn(flaecheCarport)} m² Carport`,
       `+ ${fmtIn(flaecheStellplaetze)} m² Stellplätze`,
       `${fmtIn(wandhoehe)} m hoch`,
-      anGrenze ? `an Grenze (${fmtIn(laengeAnGrenze)} m)` : "nicht an Grenze",
+      anGrenze
+        ? `an Grenze (${fmtIn(laengeAnGrenze)} m, Bestand ${fmtIn(bestandGrenzeLaenge)} m)`
+        : "nicht an Grenze",
     ];
     return {
       service: "Carport",
       source: "carport-genehmigung-pruefer",
       summary: `${parts.join(" · ")} → Tendenz: ${ergebnis.titel}`,
     };
-  }, [standort, hauptgebaeude, flaecheCarport, flaecheStellplaetze, wandhoehe, anGrenze, laengeAnGrenze, ergebnis.titel]);
+  }, [standort, hauptgebaeude, flaecheCarport, flaecheStellplaetze, wandhoehe, anGrenze, laengeAnGrenze, bestandGrenzeLaenge, ergebnis.titel]);
 
   return (
     <div className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
@@ -206,11 +216,18 @@ export function CarportGenehmigungPruefer() {
           ]}
         />
         {anGrenze && (
-          <div className="max-w-[15rem]">
+          <div className="grid max-w-md gap-5 sm:grid-cols-2">
             <NumberField
               label="Länge entlang der Grenze"
               value={laengeAnGrenze}
               onChange={setLaengeAnGrenze}
+              unit="m"
+            />
+            <NumberField
+              label="Bestehende grenznahe Bauten"
+              hint="z. B. Garage, werden angerechnet"
+              value={bestandGrenzeLaenge}
+              onChange={setBestandGrenzeLaenge}
               unit="m"
             />
           </div>
@@ -261,4 +278,7 @@ export function CarportGenehmigungPruefer() {
 }
 
 const inNf = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 });
-const fmtIn = (v: string) => inNf.format(parseNum(v));
+const fmtIn = (v: string) => {
+  const n = parseNum(v);
+  return inNf.format(Number.isFinite(n) ? n : 0);
+};
