@@ -121,6 +121,17 @@ export default function CarportKostenPage() {
         durchschnittlich 15–20 % gestiegen. In Ballungsräumen wie Hamburg liegen
         sie zudem rund 20–30 % über dem Bundesdurchschnitt.
       </P>
+      <P>
+        Konkret für zwei Stellplätze – inkl. empfohlener Maße und
+        Kostenfaktoren – siehe den Ratgeber{" "}
+        <Link
+          href="/ratgeber/doppelcarport-kosten"
+          className="font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          Doppelcarport: Kosten &amp; Maße
+        </Link>
+        .
+      </P>
 
       <H2 id="material">Kosten nach Material: Holz, Stahl oder Aluminium</H2>
       <P>
