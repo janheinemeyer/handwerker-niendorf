@@ -90,4 +90,11 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     topic: "Carport im Bebauungsplan",
     cluster: "carport",
   },
+  {
+    href: "/ratgeber/carport-material-vergleich",
+    title: "Carport-Material: Holz, Stahl, Alu",
+    blurb: "Holz, Aluminium, Stahl & WPC im Vergleich – Preis, Wartung, Haltbarkeit.",
+    topic: "Carport-Material",
+    cluster: "carport",
+  },
 ];
