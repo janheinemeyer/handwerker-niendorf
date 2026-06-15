@@ -282,7 +282,15 @@ export default function CarportBebauungsplanPage() {
         >
           Carport-Baugenehmigung Hamburg
         </Link>{" "}
-        – dort gibt es auch einen interaktiven Selbstcheck.
+        – dort gibt es auch einen interaktiven Selbstcheck. Was der Bau selbst
+        kostet, zeigt der Ratgeber{" "}
+        <Link
+          href="/ratgeber/carport-bauen-lassen-kosten"
+          className="font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          Carport bauen lassen: Kosten
+        </Link>
+        .
       </P>
 
       <H2 id="checkliste">Checkliste: Was steht in meinem Bebauungsplan?</H2>

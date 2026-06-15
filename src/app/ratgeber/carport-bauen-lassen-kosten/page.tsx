@@ -173,7 +173,13 @@ export default function CarportKostenPage() {
         <strong>50 m²</strong> Bruttogrundfläche und <strong>3 m</strong>{" "}
         Wandhöhe je zugehörigem Hauptgebäude (§ 61 HBauO) – vorhandene
         Stellplätze werden angerechnet. Auch bei einem genehmigungsfreien Carport
-        müssen Sie jedoch Grenzabstände zum Nachbarn und örtliche Bebauungspläne
+        müssen Sie jedoch Grenzabstände zum Nachbarn und{" "}
+        <Link
+          href="/ratgeber/carport-bebauungsplan"
+          className="font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          örtliche Bebauungspläne
+        </Link>{" "}
         einhalten – die Details für Hamburg stehen im{" "}
         <Link
           href="/ratgeber/carport-baugenehmigung-hamburg"
