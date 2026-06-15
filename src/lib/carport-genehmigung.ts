@@ -62,9 +62,9 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
   if (e.standort === "aussenbereich") {
     return {
       tendenz: "genehmigung",
-      titel: "Spricht für: Baugenehmigung nötig",
+      titel: "Nach Ihren Angaben: erhöhtes Prüfungsrisiko",
       begruendung: [
-        "Im Außenbereich ist ein Carport praktisch immer baugenehmigungspflichtig (§ 35 BauGB) – die Verfahrensfreiheit nach § 61 HBauO gilt nur im Innenbereich.",
+        "Im Außenbereich ist ein Carport in aller Regel baugenehmigungspflichtig (§ 35 BauGB) – die Verfahrensfreiheit nach § 61 HBauO gilt nur im Innenbereich. Nach Ihren Angaben sollten Sie das Vorhaben deshalb vor der Planung mit dem Bauamt klären.",
       ],
     };
   }
@@ -84,9 +84,9 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
   if (!e.hauptgebaeude) {
     return {
       tendenz: "genehmigung",
-      titel: "Spricht für: nicht verfahrensfrei",
+      titel: "Nach Ihren Angaben: erhöhtes Prüfungsrisiko",
       begruendung: [
-        "Die Verfahrensfreiheit nach § 61 HBauO gilt nur „je zugehörigem Hauptgebäude“. Ohne ein zugehöriges Wohn- bzw. Hauptgebäude auf dem Grundstück greift sie nicht – klären Sie das Verfahren mit dem Bauamt.",
+        "Die Verfahrensfreiheit nach § 61 HBauO gilt nur „je zugehörigem Hauptgebäude“. Ohne ein zugehöriges Wohn- bzw. Hauptgebäude auf dem Grundstück greift sie nach Ihren Angaben voraussichtlich nicht – klären Sie das Verfahren mit dem Bauamt.",
       ],
     };
   }
@@ -124,11 +124,11 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
       );
     }
     begruendung.push(
-      "Damit ist in der Regel eine Baugenehmigung nötig. Gehört der Carport zu einem Wohngebäude im Geltungsbereich eines qualifizierten Bebauungsplans, kann stattdessen das Genehmigungsfreistellungsverfahren (§ 62 HBauO) greifen.",
+      "Das spricht dafür, dass ein Baugenehmigungsverfahren nötig ist; verbindlich entscheidet das Bauamt. Gehört der Carport zu einem Wohngebäude im Geltungsbereich eines qualifizierten Bebauungsplans, kann stattdessen das Genehmigungsfreistellungsverfahren (§ 62 HBauO) greifen.",
     );
     return {
       tendenz: "genehmigung",
-      titel: "Spricht für: Genehmigung / Verfahren nötig",
+      titel: "Nach Ihren Angaben: erhöhtes Prüfungsrisiko",
       begruendung,
     };
   }
@@ -153,11 +153,11 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
         );
       }
       begruendung.push(
-        "Dann müssen entweder die regulären Abstandsflächen eingehalten oder eine Abweichung beantragt und vom Bauamt genehmigt werden – die Zustimmung des Nachbarn allein genügt nicht.",
+        "Dann müssen voraussichtlich entweder die regulären Abstandsflächen eingehalten oder eine Abweichung beantragt und vom Bauamt genehmigt werden – die Zustimmung des Nachbarn allein genügt nicht.",
       );
       return {
         tendenz: "abweichung",
-        titel: "Spricht für: Abweichung nötig",
+        titel: "Nach Ihren Angaben: weitere Prüfung nötig",
         begruendung,
       };
     }
@@ -165,17 +165,17 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
 
   const begruendung = e.anGrenze
     ? [
-        "Innerhalb von 50 m² und 3 m Wandhöhe ist der Carport im Innenbereich grundsätzlich verfahrensfrei (§ 61 HBauO) und darf bis 9 m Länge ohne eigene Abstandsfläche an die Grenze (§ 6 HBauO).",
-        "Beachten Sie: Die Gesamtlänge aller Bauten ohne eigene Abstandsfläche darf je Grundstück 15 m nicht überschreiten.",
+        "Nach Ihren Angaben liegt der Carport innerhalb der Schwellen, die § 61 HBauO für verfahrensfreie Vorhaben im Innenbereich vorsieht (bis 50 m², bis 3 m Wandhöhe), und bis 9 m Länge ohne eigene Abstandsfläche an der Grenze (§ 6 HBauO) – das spricht dafür, dass kein Baugenehmigungsverfahren nötig ist.",
+        "Beachten Sie: Die Gesamtlänge aller Bauten ohne eigene Abstandsfläche darf je Grundstück 15 m nicht überschreiten. Eine abschließende Beurteilung ist mit dieser Einordnung nicht verbunden.",
       ]
     : [
-        "Innerhalb von 50 m² und 3 m Wandhöhe ist der Carport im Innenbereich grundsätzlich verfahrensfrei (§ 61 HBauO) – sofern die regulären Abstandsflächen zu den Nachbargrenzen eingehalten werden.",
-        "Werden die Abstandsflächen unterschritten, ist zusätzlich eine Abweichung erforderlich.",
+        "Nach Ihren Angaben liegt der Carport innerhalb der Schwellen, die § 61 HBauO für verfahrensfreie Vorhaben im Innenbereich vorsieht (bis 50 m², bis 3 m Wandhöhe) – das spricht dafür, dass kein Baugenehmigungsverfahren nötig ist, sofern die regulären Abstandsflächen zu den Nachbargrenzen eingehalten werden.",
+        "Werden die Abstandsflächen unterschritten, ist zusätzlich eine Abweichung erforderlich. Eine abschließende Beurteilung ist mit dieser Einordnung nicht verbunden.",
       ];
 
   return {
     tendenz: "verfahrensfrei",
-    titel: "Spricht für: verfahrensfrei",
+    titel: "Nach Ihren Angaben: eher unkritisch",
     begruendung,
   };
 }

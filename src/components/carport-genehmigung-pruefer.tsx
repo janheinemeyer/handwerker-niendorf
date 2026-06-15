@@ -239,8 +239,10 @@ export function CarportGenehmigungPruefer() {
           <span className="transition-transform group-hover:translate-x-1">→</span>
         </RequestButton>
         <p className="mt-3 text-xs leading-relaxed text-paper/40">
-          Unverbindliche Orientierung (Stand: Juni 2026, neue HBauO seit 01.01.2026),
-          keine Rechtsberatung. Der Einzelfall kann abweichen – verbindlich ist die
+          Diese Einschätzung dient ausschließlich der allgemeinen Orientierung
+          (Stand: Juni 2026, neue HBauO seit 01.01.2026). Sie ersetzt keine
+          baurechtliche Prüfung, keine Rechtsberatung und keine Abstimmung mit der
+          zuständigen Behörde. Der Einzelfall kann abweichen – verbindlich ist die
           Auskunft des Bezirksamts.
         </p>
       </div>
