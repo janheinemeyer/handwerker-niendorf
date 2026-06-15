@@ -103,7 +103,7 @@ export default function WohnungStreichenKostenPage() {
         nötig sind:
       </P>
       <CostTable
-        head={["Leistung", "Preis pro m²"]}
+        head={["Leistung", "Preis pro m² Fläche"]}
         rows={[
           ["Wände streichen (reine Arbeit, ohne Material)", "6 – 12 €"],
           ["Wände streichen (inkl. Material)", "20 – 35 €"],
@@ -113,6 +113,14 @@ export default function WohnungStreichenKostenPage() {
           ["Stundensatz Maler (netto)", "45 – 75 €/h"],
         ]}
       />
+      <P>
+        Wichtig zur Einordnung: Diese Werte gelten <strong>je m² gestrichener
+        Fläche</strong> (Wand- bzw. Deckenfläche). Der Rechner oben rechnet
+        bewusst <strong>pro m² Wohnfläche</strong> – als Daumenregel, weil die zu
+        streichende Fläche meist ein Mehrfaches der Wohnfläche beträgt. Die beiden
+        „€/m²“ beziehen sich also auf unterschiedliche Flächen und lassen sich
+        nicht direkt gleichsetzen.
+      </P>
 
       <H2 id="nach-groesse">Was kostet es nach Wohnungsgröße?</H2>
       <P>
@@ -172,7 +180,7 @@ export default function WohnungStreichenKostenPage() {
         headline="Wohnung streichen lassen?"
         text="Schildern Sie kurz Ihr Vorhaben – wir vermitteln Ihnen kostenlos und unverbindlich geprüfte Maler aus Hamburg und Umgebung, mit transparenten Festpreisen pro m²."
         ctaLabel="Maler-Angebote anfragen"
-        service="Malerarbeiten"
+        service="Maler & Lackierer"
         source="wohnung-streichen-page"
       />
 
@@ -218,7 +226,7 @@ export default function WohnungStreichenKostenPage() {
         headline="Geprüfte Maler aus Hamburg finden"
         text="Beschreiben Sie kurz Räume, Größe und gewünschten Umfang – wir bringen Sie kostenlos und unverbindlich mit passenden Malerbetrieben aus Hamburg und Umgebung zusammen."
         ctaLabel="Maler-Angebote anfragen"
-        service="Malerarbeiten"
+        service="Maler & Lackierer"
         source="wohnung-streichen-page"
       />
 

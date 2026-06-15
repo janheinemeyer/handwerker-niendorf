@@ -43,7 +43,6 @@ const DECKE_MATERIAL = 3;
 const TAPETE = 7; // Tapete entfernen & entsorgen
 const SPACHTELN = 6; // Untergrund spachteln / vorbereiten
 const REGION_SURCHARGE = 0.2;
-const LABOUR_SHARE = 0.7;
 
 export function WohnungStreichenCalculator() {
   const [size, setSize] = useState<Size>("mittel");
@@ -63,7 +62,15 @@ export function WohnungStreichenCalculator() {
     const untergrund = spachteln ? SPACHTELN * m2 : 0;
 
     const base = waende + decke + tapeteWeg + untergrund;
-    const regionDelta = region ? base * LABOUR_SHARE * REGION_SURCHARGE : 0;
+    // Ballungsraum-Aufschlag nur auf den Arbeitsanteil – Material wird regional
+    // nicht teurer. Arbeitsanteil = Streich- und Vorarbeiten ohne Materialaufschlag,
+    // skaliert so korrekt mit der Material-Wahl (ohne Material = alles Arbeit).
+    const labour =
+      WAND_ARBEIT * m2 +
+      (decken ? DECKE_ARBEIT * m2 : 0) +
+      tapeteWeg +
+      untergrund;
+    const regionDelta = region ? labour * REGION_SURCHARGE : 0;
 
     const rawRows: { label: string; value: number }[] = [
       { label: "Wände streichen", value: waende },
@@ -92,7 +99,7 @@ export function WohnungStreichenCalculator() {
     if (extras.length) parts.push(extras.join(", "));
     if (region) parts.push("Ballungsraum");
     return {
-      service: "Malerarbeiten",
+      service: "Maler & Lackierer",
       source: "wohnung-streichen-calculator",
       summary: parts.join(" · "),
       estimate: `${eur(calc.low)} – ${eur(calc.high)}`,
