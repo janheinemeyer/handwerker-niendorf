@@ -49,7 +49,11 @@ Site-Chrome direkt statt der `RatgeberArticle`-Shell (kein „Auch interessant")
 gestrichener Wandfläche. Die €/m²-Sätze sind so kalibriert, dass ein
 Komplettjob (Wände + Decken, inkl. Material) die publizierten Spannen trifft
 (~1.000 € bei 30 m² … ~3.200 € bei 100 m²). Ballungsraum-Aufschlag: +20 % auf
-den Arbeitsanteil (~70 %) → ~14 % aufs Total.
+den **expliziten Arbeitsanteil** (Streich- und Vorarbeiten ohne
+Materialaufschlag) – skaliert damit korrekt mit der „Inkl. Material"-Wahl (ohne
+Material ≈ alles Arbeit). [Korrigiert via Codex-Review #38; vorher pauschal
++20 % × fixem 70-%-Arbeitsanteil, was den Aufschlag im Nur-Arbeit-Fall zu
+niedrig ansetzte.]
 
 **Why:** Nutzer kennen ihre Wohnfläche, nicht die Wandfläche; und die
 size-spezifischen Konkurrenzseiten (kostencheck 60/80 qm, MyHammer) quoten
