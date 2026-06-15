@@ -10,6 +10,7 @@ import {
   Faq,
   type FaqItem,
 } from "@/components/ratgeber";
+import { BaufensterDiagram } from "@/components/baufenster-diagram";
 import { BEBAUUNGSPLAN_CHECKLISTE } from "./checkliste-items";
 
 export const metadata: Metadata = {
@@ -148,6 +149,7 @@ export default function CarportBebauungsplanPage() {
           ],
         ]}
       />
+      <BaufensterDiagram />
       <P>
         Für Garagen und Carports gibt es eine wichtige Sonderregel:{" "}
         <strong>§ 23 Abs. 5 BauNVO</strong> erlaubt es, auf den{" "}
