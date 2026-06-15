@@ -1,12 +1,12 @@
 /*
-  Schematic top-down plan: Grundstück mit Baufenster (von Baugrenzen umschlossen),
-  Haus innerhalb, Carport außerhalb des Baufensters. Illustriert § 23 Abs. 5 BauNVO
-  auf der Bebauungsplan-Seite.
+  Schematic top-down plan: Grundstück mit Baufenster (= überbaubare Fläche,
+  umschlossen von den Baugrenzen), Haus innerhalb, Carport außerhalb des
+  Baufensters. Illustriert § 23 Abs. 5 BauNVO auf der Bebauungsplan-Seite.
 
-  Colours reference the raw theme CSS variables (`--accent`, `--ink`, …) directly
-  via SVG presentation attributes. Tailwind's `fill-*`/`stroke-*` utilities are
-  NOT emitted under this project's `@theme inline` setup, so using the variables
-  keeps the diagram on-brand and robust.
+  Farben referenzieren die rohen Theme-CSS-Variablen (`--accent`, `--ink`, …)
+  direkt – Tailwinds `fill-*`/`stroke-*`-Utilities werden unter `@theme inline`
+  NICHT emittiert. Alle Text-Labels stehen dunkel (ink/ink-soft) auf hellem
+  Grund (Kontrast ≥ 4.5:1); auf der Akzentfläche steht kein Text.
 */
 export function BaufensterDiagram() {
   return (
@@ -19,8 +19,9 @@ export function BaufensterDiagram() {
       >
         <title id="bf-title">Schema: Carport außerhalb des Baufensters</title>
         <desc id="bf-desc">
-          Ein Grundstück mit gestricheltem Baufenster, dem Wohnhaus darin und einem
-          Carport außerhalb des Baufensters, aber innerhalb der Grundstücksgrenze.
+          Ein Grundstück, dessen überbaubare Fläche (Baufenster) von gestrichelten
+          Baugrenzen umschlossen ist; das Haus steht im Baufenster, der Carport
+          außerhalb, aber innerhalb der Grundstücksgrenze.
         </desc>
 
         {/* Grundstück */}
@@ -38,9 +39,9 @@ export function BaufensterDiagram() {
           strokeWidth="2"
         />
 
-        {/* Baufenster (Baugrenze) */}
-        <text x="55" y="64" fill="var(--accent)" fontSize="11" fontWeight="600">
-          Baufenster (Baugrenze)
+        {/* Baugrenze = die (gestrichelte) Linie, die das Baufenster begrenzt */}
+        <text x="55" y="64" fill="var(--ink)" fontSize="11" fontWeight="600">
+          Baugrenze (Linie)
         </text>
         <rect
           x="55"
@@ -54,10 +55,10 @@ export function BaufensterDiagram() {
         />
 
         {/* Haus */}
-        <rect x="75" y="95" width="110" height="72" fill="var(--ink)" />
+        <rect x="75" y="95" width="110" height="62" fill="var(--ink)" />
         <text
           x="130"
-          y="136"
+          y="130"
           textAnchor="middle"
           fill="var(--paper)"
           fontSize="13"
@@ -66,33 +67,37 @@ export function BaufensterDiagram() {
           Haus
         </text>
 
-        {/* Carport – außerhalb des Baufensters */}
-        <rect x="262" y="95" width="74" height="112" fill="var(--accent)" />
+        {/* Baufenster = die überbaubare Fläche innerhalb der Baugrenzen */}
+        <text x="142" y="182" textAnchor="middle" fill="var(--ink)" fontSize="11">
+          Baufenster (Fläche)
+        </text>
+
+        {/* Carport – außerhalb des Baufensters (Akzentfläche ohne Text) */}
+        <rect x="262" y="95" width="74" height="95" fill="var(--accent)" />
         <text
           x="299"
-          y="146"
+          y="208"
           textAnchor="middle"
-          fill="var(--paper)"
-          fontSize="13"
+          fill="var(--ink)"
+          fontSize="12"
           fontWeight="600"
         >
           Carport
         </text>
-        <text x="299" y="162" textAnchor="middle" fill="var(--paper)" fontSize="9">
-          außerhalb
-        </text>
 
         {/* Straße */}
-        <rect x="10" y="252" width="340" height="22" fill="var(--line)" />
-        <text x="180" y="267" textAnchor="middle" fill="var(--ink-soft)" fontSize="11">
+        <rect x="10" y="248" width="340" height="22" fill="var(--line)" />
+        <text x="180" y="263" textAnchor="middle" fill="var(--ink-soft)" fontSize="11">
           Straße
         </text>
       </svg>
       <figcaption className="mt-4 text-sm leading-relaxed text-ink-soft">
-        Schema: Innerhalb der Baugrenzen liegt das <strong>Baufenster</strong>{" "}
-        (hier mit dem Haus). Ein <strong>Carport</strong> darf nach § 23 Abs. 5
-        BauNVO oft auch <strong>außerhalb des Baufensters</strong> stehen – soweit
-        der Bebauungsplan nichts anderes festsetzt.
+        Schema: Das <strong>Baufenster</strong> ist die überbaubare Fläche, die von
+        den <strong>Baugrenzen</strong> umschlossen wird (hier mit dem Haus). Ein{" "}
+        <strong>Carport</strong> kann nach § 23 Abs. 5 BauNVO auch außerhalb des
+        Baufensters <strong>zugelassen werden</strong> – soweit der Bebauungsplan
+        nichts anderes festsetzt; das ist eine Ermessensentscheidung des Bauamts,
+        kein Automatismus.
       </figcaption>
     </figure>
   );
