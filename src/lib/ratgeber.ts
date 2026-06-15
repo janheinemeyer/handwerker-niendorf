@@ -104,4 +104,11 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     topic: "Solarcarport",
     cluster: "carport",
   },
+  {
+    href: "/ratgeber/doppelcarport-kosten",
+    title: "Doppelcarport: Kosten & Maße",
+    blurb: "Carport für zwei Autos – Preise nach Material, empfohlene Maße & Kostenfaktoren.",
+    topic: "Doppelcarport",
+    cluster: "carport",
+  },
 ];

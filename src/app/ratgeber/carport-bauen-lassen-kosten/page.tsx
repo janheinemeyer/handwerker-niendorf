@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was kostet es, ein Carport bauen zu lassen?",
-    a: "Ein Carport bauen zu lassen kostet 2026 je nach Größe, Material und Aufbau typischerweise zwischen 1.800 € und 9.000 €. Ein einfaches Einzelcarport aus Holz inklusive Montage liegt bei etwa 2.500–5.500 €, ein Doppelcarport bei 3.500–9.000 €.",
+    a: "Ein Carport bauen zu lassen kostet 2026 je nach Größe, Material und Aufbau typischerweise zwischen 1.800 € und 9.000 €. Ein einfaches Einzelcarport aus Holz inklusive Montage liegt bei etwa 2.500–5.500 €, ein Doppelcarport je nach Material bei 3.500–15.000 €.",
   },
   {
     q: "Was kostet ein Carport aus Holz?",
@@ -37,7 +37,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet ein Doppelcarport?",
-    a: "Ein Doppelcarport kostet je nach Material und Ausstattung zwischen 3.500 € und 10.000 €. Holzmodelle beginnen bei etwa 3.500 €, Aluminium- und Sonderanfertigungen liegen bei 8.000–10.000 € und mehr.",
+    a: "Ein Doppelcarport kostet je nach Material und Ausstattung zwischen 3.500 € und 15.000 €. Holzmodelle beginnen bei etwa 3.500 €, Aluminium- und Stahl-/Maßanfertigungen (z. B. mit Geräteraum) liegen am oberen Ende bis ~15.000 €.",
   },
   {
     q: "Wie viel kostet die Montage eines Carports?",
@@ -83,8 +83,8 @@ export default function CarportKostenPage() {
         Aufbau typischerweise{" "}
         <strong>zwischen 1.800 € und 9.000 €</strong>. Ein einfaches
         Einzelcarport aus Holz inklusive Montage liegt bei{" "}
-        <strong>2.500–5.500 €</strong>, ein Doppelcarport bei{" "}
-        <strong>3.500–9.000 €</strong>. Hinzu kommen je nach Vorhaben Fundament
+        <strong>2.500–5.500 €</strong>, ein Doppelcarport je nach Material bei{" "}
+        <strong>3.500–15.000 €</strong>. Hinzu kommen je nach Vorhaben Fundament
         (500–2.500 €), Baugenehmigung (50–500 €) und Erdarbeiten.
       </TlDr>
 
@@ -111,7 +111,7 @@ export default function CarportKostenPage() {
         head={["Carport-Typ", "Preis inkl. Aufbau", "Hinweis"]}
         rows={[
           ["Einzelcarport", "1.800 – 5.500 €", "1 Stellplatz, ca. 3 × 5 m"],
-          ["Doppelcarport", "3.500 – 9.000 €", "2 Stellplätze nebeneinander"],
+          ["Doppelcarport", "3.500 – 15.000 €", "2 Stellplätze, je nach Material"],
           ["Reihen-/Sondercarport", "ab 6.000 €", "mehrere Plätze, Maßbau"],
           ["Bausatz (ohne Montage)", "500 – 1.500 €", "Holz, Selbstaufbau"],
         ]}
@@ -120,6 +120,17 @@ export default function CarportKostenPage() {
         <strong>Hinweis 2026:</strong> Die Preise sind gegenüber den Vorjahren um
         durchschnittlich 15–20 % gestiegen. In Ballungsräumen wie Hamburg liegen
         sie zudem rund 20–30 % über dem Bundesdurchschnitt.
+      </P>
+      <P>
+        Konkret für zwei Stellplätze – inkl. empfohlener Maße und
+        Kostenfaktoren – siehe den Ratgeber{" "}
+        <Link
+          href="/ratgeber/doppelcarport-kosten"
+          className="font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          Doppelcarport: Kosten &amp; Maße
+        </Link>
+        .
       </P>
 
       <H2 id="material">Kosten nach Material: Holz, Stahl oder Aluminium</H2>
