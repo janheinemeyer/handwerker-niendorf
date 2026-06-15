@@ -16,6 +16,35 @@ Format:
 
 ---
 
+## 2026-06-15 — Bebauungsplan gets its own page, not an expansion of the Hamburg page
+
+**Decision:** The "carport bebauungsplan" keyword cluster is served by a new
+sibling page `/ratgeber/carport-bebauungsplan` rather than by expanding
+`carport-baugenehmigung-hamburg`. The page is national-capable (anchored on
+BauNVO/BauGB: § 23 Abs. 5 BauNVO, § 31 BauGB, § 19 BauNVO, § 34/§ 35 BauGB) with
+a dedicated Hamburg section, and leads with the "Carport außerhalb der
+Baugrenze/Baufenster" angle (SEO-ROADMAP P1).
+
+**Why:** "carport bebauungsplan" is a distinct intent from "carport
+baugenehmigung hamburg"; separate pages avoid cannibalizing each other's head
+term. SERP analysis (June 2026) showed the whole cluster is held only by
+generic national pages and forums — no structured, statute-cited page owns it,
+and the Baugrenze/Baufenster long-tail is the weakest-defended (forums + one
+thin article that doesn't even cite § 23 BauNVO). All legal statements are kept
+cautious ("kann", "in der Regel", "verbindlich entscheidet das Bauamt"),
+consistent with the [2026-06-15] Prüfer wording change — no individualized legal
+verdicts.
+
+**Alternatives considered:** (a) Expand the existing Hamburg page — rejected,
+two intents on one URL + cannibalization. (b) Hamburg-specific slug
+(`-bebauungsplan-hamburg`) — rejected, the BauNVO/BauGB topic is federal; a
+Hamburg section keeps the local hook without narrowing the page.
+
+**Consequences:** Catalog entry in `RATGEBER_PAGES` auto-wires sitemap, index,
+homepage band, footer, cross-links and `knowsAbout` schema. Deferred follow-ups
+(tracked in SEO-ROADMAP P2): a downloadable PDF checklist (lead magnet) and a
+Bebauungsplan question in the Prüfer (serves the `checker` intent).
+
 ## 2026-06-14 — Carport-Genehmigungs-Prüfer is an orientation tool, not a verdict
 
 **Decision:** The interactive permit checker on `carport-baugenehmigung-hamburg`
