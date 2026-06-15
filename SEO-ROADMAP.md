@@ -194,10 +194,10 @@ strukturierten, zitierfähigen Seite.** Differenzierungs-Winkel: *verfahrensfrei
 - Am stärksten umkämpft (Bundes-Autoritätsseiten). Nicht frontal angreifen –
   über die Long-Tails P1–P3 + Hamburg-Anker mitnehmen, der Head folgt.
 
-**Offene Folge-Items aus diesem Cluster:** ✅ PDF-Checkliste (freie, druckbare
-Seite `/ratgeber/carport-bebauungsplan/checkliste`, Juni 2026) · Prüfer-
-Erweiterung um Bebauungsplan-Frage · ggf. eigene Seite für GRZ/Befreiung, falls
-die Long-Tails Volumen zeigen.
+**Offene Folge-Items aus diesem Cluster:** PDF-Checkliste – freie, druckbare
+Seite `/ratgeber/carport-bebauungsplan/checkliste` (in **PR #39**, noch nicht
+gemergt) · Prüfer-Erweiterung um Bebauungsplan-Frage · ggf. eigene Seite für
+GRZ/Befreiung, falls die Long-Tails Volumen zeigen.
 
 **Quellen (Juni 2026):**
 [hausjournal – außerhalb Baufenster](https://www.hausjournal.net/carport-ausserhalb-baufenster),
@@ -224,16 +224,24 @@ Shops, lokal kaum besetzt → schlagbar.
 
 ### P1 — Carport-Materialvergleich (Holz / Stahl / Alu / WPC) ⭐ als Nächstes
 - **Keywords:** `carport holz oder metall/alu`, `carport material vergleich`.
-- **Preis-Anker:** Holz günstig (Bausatz ab ~200–400 €), Alu/Stahl ab ~900 €+;
-  Material ist der größte Kostentreiber.
+- **Preis-Anker:** ⚠️ **Installierte Preise verwenden, nicht Bausatz-Preise** –
+  sonst ziehen wir DIY-Käufer an (steht im Widerspruch zur Skip-DIY-Entscheidung
+  unten) und unterbieten die Pillar. Maßstab ist die Kostenseite
+  `carport-bauen-lassen-kosten` (3.500–10.000 € „bauen lassen"). Material-Relation
+  dort einordnen: Holz günstigste Variante, Alu/Stahl im oberen Bereich. Reine
+  Bausatz-Preise (Holz ab ~200–400 €, Alu/Stahl ab ~900 €) höchstens **explizit
+  als „nur Material/Selbstbau"** und klar abgegrenzt nennen.
 - **Warum:** hoher Decision-Intent, schlagbare Konkurrenz (t-online, stahlzart,
   gartenhaus), funnelt direkt auf die Kostenseite + CTA, stärkt die Pillar.
 - **Rechner/Verweis:** verlinkt auf den bestehenden Kostenrechner.
 
 ### P2 — Solarcarport / Carport mit Photovoltaik ⭐ strategisch
 - **Keywords:** `solarcarport kosten`, `photovoltaik carport`, `lohnt sich`.
-- **Preis-Anker:** PV ~1.250–1.750 €/kWp; Solarcarport ~10.000–20.000 € (1 Stpl.)
-  bis 25.000–35.000 € (2 Stpl. + Geräteraum + PV); Amortisation ~10–15 Jahre.
+- **Preis-Anker:** PV ~1.250–1.750 €/kWp; Solarcarport **~9.000–30.000 €
+  (1 Stpl. inkl. Montage, ADAC)**, mit Speicher + Wallbox eher 15.000–30.000 €,
+  großer 2-Stpl.-Aufbau bis ~35.000 €; Amortisation ~10–15 Jahre. (Quellen
+  streuen stark – beim Schreiben die obere Grenze nicht kappen, v. a. da wir das
+  Wallbox-Bündel als Differenzierung bewerben.)
 - **Warum:** höchster Warenkorb; **verbindet den Carport- mit dem Wallbox-/
   Energie-Cluster** (`wallbox-installieren-kosten`) → kombinierte High-Ticket-
   Leads. Konkurrenz härter (ADAC, bauen.de, Energieportale) → über „bauen lassen"
@@ -244,6 +252,11 @@ Shops, lokal kaum besetzt → schlagbar.
 - **Preis-Anker:** ~10.000–18.000 € (Fachfirma 6.000–15.000 €, Bausätze 2.000–
   9.000 €); typ. ~6 × 6 m.
 - **Warum:** hochpreisige Größenvariante, enge Schwester der Kostenseite.
+- ⚠️ **Preis-Abgleich mit Pillar:** Die Kostenseite nennt für den (Einzel-)
+  Carport 3.500–10.000 €. Beim Bau von P3 die Doppelcarport-Range **explizit als
+  Doppel-Variante** kennzeichnen und die Pillar um eine Doppelcarport-Zeile/
+  Cross-Link ergänzen, damit keine widersprüchlichen Preise fürs selbe Produkt
+  entstehen.
 
 ### P4 — Carport oder Garage (Vergleich)
 - **Keywords:** `carport oder garage`, `… vergleich/kosten`.
@@ -257,13 +270,18 @@ Aktuell verlinkt `RelatedRatgeber` **jede** Seite auf **alle** anderen – keine
 Cluster-Trennung. Mit 5–7 Carport-Seiten lohnt jetzt:
 1. **`cluster`-Feld** in `RATGEBER_PAGES` (`src/lib/ratgeber.ts`) → Cross-Links
    primär innerhalb des Clusters gruppieren.
-2. **Pillar → Spoke / Spoke → Pillar:** die Kostenseite als Hub etablieren, der
-   explizit alle Carport-Spokes verlinkt (und zurück).
+2. **Pillar → Spoke / Spoke → Pillar:** die Kostenseite als Hub etablieren.
+   ⚠️ **Pillar nur auf bereits existierende Spokes verlinken** – jeder neue
+   Spoke fügt seinen Pillar-Link erst beim Bau hinzu (sonst zeigt die Pillar auf
+   noch nicht existierende Routen → 404). „Pillar-Link ergänzen" ist also Teil
+   jeder Spoke-PR, nicht ein einmaliger Schritt.
 3. **Kontextuelle In-Body-Links** zwischen den Carport-Seiten (über den
    automatischen „Auch interessant"-Block hinaus).
 
-**Build-Reihenfolge:** P1 Material → Linking-Hebel (cluster-Feld + Pillar) →
-P2 Solarcarport → P3 Doppelcarport → P4 Garage-Vergleich.
+**Build-Reihenfolge:** P1 Material → Linking-Hebel (cluster-Feld + Pillar↔P1) →
+P2 Solarcarport (inkl. Pillar-Link) → P3 Doppelcarport (inkl. Pillar-Link) →
+P4 Garage-Vergleich (inkl. Pillar-Link). Pillar verlinkt jeweils nur die schon
+gebauten Spokes.
 
 **Quellen (Juni 2026):**
 [t-online Material](https://www.t-online.de/heim-garten/bauen/hausbau/id_70044870/carport-materialwahl-metall-oder-holz-welches-passt-besser-.html),
