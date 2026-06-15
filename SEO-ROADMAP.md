@@ -43,12 +43,15 @@ Bundes-Volumen:
   Seite (eigener „… in Hamburg"-Abschnitt + Aufschlag-Option im Rechner, wie
   bei Carport/Wallbox schon umgesetzt).
 
-→ Zwei Cluster gezielt ausbauen: **Innen-Renovierung** (Hamburg-Stadt) und
-**Außen/Anbau** (Niendorf/Umland). Die Crosslinks sind aktuell **nicht
-cluster-getrennt** — `RelatedRatgeber` verlinkt jede Seite auf *alle* anderen
-Katalog-Einträge. Sobald beide Cluster gefüllt sind und eine saubere Trennung
-gewünscht ist, braucht es ein `cluster`-Feld im Katalog + Filterung. Bei
-wenigen Seiten ist „alle verlinken" aber ohnehin sinnvoll.
+→ Themen gezielt ausbauen: **Innen-Renovierung** (Hamburg-Stadt) und
+**Außen/Anbau** (Niendorf/Umland) als grobe Stoßrichtung. **Cluster-Taxonomie
+(umgesetzt):** das `cluster`-Feld im Katalog ist feiner geschnitten als diese
+zwei Themen – `carport` / `aussen` / `innen` / `energie` –, damit ein tief
+ausgebautes Thema (Carport) seine eigenen Geschwister zuerst zeigt.
+`RelatedRatgeber` **sortiert** same-cluster zuerst und blendet die übrigen
+Cluster **nicht aus** – „alle verlinken bleibt bei wenigen Seiten sinnvoll"
+gilt also weiter, nur mit besserer Reihenfolge. (Ersetzt den früheren Plan,
+Cluster erst später überhaupt einzuführen.)
 
 ## Priorisierter Backlog
 
@@ -265,23 +268,45 @@ Shops, lokal kaum besetzt → schlagbar.
 - **Skip:** `carport selber bauen` (DIY) – hohes Volumen, aber falscher Intent
   fürs „bauen lassen"-Lead-Modell.
 
-### Domination-Hebel: Cluster-internes Linking (über Content hinaus)
-Aktuell verlinkt `RelatedRatgeber` **jede** Seite auf **alle** anderen – keine
-Cluster-Trennung. Mit 5–7 Carport-Seiten lohnt jetzt:
-1. **`cluster`-Feld** in `RATGEBER_PAGES` (`src/lib/ratgeber.ts`) → Cross-Links
-   primär innerhalb des Clusters gruppieren.
-2. **Pillar → Spoke / Spoke → Pillar:** die Kostenseite als Hub etablieren.
-   ⚠️ **Pillar nur auf bereits existierende Spokes verlinken** – jeder neue
-   Spoke fügt seinen Pillar-Link erst beim Bau hinzu (sonst zeigt die Pillar auf
-   noch nicht existierende Routen → 404). „Pillar-Link ergänzen" ist also Teil
-   jeder Spoke-PR, nicht ein einmaliger Schritt.
-3. **Kontextuelle In-Body-Links** zwischen den Carport-Seiten (über den
-   automatischen „Auch interessant"-Block hinaus).
+### Domination-Hebel #1: Cluster-Integration zuerst (vor neuen Seiten) ⭐ JETZT
 
-**Build-Reihenfolge:** P1 Material → Linking-Hebel (cluster-Feld + Pillar↔P1) →
-P2 Solarcarport (inkl. Pillar-Link) → P3 Doppelcarport (inkl. Pillar-Link) →
-P4 Garage-Vergleich (inkl. Pillar-Link). Pillar verlinkt jeweils nur die schon
-gebauten Spokes.
+**Ist-Zustand (Audit Juni 2026):** Die drei Carport-Seiten existieren, sind aber
+lose verdrahtet:
+- In-Body-Links asymmetrisch/unvollständig: Kostenseite → nur Genehmigung;
+  Genehmigung → nur Kosten; Bebauungsplan → nur Genehmigung.
+  **`carport-bebauungsplan` ist nur schwach eingebunden** – erreichbar über den
+  automatischen `RelatedRatgeber`-Block und den „Zum Ratgeber"-Backlink der
+  Checklisten-Seite, aber **ohne kontextuelle In-Body-Links aus den beiden
+  Schwester-Artikeln** (Kosten, Genehmigung); die Pillar verlinkt sie gar nicht.
+- `RelatedRatgeber` ist **nicht cluster-getrennt**: jede Carport-Seite zeigt im
+  „Auch interessant"-Block alle 7+ fremden Kostenseiten → Carport-Geschwister
+  gehen unter, der topische Fokus verwässert.
+
+**Maßnahmen (billigster, höchster Hebel – kein neuer Content):**
+1. **`cluster`-Feld** in `RATGEBER_PAGES` (`src/lib/ratgeber.ts`);
+   `RelatedRatgeber` zeigt **gleiches Cluster zuerst** (Carport → Carport), Rest
+   danach (nicht ausblenden – bei wenigen Seiten weiter sinnvoll).
+2. **In-Body-Links vervollständigen:** Pillar (Kosten) verlinkt **Genehmigung
+   *und* Bebauungsplan**; jeder Spoke zurück zur Pillar.
+3. ⚠️ **Pillar nur auf bereits existierende Spokes verlinken** – jeder neue
+   Spoke fügt seinen Pillar-Link erst beim Bau hinzu (sonst 404). „Pillar-Link
+   ergänzen" ist Teil jeder Spoke-PR.
+
+→ Stärkt alle bestehenden + künftigen Carport-Seiten sofort. **Wird jetzt als
+eigene Code-PR umgesetzt.**
+
+### Verbesserungen an bestehenden Seiten (Depth)
+- **Baufenster-/Baugrenze-Diagramm** (SVG) auf `carport-bebauungsplan`: macht das
+  räumliche Thema verständlich, hebt Verweildauer und ist link-würdig (Foren
+  haben nichts Vergleichbares).
+- **Prüfer ↔ Bebauungsplan-Loop:** den Selbstcheck (auf der Genehmigungsseite) um
+  eine Bebauungsplan-Frage erweitern → bedient den `checker`-Intent und verzahnt
+  die Rechtsseiten (= offenes Item aus dem Carport-Recht-Cluster).
+
+**Build-Reihenfolge:** **#1 Cluster-Integration** (cluster-Feld +
+`RelatedRatgeber` + In-Body-Links) → P1 Material → P2 Solarcarport → P3
+Doppelcarport → P4 Garage-Vergleich; Depth-Items (Diagramm, Prüfer-Frage)
+opportunistisch dazwischen. Pillar verlinkt jeweils nur bereits gebaute Spokes.
 
 **Quellen (Juni 2026):**
 [t-online Material](https://www.t-online.de/heim-garten/bauen/hausbau/id_70044870/carport-materialwahl-metall-oder-holz-welches-passt-besser-.html),
