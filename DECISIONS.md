@@ -16,6 +16,32 @@ Format:
 
 ---
 
+## 2026-06-15 — PDF-Checkliste = druckbare Seite, kein generiertes Binär-PDF
+
+**Decision:** Die Bebauungsplan-Checkliste wird als eigene, druckoptimierte
+Seite (`/ratgeber/carport-bebauungsplan/checkliste`) mit nativen Checkboxen und
+einem „Drucken / als PDF speichern"-Button (`window.print()`) umgesetzt – nicht
+als hochgeladenes oder serverseitig generiertes `.pdf`. Die Checklisten-Punkte
+leben einmalig in `checkliste-items.ts` und werden von der Artikel-Seite (inline)
+und der Checklisten-Seite gemeinsam genutzt. Frei zugänglich (kein Lead-Gate),
+mit prominentem CTA. Site-weite `@media print`-Regeln in `globals.css` blenden
+Header/Footer/Grain und `.no-print`-Elemente beim Druck aus.
+
+**Why:** Single source of truth (kein Drift zwischen Seite und PDF, wie bei
+`Faq`), keine neuen Dependencies (kein puppeteer/react-pdf) und kein zu
+pflegendes Binär-Asset – passt zu „build for today's scale". Eine freie,
+druckbare Checkliste rankt für „… checkliste pdf" und wirkt als Tool, nicht als
+Duplicate Content; der Lead kommt über den CTA statt über ein E-Mail-Gate.
+
+**Alternatives considered:** Hand-/serverseitig generiertes PDF (Binär-Asset
+bzw. schwere Deps) — verworfen wegen Pflegeaufwand/Drift. Lead-Gate vor Download
+— verworfen (mehr Friktion, schwächer fürs Ranking); kann später nachgerüstet
+werden.
+
+**Consequences:** Die Checklisten-Seite ist eine Utility-Sub-Seite (nicht im
+`RATGEBER_PAGES`-Katalog), daher in `sitemap.ts` explizit gelistet; sie nutzt das
+Site-Chrome direkt statt der `RatgeberArticle`-Shell (kein „Auch interessant").
+
 ## 2026-06-15 — Bebauungsplan gets its own page, not an expansion of the Hamburg page
 
 **Decision:** The "carport bebauungsplan" keyword cluster is served by a new

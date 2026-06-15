@@ -90,3 +90,23 @@ body::before {
     animation: none;
   }
 }
+
+/* Print: strip site chrome and the grain overlay so printable pages (e.g. the
+   Bebauungsplan-Checkliste) export cleanly to PDF. Mark anything that should be
+   hidden on paper (nav, CTAs, action buttons) with `.no-print`. */
+@media print {
+  body::before {
+    display: none !important;
+  }
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  main {
+    border-top: 0 !important;
+  }
+  body {
+    background: #fff !important;
+  }
+}

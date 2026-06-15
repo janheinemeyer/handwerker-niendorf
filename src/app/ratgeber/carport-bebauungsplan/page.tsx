@@ -10,6 +10,7 @@ import {
   Faq,
   type FaqItem,
 } from "@/components/ratgeber";
+import { BEBAUUNGSPLAN_CHECKLISTE } from "./checkliste-items";
 
 export const metadata: Metadata = {
   title: "Carport & Bebauungsplan: Baugrenze, Baufenster & GRZ (2026)",
@@ -290,31 +291,21 @@ export default function CarportBebauungsplanPage() {
         (bzw. Baustufenplan) gezielt auf diese Punkte:
       </P>
       <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
-        <li>
-          <strong>Baugrenze/Baulinie:</strong> Wo liegt das Baufenster? Sind
-          Garagen/Carports außerhalb ausdrücklich zugelassen oder ausgeschlossen?
-        </li>
-        <li>
-          <strong>GRZ:</strong> Wie viel Grundfläche ist zulässig – und wie viel
-          ist schon belegt?
-        </li>
-        <li>
-          <strong>Dach &amp; Gestaltung:</strong> Vorgaben zu Dachform, Neigung,
-          Material oder Farbe?
-        </li>
-        <li>
-          <strong>Vorgarten:</strong> Gibt es eine Vorgartensatzung oder ein
-          Bauverbot zur Straße hin?
-        </li>
-        <li>
-          <strong>Stellplätze &amp; Nebenanlagen:</strong> eigene Festsetzungen
-          zu Zahl, Lage oder Größe?
-        </li>
-        <li>
-          <strong>Baulasten:</strong> liegen im Baulastenverzeichnis Eintragungen
-          vor, die das Grundstück binden?
-        </li>
+        {BEBAUUNGSPLAN_CHECKLISTE.map((item) => (
+          <li key={item.title}>
+            <strong>{item.title}:</strong> {item.detail}
+          </li>
+        ))}
       </ul>
+      <p className="mt-5">
+        <Link
+          href="/ratgeber/carport-bebauungsplan/checkliste"
+          className="inline-flex items-center gap-2 font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          Druckbare Checkliste öffnen (zum Abhaken &amp; als PDF speichern)
+          <span aria-hidden>→</span>
+        </Link>
+      </p>
 
       <CtaBand
         headline="Bebauungsplan beim Carport mitprüfen lassen?"
