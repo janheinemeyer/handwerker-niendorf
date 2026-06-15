@@ -194,9 +194,10 @@ strukturierten, zitierfähigen Seite.** Differenzierungs-Winkel: *verfahrensfrei
 - Am stärksten umkämpft (Bundes-Autoritätsseiten). Nicht frontal angreifen –
   über die Long-Tails P1–P3 + Hamburg-Anker mitnehmen, der Head folgt.
 
-**Offene Folge-Items aus diesem Cluster:** PDF-Checkliste (Lead-Magnet) ·
-Prüfer-Erweiterung um Bebauungsplan-Frage · ggf. eigene Seite für GRZ/Befreiung,
-falls die Long-Tails Volumen zeigen.
+**Offene Folge-Items aus diesem Cluster:** ✅ PDF-Checkliste (freie, druckbare
+Seite `/ratgeber/carport-bebauungsplan/checkliste`, Juni 2026) · Prüfer-
+Erweiterung um Bebauungsplan-Frage · ggf. eigene Seite für GRZ/Befreiung, falls
+die Long-Tails Volumen zeigen.
 
 **Quellen (Juni 2026):**
 [hausjournal – außerhalb Baufenster](https://www.hausjournal.net/carport-ausserhalb-baufenster),
@@ -204,6 +205,72 @@ falls die Long-Tails Volumen zeigen.
 [bau.de Forum](https://bau.de/forum/planung/15019.php),
 [steda](https://magazin.steda.de/carport-baugenehmigung/),
 [OBI](https://www.obi.de/magazin/bauen/garage/carport-ohne-baugenehmigung).
+
+## Cluster-Offensive: Carport dominieren (Pillar + Spokes)
+
+Ziel: den gesamten Carport-Themenraum besetzen, nicht nur Einzelseiten. Google
+belohnt **topische Tiefe + interne Linkstruktur** – also Pillar-Seite + eng
+verlinkte Spokes, nicht isolierte Artikel.
+
+**Bestand (Cluster-Kern):**
+- `carport-bauen-lassen-kosten` — Kosten + Rechner → **Pillar-Kandidat**
+- `carport-baugenehmigung-hamburg` — Genehmigung + Prüfer
+- `carport-bebauungsplan` (+ `/checkliste`) — Baugrenze/B-Plan + Lead-Magnet
+
+Abgedeckt sind Kosten + Recht. Lücke = die **Produkt-/Entscheidungs-Seite** des
+Funnels (Material, Typ, Wert), wo der Großteil kommerzieller Carport-Suchen
+liegt. SERP-Befund (Juni 2026): überwiegend Bundes-Aggregatoren + Hersteller-
+Shops, lokal kaum besetzt → schlagbar.
+
+### P1 — Carport-Materialvergleich (Holz / Stahl / Alu / WPC) ⭐ als Nächstes
+- **Keywords:** `carport holz oder metall/alu`, `carport material vergleich`.
+- **Preis-Anker:** Holz günstig (Bausatz ab ~200–400 €), Alu/Stahl ab ~900 €+;
+  Material ist der größte Kostentreiber.
+- **Warum:** hoher Decision-Intent, schlagbare Konkurrenz (t-online, stahlzart,
+  gartenhaus), funnelt direkt auf die Kostenseite + CTA, stärkt die Pillar.
+- **Rechner/Verweis:** verlinkt auf den bestehenden Kostenrechner.
+
+### P2 — Solarcarport / Carport mit Photovoltaik ⭐ strategisch
+- **Keywords:** `solarcarport kosten`, `photovoltaik carport`, `lohnt sich`.
+- **Preis-Anker:** PV ~1.250–1.750 €/kWp; Solarcarport ~10.000–20.000 € (1 Stpl.)
+  bis 25.000–35.000 € (2 Stpl. + Geräteraum + PV); Amortisation ~10–15 Jahre.
+- **Warum:** höchster Warenkorb; **verbindet den Carport- mit dem Wallbox-/
+  Energie-Cluster** (`wallbox-installieren-kosten`) → kombinierte High-Ticket-
+  Leads. Konkurrenz härter (ADAC, bauen.de, Energieportale) → über „bauen lassen"
+  + Hamburg + Bündelung mit Wallbox differenzieren.
+
+### P3 — Doppelcarport: Kosten
+- **Keywords:** `doppelcarport kosten`, `doppelcarport preise/maße`.
+- **Preis-Anker:** ~10.000–18.000 € (Fachfirma 6.000–15.000 €, Bausätze 2.000–
+  9.000 €); typ. ~6 × 6 m.
+- **Warum:** hochpreisige Größenvariante, enge Schwester der Kostenseite.
+
+### P4 — Carport oder Garage (Vergleich)
+- **Keywords:** `carport oder garage`, `… vergleich/kosten`.
+- **Warum:** Top-of-Funnel-Vergleich, fängt Nutzer früh ab und leitet zum
+  Carport. Mittlerer kommerzieller Wert.
+- **Skip:** `carport selber bauen` (DIY) – hohes Volumen, aber falscher Intent
+  fürs „bauen lassen"-Lead-Modell.
+
+### Domination-Hebel: Cluster-internes Linking (über Content hinaus)
+Aktuell verlinkt `RelatedRatgeber` **jede** Seite auf **alle** anderen – keine
+Cluster-Trennung. Mit 5–7 Carport-Seiten lohnt jetzt:
+1. **`cluster`-Feld** in `RATGEBER_PAGES` (`src/lib/ratgeber.ts`) → Cross-Links
+   primär innerhalb des Clusters gruppieren.
+2. **Pillar → Spoke / Spoke → Pillar:** die Kostenseite als Hub etablieren, der
+   explizit alle Carport-Spokes verlinkt (und zurück).
+3. **Kontextuelle In-Body-Links** zwischen den Carport-Seiten (über den
+   automatischen „Auch interessant"-Block hinaus).
+
+**Build-Reihenfolge:** P1 Material → Linking-Hebel (cluster-Feld + Pillar) →
+P2 Solarcarport → P3 Doppelcarport → P4 Garage-Vergleich.
+
+**Quellen (Juni 2026):**
+[t-online Material](https://www.t-online.de/heim-garten/bauen/hausbau/id_70044870/carport-materialwahl-metall-oder-holz-welches-passt-besser-.html),
+[stahlzart Material-Vergleich](https://www.stahlzart.de/carport-material-vergleich/),
+[aroundhome Doppelcarport](https://www.aroundhome.de/carport/doppelcarport/),
+[ADAC Solar-Carport](https://www.adac.de/rund-ums-haus/energie/versorgung/solar-carport/),
+[aroundhome Carport oder Garage](https://www.aroundhome.de/garage/garage-oder-carport/).
 
 ## Über Kostenseiten hinaus (lokales SEO)
 
