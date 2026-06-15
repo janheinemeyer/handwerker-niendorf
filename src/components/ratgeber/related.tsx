@@ -8,9 +8,16 @@ import { RATGEBER_PAGES } from "@/lib/ratgeber";
  * already, stays clean).
  */
 export function RelatedRatgeber({ currentHref }: { currentHref?: string }) {
-  const isCatalogPage = RATGEBER_PAGES.some((p) => p.href === currentHref);
-  const items = RATGEBER_PAGES.filter((p) => p.href !== currentHref);
-  if (!isCatalogPage || items.length === 0) return null;
+  const current = RATGEBER_PAGES.find((p) => p.href === currentHref);
+  if (!current) return null;
+  const others = RATGEBER_PAGES.filter((p) => p.href !== currentHref);
+  // Same-cluster siblings first (e.g. Carport → Carport), then the rest — so a
+  // page leads with its topically closest neighbours without hiding the others.
+  const items = [
+    ...others.filter((p) => p.cluster === current.cluster),
+    ...others.filter((p) => p.cluster !== current.cluster),
+  ];
+  if (items.length === 0) return null;
 
   return (
     <aside

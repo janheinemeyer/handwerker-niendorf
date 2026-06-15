@@ -16,6 +16,28 @@ Format:
 
 ---
 
+## 2026-06-15 — Cluster-Cross-Links: gleiches Cluster zuerst, nicht exklusiv
+
+**Decision:** `RATGEBER_PAGES` bekommt ein Pflichtfeld `cluster`
+(`carport` / `aussen` / `innen` / `energie`). `RelatedRatgeber` listet im „Auch
+interessant"-Block **same-cluster-Seiten zuerst**, danach den Rest des Katalogs –
+es blendet fremde Cluster also **nicht aus**. Ergänzend werden die Carport-Seiten
+über **kontextuelle In-Body-Links** vollständig verzahnt (Kosten ↔ Genehmigung ↔
+Bebauungsplan).
+
+**Why:** Topische Tiefe + interne Linkstruktur stärken das Carport-Cluster, ohne
+die bei wenigen Seiten weiterhin sinnvolle breite Verlinkung zu opfern. Die zuvor
+verwaiste `carport-bebauungsplan`-Seite ist jetzt aus Pillar und Genehmigungs-
+seite heraus erreichbar.
+
+**Alternatives considered:** Fremde Cluster ganz ausblenden — verworfen (zu wenig
+Seiten, würde Entdeckung unnötig beschneiden). Hierarchische Cluster
+(carport ⊂ aussen) — verworfen als premature; exakter Cluster-Match reicht.
+
+**Consequences:** Jede neue Katalog-Zeile braucht ein `cluster`. Sortier-Logik
+liegt zentral in `RelatedRatgeber`; Reihenfolge im Katalog bleibt der
+Tie-Breaker innerhalb eines Clusters.
+
 ## 2026-06-15 — PDF-Checkliste = druckbare Seite, kein generiertes Binär-PDF
 
 **Decision:** Die Bebauungsplan-Checkliste wird als eigene, druckoptimierte

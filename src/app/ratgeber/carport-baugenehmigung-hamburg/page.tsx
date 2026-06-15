@@ -162,8 +162,17 @@ export default function CarportGenehmigungHamburgPage() {
       </P>
       <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
         <li>
-          <strong>Bebauungsplan:</strong> Er kann Standort, Größe, Dachform oder
-          Materialien einschränken – auch unterhalb der 50-m²-Grenze.
+          <strong>
+            <Link
+              href="/ratgeber/carport-bebauungsplan"
+              className="text-accent underline underline-offset-4 hover:text-ink"
+            >
+              Bebauungsplan
+            </Link>
+            :
+          </strong>{" "}
+          Er kann Standort, Größe, Dachform oder Materialien einschränken – auch
+          unterhalb der 50-m²-Grenze.
         </li>
         <li>
           <strong>Abstandsflächen &amp; Grenzbebauung</strong> (§ 6 HBauO, siehe

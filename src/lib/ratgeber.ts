@@ -1,9 +1,14 @@
+/** Topical cluster — drives same-cluster-first ordering of the cross-links. */
+export type Cluster = "carport" | "aussen" | "innen" | "energie";
+
 export type RatgeberPage = {
   href: string;
   title: string;
   blurb: string;
   /** Short topic name — feeds the Organization `knowsAbout` schema. */
   topic: string;
+  /** Topical cluster — `RelatedRatgeber` surfaces same-cluster siblings first. */
+  cluster: Cluster;
 };
 
 /**
@@ -12,6 +17,10 @@ export type RatgeberPage = {
  * auto-renders an "Auch interessant" block from this on every page listed here,
  * and `organizationSchema()` derives the company's areas of expertise from the
  * `topic`s — so both update automatically when a page is added here.
+ *
+ * The `cluster` groups topically related pages: `RelatedRatgeber` lists
+ * same-cluster siblings first (so e.g. the Carport pages link tightly to each
+ * other), then the rest of the catalog.
  *
  * To add a new Ratgeber page: add it here so siblings link to it, it links back,
  * and its topic appears in the Organization schema. A page not listed renders no
@@ -23,53 +32,62 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     title: "Carport bauen lassen: Kosten",
     blurb: "Preise nach Größe, Material & Aufbau – inkl. Kostenrechner.",
     topic: "Carport-Bau",
+    cluster: "carport",
   },
   {
     href: "/ratgeber/terrassenueberdachung-kosten",
     title: "Terrassenüberdachung: Kosten",
     blurb: "Was eine Überdachung kostet – Material, Größe und Montage.",
     topic: "Terrassenüberdachung",
+    cluster: "aussen",
   },
   {
     href: "/ratgeber/wallbox-installieren-kosten",
     title: "Wallbox installieren: Kosten",
     blurb: "Installationskosten, Förderung und Technik im Überblick.",
     topic: "Wallbox-Installation",
+    cluster: "energie",
   },
   {
     href: "/ratgeber/bad-renovieren-kosten",
     title: "Bad renovieren: Kosten",
     blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
     topic: "Badsanierung",
+    cluster: "innen",
   },
   {
     href: "/ratgeber/wohnung-streichen-kosten",
     title: "Wohnung streichen lassen: Kosten",
     blurb: "Maler-Preise pro m² & nach Größe – Wände, Decken, Vorarbeiten & Rechner.",
     topic: "Malerarbeiten",
+    cluster: "innen",
   },
   {
     href: "/ratgeber/wintergarten-kosten",
     title: "Wintergarten: Kosten",
     blurb: "Kalt- oder Warmwintergarten – Preise pro m², Genehmigung & Rechner.",
     topic: "Wintergarten",
+    cluster: "aussen",
   },
   {
     href: "/ratgeber/einfahrt-pflastern-kosten",
     title: "Einfahrt pflastern: Kosten",
     blurb: "Preise pro m², die versteckten Unterbau-Kosten & Rechner.",
     topic: "Pflasterarbeiten",
+    cluster: "aussen",
   },
   {
     href: "/ratgeber/carport-baugenehmigung-hamburg",
     title: "Carport-Baugenehmigung Hamburg",
     blurb: "Wann ist ein Carport genehmigungsfrei? § 61 HBauO, Grenzabstände & Ablauf.",
     topic: "Baugenehmigung Carport",
+    cluster: "carport",
   },
   {
     href: "/ratgeber/carport-bebauungsplan",
     title: "Carport & Bebauungsplan",
     blurb: "Baugrenze, Baufenster, GRZ & Vorgarten – was der B-Plan beim Carport vorgibt.",
     topic: "Carport im Bebauungsplan",
+    cluster: "carport",
   },
 ];
