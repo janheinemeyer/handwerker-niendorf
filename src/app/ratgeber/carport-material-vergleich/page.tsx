@@ -100,13 +100,15 @@ export default function CarportMaterialVergleichPage() {
         rows={[
           ["Holz", "€ (günstigste)", "Lasur alle 2–5 Jahre", "~15–20 Jahre"],
           ["Aluminium", "€€€ (oberes Ende)", "nahezu keine", "~25–30 Jahre"],
-          ["Stahl (verzinkt)", "€€–€€€ (individuell)", "gering", "sehr lang"],
-          ["WPC / Holzoptik", "€€", "gering", "lang"],
+          ["Stahl (verzinkt)", "€€–€€€", "gering", "sehr lang"],
         ]}
       />
       <P>
         „Preis-Niveau“ meint die relative Einordnung – die tatsächlichen Kosten
-        hängen zusätzlich von Größe, Dachform und Aufbau ab (siehe unten).
+        hängen zusätzlich von Größe, Dachform und Aufbau ab (siehe unten). Holz,
+        Aluminium und Stahl sind die <strong>Tragwerk-Materialien</strong>;{" "}
+        <strong>WPC</strong> ist dagegen ein Verkleidungs-/Optik-Material und wird
+        auf ein Alu- oder Stahl-Tragwerk gesetzt (siehe unten).
       </P>
 
       <H2 id="holz">Holz-Carport</H2>
@@ -132,18 +134,22 @@ export default function CarportMaterialVergleichPage() {
       <H2 id="stahl">Stahl-Carport</H2>
       <P>
         Die robusteste Lösung – ideal bei großen Spannweiten, Doppelcarports oder
-        hoher Schneelast. Stahl wird in der Regel individuell gefertigt (kein
-        Standard-Bausatz) und liegt deshalb preislich oben. Wichtig ist der
-        Korrosionsschutz: feuerverzinkt und/oder pulverbeschichtet hält ein
-        Stahl-Carport sehr lange und bleibt weitgehend wartungsarm.
+        hoher Schneelast. Stahl gibt es als <strong>Standard-Bausatz</strong> (in
+        gängigen Maßen, günstiger) ebenso wie als <strong>Maßanfertigung</strong>{" "}
+        für Sondergrößen oder besondere Statik – letztere liegt preislich oben.
+        Wichtig ist der Korrosionsschutz: feuerverzinkt und/oder pulverbeschichtet
+        hält ein Stahl-Carport sehr lange und bleibt weitgehend wartungsarm.
       </P>
 
-      <H2 id="wpc">WPC & Aluminium in Holzoptik</H2>
+      <H2 id="wpc">WPC &amp; Holzoptik (Verkleidung)</H2>
       <P>
         Wer die warme Holzoptik mag, aber den Pflegeaufwand scheut, findet in WPC
         (Holz-Kunststoff-Verbund) oder folierten/beschichteten Alu-Profilen einen
         Mittelweg: holzähnliches Aussehen bei deutlich geringerer Wartung.
-        Preislich liegt das meist zwischen Holz und Aluminium.
+        Wichtig: <strong>WPC ist kein Tragwerk-Material</strong> – es kommt als
+        Verkleidung, Seitenwand oder Blende auf ein Alu- oder Stahl-Gerüst.
+        Preis und Haltbarkeit richten sich daher nach dem Tragwerk; die
+        WPC-Verkleidung liegt optisch zwischen Holz und Aluminium.
       </P>
 
       <H2 id="welches">Welches Material passt zu Ihnen?</H2>
@@ -164,15 +170,17 @@ export default function CarportMaterialVergleichPage() {
 
       <H2 id="kosten">Was kostet der Aufbau nach Material?</H2>
       <P>
-        Beim schlüsselfertigen Bauen-lassen liegen die meisten Carports zwischen{" "}
-        <strong>3.500 und 10.000 €</strong> inkl. Montage – Holz eher im unteren,
-        Aluminium und Stahl eher im oberen Bereich; Premium- und Doppelcarports
-        darüber. Hinzu kommt das Fundament:
+        Beim Bauen-lassen (inkl. Montage) liegen die meisten Carports zwischen{" "}
+        <strong>3.500 und 10.000 €</strong> – Holz eher im unteren, Aluminium und
+        Stahl eher im oberen Bereich; Premium- und Doppelcarports darüber. Ob das
+        Fundament im Angebot enthalten ist oder separat berechnet wird,
+        unterscheidet sich je nach Betrieb – als grobe Orientierung:
       </P>
       <CostTable
         head={["Posten", "Typische Kosten"]}
         rows={[
-          ["Punktfundamente (Streifen/Punkt)", "200 – 1.500 €"],
+          ["Punktfundamente", "200 – 600 €"],
+          ["Streifenfundament", "500 – 1.500 €"],
           ["Bodenplatte (komplett)", "1.500 – 3.500 €"],
           ["Pflege Holz (pro Jahr, über die Nutzung)", "ca. 50 – 150 €"],
         ]}
@@ -200,9 +208,12 @@ export default function CarportMaterialVergleichPage() {
       <H2 id="hamburg">Material &amp; Genehmigung in Hamburg</H2>
       <P>
         Das Material ändert nichts an der baurechtlichen Lage: In Hamburg ist ein
-        Carport im Innenbereich bis 50 m² und 3 m Wandhöhe verfahrensfrei
-        (§ 61 HBauO) – unabhängig davon, ob er aus Holz, Alu oder Stahl ist. Was
-        zählt, sind Größe, Höhe, Grenzabstände und der{" "}
+        Carport im Innenbereich in der Regel bis 50 m² und 3 m Wandhöhe{" "}
+        <strong>je zugehörigem Hauptgebäude</strong> verfahrensfrei (§ 61 HBauO) –
+        vorhandene Stellplatzflächen werden dabei angerechnet, und ohne
+        zugehöriges Wohngebäude greift die Verfahrensfreiheit nicht. Das gilt
+        unabhängig davon, ob der Carport aus Holz, Alu oder Stahl ist. Was zählt,
+        sind also Größe, Höhe, Grenzabstände und der{" "}
         <Link
           href="/ratgeber/carport-bebauungsplan"
           className="font-medium text-accent underline underline-offset-4 hover:text-ink"
