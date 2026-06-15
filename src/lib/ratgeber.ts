@@ -43,6 +43,12 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     topic: "Badsanierung",
   },
   {
+    href: "/ratgeber/wohnung-streichen-kosten",
+    title: "Wohnung streichen lassen: Kosten",
+    blurb: "Maler-Preise pro m² & nach Größe – Wände, Decken, Vorarbeiten & Rechner.",
+    topic: "Malerarbeiten",
+  },
+  {
     href: "/ratgeber/wintergarten-kosten",
     title: "Wintergarten: Kosten",
     blurb: "Kalt- oder Warmwintergarten – Preise pro m², Genehmigung & Rechner.",
