@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Doppelcarport: Kosten, Maße & Preise (2026)",
   description:
-    "Was kostet ein Doppelcarport? Bauen lassen je nach Material und Größe rund 6.000–15.000 € (Bausatz ab ~2.000 €). Empfohlene Maße (ab ~6,5 × 5,5 m), Kostenfaktoren und Genehmigung in Hamburg – mit Preisübersicht.",
+    "Was kostet ein Doppelcarport? Bauen lassen je nach Material und Größe rund 3.500–15.000 € (Bausatz ab ~2.000 €). Empfohlene Maße (ab ~6,5 × 5,5 m), Kostenfaktoren und Genehmigung in Hamburg – mit Preisübersicht.",
   alternates: { canonical: "/ratgeber/doppelcarport-kosten" },
   openGraph: {
     title: "Doppelcarport: Kosten, Maße & Preise",
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was kostet ein Doppelcarport?",
-    a: "Bauen lassen kostet ein Doppelcarport je nach Material, Größe und Ausstattung rund 6.000–15.000 €. Holzmodelle beginnen bei etwa 3.500–9.000 €, Aluminium liegt bei ca. 6.000–12.000 €, Stahl-Maßanfertigungen darüber. Als Bausatz zum Selbstaufbau gibt es Doppelcarports ab etwa 2.000–9.000 € – ohne Fundament und Montage.",
+    a: "Bauen lassen kostet ein Doppelcarport je nach Material, Größe und Ausstattung rund 3.500–15.000 €: Holz ab etwa 3.500–9.000 €, Aluminium ca. 6.000–12.000 €, Stahl-Maßanfertigungen am oberen Ende. Als Bausatz zum Selbstaufbau gibt es Doppelcarports ab etwa 2.000–9.000 € – ohne Fundament und Montage.",
   },
   {
     q: "Wie groß muss ein Doppelcarport sein?",
-    a: "Für zwei Autos nebeneinander werden mindestens etwa 6,0–6,5 m Breite, 5,5 m Länge und 2,1 m Durchfahrtshöhe empfohlen; gängige Standardmaße liegen bei rund 6 × 6 m (~36 m²). Faustregel: zur Fahrzeugbreite je Seite etwa 80 cm zum Ein- und Aussteigen einplanen, zur Länge des längsten Autos rund 1 m.",
+    a: "Für zwei Autos nebeneinander werden mindestens etwa 6,0–6,5 m Breite, 5,5 m Länge und 2,1 m Durchfahrtshöhe empfohlen; gängige Standardmaße liegen bei rund 6 × 6 m (~36 m²). Faustregel: zwei Fahrzeugbreiten plus rund 70–80 cm Bewegungsraum an den Außenseiten und in der gemeinsam genutzten Mitte – die empfohlene Mindestbreite berücksichtigt das bereits; zur Länge des längsten Autos rund 1 m einplanen.",
   },
   {
     q: "Doppelcarport oder zwei Einzelcarports?",
@@ -44,7 +44,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Braucht ein Doppelcarport in Hamburg eine Baugenehmigung?",
-    a: "Oft nicht: Mit rund 36 m² bleibt ein typischer Doppelcarport im Innenbereich meist unter der 50-m²-Grenze, bis zu der ein Carport je zugehörigem Hauptgebäude verfahrensfrei ist (§ 61 HBauO). Wichtig: vorhandene Stellplatzflächen werden angerechnet, und ohne zugehöriges Wohngebäude greift die Verfahrensfreiheit nicht. Verbindlich ist die Auskunft des Bauamts.",
+    a: "Oft nicht: Mit rund 36 m² bleibt ein typischer Doppelcarport im Innenbereich meist unter der 50-m²-Grenze, bis zu der ein Carport je zugehörigem Hauptgebäude verfahrensfrei ist (§ 61 HBauO). Wichtig: vorhandene Stellplatzflächen werden angerechnet, und ohne zugehöriges Hauptgebäude greift die Verfahrensfreiheit nicht. Verbindlich ist die Auskunft des Bauamts.",
   },
 ];
 
@@ -71,8 +71,9 @@ export default function DoppelcarportKostenPage() {
       <TlDr>
         Ein <strong>Doppelcarport</strong> (zwei Autos nebeneinander, ~6 × 6 m,
         rund 36 m²) kostet beim Bauen-lassen je nach Material und Ausstattung
-        etwa <strong>6.000–15.000 €</strong> – Holz ab ~3.500 €, Aluminium und
-        Stahl höher; Bausätze zum Selbstaufbau ab ~2.000 €. Pro Stellplatz ist er
+        etwa <strong>3.500–15.000 €</strong> – Holz am unteren, Aluminium und
+        Stahl am oberen Ende; Bausätze zum Selbstaufbau ab ~2.000 €. Pro
+        Stellplatz ist er
         günstiger als zwei Einzelcarports. In Hamburg bleibt er mit ~36 m² meist
         unter der 50-m²-Grenze und damit oft verfahrensfrei (je zugehörigem
         Hauptgebäude, Stellplätze werden angerechnet). Die volle Kostenaufstellung
@@ -173,7 +174,7 @@ export default function DoppelcarportKostenPage() {
         unter der 50-m²-Grenze, bis zu der ein Carport <strong>je zugehörigem
         Hauptgebäude</strong> verfahrensfrei ist (§ 61 HBauO) – vorhandene
         Stellplatzflächen werden allerdings angerechnet, und ohne zugehöriges
-        Wohngebäude greift die Verfahrensfreiheit nicht. Wann genau eine
+        Hauptgebäude greift die Verfahrensfreiheit nicht. Wann genau eine
         Genehmigung nötig ist, klärt der Ratgeber{" "}
         <Link
           href="/ratgeber/carport-baugenehmigung-hamburg"
