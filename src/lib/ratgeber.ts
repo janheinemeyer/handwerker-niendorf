@@ -97,4 +97,11 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     topic: "Carport-Material",
     cluster: "carport",
   },
+  {
+    href: "/ratgeber/solarcarport-kosten",
+    title: "Solarcarport: Kosten & Förderung",
+    blurb: "Carport mit Photovoltaik – Kosten, Förderung 2026 & das Duo mit der Wallbox.",
+    topic: "Solarcarport",
+    cluster: "carport",
+  },
 ];

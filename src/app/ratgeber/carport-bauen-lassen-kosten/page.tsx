@@ -164,6 +164,16 @@ export default function CarportKostenPage() {
           ["Gartenwiederherstellung", "150 – 300 €"],
         ]}
       />
+      <P>
+        Ein Dach lässt sich auch zur Stromerzeugung nutzen: Was ein{" "}
+        <Link
+          href="/ratgeber/solarcarport-kosten"
+          className="font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          Solarcarport mit Photovoltaik
+        </Link>{" "}
+        kostet und ab wann er sich lohnt, lesen Sie im eigenen Ratgeber.
+      </P>
 
       <CtaBand
         headline="Lieber gleich konkrete Preise?"
