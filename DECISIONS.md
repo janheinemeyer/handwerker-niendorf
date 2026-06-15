@@ -16,6 +16,31 @@ Format:
 
 ---
 
+## 2026-06-15 — Prüfer: Bebauungsplan-Frage verfeinert nur das „grüne“ Ergebnis
+
+**Decision:** Der Carport-Prüfer bekommt eine Frage „Gilt für Ihr Grundstück ein
+Bebauungsplan?" (`ja`/`nein`/`unsicher`, Default `unsicher`). Die Antwort wird in
+`pruefeCarport` **nur in der sonst verfahrensfreien (grünen) Verzweigung**
+ausgewertet: Bei `ja`/`unsicher` wird daraus `pruefen` („weitere Prüfung
+empfohlen"), bei `nein` bleibt es grün mit dem Hinweis, dass sich ein (auch
+übergeleiteter) Plan selten sicher ausschließen lässt.
+
+**Why:** Ein Bebauungsplan kann unabhängig von Größe/Höhe Vorgaben machen – ein
+sauberes „eher unkritisch" ist unehrlich, wenn ein Plan gilt oder das unklar ist.
+Genau dort (und nur dort) kippt die Frage das Ergebnis; in den anderen Zweigen
+ist das Ergebnis ohnehin schon „Prüfung/Genehmigung", und der statische
+„Immer zu beachten"-Block nennt den Bebauungsplan generell. Bedient zugleich den
+`carport bebauungsplan checker`-Intent. Default `unsicher`, damit der Prüfer
+nicht mit einem Quasi-Freibrief startet.
+
+**Alternatives considered:** Den B-Plan-Hinweis in jeden Ergebniszweig anhängen –
+verworfen (Rauschen; nur im grünen Fall ändert er die Aussage). Eigene Tendenz
+für den B-Plan-Fall – unnötig, `pruefen` passt.
+
+**Consequences:** Logik bleibt in `src/lib/carport-genehmigung.ts`; die
+Komponente reicht nur das neue Feld durch. Vgl. [2026-06-14] (Prüfer = Tendenz,
+kein Verdikt) – die vorsichtige Wording-Linie bleibt gewahrt.
+
 ## 2026-06-15 — Cluster-Cross-Links: gleiches Cluster zuerst, nicht exklusiv
 
 **Decision:** `RATGEBER_PAGES` bekommt ein Pflichtfeld `cluster`

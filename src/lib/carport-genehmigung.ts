@@ -14,6 +14,9 @@
 
 export type Standort = "innenbereich" | "aussenbereich" | "unsicher";
 
+/** Gilt für das Grundstück ein Bebauungsplan? */
+export type Bebauungsplan = "ja" | "nein" | "unsicher";
+
 export type CarportEingabe = {
   standort: Standort;
   /** Zugehöriges Wohn-/Hauptgebäude auf dem Grundstück vorhanden? */
@@ -33,6 +36,11 @@ export type CarportEingabe = {
    * eigene Abstandsfläche in m – zählt zur 15-m-Gesamtgrenze des § 6 HBauO.
    */
   bestandGrenzeLaenge: number;
+  /**
+   * Gilt für das Grundstück ein Bebauungsplan? Verfeinert das sonst „grüne“
+   * Ergebnis – ein Plan kann unabhängig von Größe/Höhe Vorgaben machen.
+   */
+  bebauungsplan: Bebauungsplan;
 };
 
 /** Tendenz des Ergebnisses — steuert auch Symbol/Label in der UI. */
@@ -163,6 +171,23 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
     }
   }
 
+  // Strukturell innerhalb aller Schwellen → grundsätzlich verfahrensfrei. Der
+  // Bebauungsplan kann aber unabhängig von Größe/Höhe Vorgaben machen: Gilt ein
+  // Plan (oder ist das unklar), geben wir keine saubere grüne Einordnung, sondern
+  // empfehlen die Prüfung – ehrlicher und für die Lead-Qualität besser.
+  if (e.bebauungsplan === "ja" || e.bebauungsplan === "unsicher") {
+    return {
+      tendenz: "pruefen",
+      titel: "Nach Ihren Angaben: weitere Prüfung empfohlen",
+      begruendung: [
+        e.bebauungsplan === "ja"
+          ? "Größe, Höhe und Lage liegen zwar innerhalb der Schwellen des § 61 HBauO – für Ihr Grundstück gilt aber ein Bebauungsplan, der Standort, Größe, Dachform oder Material zusätzlich einschränken kann."
+          : "Größe, Höhe und Lage liegen innerhalb der Schwellen des § 61 HBauO – ob jedoch ein Bebauungsplan gilt, ist nach Ihren Angaben unklar und sollte geklärt werden.",
+        "Ein Bebauungsplan kann Vorgaben unabhängig von Größe und Höhe machen; diese sollten vor der Planung geprüft werden. Verbindlich ist die Auskunft des Bauamts.",
+      ],
+    };
+  }
+
   const begruendung = e.anGrenze
     ? [
         "Nach Ihren Angaben liegt der Carport innerhalb der Schwellen, die § 61 HBauO für verfahrensfreie Vorhaben im Innenbereich vorsieht (bis 50 m², bis 3 m Wandhöhe), und bis 9 m Länge ohne eigene Abstandsfläche an der Grenze (§ 6 HBauO) – das spricht dafür, dass kein Baugenehmigungsverfahren nötig ist.",
@@ -172,6 +197,11 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
         "Nach Ihren Angaben liegt der Carport innerhalb der Schwellen, die § 61 HBauO für verfahrensfreie Vorhaben im Innenbereich vorsieht (bis 50 m², bis 3 m Wandhöhe) – das spricht dafür, dass kein Baugenehmigungsverfahren nötig ist, sofern die regulären Abstandsflächen zu den Nachbargrenzen eingehalten werden.",
         "Werden die Abstandsflächen unterschritten, ist zusätzlich eine Abweichung erforderlich. Eine abschließende Beurteilung ist mit dieser Einordnung nicht verbunden.",
       ];
+  // Auch bei "kein Bebauungsplan": ein (ggf. übergeleiteter) Plan lässt sich
+  // selten sicher ausschließen.
+  begruendung.push(
+    "Ob wirklich kein Bebauungsplan (auch kein übergeleiteter Baustufenplan) gilt, lässt sich oft nur beim Bauamt sicher klären.",
+  );
 
   return {
     tendenz: "verfahrensfrei",
