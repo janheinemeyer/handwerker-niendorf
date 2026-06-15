@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Darf ein Carport außerhalb der Baugrenze stehen?",
-    a: "Oft ja, aber nicht automatisch. Die Baugrenze begrenzt die überbaubare Fläche (das „Baufenster“); Gebäude dürfen sie grundsätzlich nicht überschreiten (§ 23 Abs. 3 BauNVO). Für Garagen und Carports sieht § 23 Abs. 5 BauNVO jedoch vor, dass sie auf den nicht überbaubaren Flächen zugelassen werden können – soweit der Bebauungsplan nichts anderes festsetzt. Viele Pläne erlauben das, manche schließen es ausdrücklich aus. Maßgeblich ist Ihr konkreter Bebauungsplan; verbindlich entscheidet das Bauamt.",
+    a: "Oft ja, aber nicht automatisch. Die Baugrenze begrenzt die überbaubare Fläche (das „Baufenster“); Gebäude dürfen sie grundsätzlich nicht überschreiten (§ 23 Abs. 3 BauNVO). Für Garagen und Carports sieht § 23 Abs. 5 BauNVO vor, dass sie auf den nicht überbaubaren Flächen zugelassen werden können – soweit der Bebauungsplan nichts anderes festsetzt. Schweigt der Plan, ist das eine Ermessensentscheidung des Bauamts und kein Automatismus; manche Pläne schließen es ausdrücklich aus. Maßgeblich ist Ihr konkreter Bebauungsplan; verbindlich entscheidet das Bauamt.",
   },
   {
     q: "Was passiert, wenn der Carport dem Bebauungsplan widerspricht?",
-    a: "Dann ist er nicht ohne Weiteres zulässig – auch wenn er nach Landesbauordnung verfahrensfrei wäre. In Betracht kommt eine Ausnahme (§ 31 Abs. 1 BauGB), wenn der Plan sie vorsieht, oder eine Befreiung (§ 31 Abs. 2 BauGB), wenn die Grundzüge der Planung nicht berührt werden und die Abweichung städtebaulich vertretbar bzw. eine unzumutbare Härte ist. Beides steht im Ermessen der Behörde und ist ein eigener Antrag. Eine pauschale Zusage lässt sich daraus nicht ableiten.",
+    a: "Dann ist er nicht ohne Weiteres zulässig – auch wenn er nach Landesbauordnung verfahrensfrei wäre. In Betracht kommt eine Ausnahme (§ 31 Abs. 1 BauGB), wenn der Plan sie vorsieht, oder eine Befreiung (§ 31 Abs. 2 BauGB), wenn die Grundzüge der Planung nicht berührt werden, einer der gesetzlichen Gründe vorliegt (u. a. städtebauliche Vertretbarkeit oder eine offenbar nicht beabsichtigte Härte) und die Abweichung auch unter Würdigung nachbarlicher Interessen mit den öffentlichen Belangen vereinbar ist. Beides steht im Ermessen der Behörde und ist ein eigener Antrag. Eine pauschale Zusage lässt sich daraus nicht ableiten.",
   },
   {
     q: "Darf ein Carport im Vorgarten gebaut werden?",
@@ -40,7 +40,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Zählt ein Carport in die Grundflächenzahl (GRZ)?",
-    a: "In der Regel ja. Garagen, Carports und Stellplätze werden bei der GRZ mitgerechnet. Bei Bebauungsplänen nach der BauNVO 1990 darf die zulässige GRZ durch sie um bis zu 50 % überschritten werden (höchstens bis 0,8). Bei älteren Plänen kann die Anrechnung anders ausfallen – je nach Fassung der BauNVO, die dem Plan zugrunde liegt. Im Zweifel klärt das Bauamt, wie viel Fläche noch frei ist.",
+    a: "In der Regel ja. Garagen, Carports und Stellplätze werden bei der GRZ mitgerechnet. Bei Bebauungsplänen nach der BauNVO 1990 darf die zulässige GRZ durch sie um bis zu 50 % überschritten werden (höchstens bis 0,8) – sofern der Plan nichts anderes bestimmt (§ 19 Abs. 4 Satz 3 BauNVO); auch ein neuerer Plan kann das einschränken. Bei älteren Plänen kann die Anrechnung ohnehin anders ausfallen – je nach Fassung der BauNVO, die dem Plan zugrunde liegt. Im Zweifel klärt das Bauamt, wie viel Fläche noch frei ist.",
   },
   {
     q: "Was gilt für einen Carport, wenn es keinen Bebauungsplan gibt?",
@@ -82,8 +82,8 @@ export default function CarportBebauungsplanPage() {
         zugelassen werden, soweit der Plan nichts anderes festsetzt. Daneben
         regelt der Plan u. a. <strong>GRZ</strong>, Dachform und Vorgarten. Gibt
         es keinen Bebauungsplan, gelten <strong>§ 34/§ 35 BauGB</strong>.
-        Verbindlich ist immer die Auskunft des Bauamts – diese Seite gibt nur eine
-        allgemeine Orientierung.
+        Verbindlich ist erst eine Entscheidung des Bauamts (z. B. Vorbescheid oder
+        Baugenehmigung) – diese Seite gibt nur eine allgemeine Orientierung.
       </TlDr>
 
       <H2 id="was-regelt">Was regelt der Bebauungsplan für einen Carport?</H2>
@@ -139,7 +139,7 @@ export default function CarportBebauungsplanPage() {
           ],
           [
             "Baulinie (§ 23 Abs. 2 BauNVO)",
-            "auf ihr muss gebaut werden (Pflicht zur Bebauung)",
+            "wird gebaut, muss das Gebäude auf dieser Linie stehen",
           ],
           [
             "Baufenster",
@@ -158,16 +158,18 @@ export default function CarportBebauungsplanPage() {
       </P>
       <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
         <li>
-          Viele Bebauungspläne lassen Carports außerhalb des Baufensters{" "}
-          <strong>zu</strong> – das ist der Regelfall.
+          Schweigt der Plan, <strong>können</strong> Carports außerhalb des
+          Baufensters zugelassen werden – die Zulassung ist aber eine{" "}
+          <strong>Ermessensentscheidung des Bauamts</strong>, kein Automatismus.
         </li>
         <li>
           Manche Pläne <strong>schließen</strong> das ausdrücklich aus oder
           begrenzen es (z. B. nur seitlich, nicht zur Straße).
         </li>
         <li>
-          Es ist eine <strong>„Kann“-Regelung</strong>: Sie gibt keinen
-          automatischen Anspruch, sondern eröffnet die Möglichkeit.
+          Auch ein nach Landesbauordnung <strong>verfahrensfreier</strong>{" "}
+          Carport braucht diese Zulassung, wenn er außerhalb des Baufensters
+          liegt.
         </li>
       </ul>
       <P>
@@ -191,9 +193,12 @@ export default function CarportBebauungsplanPage() {
         </li>
         <li>
           <strong>Befreiung (§ 31 Abs. 2 BauGB):</strong> möglich, wenn die{" "}
-          <em>Grundzüge der Planung nicht berührt</em> werden und die Abweichung
-          städtebaulich vertretbar ist oder zu einer unzumutbaren Härte führen
-          würde – und nachbarliche Interessen gewahrt bleiben.
+          <em>Grundzüge der Planung nicht berührt</em> werden, einer der
+          gesetzlichen Gründe vorliegt (Wohl der Allgemeinheit, städtebauliche
+          Vertretbarkeit oder eine{" "}
+          <em>offenbar nicht beabsichtigte Härte</em>) <strong>und</strong> die
+          Abweichung auch unter Würdigung nachbarlicher Interessen mit den
+          öffentlichen Belangen vereinbar ist.
         </li>
       </ul>
       <P>
@@ -218,16 +223,19 @@ export default function CarportBebauungsplanPage() {
         Grundstücks überbaut werden darf. Garagen, Carports und Stellplätze
         zählen dabei grundsätzlich mit. Bei Plänen nach der{" "}
         <strong>BauNVO 1990</strong> darf die zulässige GRZ durch diese Anlagen um{" "}
-        <strong>bis zu 50 %</strong> überschritten werden (höchstens bis 0,8). Bei
-        älteren Bebauungsplänen kann die Anrechnung abweichen – maßgeblich ist die
-        Fassung der BauNVO, die dem Plan zugrunde liegt. Ob auf Ihrem Grundstück
-        noch „Fläche frei“ ist, prüft im Zweifel das Bauamt.
+        <strong>bis zu 50 %</strong> überschritten werden (höchstens bis 0,8) –{" "}
+        <strong>sofern der Bebauungsplan nichts anderes bestimmt</strong>{" "}
+        (§ 19 Abs. 4 Satz 3 BauNVO). Auch ein neuerer Plan kann diese
+        Überschreitung also einschränken oder ausschließen; bei älteren Plänen
+        kann die Anrechnung ohnehin abweichen – maßgeblich ist die Fassung der
+        BauNVO, die dem Plan zugrunde liegt. Ob auf Ihrem Grundstück noch{" "}
+        „Fläche frei“ ist, prüft im Zweifel das Bauamt.
       </P>
 
       <H2 id="kein-bplan">Was gilt, wenn es keinen Bebauungsplan gibt?</H2>
       <P>
-        Existiert für Ihr Grundstück kein (qualifizierter) Bebauungsplan, gilt
-        nicht etwa „alles erlaubt“, sondern das allgemeine Bauplanungsrecht:
+        Existiert für Ihr Grundstück kein <em>qualifizierter</em> Bebauungsplan,
+        gilt nicht etwa „alles erlaubt“, sondern das allgemeine Bauplanungsrecht:
       </P>
       <CostTable
         head={["Lage", "Maßstab", "Grundlage"]}
@@ -238,24 +246,34 @@ export default function CarportBebauungsplanPage() {
             "§ 34 BauGB",
           ],
           [
-            "Außenbereich (unbebaut)",
+            "Außenbereich",
             "nur eingeschränkt zulässig, praktisch immer genehmigungspflichtig",
             "§ 35 BauGB",
           ],
         ]}
       />
       <P>
-        Ob Ihr Grundstück im Innen- oder Außenbereich liegt, entscheidet
-        maßgeblich über die Zulässigkeit – das lässt sich nur am konkreten Fall
-        beurteilen.
+        Ob ein Grundstück zum Innen- oder Außenbereich gehört, hängt davon ab, ob
+        es am <strong>Bebauungszusammenhang</strong> teilnimmt – nicht allein
+        davon, ob es bereits bebaut ist; auch eine bebaute Fläche kann im
+        Außenbereich liegen. Das lässt sich nur am konkreten Fall beurteilen.
+      </P>
+      <P>
+        Gibt es einen <strong>einfachen Bebauungsplan</strong> (§ 30 Abs. 3
+        BauGB) – in Hamburg häufig ein übergeleiteter Baustufenplan –, bleiben
+        dessen Festsetzungen verbindlich; § 34 bzw. § 35 BauGB füllen dann nur die
+        Lücken, die der Plan offenlässt.
       </P>
 
       <H2 id="verfahrensfrei">„Verfahrensfrei“ heißt nicht „regelfrei“</H2>
       <P>
         Ein nach Landesbauordnung verfahrensfreier Carport braucht keinen
         Bauantrag – aber er muss das materielle Baurecht trotzdem einhalten, also
-        auch den Bebauungsplan. Verstößt er gegen eine Festsetzung, ist er formal
-        rechtswidrig, und das Bauamt kann selbst Jahre später eingreifen. Wann ein
+        auch den Bebauungsplan. Verstößt er gegen eine Festsetzung, ist er{" "}
+        <strong>materiell rechtswidrig</strong> – ein nachträglicher Antrag heilt
+        das nicht automatisch; nötig sind dann ggf. eine Zulassung, eine
+        Befreiung oder eine Umplanung. Das Bauamt kann selbst Jahre später
+        eingreifen. Wann ein
         Carport in Hamburg überhaupt verfahrensfrei ist, lesen Sie im Ratgeber{" "}
         <Link
           href="/ratgeber/carport-baugenehmigung-hamburg"
@@ -333,7 +351,8 @@ export default function CarportBebauungsplanPage() {
         der allgemeinen Orientierung – er ersetzt keine baurechtliche Prüfung,
         keine Rechtsberatung und keine Auskunft des zuständigen Bauamts. Was Ihr
         Bebauungsplan konkret zulässt, hängt vom Einzelfall ab; verbindlich ist
-        immer die Auskunft des Bezirksamts.
+        erst eine förmliche Entscheidung des Bezirksamts (etwa ein Vorbescheid
+        oder die Baugenehmigung).
       </p>
     </RatgeberArticle>
   );
