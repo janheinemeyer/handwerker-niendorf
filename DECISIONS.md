@@ -16,6 +16,30 @@ Format:
 
 ---
 
+## 2026-06-15 — Maler-Kostenrechner rechnet pro m² Wohnfläche, nicht pro m² Wandfläche
+
+**Decision:** Der Rechner auf `wohnung-streichen-kosten` modelliert die Kosten
+**pro m² Wohnfläche** (klein ~30 / mittel ~60 / groß ~100 m²), nicht pro m²
+gestrichener Wandfläche. Die €/m²-Sätze sind so kalibriert, dass ein
+Komplettjob (Wände + Decken, inkl. Material) die publizierten Spannen trifft
+(~1.000 € bei 30 m² … ~3.200 € bei 100 m²). Ballungsraum-Aufschlag: +20 % auf
+den Arbeitsanteil (~70 %) → ~14 % aufs Total.
+
+**Why:** Nutzer kennen ihre Wohnfläche, nicht die Wandfläche; und die
+size-spezifischen Konkurrenzseiten (kostencheck 60/80 qm, MyHammer) quoten
+ebenfalls pro Wohnfläche bzw. nach Wohnungsgröße. Eine Wandflächen-Umrechnung
+(Wohnfläche × Faktor) wäre eine zusätzliche, fehleranfällige Annahme ohne
+Mehrwert für die Schätzgenauigkeit.
+
+**Alternatives considered:** Pro m² Wandfläche mit Umrechnungsfaktor (~×2,5) —
+verworfen, weil die Quellen Wand- und Wohnflächenpreise vermischen und der
+Faktor je nach Grundriss stark streut. Reine Stundensatz-Schätzung — zu unsicher
+für eine Sofort-Spanne.
+
+**Consequences:** Konsistent mit den anderen Kostenrechnern (inline-Mathematik
+mit den `calculator-ui`-Bausteinen, kein eigenes `lib/`-Modul). Katalog-Eintrag
+verdrahtet alle Discovery-Flächen automatisch.
+
 ## 2026-06-15 — Bebauungsplan gets its own page, not an expansion of the Hamburg page
 
 **Decision:** The "carport bebauungsplan" keyword cluster is served by a new

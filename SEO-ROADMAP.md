@@ -71,7 +71,7 @@ jeweils mit Hamburg-Aufschlag.
 - **Rechner-Achsen:** Größe (m²), Umfang (Teil-/Komplettsanierung), Ausstattung
   (Standard/gehoben), Fliesenfläche, Barrierefrei ja/nein, Hamburg-Aufschlag.
 
-**2. Wohnung streichen lassen / Maler** — `wohnung streichen lassen kosten`, `maler kosten pro qm`
+**2. Wohnung streichen lassen / Maler** — `wohnung streichen lassen kosten`, `maler kosten pro qm` ✅ **gebaut** (`/ratgeber/wohnung-streichen-kosten`, Juni 2026)
 - **Preis-Anker:** 6–12 €/m² (nur Arbeit), 20–35 €/m² inkl. Material;
   30 m² ab ~1.000 €, 50 m² ab ~1.600 €, 75 m² ab ~2.400 €, 100 m² ab ~3.200 €.
 - **Fit:** gut — „Maler & Lackierer" ist Leistung. Innen-Cluster. Niedrigerer
