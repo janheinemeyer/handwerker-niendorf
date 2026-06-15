@@ -43,12 +43,15 @@ Bundes-Volumen:
   Seite (eigener „… in Hamburg"-Abschnitt + Aufschlag-Option im Rechner, wie
   bei Carport/Wallbox schon umgesetzt).
 
-→ Zwei Cluster gezielt ausbauen: **Innen-Renovierung** (Hamburg-Stadt) und
-**Außen/Anbau** (Niendorf/Umland). Die Crosslinks sind aktuell **nicht
-cluster-getrennt** — `RelatedRatgeber` verlinkt jede Seite auf *alle* anderen
-Katalog-Einträge. Sobald beide Cluster gefüllt sind und eine saubere Trennung
-gewünscht ist, braucht es ein `cluster`-Feld im Katalog + Filterung. Bei
-wenigen Seiten ist „alle verlinken" aber ohnehin sinnvoll.
+→ Themen gezielt ausbauen: **Innen-Renovierung** (Hamburg-Stadt) und
+**Außen/Anbau** (Niendorf/Umland) als grobe Stoßrichtung. **Cluster-Taxonomie
+(umgesetzt):** das `cluster`-Feld im Katalog ist feiner geschnitten als diese
+zwei Themen – `carport` / `aussen` / `innen` / `energie` –, damit ein tief
+ausgebautes Thema (Carport) seine eigenen Geschwister zuerst zeigt.
+`RelatedRatgeber` **sortiert** same-cluster zuerst und blendet die übrigen
+Cluster **nicht aus** – „alle verlinken bleibt bei wenigen Seiten sinnvoll"
+gilt also weiter, nur mit besserer Reihenfolge. (Ersetzt den früheren Plan,
+Cluster erst später überhaupt einzuführen.)
 
 ## Priorisierter Backlog
 
@@ -271,8 +274,10 @@ Shops, lokal kaum besetzt → schlagbar.
 lose verdrahtet:
 - In-Body-Links asymmetrisch/unvollständig: Kostenseite → nur Genehmigung;
   Genehmigung → nur Kosten; Bebauungsplan → nur Genehmigung.
-  **`carport-bebauungsplan` ist faktisch verwaist** – keine In-Body-Links
-  *darauf*, und die Pillar (Kostenseite) verlinkt sie gar nicht.
+  **`carport-bebauungsplan` ist nur schwach eingebunden** – erreichbar über den
+  automatischen `RelatedRatgeber`-Block und den „Zum Ratgeber"-Backlink der
+  Checklisten-Seite, aber **ohne kontextuelle In-Body-Links aus den beiden
+  Schwester-Artikeln** (Kosten, Genehmigung); die Pillar verlinkt sie gar nicht.
 - `RelatedRatgeber` ist **nicht cluster-getrennt**: jede Carport-Seite zeigt im
   „Auch interessant"-Block alle 7+ fremden Kostenseiten → Carport-Geschwister
   gehen unter, der topische Fokus verwässert.
