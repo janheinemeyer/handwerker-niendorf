@@ -132,8 +132,20 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
       );
     }
     begruendung.push(
-      "Das spricht dafür, dass ein Baugenehmigungsverfahren nötig ist; verbindlich entscheidet das Bauamt. Gehört der Carport zu einem Wohngebäude im Geltungsbereich eines qualifizierten Bebauungsplans, kann stattdessen das Genehmigungsfreistellungsverfahren (§ 62 HBauO) greifen.",
+      "Das spricht dafür, dass ein Baugenehmigungsverfahren nötig ist; verbindlich entscheidet das Bauamt.",
     );
+    // § 62 (Genehmigungsfreistellung) setzt einen qualifizierten Bebauungsplan
+    // voraus – nur erwähnen, wenn ein Plan gilt (oder das unklar ist). Bei
+    // ausdrücklich „kein Plan" wäre dieser Weg nicht verfügbar.
+    if (e.bebauungsplan === "ja") {
+      begruendung.push(
+        "Da für Ihr Grundstück ein Bebauungsplan gilt, kann bei einem Wohngebäude im Geltungsbereich eines qualifizierten Plans stattdessen das Genehmigungsfreistellungsverfahren (§ 62 HBauO) greifen.",
+      );
+    } else if (e.bebauungsplan === "unsicher") {
+      begruendung.push(
+        "Gilt für Ihr Grundstück ein qualifizierter Bebauungsplan (bitte prüfen), kann bei einem Wohngebäude stattdessen das Genehmigungsfreistellungsverfahren (§ 62 HBauO) greifen.",
+      );
+    }
     return {
       tendenz: "genehmigung",
       titel: "Nach Ihren Angaben: erhöhtes Prüfungsrisiko",
@@ -171,23 +183,9 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
     }
   }
 
-  // Strukturell innerhalb aller Schwellen → grundsätzlich verfahrensfrei. Der
-  // Bebauungsplan kann aber unabhängig von Größe/Höhe Vorgaben machen: Gilt ein
-  // Plan (oder ist das unklar), geben wir keine saubere grüne Einordnung, sondern
-  // empfehlen die Prüfung – ehrlicher und für die Lead-Qualität besser.
-  if (e.bebauungsplan === "ja" || e.bebauungsplan === "unsicher") {
-    return {
-      tendenz: "pruefen",
-      titel: "Nach Ihren Angaben: weitere Prüfung empfohlen",
-      begruendung: [
-        e.bebauungsplan === "ja"
-          ? "Größe, Höhe und Lage liegen zwar innerhalb der Schwellen des § 61 HBauO – für Ihr Grundstück gilt aber ein Bebauungsplan, der Standort, Größe, Dachform oder Material zusätzlich einschränken kann."
-          : "Größe, Höhe und Lage liegen innerhalb der Schwellen des § 61 HBauO – ob jedoch ein Bebauungsplan gilt, ist nach Ihren Angaben unklar und sollte geklärt werden.",
-        "Ein Bebauungsplan kann Vorgaben unabhängig von Größe und Höhe machen; diese sollten vor der Planung geprüft werden. Verbindlich ist die Auskunft des Bauamts.",
-      ],
-    };
-  }
-
+  // Strukturell innerhalb aller Schwellen → grundsätzlich verfahrensfrei. Die
+  // strukturelle Begründung (inkl. Abstandsflächen-Hinweis im Nicht-Grenz-Fall)
+  // gilt in jedem Fall – darauf setzt die Bebauungsplan-Bewertung auf.
   const begruendung = e.anGrenze
     ? [
         "Nach Ihren Angaben liegt der Carport innerhalb der Schwellen, die § 61 HBauO für verfahrensfreie Vorhaben im Innenbereich vorsieht (bis 50 m², bis 3 m Wandhöhe), und bis 9 m Länge ohne eigene Abstandsfläche an der Grenze (§ 6 HBauO) – das spricht dafür, dass kein Baugenehmigungsverfahren nötig ist.",
@@ -197,10 +195,28 @@ export function pruefeCarport(e: CarportEingabe): CarportErgebnis {
         "Nach Ihren Angaben liegt der Carport innerhalb der Schwellen, die § 61 HBauO für verfahrensfreie Vorhaben im Innenbereich vorsieht (bis 50 m², bis 3 m Wandhöhe) – das spricht dafür, dass kein Baugenehmigungsverfahren nötig ist, sofern die regulären Abstandsflächen zu den Nachbargrenzen eingehalten werden.",
         "Werden die Abstandsflächen unterschritten, ist zusätzlich eine Abweichung erforderlich. Eine abschließende Beurteilung ist mit dieser Einordnung nicht verbunden.",
       ];
-  // Auch bei "kein Bebauungsplan": ein (ggf. übergeleiteter) Plan lässt sich
-  // selten sicher ausschließen.
+
+  // Der Bebauungsplan kann unabhängig von Größe/Höhe Vorgaben machen: Gilt ein
+  // Plan (oder ist das unklar), geben wir keine saubere grüne Einordnung, sondern
+  // empfehlen die Prüfung – ehrlicher und für die Lead-Qualität besser. Die
+  // strukturellen Hinweise (oben) bleiben dabei erhalten.
+  if (e.bebauungsplan === "ja" || e.bebauungsplan === "unsicher") {
+    begruendung.push(
+      e.bebauungsplan === "ja"
+        ? "Für Ihr Grundstück gilt zudem ein Bebauungsplan, der Standort, Größe, Dachform oder Material unabhängig von diesen Grenzen einschränken kann – das sollte vor der Planung geprüft werden."
+        : "Ob ein Bebauungsplan gilt, ist nach Ihren Angaben unklar – ein Plan kann unabhängig von diesen Grenzen Vorgaben machen und sollte geklärt werden.",
+    );
+    return {
+      tendenz: "pruefen",
+      titel: "Nach Ihren Angaben: weitere Prüfung empfohlen",
+      begruendung,
+    };
+  }
+
+  // „Kein Bebauungsplan": Im unbeplanten Innenbereich gilt § 34 BauGB (Einfügen
+  // in die nähere Umgebung) – das kann der Selbstcheck nicht beurteilen.
   begruendung.push(
-    "Ob wirklich kein Bebauungsplan (auch kein übergeleiteter Baustufenplan) gilt, lässt sich oft nur beim Bauamt sicher klären.",
+    "Auch ohne Bebauungsplan gilt im Innenbereich § 34 BauGB: Der Carport muss sich in die Eigenart der näheren Umgebung einfügen – das lässt sich hier nicht beurteilen. Ob wirklich kein (auch übergeleiteter) Plan gilt, klärt zudem das Bauamt.",
   );
 
   return {
