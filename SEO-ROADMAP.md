@@ -21,16 +21,13 @@ Alle drei folgen demselben Muster: **TL;DR mit Zahl → Kostentabellen →
 FAQ (aus PAA-Fragen) → interaktiver Kostenrechner**. Template
 (`RatgeberArticle`) + zentraler Katalog (`src/lib/ratgeber.ts`) stehen.
 
-**Aus dem Katalog automatisch:** die Crosslinks („Auch interessant") und das
-`knowsAbout`-Schema. **Noch hartcodiert und pro Seite manuell zu pflegen:** die
-Sitemap (`src/app/sitemap.ts`), die `/ratgeber`-Übersicht
-(`src/app/ratgeber/page.tsx`), das Homepage-Ratgeber-Band
+**Komplett aus dem Katalog (`RATGEBER_PAGES`) abgeleitet:** Crosslinks („Auch
+interessant"), das `knowsAbout`-Schema, die Sitemap (`src/app/sitemap.ts`), die
+`/ratgeber`-Übersicht (`src/app/ratgeber/page.tsx`), das Homepage-Ratgeber-Band
 (`src/components/services.tsx`) und die Footer-Spalte
-(`src/components/site-footer.tsx`). → **Verbesserung:** diese Listen ebenfalls
-aus `RATGEBER_PAGES` ableiten, dann verdrahtet sich wirklich alles selbst. Bis
-dahin: eine neue Seite = Katalog-Zeile + `page.tsx` + diese vier Listen
-aktualisieren (siehe Checkliste unten und CLAUDE.md → „Authoring a Ratgeber /
-SEO page").
+(`src/components/site-footer.tsx`). → Eine neue Seite = **eine Katalog-Zeile +
+`page.tsx`**; alle Discovery-Flächen verdrahten sich selbst (siehe CLAUDE.md →
+„Authoring a Ratgeber / SEO page").
 
 ## Warum Hamburg/Niendorf zuerst
 
@@ -150,6 +147,63 @@ Wettbewerbsfeld (Energieberater, Fachportale). Nur mit gründlicher Recherche:
 4. **Boden verlegen** — Innen, Renovierung/Miete.
 5. **Einfahrt pflastern** — Außen, EFH (saisonal starten: Frühjahr).
 6. **Poolbau** — opportunistisch, vor der Saison (Frühjahr).
+
+## Cluster: Carport-Recht / Bebauungsplan (Genehmigung, nicht Kosten)
+
+Eigener Themen-Cluster **neben** den Kostenseiten – informationale/rechtliche
+Suchintentionen rund um Carport-Genehmigung. Bestehende Seite:
+`/ratgeber/carport-baugenehmigung-hamburg` (§ 61 HBauO + Selbstcheck-Prüfer).
+
+**Befund der SERP-Analyse (Juni 2026, aus Google-Autocomplete + Top-Treffern):**
+Der ganze „carport bebauungsplan"-Cluster wird entweder von **generischen
+Bundes-Seiten** („Carport Baugenehmigung – alle Bundesländer": steda,
+hansagarten24, profizelt24, greenox, OBI) bedient, die den Bebauungsplan nur als
+Absatz streifen, **oder von Foren** (bau.de, bau.net, juraforum,
+frag-einen-anwalt). **Niemand besetzt „Carport + Bebauungsplan" mit einer
+strukturierten, zitierfähigen Seite.** Differenzierungs-Winkel: *verfahrensfrei
+≠ regelfrei* – die Brücke von der bestehenden § 61-Seite.
+
+### P1 — Carport außerhalb Baugrenze / Baufenster ⭐ (gebaut)
+- **Keywords:** `baugrenze bebauungsplan carport`, `carport außerhalb
+  baufenster`, `carport außerhalb bebauungsplan`.
+- **Warum P1:** schwächster Wettbewerb des Clusters – nur Foren + ein dünner
+  hausjournal-Artikel (zitiert **§ 23 BauNVO nicht**, nicht ortsspezifisch, keine
+  Checkliste). Konkrete, zitierfähige Rechtsgrundlage liegt ungenutzt:
+  **§ 23 Abs. 5 BauNVO** (Garagen/Carports außerhalb des Baufensters „soweit der
+  B-Plan nichts anderes festsetzt") + **§ 31 BauGB** (Ausnahme/Befreiung).
+- **Umsetzung:** neue Seite `/ratgeber/carport-bebauungsplan` (national-fähig
+  über BauNVO/BauGB, mit Hamburg-Abschnitt). Deckt P3 gleich mit ab.
+
+### P2 — Bebauungsplan-Checkliste (+ Hamburg / + PDF)
+- **Keywords:** `carport bebauungsplan checkliste`, `... checkliste hamburg`,
+  `... checkliste pdf`, `... checker`.
+- **Warum:** reine Content-Lücke – niemand liefert tatsächlich eine Checkliste.
+  Das `pdf`-Modifier = Download-Intent → **Lead-Magnet-Potenzial**.
+- **Umsetzung:** Inline-Checkliste ist bereits Teil der P1-Seite. **Offen:**
+  herunterladbares PDF (Lead-Gate) + den **Selbstcheck-Prüfer um eine
+  Bebauungsplan-Frage erweitern** (bedient `checker`-Intent, konsistent mit der
+  vorsichtigen Wording-Logik).
+
+### P3 — Carport ohne Bebauungsplan (§ 34 / § 35 BauGB)
+- **Keywords:** `carport ohne bebauungsplan`, `carport bauen ohne bebauungsplan`.
+- **Warum:** generische Seiten ranken, aber keine erklärt den „kein-B-Plan"-Fall
+  sauber (Innenbereich § 34 „Einfügen" vs. Außenbereich § 35). Mittel.
+- **Umsetzung:** als Abschnitt in der P1-Seite enthalten.
+
+### P4 — Head-Term `carport bebauungsplan`
+- Am stärksten umkämpft (Bundes-Autoritätsseiten). Nicht frontal angreifen –
+  über die Long-Tails P1–P3 + Hamburg-Anker mitnehmen, der Head folgt.
+
+**Offene Folge-Items aus diesem Cluster:** PDF-Checkliste (Lead-Magnet) ·
+Prüfer-Erweiterung um Bebauungsplan-Frage · ggf. eigene Seite für GRZ/Befreiung,
+falls die Long-Tails Volumen zeigen.
+
+**Quellen (Juni 2026):**
+[hausjournal – außerhalb Baufenster](https://www.hausjournal.net/carport-ausserhalb-baufenster),
+[ra-kotz – Carport Baugrenze](https://www.ra-kotz.de/carport_baugrenze.htm),
+[bau.de Forum](https://bau.de/forum/planung/15019.php),
+[steda](https://magazin.steda.de/carport-baugenehmigung/),
+[OBI](https://www.obi.de/magazin/bauen/garage/carport-ohne-baugenehmigung).
 
 ## Über Kostenseiten hinaus (lokales SEO)
 

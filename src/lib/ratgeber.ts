@@ -60,4 +60,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Wann ist ein Carport genehmigungsfrei? § 61 HBauO, Grenzabstände & Ablauf.",
     topic: "Baugenehmigung Carport",
   },
+  {
+    href: "/ratgeber/carport-bebauungsplan",
+    title: "Carport & Bebauungsplan",
+    blurb: "Baugrenze, Baufenster, GRZ & Vorgarten – was der B-Plan beim Carport vorgibt.",
+    topic: "Carport im Bebauungsplan",
+  },
 ];
