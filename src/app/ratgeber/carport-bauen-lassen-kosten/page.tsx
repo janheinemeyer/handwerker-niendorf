@@ -135,6 +135,17 @@ export default function CarportKostenPage() {
           ["Aluminium", "3.000 – 10.000 €", "wartungsarm, modern, höherer Preis"],
         ]}
       />
+      <P>
+        Welches Material zu Ihnen passt – nach Optik, Pflegeaufwand und
+        Haltbarkeit – zeigt der{" "}
+        <Link
+          href="/ratgeber/carport-material-vergleich"
+          className="font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          Carport-Materialvergleich (Holz, Stahl, Alu)
+        </Link>
+        .
+      </P>
 
       <H2 id="zusatzkosten">Zusätzliche Kosten beim Carport-Bau</H2>
       <P>
