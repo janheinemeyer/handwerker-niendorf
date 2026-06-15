@@ -6,6 +6,7 @@ import { Segmented } from "@/components/calculator-ui";
 import {
   pruefeCarport,
   type Standort,
+  type Bebauungsplan,
   type Tendenz,
 } from "@/lib/carport-genehmigung";
 
@@ -28,6 +29,12 @@ const STANDORT_NAME: Record<Standort, string> = {
   innenbereich: "Innenbereich",
   aussenbereich: "Außenbereich",
   unsicher: "unklar",
+};
+
+const BPLAN_NAME: Record<Bebauungsplan, string> = {
+  ja: "B-Plan: ja",
+  nein: "B-Plan: nein",
+  unsicher: "B-Plan: unklar",
 };
 
 function NumberField({
@@ -97,6 +104,7 @@ export function CarportGenehmigungPruefer() {
   const [anGrenze, setAnGrenze] = useState(false);
   const [laengeAnGrenze, setLaengeAnGrenze] = useState("5");
   const [bestandGrenzeLaenge, setBestandGrenzeLaenge] = useState("0");
+  const [bebauungsplan, setBebauungsplan] = useState<Bebauungsplan>("unsicher");
 
   const eingabe = useMemo(
     () => ({
@@ -108,8 +116,9 @@ export function CarportGenehmigungPruefer() {
       anGrenze,
       laengeAnGrenze: parseNum(laengeAnGrenze),
       bestandGrenzeLaenge: parseNum(bestandGrenzeLaenge),
+      bebauungsplan,
     }),
-    [standort, hauptgebaeude, flaecheCarport, flaecheStellplaetze, wandhoehe, anGrenze, laengeAnGrenze, bestandGrenzeLaenge],
+    [standort, hauptgebaeude, flaecheCarport, flaecheStellplaetze, wandhoehe, anGrenze, laengeAnGrenze, bestandGrenzeLaenge, bebauungsplan],
   );
 
   const ergebnis = useMemo(() => pruefeCarport(eingabe), [eingabe]);
@@ -124,13 +133,14 @@ export function CarportGenehmigungPruefer() {
       anGrenze
         ? `an Grenze (${fmtIn(laengeAnGrenze)} m, Bestand ${fmtIn(bestandGrenzeLaenge)} m)`
         : "nicht an Grenze",
+      BPLAN_NAME[bebauungsplan],
     ];
     return {
       service: "Carport",
       source: "carport-genehmigung-pruefer",
       summary: `${parts.join(" · ")} → Tendenz: ${ergebnis.titel}`,
     };
-  }, [standort, hauptgebaeude, flaecheCarport, flaecheStellplaetze, wandhoehe, anGrenze, laengeAnGrenze, bestandGrenzeLaenge, ergebnis.titel]);
+  }, [standort, hauptgebaeude, flaecheCarport, flaecheStellplaetze, wandhoehe, anGrenze, laengeAnGrenze, bestandGrenzeLaenge, bebauungsplan, ergebnis.titel]);
 
   return (
     <div className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
@@ -203,6 +213,17 @@ export function CarportGenehmigungPruefer() {
             />
           </div>
         )}
+
+        <Segmented<Bebauungsplan>
+          label="Gilt für Ihr Grundstück ein Bebauungsplan?"
+          value={bebauungsplan}
+          onChange={setBebauungsplan}
+          options={[
+            { value: "ja", label: "Ja" },
+            { value: "nein", label: "Nein" },
+            { value: "unsicher", label: "Weiß nicht" },
+          ]}
+        />
       </div>
 
       {/* Result */}
