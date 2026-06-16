@@ -111,4 +111,11 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     topic: "Doppelcarport",
     cluster: "carport",
   },
+  {
+    href: "/ratgeber/carport-oder-garage",
+    title: "Carport oder Garage?",
+    blurb: "Kosten, Vor- & Nachteile und Genehmigung im direkten Vergleich.",
+    topic: "Carport oder Garage",
+    cluster: "carport",
+  },
 ];

@@ -130,7 +130,14 @@ export default function CarportKostenPage() {
         >
           Doppelcarport: Kosten &amp; Maße
         </Link>
-        .
+        . Noch unentschlossen? Der Vergleich{" "}
+        <Link
+          href="/ratgeber/carport-oder-garage"
+          className="font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          Carport oder Garage
+        </Link>{" "}
+        ordnet Kosten und Nutzen ein.
       </P>
 
       <H2 id="material">Kosten nach Material: Holz, Stahl oder Aluminium</H2>
