@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Carport oder Garage? Kosten & Vergleich (2026)",
   description:
-    "Carport oder Garage – was ist besser? Der Carport ist deutlich günstiger (ab ~1.800 €) und schneller gebaut, die Garage bietet mehr Schutz und Stauraum (ab ~4.000–8.000 €, gemauert deutlich mehr). Kosten, Vor- und Nachteile und Genehmigung im Vergleich.",
+    "Carport oder Garage – was ist besser? Der Carport ist deutlich günstiger (ab ~1.800 €) und schneller gebaut, die Garage bietet mehr Schutz und Stauraum (Fertiggarage ab ~7.000 €, gemauert deutlich mehr). Kosten, Vor- und Nachteile und Genehmigung im Vergleich.",
   alternates: { canonical: "/ratgeber/carport-oder-garage" },
   openGraph: {
     title: "Carport oder Garage? Der Vergleich",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was ist günstiger – Carport oder Garage?",
-    a: "Der Carport, mit deutlichem Abstand. Ein Einzelcarport kostet bauen lassen rund 1.800–5.500 €, eine Fertig-Einzelgarage 4.000–8.000 € und eine gemauerte Einzelgarage 10.000–15.000 €. Bei zwei Stellplätzen wird der Abstand noch größer. Hauptgrund: Der Carport ist offen, braucht weniger Material und oft kein massives Fundament.",
+    a: "Der Carport, mit deutlichem Abstand. Ein Einzelcarport kostet bauen lassen rund 1.800–5.500 €, eine Fertig-Einzelgarage 7.000–12.000 € und eine gemauerte Einzelgarage ab ~18.000 €. Bei zwei Stellplätzen wird der Abstand noch größer. Hauptgrund: Der Carport ist offen, braucht weniger Material und oft kein massives Fundament.",
   },
   {
     q: "Carport oder Garage – was ist besser?",
@@ -40,7 +40,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Braucht ein Carport oder eine Garage eher eine Baugenehmigung?",
-    a: "In Hamburg gilt für beide dieselbe Schwelle: bis 50 m² Grundfläche und 3 m Wandhöhe je zugehörigem Hauptgebäude sind sowohl Carports als auch Garagen im Innenbereich verfahrensfrei (§ 61 HBauO) – vorhandene Stellplätze werden angerechnet. Darüber, im Außenbereich oder bei abweichenden Vorgaben des Bebauungsplans wird es genehmigungspflichtig. Verbindlich ist die Auskunft des Bauamts.",
+    a: "In Hamburg gilt für beide dieselbe Schwelle: bis 50 m² Bruttogrundfläche und 3 m Wandhöhe je zugehörigem Hauptgebäude sind sowohl Carports als auch Garagen im Innenbereich verfahrensfrei (§ 61 HBauO) – vorhandene Garagen und Carports werden auf die 50 m² angerechnet. Darüber oder im Außenbereich wird es genehmigungspflichtig. Widerspricht das Vorhaben dem Bebauungsplan, bleibt es zwar verfahrensfrei, ist aber ohne Ausnahme oder Befreiung (§ 31 BauGB) nicht zulässig. Verbindlich ist die Auskunft des Bauamts.",
   },
   {
     q: "Steigert eine Garage den Wert der Immobilie mehr als ein Carport?",
@@ -72,7 +72,7 @@ export default function CarportOderGaragePage() {
         Der <strong>Carport</strong> ist deutlich günstiger (ab ~1.800 €),
         schneller gebaut und durch die offene Bauweise gut belüftet – ideal als
         preiswerter Wetterschutz. Die <strong>Garage</strong> kostet mehr
-        (Fertiggarage ab ~4.000–8.000 €, gemauert deutlich mehr), bietet dafür{" "}
+        (Fertiggarage ab ~7.000 €, gemauert deutlich mehr), bietet dafür{" "}
         <strong>Schutz vor Diebstahl, Witterung und Vandalismus</strong> sowie
         abschließbaren Stauraum. In Hamburg sind beide bis 50 m² und 3 m je
         Hauptgebäude verfahrensfrei (§ 61 HBauO). Die Wahl hängt von Budget,
@@ -89,10 +89,10 @@ export default function CarportOderGaragePage() {
         rows={[
           ["Einzelcarport", "1.800 – 5.500 €"],
           ["Doppelcarport", "3.500 – 15.000 €"],
-          ["Fertiggarage, einzeln (Holz/Stahl/Beton)", "4.000 – 8.000 €"],
-          ["Fertig-Doppelgarage (Beton)", "ab ~14.000 €"],
-          ["Gemauerte Garage, einzeln", "10.000 – 15.000 €"],
-          ["Gemauerte Garage, doppelt", "20.000 – 30.000 €"],
+          ["Fertiggarage, einzeln (Holz/Stahl/Beton)", "7.000 – 12.000 €"],
+          ["Fertig-Doppelgarage (Beton)", "ab ~15.000 €"],
+          ["Gemauerte Garage, einzeln", "18.000 – 25.000 €"],
+          ["Gemauerte Garage, doppelt", "30.000 – 45.000 €"],
         ]}
       />
       <P>
@@ -153,11 +153,12 @@ export default function CarportOderGaragePage() {
       <P>
         Baurechtlich macht Hamburg zwischen Carport und Garage meist keinen
         Unterschied: Beide sind im Innenbereich bis <strong>50 m²</strong>{" "}
-        Grundfläche und <strong>3 m</strong> Wandhöhe <strong>je zugehörigem
-        Hauptgebäude</strong> verfahrensfrei (§ 61 HBauO) – vorhandene
-        Stellplatzflächen werden angerechnet. Größer, im Außenbereich oder mit
-        abweichenden Vorgaben aus dem Bebauungsplan wird es genehmigungspflichtig.
-        Die Details stehen im Ratgeber{" "}
+        Bruttogrundfläche und <strong>3 m</strong> Wandhöhe <strong>je zugehörigem
+        Hauptgebäude</strong> verfahrensfrei (§ 61 HBauO) – vorhandene Garagen und
+        Carports werden auf die 50 m² angerechnet. Größer oder im Außenbereich
+        wird es genehmigungspflichtig. Widerspricht das Vorhaben dem
+        Bebauungsplan, bleibt es zwar verfahrensfrei, ist aber ohne Ausnahme oder
+        Befreiung (§ 31 BauGB) nicht zulässig. Die Details stehen im Ratgeber{" "}
         <Link
           href="/ratgeber/carport-baugenehmigung-hamburg"
           className="font-medium text-accent underline underline-offset-4 hover:text-ink"
