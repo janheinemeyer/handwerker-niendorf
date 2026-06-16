@@ -81,7 +81,7 @@ export default function KnxSmartHomeKostenPage() {
 
       <H2 id="kosten">Was kostet ein KNX-Smart-Home?</H2>
       <P>
-        KNX wird individuell geplant – einen Stückpreis „pro m²" gibt es nicht.
+        KNX wird individuell geplant – einen Stückpreis „pro m²“ gibt es nicht.
         Sinnvoll ist die Betrachtung nach Ausbaustufe. Die folgenden Richtwerte
         sind <strong>Komplettpreise inklusive Hardware, Installation und
         Programmierung</strong>:
@@ -112,7 +112,7 @@ export default function KnxSmartHomeKostenPage() {
 
       <H2 id="was-ist-knx">Was ist KNX – kurz erklärt</H2>
       <P>
-        KNX (von „Konnex") ist ein <strong>offener, weltweiter Standard für die
+        KNX (von „Konnex“) ist ein <strong>offener, weltweiter Standard für die
         Gebäudeautomation</strong>, getragen von über 500 Herstellern, deren
         Geräte untereinander kompatibel sind. Alle Komponenten hängen an einer
         gemeinsamen Bus-Leitung: <strong>Sensoren</strong> (Taster, Bewegungs- und
