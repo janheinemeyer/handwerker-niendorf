@@ -2,6 +2,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Breadcrumb, type Crumb } from "./breadcrumb";
 import { RelatedRatgeber } from "./related";
+import { RegionNote } from "./region-note";
 
 /**
  * Page shell for Ratgeber/SEO articles: header, breadcrumb (+ its JSON-LD),
@@ -36,6 +37,7 @@ export function RatgeberArticle({
             <p className="mt-4 text-sm text-ink-soft">Aktualisiert: {updated}</p>
           )}
           {children}
+          <RegionNote currentHref={currentHref} />
           <RelatedRatgeber currentHref={currentHref} />
         </article>
       </main>
