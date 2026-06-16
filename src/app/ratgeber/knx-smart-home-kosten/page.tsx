@@ -11,6 +11,7 @@ import {
   Faq,
   type FaqItem,
 } from "@/components/ratgeber";
+import { KnxKostenRechner } from "@/components/knx-kosten-rechner";
 
 export const metadata: Metadata = {
   title: "KNX Smart Home: Kosten 2026 (Pakete, Neubau & Nachrüsten)",
@@ -109,6 +110,14 @@ export default function KnxSmartHomeKostenPage() {
         Zahl der Räume und Gewerke, die Menge der Aktoren sowie der Unterschied
         zwischen Neubau und Bestand.
       </P>
+
+      <H3>Kostenrechner: Umfang zusammenstellen</H3>
+      <P>
+        Stellen Sie Bauart, Hausgröße und gewünschte Gewerke zusammen – der
+        Rechner schätzt daraus einen Richtwert inklusive Material, Installation
+        und Programmierung.
+      </P>
+      <KnxKostenRechner />
 
       <H2 id="was-ist-knx">Was ist KNX – kurz erklärt</H2>
       <P>
