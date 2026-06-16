@@ -290,3 +290,26 @@ pages (Bad, Wohnung streichen, Wintergarten) intentionally left nationally frame
 **Consequences:** Add `telephone`/`geo` to `organizationSchema()` once real data
 exists. To extend local framing to other service clusters, widen the `cluster`
 check in `RegionNote`.
+
+## 2026-06-16 — New `smarthome` cluster: KNX Smart Home Kosten page
+
+**Decision:** Added a `smarthome` Ratgeber cluster and a first page,
+`/ratgeber/knx-smart-home-kosten`, targeting "KNX Kosten" intent (Hamburg-framed).
+Extended `RegionNote` to render for `smarthome` too (per-cluster wording map).
+
+**Why:** A SERP scan of four candidate expansion topics (Sicherheitstechnik,
+KNX/Smart Home, Solar/PV, Heizung/Klima) showed KNX is the only one whose
+informational SERPs are NOT locked by national lead-gen aggregators
+(aroundhome/my-hammer/checkfox) — they're held by content-marketer/integrator
+blogs, and no Hamburg-local content ranks. Low volume but high-value, high-intent
+leads. Targeted "KNX Kosten" / retrofit / comparison intent; deliberately NOT
+"Was ist KNX" (high-DA info sites, low value) or "Home Assistant" (DIY/forum,
+anti-commercial).
+
+**Branch dependency:** Built ON TOP of `feat/local-niendorf-framing` (PR #50),
+not `main`, because the local `RegionNote` block it extends lives there. Merge #50
+first, or retarget once #50 lands. (Exception to the usual "branch from main" rule,
+driven by the real RegionNote dependency.)
+
+**Scope / not done:** Two planned sibling pages — "KNX oder Loxone" (comparison)
+and "KNX nachrüsten im Altbau" — are follow-ups, separate PRs.
