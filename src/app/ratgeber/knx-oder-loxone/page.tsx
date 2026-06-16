@@ -10,6 +10,7 @@ import {
   Faq,
   type FaqItem,
 } from "@/components/ratgeber";
+import { KnxLoxoneEntscheidung } from "@/components/knx-loxone-entscheidung";
 
 export const metadata: Metadata = {
   title: "KNX oder Loxone? Vergleich & Kosten (2026)",
@@ -149,7 +150,13 @@ export default function KnxOderLoxonePage() {
       />
 
       <H2 id="wann-welches">Wann KNX, wann Loxone?</H2>
-      <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
+      <P>
+        Beantworten Sie ein paar kurze Fragen – die Entscheidungshilfe zeigt
+        Ihnen eine neutrale Tendenz für Ihr Vorhaben.
+      </P>
+      <KnxLoxoneEntscheidung />
+      <P>Kurz zusammengefasst:</P>
+      <ul className="mt-2 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
         <li>
           <strong>Unabhängigkeit &amp; lange Lebensdauer:</strong> KNX (Neubau oder
           Kernsanierung, hochwertig, soll über Jahrzehnte wachsen).
