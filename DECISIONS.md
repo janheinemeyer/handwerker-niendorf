@@ -263,3 +263,30 @@ writing from memory produces code that type-checks wrong or fails at runtime.
 
 **Consequences:** Validation and routing code should be checked against the
 installed versions, not assumed.
+
+## 2026-06-16 — Local "Niendorf" framing + LocalBusiness schema
+
+**Decision:** Anchor local search intent on the Stadtteil. Promoted the root
+JSON-LD from `Organization` to `LocalBusiness` (real address now exists:
+Margaretha-Rothe-Weg 11, 22455 Hamburg-Niendorf) with a `PostalAddress` and an
+`areaServed` list naming Niendorf + neighbouring Stadtteile (Lokstedt, Schnelsen,
+Eidelstedt, Stellingen, Groß Borstel) + Hamburg. Added a reusable `RegionNote`
+block, auto-rendered by `RatgeberArticle` for `cluster: "carport"` pages only,
+driven by the catalog. NAP centralised in `src/lib/site.ts` (`BUSINESS`).
+
+**Why:** Big aggregators (aroundhome, my-hammer, OBI) own the national "… Kosten"
+head terms; a local site realistically wins only on geo-modified intent
+("Carport Niendorf", "… in der Nähe"). On-page local relevance + matching
+structured data is the lever for that. Scoped to the carport cluster (the brand's
+core and best-positioned topic) to avoid diluting the informational national cost
+pages with low-volume local framing.
+
+**Scope / not done:** `telephone` omitted from schema (still placeholder — faking
+NAP is worse than omitting). `geo` coords omitted (not fabricating). No Google
+Business Profile yet — that is the single biggest lever for "near me" (local pack)
+and remains a separate to-do gated on the business setting up GBP. Informational
+pages (Bad, Wohnung streichen, Wintergarten) intentionally left nationally framed.
+
+**Consequences:** Add `telephone`/`geo` to `organizationSchema()` once real data
+exists. To extend local framing to other service clusters, widen the `cluster`
+check in `RegionNote`.
