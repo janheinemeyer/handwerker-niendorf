@@ -21,6 +21,7 @@ export function organizationSchema() {
     name: BUSINESS.name,
     url: SITE_URL,
     telephone: BUSINESS.phone,
+    email: BUSINESS.email,
     description:
       "Vermittlung von geprüften Handwerksbetrieben in Hamburg-Niendorf und Umgebung – kostenlos und unverbindlich.",
     address: {

@@ -146,7 +146,7 @@ export default function DatenschutzPage() {
             <br />
             Telefon: {BUSINESS.phone}
             <br />
-            E-Mail: [Ihre E-Mail-Adresse einsetzen]
+            E-Mail: {BUSINESS.email}
           </address>
           <P>
             Verantwortliche Stelle ist die natürliche oder juristische Person,
