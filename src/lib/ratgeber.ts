@@ -1,5 +1,10 @@
 /** Topical cluster — drives same-cluster-first ordering of the cross-links. */
-export type Cluster = "carport" | "aussen" | "innen" | "energie";
+export type Cluster =
+  | "carport"
+  | "aussen"
+  | "innen"
+  | "energie"
+  | "smarthome";
 
 export type RatgeberPage = {
   href: string;
@@ -117,5 +122,12 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kosten, Vor- & Nachteile und Genehmigung im direkten Vergleich.",
     topic: "Carport oder Garage",
     cluster: "carport",
+  },
+  {
+    href: "/ratgeber/knx-smart-home-kosten",
+    title: "KNX Smart Home: Kosten",
+    blurb: "Was ein KNX-Smart-Home kostet – Pakete, Neubau vs. Nachrüsten & Programmierung.",
+    topic: "KNX Smart Home",
+    cluster: "smarthome",
   },
 ];

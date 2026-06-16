@@ -14,6 +14,7 @@ const serviceOptions = [
   "Wintergarten",
   "Pflasterarbeiten",
   "Wallbox / Ladestation",
+  "Smart Home / KNX",
   "Renovierung & Modernisierung",
   "Maler & Lackierer",
   "Trockenbau",
