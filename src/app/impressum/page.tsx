@@ -48,15 +48,6 @@ export default function ImpressumPage() {
             E-Mail: {BUSINESS.email}
           </address>
 
-          <H2>Umsatzsteuer-Identifikationsnummer</H2>
-          <P>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27 a
-            Umsatzsteuergesetz:
-            <br />
-            [USt-IdNr. einsetzen – falls keine vorhanden (Kleinunternehmer nach
-            § 19 UStG), diesen Abschnitt vollständig entfernen]
-          </P>
-
           <H2>Redaktionell verantwortlich (§ 18 Abs. 2 MStV)</H2>
           <address className="mt-3 not-italic leading-relaxed text-ink-soft">
             Jan Heinemeyer
