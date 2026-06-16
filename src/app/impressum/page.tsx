@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { BUSINESS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Impressum · Handwerk Niendorf",
@@ -42,19 +43,10 @@ export default function ImpressumPage() {
 
           <H2>Kontakt</H2>
           <address className="mt-3 not-italic leading-relaxed text-ink-soft">
-            Telefon: [Ihre Telefonnummer einsetzen]
+            Telefon: {BUSINESS.phone}
             <br />
-            E-Mail: [Ihre E-Mail-Adresse einsetzen]
+            E-Mail: {BUSINESS.email}
           </address>
-
-          <H2>Umsatzsteuer-Identifikationsnummer</H2>
-          <P>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27 a
-            Umsatzsteuergesetz:
-            <br />
-            [USt-IdNr. einsetzen – falls keine vorhanden (Kleinunternehmer nach
-            § 19 UStG), diesen Abschnitt vollständig entfernen]
-          </P>
 
           <H2>Redaktionell verantwortlich (§ 18 Abs. 2 MStV)</H2>
           <address className="mt-3 not-italic leading-relaxed text-ink-soft">
@@ -69,8 +61,8 @@ export default function ImpressumPage() {
           <P>
             Unsere zentrale Kontaktstelle für Nutzerinnen und Nutzer sowie für
             Behörden nach Art. 11 und Art. 12 der Verordnung (EU) 2022/2065
-            (Digital Services Act) erreichen Sie per E-Mail unter [Ihre
-            E-Mail-Adresse einsetzen]. Die Kommunikation ist in deutscher und
+            (Digital Services Act) erreichen Sie per E-Mail unter{" "}
+            {BUSINESS.email}. Die Kommunikation ist in deutscher und
             englischer Sprache möglich.
           </P>
 

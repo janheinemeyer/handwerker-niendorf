@@ -1,4 +1,5 @@
 import { RequestForm } from "./request/request-form";
+import { BUSINESS } from "@/lib/site";
 
 export function Contact() {
   return (
@@ -18,8 +19,8 @@ export function Contact() {
 
           <dl className="mt-12 space-y-px border border-line bg-line">
             {[
-              ["Telefon", "040 123 456", "tel:+4940123456"],
-              ["E-Mail", "hallo@handwerk-niendorf.de", "mailto:hallo@handwerk-niendorf.de"],
+              ["Telefon", BUSINESS.phone, `tel:${BUSINESS.phone.replace(/\s/g, "")}`],
+              ["E-Mail", BUSINESS.email, `mailto:${BUSINESS.email}`],
               ["Vermittlungsgebiet", "Hamburg & Umgebung", null],
               ["Zeiten", "Mo–Fr 7–18 Uhr", null],
             ].map(([label, value, href]) => (

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { BUSINESS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung · Handwerk Niendorf",
@@ -143,9 +144,9 @@ export default function DatenschutzPage() {
             22455 Hamburg
             <br />
             <br />
-            Telefon: [Ihre Telefonnummer einsetzen]
+            Telefon: {BUSINESS.phone}
             <br />
-            E-Mail: [Ihre E-Mail-Adresse einsetzen]
+            E-Mail: {BUSINESS.email}
           </address>
           <P>
             Verantwortliche Stelle ist die natürliche oder juristische Person,
