@@ -9,10 +9,9 @@ import { RATGEBER_PAGES } from "./ratgeber";
  * expertise grow automatically as new SEO pages are registered in
  * RATGEBER_PAGES — no need to touch this file.
  *
- * `LocalBusiness` (was `Organization`) now that a real postal address exists.
- * `telephone` is still placeholder, so it's omitted rather than faked. Add it
- * here once a real number is live. `areaServed` names Niendorf and the
- * neighbouring Stadtteile to anchor local intent ("… Niendorf", "in der Nähe").
+ * `LocalBusiness` (was `Organization`) now that a real postal address and phone
+ * exist. `areaServed` names Niendorf and the neighbouring Stadtteile to anchor
+ * local intent ("… Niendorf", "in der Nähe").
  */
 export function organizationSchema() {
   return {
@@ -21,6 +20,7 @@ export function organizationSchema() {
     "@id": `${SITE_URL}/#organization`,
     name: BUSINESS.name,
     url: SITE_URL,
+    telephone: BUSINESS.phone,
     description:
       "Vermittlung von geprüften Handwerksbetrieben in Hamburg-Niendorf und Umgebung – kostenlos und unverbindlich.",
     address: {

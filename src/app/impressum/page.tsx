@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { BUSINESS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Impressum · Handwerk Niendorf",
@@ -42,7 +43,7 @@ export default function ImpressumPage() {
 
           <H2>Kontakt</H2>
           <address className="mt-3 not-italic leading-relaxed text-ink-soft">
-            Telefon: [Ihre Telefonnummer einsetzen]
+            Telefon: {BUSINESS.phone}
             <br />
             E-Mail: [Ihre E-Mail-Adresse einsetzen]
           </address>
