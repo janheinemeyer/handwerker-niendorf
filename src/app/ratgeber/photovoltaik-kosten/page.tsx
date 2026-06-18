@@ -36,7 +36,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Ist eine Photovoltaikanlage steuerfrei?",
-    a: "Weitgehend ja. Seit 2023 gilt für Kauf und Installation der 0-%-Mehrwertsteuersatz (auch 2026), und Einnahmen aus Anlagen bis 30 kWp auf Wohngebäuden sind einkommensteuerfrei. Pflicht ist nur die Anmeldung im Marktstammdatenregister der Bundesnetzagentur – einen Fragebogen zur steuerlichen Erfassung brauchen Sie in der Regel nicht mehr.",
+    a: "Weitgehend ja. Seit 2023 gilt für Kauf und Installation der 0-%-Mehrwertsteuersatz (auch 2026), und Einnahmen aus Anlagen bis 30 kWp auf Wohngebäuden sind einkommensteuerfrei. Anmelden müssen Sie die Anlage im Marktstammdatenregister der Bundesnetzagentur und beim Netzbetreiber (Netzanschluss); einen Fragebogen zur steuerlichen Erfassung brauchen Sie dagegen in der Regel nicht mehr.",
   },
   {
     q: "Wie groß sollte die PV-Anlage für ein Einfamilienhaus sein?",
@@ -44,11 +44,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was bekomme ich 2026 für eingespeisten Strom?",
-    a: "Die Einspeisevergütung liegt für neue Anlagen bis 10 kWp ab Februar 2026 bei etwa 7,78 ct/kWh (Teileinspeisung) bzw. 12,35 ct/kWh (Volleinspeisung). Sie sinkt durch die EEG-Degression langsam, bleibt aber für Anlagen bis 100 kWp erhalten. Wirtschaftlich zählt vor allem der Eigenverbrauch – selbst genutzter Strom ist deutlich mehr wert als die Einspeisung.",
+    a: "Für neue Anlagen bis 10 kWp etwa 7,78 ct/kWh (Teileinspeisung) bzw. 12,35 ct/kWh (Volleinspeisung). Wichtig: In Stunden mit negativen Börsenstrompreisen wird nach dem Solarspitzengesetz keine Vergütung gezahlt – diese Zeiten werden durch eine Verlängerung des Förderzeitraums ausgeglichen. Die Sätze sinken durch die EEG-Degression langsam, bleiben aber für Anlagen bis 100 kWp erhalten. Wirtschaftlich zählt ohnehin vor allem der Eigenverbrauch – selbst genutzter Strom ist deutlich mehr wert als die Einspeisung.",
   },
   {
     q: "Muss meine Anlage steuerbar sein?",
-    a: "Für Anlagen ab 7 kW, die ab dem 1. Juni 2026 in Betrieb gehen, ist eine Steuerbarkeit durch den Netzbetreiber vorgeschrieben (technische Vorrichtung zur Leistungsbegrenzung bei Netzengpässen). Sehr kleine Anlagen unter 7 kW sind davon ausgenommen. Der Fachbetrieb plant das mit ein.",
+    a: "Neue Anlagen über 7 kWp müssen nach dem Solarspitzengesetz steuerbar sein – per Smart Meter und Steuereinrichtung, damit der Netzbetreiber die Einspeisung bei Netzengpässen begrenzen kann. Solange diese Technik fehlt, wird die Einspeisung auf 60 % der Anlagenleistung gedeckelt. Kleine Anlagen bis 7 kWp sind ausgenommen. Der Fachbetrieb plant das mit ein.",
   },
 ];
 
@@ -133,11 +133,17 @@ export default function PhotovoltaikKostenPage() {
         Drei Regelungen machen PV 2026 attraktiv: Auf Kauf und Installation fällt{" "}
         <strong>0 % Mehrwertsteuer</strong> an, Anlagen bis <strong>30 kWp</strong>{" "}
         sind <strong>einkommensteuerfrei</strong>, und für eingespeisten Strom gibt
-        es die <strong>Einspeisevergütung</strong> (bis 10 kWp ab Februar 2026 rund
-        7,78 ct/kWh bei Teileinspeisung). Pflicht ist nur die Anmeldung im{" "}
-        <strong>Marktstammdatenregister</strong>. Neu: Anlagen ab 7 kW, die ab dem
-        1. Juni 2026 starten, müssen <strong>steuerbar</strong> sein. Die Details zu
-        Steuer und Vergütung vertiefen wir in einem eigenen Ratgeber.
+        es die <strong>Einspeisevergütung</strong> (bis 10 kWp rund 7,78 ct/kWh bei
+        Teileinspeisung). In Stunden mit <strong>negativen Börsenstrompreisen</strong>{" "}
+        wird diese Vergütung allerdings nicht gezahlt – der Förderzeitraum verlängert
+        sich stattdessen. Anmelden müssen Sie die Anlage sowohl im{" "}
+        <strong>Marktstammdatenregister</strong> als auch beim{" "}
+        <strong>Netzbetreiber</strong> (Netzanschluss) – das übernimmt der
+        Fachbetrieb. Und: Neue Anlagen über 7 kWp müssen nach dem{" "}
+        <strong>Solarspitzengesetz</strong> steuerbar sein (Smart Meter /
+        Steuereinrichtung); ohne diese wird die Einspeisung auf 60 % der
+        Anlagenleistung begrenzt. Die Details zu Steuer und Vergütung vertiefen wir
+        in einem eigenen Ratgeber.
       </P>
 
       <H2 id="groesse">PV mit Wärmepumpe oder Wallbox? Dann größer planen</H2>
