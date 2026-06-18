@@ -22,7 +22,7 @@ can, then explicitly ask the user for the rest and fold their answer back in. Ne
 fabricate search volumes or Search Console numbers.
 
 **I do automatically** (via WebSearch / WebFetch):
-- Phase 1 (seed & intent), Phase 2a/2c (autocomplete-style + question mining),
+- Phase 1 (seed & intent), Phase 2 discovery (autocomplete-style + question mining),
   Phase 3 (fetch ranking pages, extract structure & content gaps), Phase 4 (full
   on-page mapping), Phase 5a (schema check via the build).
 
