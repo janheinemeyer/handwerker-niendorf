@@ -46,6 +46,9 @@ State the split at the start of each run so expectations are clear.
 - Classify intent. If two intents fit, that's two pages — say so, don't blend them.
 - Check `src/lib/ratgeber.ts`: does a sibling/cluster already cover this? Pick the
   `cluster` the new page belongs to; note which existing pages should cross-link.
+- Check `research/seo/keywords/` first — prior Keyword-Planner exports may already
+  cover the topic (saves re-pulling volumes). When the user supplies a fresh export,
+  add it there (UTF-8, topic-named) and note the patterns in its README.
 
 ## Phase 2 — Keyword & question discovery
 
