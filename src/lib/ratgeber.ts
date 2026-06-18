@@ -75,6 +75,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/waermepumpe-altbau",
+    title: "Wärmepumpe im Altbau",
+    blurb: "Funktioniert das? Voraussetzungen, Heizkörper ohne Fußbodenheizung, Hochtemperatur & ehrlicher Check.",
+    topic: "Wärmepumpe im Altbau",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/bad-renovieren-kosten",
     title: "Bad renovieren: Kosten",
     blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
