@@ -82,6 +82,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/waermepumpe-stromverbrauch",
+    title: "Wärmepumpe: Stromverbrauch",
+    blurb: "Wie viel Strom braucht sie? Verbrauch berechnen, Stromkosten pro Jahr & mit Tarif/PV senken.",
+    topic: "Wärmepumpen-Stromverbrauch",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/warmwasser-waermepumpe",
     title: "Warmwasser-Wärmepumpe",
     blurb: "Effizientes Warmwasser aus der Kellerluft – Funktion, Kosten, Stromverbrauch & wann sie sich lohnt.",
