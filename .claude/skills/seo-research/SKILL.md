@@ -29,6 +29,9 @@ fabricate search volumes or Search Console numbers.
 **I ask the user for** (login-gated, don't guess):
 - Real search volumes → **Bing Webmaster Tools → Keyword Research** or Google Keyword
   Planner (free Ads account).
+- Local community demand (Phase 2) → login-walled Facebook groups / nebenan.de read by
+  the user; they paste anonymised themes, I process them. (Competitor Google reviews I
+  can fetch myself.)
 - Localised Hamburg SERP / Local-Pack reality → quick incognito check with location set.
 - Post-launch Search Console queries (the feedback loop in Phase 5c) → paste me the
   Leistungsbericht rows and I'll turn them into the next page's keywords.
@@ -48,8 +51,20 @@ State the split at the start of each run so expectations are clear.
 
 - **WebSearch** the seed + variants; harvest autocomplete-style long-tails and
   "People also ask" / "Ähnliche Fragen" phrasings → these become H2 ids and FAQ items.
-- **WebFetch** German Q&A sources (gutefrage.net, motor-talk, relevant subreddits) for
-  real user wording → feeds the TlDr tone and FAQ.
+- **WebFetch** German Q&A sources (gutefrage.net, haustechnikdialog.de, relevant
+  subreddits) for real user wording → feeds the TlDr tone and FAQ.
+- **Local community demand mining** (highest-intent, hyperlocal signal): real residents
+  asking "kennt jemand einen guten <Gewerk> in Niendorf?" reveal which services are most
+  in demand, the exact phrasing, and which competitors get recommended / complained
+  about → the strongest source for the keyword ranking and content gaps. Sources:
+  local Facebook groups, **nebenan.de** (per Stadtteil), **Kleinanzeigen → Gesuche**
+  (PLZ 22455/22459), and competitor Google reviews (the 1–3★ ones expose pain points).
+  Caveats: Facebook/nebenan.de are login-walled — **WebFetch can't reach them and
+  scraping breaks their ToS, so this is a manual read by the user** (see division of
+  labour). Competitor Google reviews are public and I can fetch those. Treat it as a
+  *demand* signal, not search volume — a small, vocal sample that complements, not
+  replaces, the keyword data. **DSGVO: aggregate themes only — no names, no storing or
+  reusing individual posts verbatim.**
 - Seasonality: note the obvious pattern (Klima ↑ Sommer, Heizung ↑ Winter) — only flag
   if it affects launch timing.
 - **Ask the user** to drop real volumes from Bing WMT / Keyword Planner for the top
