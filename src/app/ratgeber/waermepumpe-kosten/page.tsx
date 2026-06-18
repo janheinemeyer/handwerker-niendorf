@@ -155,7 +155,16 @@ export default function WaermepumpeKostenPage() {
         <strong>11.000–14.000 € Eigenanteil</strong>. Neu seit 2026: Gefördert
         wird nur, wenn das Außengerät mindestens <strong>10 dB unter dem
         gesetzlichen Lärm-Grenzwert</strong> liegt – ein Punkt, der gerade in
-        dichter Bebauung ohnehin wichtig ist.
+        dichter Bebauung ohnehin wichtig ist. Wie Sie die Förderung Schritt für
+        Schritt beantragen (und den häufigsten Fehler vermeiden), steht im
+        Ratgeber{" "}
+        <Link
+          href="/ratgeber/waermepumpe-foerderung"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          Wärmepumpe-Förderung 2026
+        </Link>
+        .
       </P>
 
       <CtaBand
