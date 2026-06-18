@@ -61,6 +61,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/klimaanlage-als-heizung",
+    title: "Klimaanlage als Heizung & Wärmepumpe",
+    blurb: "Heizen mit der Split-Klimaanlage – Effizienz, Kosten, Förderung 2026 & wann es sich lohnt.",
+    topic: "Klimaanlage als Heizung",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/bad-renovieren-kosten",
     title: "Bad renovieren: Kosten",
     blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
