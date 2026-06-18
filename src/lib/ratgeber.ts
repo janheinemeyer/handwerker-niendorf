@@ -68,6 +68,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/waermepumpe-kosten",
+    title: "Wärmepumpe: Kosten & Förderung",
+    blurb: "Luft-Wasser, Erdwärme & Co. – Preise mit Einbau, KfW-Förderung 2026 & ehrlicher Altbau-Check.",
+    topic: "Wärmepumpe",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/bad-renovieren-kosten",
     title: "Bad renovieren: Kosten",
     blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
