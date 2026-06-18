@@ -313,3 +313,33 @@ driven by the real RegionNote dependency.)
 
 **Scope / not done:** Two planned sibling pages — "KNX oder Loxone" (comparison)
 and "KNX nachrüsten im Altbau" — are follow-ups, separate PRs.
+
+## 2026-06-18 — SEO strategy: dominate local search through depth
+
+**Decision:** Documented the overarching SEO strategy in
+`research/seo/STRATEGY.md` and adopt it as the guideline for every new
+Ratgeber/SEO page: **don't chase the generic national head terms — dominate
+local Hamburg search by winning where the big players are structurally weak, and
+secure it with topical depth (cluster authority).**
+
+**Why:** SERP analysis across topics (Carport, KNX, Klimaanlage, Wärmepumpe)
+keeps showing the same pattern: national aggregators and product sellers
+(thermondo, 1komma5, enpal, aroundhome, my-hammer, ADAC) own the high-volume
+generic "… Kosten" terms via domain authority we can't out-muscle. The
+defensible, higher-converting fronts are: (1) local intent + Google Maps pack,
+(2) topical authority via the interlinked cluster (`RATGEBER_PAGES` +
+`RelatedRatgeber`), (3) neutrality/honesty the sellers structurally can't match
+("wann lohnt es sich *nicht*"), and (4) GEO/AI answer engines that reward
+precise, structured, honest sources over brand. This formalises and extends the
+local-framing rationale from the carport/`RegionNote` entry above.
+
+**Scope / not done:** Strategy doc only — no code. The single biggest lever,
+**Google Business Profile + reviews**, lives outside the repo and stays gated on
+real NAP data (phone/address are still placeholders; `telephone`/`geo` remain
+omitted from the schema on purpose). `RegionNote` still only renders for
+`carport`/`smarthome`; widening it to `energie` is a separate decision.
+
+**Consequences:** New pages follow the per-page checklist in STRATEGY.md
+(non-geo primary keyword, one-intent-per-page, Hamburg angle, honest
+"not-worth-it" section, cluster cross-links). Build cluster depth before opening
+new topics. Keyword data + learned patterns live in `research/seo/keywords/`.
