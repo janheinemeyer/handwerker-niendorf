@@ -54,6 +54,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/klimaanlage-einbauen-kosten",
+    title: "Klimaanlage einbauen: Kosten",
+    blurb: "Split & Multisplit – Preise mit Montage, Genehmigung, Strom & Wartung.",
+    topic: "Klimaanlage",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/bad-renovieren-kosten",
     title: "Bad renovieren: Kosten",
     blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
