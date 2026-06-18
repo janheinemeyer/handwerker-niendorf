@@ -82,6 +82,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/warmwasser-waermepumpe",
+    title: "Warmwasser-Wärmepumpe",
+    blurb: "Effizientes Warmwasser aus der Kellerluft – Funktion, Kosten, Stromverbrauch & wann sie sich lohnt.",
+    topic: "Warmwasser-Wärmepumpe",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/bad-renovieren-kosten",
     title: "Bad renovieren: Kosten",
     blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
