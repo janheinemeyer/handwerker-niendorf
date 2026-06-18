@@ -54,6 +54,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/photovoltaik-kosten",
+    title: "Photovoltaik: Kosten",
+    blurb: "PV-Anlage mit & ohne Speicher – Preise pro kWp, Steuer, Einspeisevergütung & wann sich Solar lohnt.",
+    topic: "Photovoltaik",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/klimaanlage-einbauen-kosten",
     title: "Klimaanlage einbauen: Kosten",
     blurb: "Split & Multisplit – Preise mit Montage, Genehmigung, Strom & Wartung.",
