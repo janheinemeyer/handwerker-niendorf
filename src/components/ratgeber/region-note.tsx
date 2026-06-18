@@ -27,10 +27,12 @@ export function RegionNote({ currentHref }: { currentHref?: string }) {
   const copy = current && REGION_COPY[current.cluster];
   if (!copy) return null;
 
-  const districts = [
-    ...BUSINESS.neighboringDistricts.slice(0, -1),
-    `und ${BUSINESS.neighboringDistricts.at(-1)}`,
-  ].join(", ");
+  // German list: "A, B, C und D" — no comma before the final "und".
+  const list = BUSINESS.neighboringDistricts;
+  const districts =
+    list.length > 1
+      ? `${list.slice(0, -1).join(", ")} und ${list.at(-1)}`
+      : list[0];
 
   return (
     <aside
