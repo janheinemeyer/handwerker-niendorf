@@ -244,12 +244,12 @@ export default function KlimaanlageHeizungPage() {
         Über unsere Vermittlung erhalten Sie Festpreis-Angebote geprüfter
         Klimatechnik- und Wärmepumpen-Betriebe aus Niendorf und Umgebung – inkl.
         Beurteilung der Förderfähigkeit. Wer ohnehin in Effizienz investiert,
-        kombiniert die Anlage gern mit eigener{" "}
+        kombiniert die Anlage gern mit einer eigenen{" "}
         <Link
           href="/ratgeber/wallbox-installieren-kosten"
           className="text-accent underline-offset-2 hover:underline"
         >
-          Lade- und Solartechnik
+          Wallbox &amp; Ladetechnik
         </Link>
         .
       </P>
