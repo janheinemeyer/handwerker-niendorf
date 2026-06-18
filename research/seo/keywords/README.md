@@ -11,9 +11,12 @@ transkodiert** (sonst nicht grep-/diff-bar), sonst unverändert.
 |---|---|---|---|
 | `klimaanlage-kosten_2026-06-18.csv` | Klimaanlage Kosten / Einbau / Montage / Split / Wohnung / Haus | 615 | 18.06.2026 |
 | `klimaanlage-heizung_2026-06-18.csv` | Klimaanlage als Heizung / Wärmepumpe / heizen / Förderung | 874 | 18.06.2026 |
+| `waermepumpe_2026-06-18.csv` | Wärmepumpe Kosten / Förderung / Altbau / Stromverbrauch / Warmwasser / Erdwärme | 5.298 | 18.06.2026 |
 
-Beide speisten die Ratgeber-Seiten `klimaanlage-einbauen-kosten` und
-`klimaanlage-als-heizung`.
+Die Klima-Exporte speisten die Ratgeber-Seiten `klimaanlage-einbauen-kosten` und
+`klimaanlage-als-heizung`. Der Wärmepumpe-Export ist deutlich breiter und deckt
+mehrere eigenständige Intents ab (Kosten/Förderung, Stromverbrauch, Altbau,
+Warmwasser-Wärmepumpe, Erdwärme) — das ist ein ganzer Cluster, nicht eine Seite.
 
 ## Format
 
