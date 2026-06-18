@@ -89,6 +89,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/warmwasser-waermepumpe",
+    title: "Warmwasser-Wärmepumpe",
+    blurb: "Effizientes Warmwasser aus der Kellerluft – Funktion, Kosten, Stromverbrauch & wann sie sich lohnt.",
+    topic: "Warmwasser-Wärmepumpe",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/waermepumpe-foerderung",
     title: "Wärmepumpe: Förderung 2026",
     blurb: "Bis zu 70 % über die KfW 458 – Boni, Voraussetzungen, Antrag Schritt für Schritt & der häufigste Fehler.",
