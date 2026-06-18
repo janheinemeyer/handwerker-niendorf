@@ -76,8 +76,9 @@ export default function WaermepumpeAltbauPage() {
         Ja – eine Wärmepumpe funktioniert in der <strong>Mehrzahl der Altbauten</strong>,
         auch mit Heizkörpern und ohne Komplettsanierung. Entscheidend ist nicht das
         Baujahr, sondern die nötige <strong>Vorlauftemperatur</strong>: unter ~55 °C
-        arbeitet sie effizient. Im ungedämmten Altbau sinkt die Jahresarbeitszahl auf{" "}
-        <strong>2,5–3,0</strong> – dann helfen ein hydraulischer Abgleich, einzelne
+        arbeitet sie effizient. Im ungedämmten Altbau wird aus einer Kilowattstunde
+        Strom dann nur noch <strong>~2,5–3 statt ~4 kWh Wärme</strong> – der
+        Stromverbrauch steigt. Hier helfen ein hydraulischer Abgleich, einzelne
         größere Heizkörper oder eine Hochtemperatur-Wärmepumpe. Pflicht ist eine
         Heizlastberechnung vor dem Kauf.
       </TlDr>
@@ -136,7 +137,8 @@ export default function WaermepumpeAltbauPage() {
         Wenn sich die Vorlauftemperatur nicht ausreichend senken lässt, ist eine{" "}
         <strong>Hochtemperatur-Wärmepumpe</strong> die Lösung: Sie erreicht bis zu
         etwa 70 °C und versorgt vorhandene Heizkörper ohne Austausch. Der Preis
-        dafür ist eine niedrigere Effizienz – die Jahresarbeitszahl liegt dann
+        dafür ist eine niedrigere Effizienz – die <strong>Jahresarbeitszahl (JAZ)</strong>,
+        also wie viel Wärme aus einer Kilowattstunde Strom entsteht, liegt dann
         meist nur bei 2,5–3,5, die Stromkosten steigen entsprechend. Sie ist eine
         ehrliche Option für den ungedämmten Bestand, aber kein Freifahrtschein:
         jedes zusätzliche Grad Vorlauftemperatur kostet Effizienz und damit Geld.
