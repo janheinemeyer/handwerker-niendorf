@@ -29,10 +29,12 @@ unten genannten Hebel, nicht über den nackten Head-Term.
    für einzelne Leistungen). Unser Feld sind die **organischen** Treffer für
    „[Leistung] hamburg / [Stadtteil]"-Intent — genau das Modell von
    Aroundhome/Check24/MyHammer. Dort schlagen wir die *nationalen* Aggregatoren
-   durch **hyperlokale Spezifität** (echte Niendorf-/Stadtteil-Bezüge via
-   `RegionNote` + `areaServed`-Schema), wo deren Templates generisch-bundesweit
-   bleiben. Ein #1 für ein lokales 200-Suchen-Keyword schlägt #8 für ein
-   50k-Keyword.
+   durch **hyperlokale Spezifität** (echte Niendorf-/Stadtteil-Bezüge), wo deren
+   Templates generisch-bundesweit bleiben. Mechanik: `areaServed`-Schema plus eine
+   Hamburg-Sektion auf der Seite — über den `RegionNote`-Block (rendert derzeit nur
+   für `carport`/`smarthome`) oder, für andere Cluster wie `energie`, als
+   handgeschriebene Hamburg-Sektion, bis `RegionNote` darauf ausgeweitet ist. Ein
+   #1 für ein lokales 200-Suchen-Keyword schlägt #8 für ein 50k-Keyword.
 2. **Topical Authority durch Cluster-Tiefe.** Eine Einzelseite verliert; 8–10 eng
    verlinkte Seiten zu einem Thema signalisieren Google regionale Themen-Autorität.
    Die Cluster-Mechanik (`RATGEBER_PAGES` + `RelatedRatgeber`) ist die Waffe — je
@@ -50,10 +52,11 @@ unten genannten Hebel, nicht über den nackten Head-Term.
 ## Playbook (Priorität)
 
 1. **Hyperlokale organische Seiten** — „[Leistung] Hamburg/[Stadtteil]"-Framing
-   via `RegionNote` + `areaServed`-Schema, spezifischer als die national-generischen
-   Aggregatoren. (Kein GBP/Local-Pack — siehe Front 1; wir sind Aggregator. Ein
-   einzelner generischer Unternehmenseintrag ist optional, aber kein Ranking-Hebel
-   für einzelne Leistungen.)
+   via `areaServed`-Schema + Hamburg-Sektion (`RegionNote` für `carport`/`smarthome`,
+   sonst handgeschrieben — siehe Front 1), spezifischer als die national-generischen
+   Aggregatoren. (Kein GBP/Local-Pack — wir sind Aggregator. Ein einzelner
+   generischer Unternehmenseintrag ist optional, aber kein Ranking-Hebel für
+   einzelne Leistungen.)
 2. **Cluster fertig bauen**, bevor neue Themen geöffnet werden (Tiefe vor Breite).
 3. **Pro Seite den Hamburg-Winkel schärfen**, den keiner hat (dichte Bebauung,
    Außengerät/Lärm, Denkmalschutz, Fernwärme-Pflichtgebiete, Reihenhaus).
