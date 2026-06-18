@@ -220,8 +220,16 @@ export default function WaermepumpeKostenPage() {
         Heizkörper-Check, dann Wärmepumpe. <strong>Wann es sich (noch) nicht
         lohnt:</strong> im schlecht gedämmten Haus mit kleinen Heizkörpern und
         ohne Sanierungsbudget – hier erst die Hülle verbessern. Eine
-        Heizlastberechnung vor dem Kauf ist in jedem Fall Pflicht. (Eine
-        ausführliche Altbau-Seite folgt in diesem Ratgeber.)
+        Heizlastberechnung vor dem Kauf ist in jedem Fall Pflicht. Alle Details –
+        Voraussetzungen, Heizkörper ohne Fußbodenheizung und die
+        Hochtemperatur-Wärmepumpe – im Ratgeber{" "}
+        <Link
+          href="/ratgeber/waermepumpe-altbau"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          Wärmepumpe im Altbau
+        </Link>
+        .
       </P>
 
       <H2 id="hamburg">Wärmepumpe in Hamburg: das ist hier zu beachten</H2>
