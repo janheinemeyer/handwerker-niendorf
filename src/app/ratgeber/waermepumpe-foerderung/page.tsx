@@ -32,15 +32,15 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Aus welchen Boni setzt sich die Förderung zusammen?",
-    a: "Grundförderung 30 % (für alle im Bestandsgebäude), Klimageschwindigkeitsbonus 20 % (Selbstnutzer, die eine alte fossile Heizung ersetzen), Einkommensbonus 30 % (bis 40.000 € zu versteuerndes Haushaltseinkommen) und Effizienzbonus 5 % (Erdwärme/Wasser oder natürliches Kältemittel). Rechnerisch ergibt das 85 %, die KfW kappt aber bei 70 %.",
+    a: "Grundförderung 30 % (für alle im Bestandsgebäude), Klimageschwindigkeitsbonus 20 % (Selbstnutzer beim Heizungstausch – bei Gas- und Biomasseheizungen nur, wenn sie bei Antragstellung mindestens 20 Jahre alt sind), Einkommensbonus 30 % (zu versteuerndes Haushaltseinkommen ≤ 40.000 €, Durchschnitt aus dem 2. und 3. Jahr vor dem Antrag) und Effizienzbonus 5 % (Erdwärme/Wasser oder natürliches Kältemittel). Rechnerisch ergibt das 85 %, die KfW kappt aber bei 70 %.",
   },
   {
     q: "Wer bekommt die Wärmepumpen-Förderung?",
-    a: "Eigentümer von Bestandsgebäuden, deren Bauantrag mindestens fünf Jahre zurückliegt. Die Grundförderung gilt für alle; die Boni hängen an Selbstnutzung, Einkommen und Technik. Neubauten sind über dieses Programm nicht förderfähig.",
+    a: "Privatpersonen als Eigentümer von Bestandsgebäuden (Bauantrag mindestens fünf Jahre alt), ob selbst genutzt oder vermietet, über das Programm 458. Unternehmen und juristische Personen laufen über Programm 459 (max. 35 %). Die Grundförderung gilt für alle; die Boni hängen an Selbstnutzung, Einkommen und Technik. Neubauten sind nicht förderfähig.",
   },
   {
     q: "Wann muss ich den Antrag stellen – vor oder nach dem Auftrag?",
-    a: "Sie schließen zuerst einen Liefer- bzw. Leistungsvertrag mit dem Fachbetrieb ab, der aber eine aufschiebende oder auflösende Bedingung enthalten muss: Er wird erst mit der KfW-Förderzusage wirksam. Den Antrag stellen Sie dann über das Portal „Meine KfW“. Mit dem Einbau dürfen Sie erst nach der schriftlichen Zusage beginnen.",
+    a: "Sie schließen zuerst einen Liefer- bzw. Leistungsvertrag mit dem Fachbetrieb ab, der aber eine aufschiebende oder auflösende Bedingung enthalten muss: Er wird erst mit der KfW-Förderzusage wirksam. Mit der vom Fachbetrieb erstellten Bestätigung zum Antrag (BzA) stellen Sie den Antrag über das Portal „Meine KfW“. Mit dem Einbau dürfen Sie erst nach der schriftlichen Zusage beginnen.",
   },
   {
     q: "Was ist der häufigste Fehler bei der Förderung?",
@@ -48,7 +48,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "KfW-Zuschuss oder Steuerbonus § 35c – was ist besser?",
-    a: "Beides geht nicht für dieselbe Maßnahme. Die KfW 458 bringt bis zu 70 % als direkten Zuschuss und ist meist deutlich attraktiver. Der Steuerbonus nach § 35c EStG (20 % der Kosten über drei Jahre) ist die Alternative, wenn der KfW-Weg z. B. aus zeitlichen Gründen nicht mehr möglich ist.",
+    a: "Beides geht nicht für dieselbe Maßnahme. Die KfW 458 bringt bis zu 70 % als direkten Zuschuss und ist meist deutlich attraktiver. Der Steuerbonus nach § 35c EStG (20 % der Kosten über drei Jahre) gilt nur für selbstgenutztes Wohneigentum und ist die Alternative, wenn der KfW-Weg z. B. aus zeitlichen Gründen nicht mehr möglich ist.",
   },
 ];
 
@@ -84,20 +84,22 @@ export default function WaermepumpeFoerderungPage() {
 
       <H2 id="wie-viel">Wie viel Förderung gibt es 2026?</H2>
       <P>
-        Zuständig für Wärmepumpen in selbst genutzten und vermieteten
-        Wohngebäuden ist die <strong>KfW</strong> mit der Heizungsförderung
-        (Programm 458) – nicht mehr die BAFA. Der maximale Zuschuss beträgt{" "}
-        <strong>70 %</strong>, begrenzt auf <strong>30.000 € förderfähige
-        Kosten</strong> für die erste Wohneinheit. Damit sind bis zu{" "}
-        <strong>21.000 €</strong> drin. Der Satz setzt sich aus der
-        Grundförderung und drei kombinierbaren Boni zusammen:
+        Zuständig ist die <strong>KfW</strong> (nicht mehr die BAFA) – für{" "}
+        <strong>Privatpersonen</strong> als Eigentümer (auch WEG), ob selbst
+        genutzt oder vermietet, über das <strong>Programm 458</strong>.
+        Unternehmen und juristische Personen laufen dagegen über Programm 459,
+        das auf <strong>35 %</strong> gedeckelt ist. Für Privatpersonen beträgt
+        der maximale Zuschuss <strong>70 %</strong>, begrenzt auf{" "}
+        <strong>30.000 € förderfähige Kosten</strong> für die erste Wohneinheit.
+        Damit sind bis zu <strong>21.000 €</strong> drin. Der Satz setzt sich aus
+        der Grundförderung und drei kombinierbaren Boni zusammen:
       </P>
       <CostTable
         head={["Förderbaustein", "Zuschuss", "Bedingung"]}
         rows={[
           ["Grundförderung", "30 %", "Bestandsgebäude (Bauantrag ≥ 5 Jahre), für alle"],
-          ["Klimageschwindigkeits-Bonus", "20 %", "Selbstnutzer, Austausch alter fossiler Heizung (voll bis 2028)"],
-          ["Einkommens-Bonus", "30 %", "Selbstnutzer, bis 40.000 € zu versteuerndes Haushaltseinkommen"],
+          ["Klimageschwindigkeits-Bonus", "20 %", "Selbstnutzer, Heizungstausch (Gas/Biomasse: ≥ 20 Jahre alt); voll bis 2028"],
+          ["Einkommens-Bonus", "30 %", "Selbstnutzer, zvE ≤ 40.000 € (Ø 2. + 3. Jahr vor Antrag)"],
           ["Effizienz-Bonus", "5 %", "Erdwärme / Wasser / Abwasser oder natürliches Kältemittel"],
           ["Maximal kombiniert", "70 %", "Deckel: 30.000 € Kosten → max. 21.000 €"],
         ]}
@@ -117,11 +119,17 @@ export default function WaermepumpeFoerderungPage() {
       <H2 id="boni">Die Boni im Detail</H2>
       <P>
         Der <strong>Klimageschwindigkeitsbonus (20 %)</strong> ist der
-        wichtigste Hebel: Er gilt für Selbstnutzer, die eine funktionierende alte
-        Öl-, Gas- oder Kohleheizung gegen die Wärmepumpe tauschen, und ist noch
-        bis Ende 2028 in voller Höhe verfügbar – ab 2029 schmilzt er alle zwei
-        Jahre. Der <strong>Einkommensbonus (30 %)</strong> kommt hinzu, wenn das
-        zu versteuernde Haushaltseinkommen 40.000 € nicht übersteigt. Den{" "}
+        wichtigste Hebel: Er gilt für Selbstnutzer, die ihre alte Heizung
+        ersetzen. Bei <strong>Gas- und Biomasseheizungen</strong> greift er
+        allerdings nur, wenn die Heizung bei Antragstellung{" "}
+        <strong>mindestens 20 Jahre</strong> in Betrieb war – Öl-, Kohle-,
+        Nachtspeicher- und Gas-Etagenheizungen sind von dieser Altersgrenze
+        ausgenommen. Voll verfügbar ist er bis Ende 2028, ab 2029 schmilzt er
+        alle zwei Jahre. Den <strong>Einkommensbonus (30 %)</strong> gibt es, wenn
+        das zu versteuernde Haushaltseinkommen 40.000 € nicht übersteigt –
+        maßgeblich ist der Durchschnitt aus dem <strong>zweiten und dritten Jahr
+        vor dem Antrag</strong> (für einen Antrag 2026 also 2023/2024,
+        nachgewiesen per Steuerbescheid). Den{" "}
         <strong>Effizienzbonus (5 %)</strong> gibt es für Erdwärme-, Wasser- oder
         Abwasser-Wärmepumpen sowie für Geräte mit natürlichem Kältemittel.
       </P>
@@ -133,9 +141,10 @@ export default function WaermepumpeFoerderungPage() {
       <ol className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent marker:font-bold [list-style:decimal]">
         <li>Fachbetrieb auswählen und ein Angebot einholen.</li>
         <li><strong>Liefer-/Leistungsvertrag mit aufschiebender (oder auflösender) Bedingung</strong> schließen – er wird erst mit der KfW-Zusage wirksam.</li>
-        <li>Antrag über das Portal <strong>„Meine KfW“</strong> stellen (Identifizierung inklusive).</li>
+        <li>Vom Fachbetrieb die <strong>Bestätigung zum Antrag (BzA)</strong> erstellen lassen – eine 15-stellige ID, die Sie für den Antrag brauchen.</li>
+        <li>Antrag über das Portal <strong>„Meine KfW“</strong> stellen (mit BzA-ID und Identifizierung).</li>
         <li>Auf die <strong>schriftliche Förderzusage warten</strong> – und erst dann mit dem Einbau beginnen.</li>
-        <li>Umsetzung innerhalb von 36 Monaten; danach <strong>Fachunternehmererklärung</strong> und Rechnungen einreichen (innerhalb von 6 Monaten nach der letzten Rechnung).</li>
+        <li>Umsetzung und Nachweise <strong>spätestens 36 Monate nach der Zusage</strong>: die <strong>Bestätigung nach Durchführung (BnD)</strong>, die Fachunternehmererklärung und die Rechnungen müssen bis dahin – und zugleich innerhalb von 6 Monaten nach der letzten Rechnung – eingereicht werden.</li>
         <li>KfW prüft und zahlt den Zuschuss aus.</li>
       </ol>
 
@@ -164,9 +173,11 @@ export default function WaermepumpeFoerderungPage() {
         Wer die KfW-Förderung nicht nutzt – etwa weil der Zeitpunkt verpasst
         wurde –, kann die Maßnahme stattdessen steuerlich absetzen: Nach{" "}
         <strong>§ 35c EStG</strong> sind 20 % der Kosten über drei Jahre
-        abziehbar. Wichtig: <strong>entweder KfW oder § 35c</strong> für dieselbe
-        Maßnahme, nicht beides. In den allermeisten Fällen ist der direkte
-        KfW-Zuschuss (bis 70 %) deutlich attraktiver als der Steuerbonus.
+        abziehbar. Das gilt allerdings <strong>nur für selbstgenutztes
+        Wohneigentum</strong> – bei vermieteten Objekten greift § 35c nicht.
+        Wichtig: <strong>entweder KfW oder § 35c</strong> für dieselbe Maßnahme,
+        nicht beides. In den allermeisten Fällen ist der direkte KfW-Zuschuss
+        (bis 70 %) deutlich attraktiver als der Steuerbonus.
       </P>
 
       <H2 id="hamburg">Wärmepumpen-Förderung in Hamburg</H2>
