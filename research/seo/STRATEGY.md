@@ -21,11 +21,18 @@ unten genannten Hebel, nicht über den nackten Head-Term.
 
 ## Wo wir gewinnen (die vier verteidigbaren Fronten)
 
-1. **Lokaler Intent + Local Pack.** thermondo hat keine Niendorf-Präsenz.
-   „… hamburg", „… in der nähe", „… eimsbüttel" + der Google-Maps-Pack sind
-   Heimspiel — höchste Kaufabsicht, beste Conversion. Ein #1 für ein lokales
-   200-Suchen-Keyword schlägt #8 für ein 50k-Keyword. Hängt mehr am **Google
-   Business Profile + echten Bewertungen** als am Artikel.
+1. **Lokaler Intent — organisch (das Aggregator-Modell).** Wir sind ein
+   **Vermittler/Aggregator**, kein ausführender Betrieb. Deshalb **kein
+   Google-Business-Profile und kein Google-Maps-Local-Pack** — der gehört dem
+   tatsächlichen Dienstleister, Google lässt Lead-Gen-Seiten dort nicht zu
+   (höchstens *ein* generischer Unternehmenseintrag ist möglich, ohne SEO-Hebel
+   für einzelne Leistungen). Unser Feld sind die **organischen** Treffer für
+   „[Leistung] hamburg / [Stadtteil]"-Intent — genau das Modell von
+   Aroundhome/Check24/MyHammer. Dort schlagen wir die *nationalen* Aggregatoren
+   durch **hyperlokale Spezifität** (echte Niendorf-/Stadtteil-Bezüge via
+   `RegionNote` + `areaServed`-Schema), wo deren Templates generisch-bundesweit
+   bleiben. Ein #1 für ein lokales 200-Suchen-Keyword schlägt #8 für ein
+   50k-Keyword.
 2. **Topical Authority durch Cluster-Tiefe.** Eine Einzelseite verliert; 8–10 eng
    verlinkte Seiten zu einem Thema signalisieren Google regionale Themen-Autorität.
    Die Cluster-Mechanik (`RATGEBER_PAGES` + `RelatedRatgeber`) ist die Waffe — je
@@ -42,9 +49,11 @@ unten genannten Hebel, nicht über den nackten Head-Term.
 
 ## Playbook (Priorität)
 
-1. **Google Business Profile + Bewertungen** — größter Hebel für lokale Dominanz,
-   liegt *außerhalb* der Website. Gated auf echte NAP-Daten (aktuell Platzhalter;
-   `telephone`/`geo` fehlen bewusst im Schema — siehe DECISIONS 2026-06-anchor).
+1. **Hyperlokale organische Seiten** — „[Leistung] Hamburg/[Stadtteil]"-Framing
+   via `RegionNote` + `areaServed`-Schema, spezifischer als die national-generischen
+   Aggregatoren. (Kein GBP/Local-Pack — siehe Front 1; wir sind Aggregator. Ein
+   einzelner generischer Unternehmenseintrag ist optional, aber kein Ranking-Hebel
+   für einzelne Leistungen.)
 2. **Cluster fertig bauen**, bevor neue Themen geöffnet werden (Tiefe vor Breite).
 3. **Pro Seite den Hamburg-Winkel schärfen**, den keiner hat (dichte Bebauung,
    Außengerät/Lärm, Denkmalschutz, Fernwärme-Pflichtgebiete, Reihenhaus).

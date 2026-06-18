@@ -326,18 +326,28 @@ secure it with topical depth (cluster authority).**
 keeps showing the same pattern: national aggregators and product sellers
 (thermondo, 1komma5, enpal, aroundhome, my-hammer, ADAC) own the high-volume
 generic "… Kosten" terms via domain authority we can't out-muscle. The
-defensible, higher-converting fronts are: (1) local intent + Google Maps pack,
+defensible, higher-converting fronts are: (1) local-intent *organic* results — we
+are an aggregator/Vermittler, so **no Google Business Profile / Maps local pack**
+is available (that belongs to the actual service provider); we win local intent
+organically by out-localising the national aggregators (Aroundhome/Check24/
+MyHammer) the way they out-rank generic content,
 (2) topical authority via the interlinked cluster (`RATGEBER_PAGES` +
 `RelatedRatgeber`), (3) neutrality/honesty the sellers structurally can't match
 ("wann lohnt es sich *nicht*"), and (4) GEO/AI answer engines that reward
 precise, structured, honest sources over brand. This formalises and extends the
 local-framing rationale from the carport/`RegionNote` entry above.
 
-**Scope / not done:** Strategy doc only — no code. The single biggest lever,
-**Google Business Profile + reviews**, lives outside the repo and stays gated on
-real NAP data (phone/address are still placeholders; `telephone`/`geo` remain
-omitted from the schema on purpose). `RegionNote` still only renders for
-`carport`/`smarthome`; widening it to `energie` is a separate decision.
+**Constraint (aggregator):** We are a lead-gen aggregator/Vermittler, not the
+executing trade. So **no Google Business Profile / Maps local pack** is realistically
+available — that listing belongs to the actual service provider, and Google
+disallows lead-gen GBPs. At most one generic company listing is possible, with no
+ranking lever for individual services. Local dominance therefore runs through
+**organic** local-intent results, not the map pack. This also means the schema
+should lean Organization-as-aggregator rather than a trade `LocalBusiness`
+(`telephone`/`geo` stay omitted until real data exists either way).
+
+**Scope / not done:** Strategy doc only — no code. `RegionNote` still only renders
+for `carport`/`smarthome`; widening it to `energie` is a separate decision.
 
 **Consequences:** New pages follow the per-page checklist in STRATEGY.md
 (non-geo primary keyword, one-intent-per-page, Hamburg angle, honest
