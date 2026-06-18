@@ -13,9 +13,9 @@ description: Run a structured, free-tools-only SEO research pass BEFORE building
 Goal: a repeatable, zero-cost research pass for a **local Hamburg trades business**
 that ends in a concrete page brief. One page = one search intent. For local trades,
 **intent precision beats search volume** — a 50/mo keyword with buying intent beats a
-50.000/mo generic head term. Don't chase volume; chase the right query.
+50.000/mo generic head term.
 
-## Division of labour — read this first
+## Division of labour
 
 Some steps need a logged-in account and **cannot** be done from here. Do the parts you
 can, then explicitly ask the user for the rest and fold their answer back in. Never
@@ -120,5 +120,5 @@ PAGE PLAN:
   CostTable: <yes/no + columns>
   FAQ: <questions>
 CATALOG: { href, title, blurb, topic, cluster }
-OPEN (need user): <volumes / local pack / GSC — whatever is still login-gated>
+OPEN (need user): <volumes / community demand / local pack / GSC — whatever is still login-gated>
 ```
