@@ -89,6 +89,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/waermepumpe-foerderung",
+    title: "Wärmepumpe: Förderung 2026",
+    blurb: "Bis zu 70 % über die KfW 458 – Boni, Voraussetzungen, Antrag Schritt für Schritt & der häufigste Fehler.",
+    topic: "Wärmepumpen-Förderung",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/bad-renovieren-kosten",
     title: "Bad renovieren: Kosten",
     blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
