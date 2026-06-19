@@ -35,12 +35,15 @@ export const metadata: Metadata = {
     locale: "de_DE",
     type: "website",
   },
-  // The site-wide opengraph-image is reused as the Twitter image automatically.
+  // Only the card type + image are set site-wide. Title/description are left out
+  // on purpose so each page's Twitter card falls back to its own og:title /
+  // og:description instead of inheriting the homepage copy. `twitter.images` is
+  // set explicitly (the opengraph-image file convention doesn't emit a
+  // twitter:image on pages that override openGraph), so every page gets the card
+  // image.
   twitter: {
     card: "summary_large_image",
-    title: "Handwerk Niendorf",
-    description:
-      "Geprüfte Handwerksbetriebe aus Hamburg-Niendorf finden. Kostenlos und unverbindlich.",
+    images: ["/opengraph-image"],
   },
 };
 
