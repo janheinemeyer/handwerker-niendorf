@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Preise pro kWp, mit/ohne Speicher, Steuer & Einspeisevergütung 2026 – herstellerneutral.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

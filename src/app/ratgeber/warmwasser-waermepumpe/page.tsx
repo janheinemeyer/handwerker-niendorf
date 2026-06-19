@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Warmwasser aus der Kellerluft – Funktion, Kosten, Stromverbrauch, Förderung & wann es sich lohnt.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

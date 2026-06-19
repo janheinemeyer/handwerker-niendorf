@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Deckungsgrad (inkl. Winter-Check), Komplettpaket-Kosten, Dimensionierung & Förderung.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

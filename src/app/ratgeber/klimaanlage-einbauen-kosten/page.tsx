@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Split & Multisplit – Preise mit Montage, Zusatzkosten, Genehmigung, Strom & Wartung.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

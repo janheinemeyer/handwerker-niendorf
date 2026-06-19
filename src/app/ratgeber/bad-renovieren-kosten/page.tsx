@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Preise pro m², nach Größe und Gewerk – mit Kostenrechner, Förderung und Spartipps.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

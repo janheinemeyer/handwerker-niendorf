@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Boni, Voraussetzungen, Antrag Schritt für Schritt & der häufigste Fehler – herstellerneutral.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

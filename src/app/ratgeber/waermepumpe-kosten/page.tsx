@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Preise mit Einbau nach Typ, KfW-Förderung bis 70 %, Betriebskosten & ehrlicher Altbau-Check – herstellerneutral.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

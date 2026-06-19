@@ -35,6 +35,13 @@ export const metadata: Metadata = {
     locale: "de_DE",
     type: "website",
   },
+  // The site-wide opengraph-image is reused as the Twitter image automatically.
+  twitter: {
+    card: "summary_large_image",
+    title: "Handwerk Niendorf",
+    description:
+      "Geprüfte Handwerksbetriebe aus Hamburg-Niendorf finden. Kostenlos und unverbindlich.",
+  },
 };
 
 export default function RootLayout({

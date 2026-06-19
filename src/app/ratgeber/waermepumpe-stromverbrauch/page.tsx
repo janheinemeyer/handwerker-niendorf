@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Verbrauch berechnen, kWh- & Kostenbeispiele und wie Sie mit Wärmepumpentarif und PV sparen.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

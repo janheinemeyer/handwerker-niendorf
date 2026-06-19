@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Preise nach Material, empfohlene Maße und Kostenfaktoren für einen Carport für zwei Autos.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

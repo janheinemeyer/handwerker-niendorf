@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Kein Bundes-Zuschuss – aber 0 % MwSt, Steuerfreiheit bis 30 kWp, Einspeisevergütung & KfW-270-Kredit.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

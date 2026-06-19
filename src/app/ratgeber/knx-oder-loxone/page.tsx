@@ -23,6 +23,7 @@ export const metadata: Metadata = {
       "Offener Standard gegen Komplettsystem: Kosten, Vor- und Nachteile und wann sich welches System lohnt.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 
