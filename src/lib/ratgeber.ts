@@ -68,6 +68,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/photovoltaik-foerderung",
+    title: "Photovoltaik: Förderung & Steuer",
+    blurb: "0 % MwSt, Steuerfreiheit bis 30 kWp, KfW 270 & regionale Programme – und warum es keinen Bundes-Zuschuss gibt.",
+    topic: "Photovoltaik-Förderung",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/klimaanlage-einbauen-kosten",
     title: "Klimaanlage einbauen: Kosten",
     blurb: "Split & Multisplit – Preise mit Montage, Genehmigung, Strom & Wartung.",
