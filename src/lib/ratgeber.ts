@@ -61,6 +61,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/stromspeicher-kosten",
+    title: "Stromspeicher: Kosten & Größe",
+    blurb: "Preise pro kWh, die richtige Speichergröße, Lebensdauer & ob sich ein PV-Speicher lohnt.",
+    topic: "Stromspeicher",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/einspeiseverguetung-2026",
     title: "Einspeisevergütung 2026",
     blurb: "Aktuelle PV-Sätze (ct/kWh), Teil- vs. Volleinspeisung, 20-Jahre-Garantie & die Negativpreis-Regel.",
