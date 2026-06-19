@@ -1,9 +1,14 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { ImageResponse } from "next/og";
 import { BUSINESS } from "@/lib/site";
 
 // Default social-share / SERP card image for the whole site. Next.js wires this
 // up as og:image (and twitter:image) automatically for every route that doesn't
-// declare its own. Industrial/editorial look matching the design system.
+// declare its own. Industrial/editorial look matching the design system, set in
+// the brand display font (Bricolage Grotesque). Fonts are loaded via
+// `fetch(new URL(...))` so Turbopack traces and bundles the TTFs (no network at
+// render time, and no module-scope fs read that would break page prerendering).
 export const alt = "Handwerk Niendorf – geprüfte Handwerksbetriebe in Hamburg finden";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -13,7 +18,14 @@ const INK = "#17140d";
 const INK_SOFT = "#46402f";
 const ACCENT = "#d9430b";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const extraBold = readFileSync(
+    fileURLToPath(new URL("./_og/BricolageGrotesque-ExtraBold.ttf", import.meta.url)),
+  );
+  const medium = readFileSync(
+    fileURLToPath(new URL("./_og/BricolageGrotesque-Medium.ttf", import.meta.url)),
+  );
+
   return new ImageResponse(
     (
       <div
@@ -25,8 +37,7 @@ export default function OpengraphImage() {
           justifyContent: "space-between",
           background: PAPER,
           padding: "72px 80px",
-          fontFamily: "sans-serif",
-          // accent rule down the left edge
+          fontFamily: "Bricolage Grotesque",
           borderLeft: `16px solid ${ACCENT}`,
         }}
       >
@@ -35,7 +46,7 @@ export default function OpengraphImage() {
             display: "flex",
             color: ACCENT,
             fontSize: 28,
-            fontWeight: 700,
+            fontWeight: 800,
             letterSpacing: 4,
             textTransform: "uppercase",
           }}
@@ -47,11 +58,11 @@ export default function OpengraphImage() {
           <div
             style={{
               display: "flex",
-              fontSize: 104,
+              fontSize: 110,
               fontWeight: 800,
               color: INK,
-              lineHeight: 1.02,
-              letterSpacing: -2,
+              lineHeight: 1.0,
+              letterSpacing: -3,
             }}
           >
             {BUSINESS.name}
@@ -59,7 +70,7 @@ export default function OpengraphImage() {
           <div
             style={{
               display: "flex",
-              marginTop: 28,
+              marginTop: 30,
               fontSize: 40,
               fontWeight: 500,
               color: INK_SOFT,
@@ -82,15 +93,21 @@ export default function OpengraphImage() {
             color: INK,
           }}
         >
-          <div style={{ display: "flex", fontWeight: 700 }}>
+          <div style={{ display: "flex", fontWeight: 800 }}>
             handwerker-niendorf.de
           </div>
-          <div style={{ display: "flex", color: INK_SOFT }}>
+          <div style={{ display: "flex", fontWeight: 500, color: INK_SOFT }}>
             Niendorf · Eimsbüttel · ganz Hamburg
           </div>
         </div>
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        { name: "Bricolage Grotesque", data: extraBold, weight: 800, style: "normal" },
+        { name: "Bricolage Grotesque", data: medium, weight: 500, style: "normal" },
+      ],
+    },
   );
 }
