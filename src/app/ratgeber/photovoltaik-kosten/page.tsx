@@ -150,6 +150,13 @@ export default function PhotovoltaikKostenPage() {
         >
           Einspeisevergütung 2026
         </Link>
+        ; was sonst gefördert wird (0 % MwSt, Steuerfreiheit, KfW 270), im Ratgeber{" "}
+        <Link
+          href="/ratgeber/photovoltaik-foerderung"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          Photovoltaik-Förderung
+        </Link>
         .
       </P>
 
