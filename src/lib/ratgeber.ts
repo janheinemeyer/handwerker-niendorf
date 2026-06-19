@@ -82,6 +82,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/photovoltaik-waermepumpe",
+    title: "Photovoltaik & Wärmepumpe",
+    blurb: "Lohnt sich die Kombi? Deckungsgrad, Komplettpaket-Kosten, Dimensionierung & der ehrliche Winter-Check.",
+    topic: "Photovoltaik & Wärmepumpe",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/klimaanlage-einbauen-kosten",
     title: "Klimaanlage einbauen: Kosten",
     blurb: "Split & Multisplit – Preise mit Montage, Genehmigung, Strom & Wartung.",
