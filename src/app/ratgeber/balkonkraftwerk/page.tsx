@@ -32,7 +32,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Muss ich ein Balkonkraftwerk anmelden?",
-    a: "Ja, aber nur an einer Stelle: im Marktstammdatenregister der Bundesnetzagentur (kostenlos, online, ca. 5–10 Minuten). Seit dem Solarpaket I (16. Mai 2024) entfällt die früher zusätzlich nötige Anmeldung beim Netzbetreiber komplett. Einen alten, rückwärtslaufenden Zähler tauscht der Netzbetreiber bei Gelegenheit gegen einen Zweirichtungszähler – bis dahin wird der Betrieb geduldet.",
+    a: "Im Regelfall nur an einer Stelle: im Marktstammdatenregister der Bundesnetzagentur (kostenlos, online, ca. 5–10 Minuten). Seit dem Solarpaket I (16. Mai 2024) entfällt die separate Anmeldung beim Netzbetreiber – allerdings nur, wenn Sie auf eine Einspeisevergütung verzichten (Normalfall beim Balkonkraftwerk). Wer Geld für eingespeisten Strom möchte, meldet die Anlage zusätzlich beim Netzbetreiber an. Einen alten, rückwärtslaufenden Zähler tauscht der Netzbetreiber bei Gelegenheit gegen einen Zweirichtungszähler.",
   },
   {
     q: "Wie viel Watt sind erlaubt – 600 oder 800?",
@@ -40,7 +40,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Darf mein Vermieter ein Balkonkraftwerk verbieten?",
-    a: "In der Regel nicht pauschal. Seit 2024 ist das Balkonkraftwerk als privilegierte Maßnahme in § 554 BGB (Miete) und § 20 WEG (Eigentum) verankert: Mieter und Eigentümer haben grundsätzlich einen Anspruch auf Zustimmung. Vermieter bzw. die Eigentümergemeinschaft dürfen aber Vorgaben zur Ausführung machen (z. B. zur Befestigung). Best Practice: vorab schriftlich informieren.",
+    a: "In der Regel nicht pauschal. Seit 2024 ist das Balkonkraftwerk als privilegierte Maßnahme in § 554 BGB (Miete) und § 20 WEG (Eigentum) verankert: Mieter und Eigentümer haben grundsätzlich einen Anspruch auf Zustimmung. Wichtig: Das ist ein Anspruch auf Zustimmung, kein Recht, ohne sie zu installieren – holen Sie die Zustimmung vor der Montage schriftlich ein. Vermieter bzw. die Eigentümergemeinschaft dürfen Vorgaben zur Ausführung machen (z. B. zur Befestigung), eine grundlose Ablehnung lässt sich aber durchsetzen.",
   },
   {
     q: "Was bringt ein Balkonkraftwerk im Jahr?",
@@ -104,7 +104,10 @@ export default function BalkonkraftwerkPage() {
         (16. Mai 2024) müssen Sie das Balkonkraftwerk nur noch an einer Stelle
         anmelden: im <strong>Marktstammdatenregister</strong> der Bundesnetzagentur –
         kostenlos, online, in etwa 5–10 Minuten. Die früher zusätzlich nötige{" "}
-        <strong>Anmeldung beim Netzbetreiber entfällt</strong> komplett. Haben Sie
+        <strong>Anmeldung beim Netzbetreiber entfällt</strong> – allerdings nur,
+        wenn Sie auf eine Einspeisevergütung verzichten (der Regelfall beim
+        Balkonkraftwerk). Wer für den eingespeisten Überschuss Geld möchte, muss die
+        Anlage zusätzlich beim Netzbetreiber anmelden. Haben Sie
         noch einen alten, rückwärtslaufenden Stromzähler, tauscht ihn der
         Netzbetreiber bei Gelegenheit gegen einen Zweirichtungszähler; bis dahin
         wird der Betrieb geduldet.
@@ -116,18 +119,22 @@ export default function BalkonkraftwerkPage() {
         rows={[
           ["Wechselrichter-Leistung (max.)", "800 Watt"],
           ["Modulleistung (max.)", "2.000 Wp"],
-          ["Anschluss", "Schuko-Steckdose erlaubt (mit NA-Schutz)"],
+          ["Anschluss", "Schuko erlaubt mit normkonformem Gerät (DIN VDE V 0126-95)"],
           ["Schuko: max. Modulleistung", "960 Wp"],
           ["Anmeldung", "nur Marktstammdatenregister"],
-          ["Netzbetreiber-Anmeldung", "entfällt"],
+          ["Netzbetreiber-Anmeldung", "entfällt (außer bei Einspeisevergütung)"],
         ]}
       />
       <P>
         Der Anschluss über eine normale <strong>Schuko-Steckdose</strong> ist
-        zulässig, sofern eine Abschaltautomatik (NA-Schutz) integriert ist – bei
-        modernen Geräten Standard. Eine fest installierte Einspeisesteckdose
-        (Wieland) ist sicherer, aber kein Muss; dafür – oder für einen eigenen
-        Stromkreis – lohnt ein kurzer Elektriker-Check.
+        zulässig, wenn das Steckersolargerät die einschlägige Norm{" "}
+        <strong>DIN VDE V 0126-95</strong> erfüllt – dazu zählen neben der
+        Abschaltautomatik (NA-Schutz) die Leistungsgrenzen (800 VA / 960 Wp) und ein
+        ausreichender Berührungsschutz. Achten Sie also auf ein entsprechend
+        zertifiziertes Komplett-Set, nicht nur auf „mit NA-Schutz“. Eine fest
+        installierte Einspeisesteckdose (Wieland) ist sicherer, aber kein Muss;
+        dafür – oder für einen eigenen Stromkreis – lohnt ein kurzer
+        Elektriker-Check.
       </P>
 
       <H2 id="mietrecht">Dürfen Mieter ein Balkonkraftwerk installieren?</H2>
@@ -138,9 +145,13 @@ export default function BalkonkraftwerkPage() {
         Wohnungseigentümer haben grundsätzlich einen <strong>Anspruch auf
         Zustimmung</strong>. Vermieter oder die Eigentümergemeinschaft können nicht
         mehr pauschal ablehnen, dürfen aber <strong>Vorgaben zur Ausführung</strong>{" "}
-        machen – etwa zur Befestigung oder zum optischen Erscheinungsbild. Als Best
-        Practice gilt: den Vermieter vorab schriftlich informieren und eine
-        fachgerechte, rückbaubare Montage zusagen.
+        machen – etwa zur Befestigung oder zum optischen Erscheinungsbild. Wichtig:
+        Das ist ein <strong>Anspruch auf Zustimmung</strong>, kein Recht, einfach
+        ohne sie loszulegen. <strong>Holen Sie die Zustimmung des Vermieters bzw. der
+        Eigentümergemeinschaft vor der Montage schriftlich ein</strong> – mit Zusage
+        einer fachgerechten, rückbaubaren Befestigung. Wird sie ohne triftigen Grund
+        verweigert, können Sie den Anspruch durchsetzen; eigenmächtig montieren
+        sollten Sie aber nicht, sonst drohen Rückbau-Streitigkeiten.
       </P>
 
       <H2 id="ertrag">Was bringt ein Balkonkraftwerk – und lohnt es sich?</H2>
@@ -166,11 +177,12 @@ export default function BalkonkraftwerkPage() {
       <H2 id="foerderung">Förderung: Nullsteuersatz &amp; lokale Programme</H2>
       <P>
         Die wichtigste „Förderung“ sind die <strong>0 % Mehrwertsteuer</strong> –
-        einen bundesweiten Zuschuss gibt es nicht. Auf Landes- und Kommunalebene
-        fördern jedoch einzelne Programme das Balkonkraftwerk direkt (in Berlin etwa{" "}
-        <em>SolarPLUS</em> mit bis zu 500 €). Diese Programme wechseln häufig und
-        sind oft schnell ausgeschöpft – für Hamburg lohnt der aktuelle Blick auf die
-        Angebote der Stadt und der IFB Hamburg. Mehr zu den Steuerregeln im Ratgeber{" "}
+        einen bundesweiten Zuschuss gibt es nicht. Einzelne Städte und Länder haben
+        das Balkonkraftwerk zuletzt direkt bezuschusst, doch solche Programme
+        wechseln ständig, sind schnell ausgeschöpft und werden teils wieder
+        eingestellt oder umgebaut – verlassen Sie sich nicht darauf. Prüfen Sie für
+        Hamburg den <strong>aktuellen</strong> Stand bei der Stadt und der IFB
+        Hamburg, bevor Sie kaufen. Mehr zu den Steuerregeln im Ratgeber{" "}
         <Link
           href="/ratgeber/photovoltaik-foerderung"
           className="text-accent underline-offset-2 hover:underline"
