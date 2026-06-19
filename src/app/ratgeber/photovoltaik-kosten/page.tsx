@@ -142,8 +142,15 @@ export default function PhotovoltaikKostenPage() {
         Fachbetrieb. Und: Neue Anlagen über 7 kWp müssen nach dem{" "}
         <strong>Solarspitzengesetz</strong> steuerbar sein (Smart Meter /
         Steuereinrichtung); ohne diese wird die Einspeisung auf 60 % der
-        Anlagenleistung begrenzt. Die Details zu Steuer und Vergütung vertiefen wir
-        in einem eigenen Ratgeber.
+        Anlagenleistung begrenzt. Die aktuellen Sätze, Teil- vs. Volleinspeisung
+        und die 20-Jahre-Garantie stehen im Ratgeber{" "}
+        <Link
+          href="/ratgeber/einspeiseverguetung-2026"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          Einspeisevergütung 2026
+        </Link>
+        .
       </P>
 
       <H2 id="groesse">PV mit Wärmepumpe oder Wallbox? Dann größer planen</H2>

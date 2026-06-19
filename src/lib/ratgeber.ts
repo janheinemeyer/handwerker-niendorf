@@ -61,6 +61,13 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     cluster: "energie",
   },
   {
+    href: "/ratgeber/einspeiseverguetung-2026",
+    title: "Einspeisevergütung 2026",
+    blurb: "Aktuelle PV-Sätze (ct/kWh), Teil- vs. Volleinspeisung, 20-Jahre-Garantie & die Negativpreis-Regel.",
+    topic: "Einspeisevergütung",
+    cluster: "energie",
+  },
+  {
     href: "/ratgeber/klimaanlage-einbauen-kosten",
     title: "Klimaanlage einbauen: Kosten",
     blurb: "Split & Multisplit – Preise mit Montage, Genehmigung, Strom & Wartung.",
