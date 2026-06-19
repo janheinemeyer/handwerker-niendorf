@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Wie hoch ist die Einspeisevergütung 2026?",
-    a: "Für neue Anlagen bis 10 kWp gilt seit Februar 2026 ein Satz von 7,78 ct/kWh bei Teileinspeisung (Überschuss) und 12,34 ct/kWh bei Volleinspeisung. Bei 10–40 kWp sind es 6,73 ct bzw. 10,35 ct/kWh. Zum 1. August 2026 sinken die Sätze leicht (Degression), für Anlagen bis 10 kWp auf etwa 7,71 bzw. 12,23 ct/kWh.",
+    a: "Für neue Anlagen bis 10 kWp gilt seit Februar 2026 ein Satz von 7,78 ct/kWh bei Teileinspeisung (Überschuss) und 12,34 ct/kWh bei Volleinspeisung. Bei größeren Anlagen wird leistungsanteilig vergütet: nur der Anteil über 10 kWp (bis 40 kWp) bekommt die niedrigeren 6,73 bzw. 10,35 ct/kWh, die ersten 10 kWp behalten den höheren Satz. Zum 1. August 2026 sinken die Sätze leicht (Degression), bis 10 kWp auf etwa 7,71 bzw. 12,23 ct/kWh.",
   },
   {
     q: "Teileinspeisung oder Volleinspeisung – was ist besser?",
@@ -40,7 +40,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Bekomme ich bei negativen Strompreisen noch Geld?",
-    a: "Nein. Nach dem Solarspitzengesetz (gilt für neue Anlagen seit Februar 2025) entfällt die Vergütung in Stunden, in denen der Börsenstrompreis negativ ist. Diese Zeiten werden aber kompensiert: Sie werden ans Ende der 20-jährigen Förderperiode angehängt, sodass der Förderzeitraum sich entsprechend verlängert.",
+    a: "Sobald Ihre Anlage ein intelligentes Messsystem (Smart Meter) hat: nein – dann entfällt nach dem Solarspitzengesetz die Vergütung in Stunden mit negativem Börsenstrompreis. Ohne Smart Meter greift bei kleineren Anlagen zunächst die Übergangsregel mit Deckelung der Einspeisung auf 60 % der Leistung. Die nicht vergüteten Negativpreis-Zeiten werden kompensiert: Sie werden ans Ende der 20-jährigen Förderperiode angehängt, sodass sich der Förderzeitraum entsprechend verlängert.",
   },
   {
     q: "Lohnt sich Einspeisen oder Eigenverbrauch mehr?",
@@ -92,9 +92,17 @@ export default function EinspeiseverguetungPage() {
         head={["Anlagengröße", "Teileinspeisung", "Volleinspeisung"]}
         rows={[
           ["bis 10 kWp", "7,78 ct/kWh", "12,34 ct/kWh"],
-          ["10 – 40 kWp", "6,73 ct/kWh", "10,35 ct/kWh"],
+          ["Anteil 10 – 40 kWp", "6,73 ct/kWh", "10,35 ct/kWh"],
         ]}
       />
+      <P>
+        Wichtig bei Anlagen über 10 kWp: Die Sätze gelten{" "}
+        <strong>leistungsanteilig</strong>. Die ersten 10 kWp werden mit dem
+        höheren Satz vergütet, nur der Anteil <em>darüber</em> mit dem niedrigeren –
+        der effektive Satz ist ein Mischwert, nicht eine pauschale Absenkung der
+        ganzen Anlage. Eine 15-kWp-Anlage erhält also für die ersten 10 kWp 7,78 ct
+        und nur für die restlichen 5 kWp 6,73 ct.
+      </P>
       <P>
         Zum <strong>1. August 2026</strong> sinken die Sätze durch die
         halbjährliche Degression leicht (für Anlagen bis 10 kWp auf etwa 7,71 bzw.
@@ -134,15 +142,19 @@ export default function EinspeiseverguetungPage() {
 
       <H2 id="negativ">Negative Strompreise: das Solarspitzengesetz</H2>
       <P>
-        Seit Februar 2025 gilt für neue Anlagen: In Stunden, in denen der{" "}
-        <strong>Börsenstrompreis negativ</strong> ist, wird für eingespeisten
-        Strom <strong>keine Vergütung</strong> gezahlt. Das klingt schlechter, als
-        es ist – die ausgefallenen Zeiträume werden <strong>ans Ende der
+        Seit Februar 2025 gilt: Sobald die Anlage ein{" "}
+        <strong>intelligentes Messsystem (Smart Meter)</strong> hat, wird in
+        Stunden mit <strong>negativem Börsenstrompreis</strong> keine
+        Einspeisevergütung mehr gezahlt. Solange noch kein Smart Meter installiert
+        ist, greift bei kleineren Anlagen stattdessen die Übergangsregel: Die
+        Einspeisung wird pauschal auf <strong>60 % der Anlagenleistung</strong>{" "}
+        gedeckelt. Der Wegfall bei Negativpreisen ist dabei kein dauerhafter
+        Verlust – die betroffenen Zeiträume werden <strong>ans Ende der
         20-jährigen Förderperiode angehängt</strong> und so nachgeholt (auf Basis
         des durchschnittlichen Ertragspotenzials der betroffenen Monate). Wer den
-        Strom in diesen Stunden ohnehin selbst verbraucht oder speichert, ist von
-        der Regel praktisch nicht betroffen. Zur Erinnerung: Anlagen über 7 kWp
-        müssen dafür steuerbar sein – Details im{" "}
+        Strom in diesen Stunden ohnehin selbst verbraucht oder speichert, ist
+        praktisch nicht betroffen. Mehr zu Smart Meter und Steuerbarkeit (ab 7 kWp)
+        im{" "}
         <Link
           href="/ratgeber/photovoltaik-kosten"
           className="text-accent underline-offset-2 hover:underline"
