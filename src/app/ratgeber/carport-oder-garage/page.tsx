@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Kosten, Vor- und Nachteile und Genehmigung von Carport und Garage im direkten Vergleich.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

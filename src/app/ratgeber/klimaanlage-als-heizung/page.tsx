@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Heizen mit der Split-Klimaanlage – Effizienz, Unterschied zur Wärmepumpe, Kosten & Förderung 2026.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

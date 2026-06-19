@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Carport mit Photovoltaik – Kosten nach Größe, Förderung 2026, Amortisation und das Duo mit der Wallbox.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

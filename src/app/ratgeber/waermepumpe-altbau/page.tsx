@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Voraussetzungen, Heizkörper ohne Fußbodenheizung, Hochtemperatur-Wärmepumpe & ehrlicher Eignungs-Check.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

@@ -24,6 +24,7 @@ export const metadata: Metadata = {
       "Baugrenze/Baufenster, GRZ, Vorgarten und Befreiung (§ 31 BauGB) – was der Bebauungsplan beim Carport vorgibt, mit Checkliste.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

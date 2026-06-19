@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Preise pro m², die versteckten Unterbau-Kosten, Materialvergleich und Rechner.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

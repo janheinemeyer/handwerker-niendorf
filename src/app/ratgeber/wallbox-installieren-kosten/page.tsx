@@ -23,6 +23,7 @@ export const metadata: Metadata = {
       "Preise für Gerät und Installation – mit Kostenrechner, Förderung und Anmeldung.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

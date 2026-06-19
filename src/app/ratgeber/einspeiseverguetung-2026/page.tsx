@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Sätze nach Anlagengröße, Teil- vs. Volleinspeisung, 20-Jahre-Garantie & Negativpreis-Regel.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

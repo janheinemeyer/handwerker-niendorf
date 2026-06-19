@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Preis-Niveau, Wartung, Haltbarkeit und Optik der Carport-Materialien – plus was der Aufbau kostet.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

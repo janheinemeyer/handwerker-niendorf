@@ -23,6 +23,7 @@ export const metadata: Metadata = {
       "Preise nach Größe, Material und Montage – mit Kostenrechner, Tabellen und FAQ.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

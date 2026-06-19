@@ -14,6 +14,12 @@ export type RatgeberPage = {
   topic: string;
   /** Topical cluster — `RelatedRatgeber` surfaces same-cluster siblings first. */
   cluster: Cluster;
+  /**
+   * Last meaningful content change (ISO `YYYY-MM-DD`). Feeds the sitemap's
+   * `lastModified` so it reflects a real date instead of the build timestamp.
+   * Bump it when you substantively update a page.
+   */
+  updated: string;
 };
 
 /**
@@ -29,7 +35,7 @@ export type RatgeberPage = {
  *
  * To add a new Ratgeber page: add it here so siblings link to it, it links back,
  * and its topic appears in the Organization schema. A page not listed renders no
- * cross-links.
+ * cross-links. Set `updated` to the current date for the sitemap.
  */
 export const RATGEBER_PAGES: RatgeberPage[] = [
   {
@@ -38,6 +44,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Preise nach Größe, Material & Aufbau – inkl. Kostenrechner.",
     topic: "Carport-Bau",
     cluster: "carport",
+    updated: "2026-06-15",
   },
   {
     href: "/ratgeber/terrassenueberdachung-kosten",
@@ -45,6 +52,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Was eine Überdachung kostet – Material, Größe und Montage.",
     topic: "Terrassenüberdachung",
     cluster: "aussen",
+    updated: "2026-06-12",
   },
   {
     href: "/ratgeber/wallbox-installieren-kosten",
@@ -52,6 +60,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Installationskosten, Förderung und Technik im Überblick.",
     topic: "Wallbox-Installation",
     cluster: "energie",
+    updated: "2026-06-12",
   },
   {
     href: "/ratgeber/photovoltaik-kosten",
@@ -59,6 +68,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "PV-Anlage mit & ohne Speicher – Preise pro kWp, Steuer, Einspeisevergütung & wann sich Solar lohnt.",
     topic: "Photovoltaik",
     cluster: "energie",
+    updated: "2026-06-19",
   },
   {
     href: "/ratgeber/stromspeicher-kosten",
@@ -66,6 +76,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Preise pro kWh, die richtige Speichergröße, Lebensdauer & ob sich ein PV-Speicher lohnt.",
     topic: "Stromspeicher",
     cluster: "energie",
+    updated: "2026-06-19",
   },
   {
     href: "/ratgeber/balkonkraftwerk",
@@ -73,6 +84,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kosten, Anmeldung (nur MaStR), 800-Watt-Regel, Mieterrecht & was es im Jahr bringt.",
     topic: "Balkonkraftwerk",
     cluster: "energie",
+    updated: "2026-06-19",
   },
   {
     href: "/ratgeber/einspeiseverguetung-2026",
@@ -80,6 +92,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Aktuelle PV-Sätze (ct/kWh), Teil- vs. Volleinspeisung, 20-Jahre-Garantie & die Negativpreis-Regel.",
     topic: "Einspeisevergütung",
     cluster: "energie",
+    updated: "2026-06-19",
   },
   {
     href: "/ratgeber/photovoltaik-foerderung",
@@ -87,6 +100,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "0 % MwSt, Steuerfreiheit bis 30 kWp, KfW 270 & regionale Programme – und warum es keinen Bundes-Zuschuss gibt.",
     topic: "Photovoltaik-Förderung",
     cluster: "energie",
+    updated: "2026-06-19",
   },
   {
     href: "/ratgeber/photovoltaik-waermepumpe",
@@ -94,6 +108,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Lohnt sich die Kombi? Deckungsgrad, Komplettpaket-Kosten, Dimensionierung & der ehrliche Winter-Check.",
     topic: "Photovoltaik & Wärmepumpe",
     cluster: "energie",
+    updated: "2026-06-19",
   },
   {
     href: "/ratgeber/klimaanlage-einbauen-kosten",
@@ -101,6 +116,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Split & Multisplit – Preise mit Montage, Genehmigung, Strom & Wartung.",
     topic: "Klimaanlage",
     cluster: "energie",
+    updated: "2026-06-18",
   },
   {
     href: "/ratgeber/klimaanlage-als-heizung",
@@ -108,6 +124,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Heizen mit der Split-Klimaanlage – Effizienz, Kosten, Förderung 2026 & wann es sich lohnt.",
     topic: "Klimaanlage als Heizung",
     cluster: "energie",
+    updated: "2026-06-18",
   },
   {
     href: "/ratgeber/waermepumpe-kosten",
@@ -115,6 +132,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Luft-Wasser, Erdwärme & Co. – Preise mit Einbau, KfW-Förderung 2026 & ehrlicher Altbau-Check.",
     topic: "Wärmepumpe",
     cluster: "energie",
+    updated: "2026-06-18",
   },
   {
     href: "/ratgeber/waermepumpe-altbau",
@@ -122,6 +140,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Funktioniert das? Voraussetzungen, Heizkörper ohne Fußbodenheizung, Hochtemperatur & ehrlicher Check.",
     topic: "Wärmepumpe im Altbau",
     cluster: "energie",
+    updated: "2026-06-18",
   },
   {
     href: "/ratgeber/waermepumpe-stromverbrauch",
@@ -129,6 +148,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Wie viel Strom braucht sie? Verbrauch berechnen, Stromkosten pro Jahr & mit Tarif/PV senken.",
     topic: "Wärmepumpen-Stromverbrauch",
     cluster: "energie",
+    updated: "2026-06-18",
   },
   {
     href: "/ratgeber/warmwasser-waermepumpe",
@@ -136,6 +156,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Effizientes Warmwasser aus der Kellerluft – Funktion, Kosten, Stromverbrauch & wann sie sich lohnt.",
     topic: "Warmwasser-Wärmepumpe",
     cluster: "energie",
+    updated: "2026-06-18",
   },
   {
     href: "/ratgeber/waermepumpe-foerderung",
@@ -143,6 +164,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Bis zu 70 % über die KfW 458 – Boni, Voraussetzungen, Antrag Schritt für Schritt & der häufigste Fehler.",
     topic: "Wärmepumpen-Förderung",
     cluster: "energie",
+    updated: "2026-06-18",
   },
   {
     href: "/ratgeber/bad-renovieren-kosten",
@@ -150,6 +172,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
     topic: "Badsanierung",
     cluster: "innen",
+    updated: "2026-06-13",
   },
   {
     href: "/ratgeber/wohnung-streichen-kosten",
@@ -157,6 +180,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Maler-Preise pro m² & nach Größe – Wände, Decken, Vorarbeiten & Rechner.",
     topic: "Malerarbeiten",
     cluster: "innen",
+    updated: "2026-06-15",
   },
   {
     href: "/ratgeber/wintergarten-kosten",
@@ -164,6 +188,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kalt- oder Warmwintergarten – Preise pro m², Genehmigung & Rechner.",
     topic: "Wintergarten",
     cluster: "aussen",
+    updated: "2026-06-13",
   },
   {
     href: "/ratgeber/einfahrt-pflastern-kosten",
@@ -171,6 +196,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Preise pro m², die versteckten Unterbau-Kosten & Rechner.",
     topic: "Pflasterarbeiten",
     cluster: "aussen",
+    updated: "2026-06-13",
   },
   {
     href: "/ratgeber/carport-baugenehmigung-hamburg",
@@ -178,6 +204,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Wann ist ein Carport genehmigungsfrei? § 61 HBauO, Grenzabstände & Ablauf.",
     topic: "Baugenehmigung Carport",
     cluster: "carport",
+    updated: "2026-06-15",
   },
   {
     href: "/ratgeber/carport-bebauungsplan",
@@ -185,6 +212,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Baugrenze, Baufenster, GRZ & Vorgarten – was der B-Plan beim Carport vorgibt.",
     topic: "Carport im Bebauungsplan",
     cluster: "carport",
+    updated: "2026-06-15",
   },
   {
     href: "/ratgeber/carport-material-vergleich",
@@ -192,6 +220,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Holz, Aluminium, Stahl & WPC im Vergleich – Preis, Wartung, Haltbarkeit.",
     topic: "Carport-Material",
     cluster: "carport",
+    updated: "2026-06-15",
   },
   {
     href: "/ratgeber/solarcarport-kosten",
@@ -199,6 +228,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Carport mit Photovoltaik – Kosten, Förderung 2026 & das Duo mit der Wallbox.",
     topic: "Solarcarport",
     cluster: "carport",
+    updated: "2026-06-15",
   },
   {
     href: "/ratgeber/doppelcarport-kosten",
@@ -206,6 +236,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Carport für zwei Autos – Preise nach Material, empfohlene Maße & Kostenfaktoren.",
     topic: "Doppelcarport",
     cluster: "carport",
+    updated: "2026-06-15",
   },
   {
     href: "/ratgeber/carport-oder-garage",
@@ -213,6 +244,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kosten, Vor- & Nachteile und Genehmigung im direkten Vergleich.",
     topic: "Carport oder Garage",
     cluster: "carport",
+    updated: "2026-06-16",
   },
   {
     href: "/ratgeber/knx-smart-home-kosten",
@@ -220,6 +252,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Was ein KNX-Smart-Home kostet – Pakete, Neubau vs. Nachrüsten & Programmierung.",
     topic: "KNX Smart Home",
     cluster: "smarthome",
+    updated: "2026-06-16",
   },
   {
     href: "/ratgeber/knx-oder-loxone",
@@ -227,5 +260,6 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Offener Standard vs. Komplettsystem – Kosten, Vor- & Nachteile im Vergleich.",
     topic: "KNX oder Loxone",
     cluster: "smarthome",
+    updated: "2026-06-16",
   },
 ];

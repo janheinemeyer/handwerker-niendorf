@@ -24,6 +24,7 @@ export const metadata: Metadata = {
       "Kosten eines KNX-Smart-Homes nach Ausbaustufe, Neubau vs. Nachrüsten und Programmierung – kompakt erklärt.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

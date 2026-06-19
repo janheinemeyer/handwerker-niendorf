@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Kosten ab ~300 €, Anmeldung nur im Marktstammdatenregister, 800-Watt-Regel & Mieterrecht.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

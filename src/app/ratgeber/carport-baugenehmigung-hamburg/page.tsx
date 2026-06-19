@@ -23,6 +23,7 @@ export const metadata: Metadata = {
       "§ 61 HBauO: Carport bis 50 m² und 3 m je Hauptgebäude verfahrensfrei. Grenzabstände, Ablauf und Kosten für Hamburg.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

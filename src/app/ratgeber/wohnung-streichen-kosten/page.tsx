@@ -23,6 +23,7 @@ export const metadata: Metadata = {
       "Maler-Preise pro m² und nach Wohnungsgröße, Wände vs. Decke, Vorarbeiten & Hamburg-Aufschlag – mit Kostenrechner.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

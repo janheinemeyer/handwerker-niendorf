@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Kalt- vs. Warmwintergarten, Preise pro m², Material und Baugenehmigung – mit Kostenrechner.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

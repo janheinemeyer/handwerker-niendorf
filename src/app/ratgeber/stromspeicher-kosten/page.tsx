@@ -22,6 +22,7 @@ export const metadata: Metadata = {
       "Preise pro kWh, Speichergröße berechnen, Lebensdauer, Notstrom & wann sich der Speicher lohnt.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 

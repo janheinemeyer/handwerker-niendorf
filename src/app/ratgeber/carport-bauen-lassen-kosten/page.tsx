@@ -23,6 +23,7 @@ export const metadata: Metadata = {
       "Preise nach Typ, Material und Aufbau – mit Kostentabellen, Spartipps und Rechner.",
     locale: "de_DE",
     type: "article",
+    images: ["/opengraph-image"],
   },
 };
 
