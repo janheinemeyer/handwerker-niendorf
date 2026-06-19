@@ -32,7 +32,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was bedeutet der 0-%-Mehrwertsteuersatz?",
-    a: "Seit 2023 fällt auf Kauf und Installation einer PV-Anlage bis 30 kWp keine Mehrwertsteuer an (0 % statt 19 %). Der Nullsteuersatz gilt unbefristet und umfasst alle wesentlichen Komponenten: Module, Wechselrichter, Batteriespeicher, Montagegestell, Kabel, die Wallbox und die komplette Montageleistung. Das senkt den Bruttopreis direkt um knapp ein Fünftel.",
+    a: "Seit 2023 fällt auf Kauf und Installation einer PV-Anlage bis 30 kWp keine Mehrwertsteuer an (0 % statt 19 %). Der Nullsteuersatz gilt unbefristet und umfasst die wesentlichen Komponenten der Anlage: Module, Wechselrichter, Batteriespeicher, Montagegestell, Kabel und die komplette Montageleistung. Eine Wallbox zählt dagegen als Stromverbraucher und ist nur in bestimmten Paketkonstellationen mit erfasst. Der Nullsteuersatz senkt den Bruttopreis der Anlage direkt um knapp ein Fünftel.",
   },
   {
     q: "Ist meine PV-Anlage steuerfrei?",
@@ -44,7 +44,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was ist die KfW 270 – und ist das ein Zuschuss?",
-    a: "Nein, ein zinsgünstiger Kredit, kein Zuschuss. Über die KfW 270 („Erneuerbare Energien – Standard“) lassen sich PV-Anlage, Speicher und Wallbox bis zu 100 % finanzieren. Der effektive Jahreszins hängt von der Bonität ab und liegt grob zwischen rund 3 % und über 11 %. Sinnvoll, wenn Sie die Anschaffung finanzieren wollen – Geld geschenkt gibt es damit aber nicht.",
+    a: "Nein, ein zinsgünstiger Kredit, kein Zuschuss. Über die KfW 270 („Erneuerbare Energien – Standard“) lassen sich PV-Anlage und Batteriespeicher bis zu 100 % finanzieren (eine Wallbox gehört nicht zu den förderfähigen Posten dieses Programms). Der effektive Jahreszins hängt von der Bonität ab und liegt grob zwischen rund 3 % und über 11 %. Sinnvoll, wenn Sie die Anschaffung finanzieren wollen – Geld geschenkt gibt es damit aber nicht.",
   },
   {
     q: "Gibt es regionale Förderung in Hamburg?",
@@ -113,8 +113,9 @@ export default function PhotovoltaikFoerderungPage() {
         Der größte Hebel sind die Steuervorteile. Seit 2023 gilt der{" "}
         <strong>Nullsteuersatz</strong>: Auf Kauf und Installation einer Anlage bis
         30 kWp fällt <strong>keine Mehrwertsteuer</strong> an (0 % statt 19 %) –
-        unbefristet, und für alle wesentlichen Komponenten samt Speicher, Wallbox
-        und Montage. Zusätzlich sind die <strong>Einnahmen</strong> aus Anlagen bis
+        unbefristet, und für die wesentlichen Komponenten der Anlage samt Speicher
+        und Montage (eine Wallbox als reiner Stromverbraucher fällt in der Regel
+        nicht darunter). Zusätzlich sind die <strong>Einnahmen</strong> aus Anlagen bis
         30 kWp am Einfamilienhaus nach <strong>§ 3 Nr. 72 EStG einkommensteuerfrei</strong>.
         Praktisch heißt das: <strong>keine MwSt, keine Einkommensteuer, keine
         Gewerbeanmeldung</strong> – eine Anlage bis 30 kWp ist quasi steuerfrei. Die
@@ -125,8 +126,9 @@ export default function PhotovoltaikFoerderungPage() {
       <P>
         Die <strong>KfW 270</strong> („Erneuerbare Energien – Standard“) ist der
         wichtigste bundesweite Finanzierungsbaustein – aber ein{" "}
-        <strong>Kredit, kein Zuschuss</strong>. Sie finanziert PV-Anlage, Speicher
-        und Wallbox zu bis zu 100 % der Kosten. Der effektive Jahreszins hängt von
+        <strong>Kredit, kein Zuschuss</strong>. Sie finanziert die PV-Anlage und den
+        Batteriespeicher zu bis zu 100 % der Kosten (eine Wallbox gehört nicht zu
+        den förderfähigen Posten dieses Programms). Der effektive Jahreszins hängt von
         der Bonität ab und reicht grob von rund 3 % bis über 11 %. Den Antrag
         stellen Sie <strong>vor Vertragsabschluss</strong> über Ihre Hausbank, nicht
         direkt bei der KfW. Sinnvoll, wenn Sie die Anschaffung strecken wollen –
