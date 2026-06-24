@@ -175,6 +175,14 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     updated: "2026-06-13",
   },
   {
+    href: "/ratgeber/fliesen-legen-kosten",
+    title: "Fliesen legen lassen: Kosten",
+    blurb: "Preise pro m² für Boden, Wand & Bad – mit Abdichtung, Stundenlohn, Beispielrechnung & Spartipps.",
+    topic: "Fliesenarbeiten",
+    cluster: "innen",
+    updated: "2026-06-24",
+  },
+  {
     href: "/ratgeber/wohnung-streichen-kosten",
     title: "Wohnung streichen lassen: Kosten",
     blurb: "Maler-Preise pro m² & nach Größe – Wände, Decken, Vorarbeiten & Rechner.",

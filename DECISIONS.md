@@ -353,3 +353,32 @@ for `carport`/`smarthome`; widening it to `energie` is a separate decision.
 (non-geo primary keyword, one-intent-per-page, Hamburg angle, honest
 "not-worth-it" section, cluster cross-links). Build cluster depth before opening
 new topics. Keyword data + learned patterns live in `research/seo/keywords/`.
+
+## 2026-06-24 — Ancillary "Zulieferer" pages deepen existing clusters
+
+**Decision:** Grow the Ratgeber catalog with **smaller ancillary trades that feed
+an existing cluster's pillar**, rather than only big-ticket pillar topics or
+brand-new clusters. First page: `fliesen-legen-kosten` (cluster `innen`), which
+funnels into the `bad-renovieren-kosten` pillar. Candidate backlog (one per
+existing cluster, validate each with `/seo-research` before building): Fliesen
+legen + Trockenbau (`innen`), Terrasse bauen + Zaun (`aussen`), Carport-Fundament
+(`carport`), Hydraulischer Abgleich (`energie`), KNX nachrüsten (`smarthome`).
+
+**Why:** The catalog was deep on expensive pillars but thin on the *surrounding*
+work people actually search mid-project. Ancillary pages are lower-competition
+long-tails that (a) add cluster authority to the money pages and (b) catch users
+already in a project, then cross-link them to the pillar + contact form. Each one
+need not carry traffic alone — the cluster ranks. Extends the depth-over-breadth
+strategy from the 2026-06-18 entry.
+
+**Alternatives considered:** Opening a new `elektro` cluster (Mauerschlitzen etc.)
+— rejected for now: weaker per-page lead value and no existing pillar to feed;
+ancillary-into-existing-cluster gives faster authority compounding.
+
+**Consequences:** New ancillary pages reuse `@/components/ratgeber` and register
+in `RATGEBER_PAGES` like any other. Note from the Fliesen keyword data: unlike
+Klima/PV, the **geo term has real volume** (`fliesenleger hamburg` ≈ 100–1.000/mo)
+— so a Hamburg section is warranted, but this is captured **organically**; the
+aggregator constraint (no GBP/map pack, see 2026-06-18) still holds. The
+`fliesenleger stundenlohn` term is high-volume *and* low-competition — pages
+should surface such sub-questions as their own H2, not bury them in a table.
