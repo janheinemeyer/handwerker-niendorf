@@ -169,11 +169,12 @@ export default function FliesenLegenKostenPage() {
         ]}
       />
       <P>
-        Damit liegt ein durchschnittliches Bad – je nach Format, Aufwand und
-        Hamburg-Aufschlag – realistisch in der Spanne von{" "}
-        <strong>3.000 bis 8.000 €</strong> für die reinen Fliesenarbeiten. Nach
-        oben offen wird es bei großformatigem Feinsteinzeug, aufwendigen Mustern
-        oder Mosaik.
+        Ohne Abriss und mit günstigem Material kann ein kleines Bad knapp unter
+        dieser Summe bleiben; mit Abriss, Großformat oder aufwendigen Mustern
+        klettert sie nach oben. Realistisch liegt ein durchschnittliches Bad – je
+        nach Format, Aufwand und Hamburg-Aufschlag – damit bei{" "}
+        <strong>3.000 bis 8.000 €</strong> für die reinen Fliesenarbeiten, nach
+        oben offen bei großformatigem Feinsteinzeug oder Mosaik.
       </P>
 
       <H2 id="altbau">Alte Fliesen entfernen oder Fliese auf Fliese?</H2>
