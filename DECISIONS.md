@@ -382,3 +382,29 @@ Klima/PV, the **geo term has real volume** (`fliesenleger hamburg` ≈ 100–1.0
 aggregator constraint (no GBP/map pack, see 2026-06-18) still holds. The
 `fliesenleger stundenlohn` term is high-volume *and* low-competition — pages
 should surface such sub-questions as their own H2, not bury them in a table.
+
+## 2026-09-22 — Gastro-Terrassenüberdachung is its own page, priced net, with a payback calculator
+
+**Decision:** Build `terrassenueberdachung-gastronomie` (cluster `aussen`) as a
+separate page instead of a section on `terrassenueberdachung-kosten`. Its
+calculator (`GastroTerrassenCalculator`) shows **net** prices (zzgl. MwSt.) and
+adds a **payback estimate** (seats × extra days × spend × 30 % contribution
+margin). The private page gets one contextual in-body link to it.
+
+**Why:** Different intent and a different buyer: B2B, net pricing with input-VAT
+deduction, AfA instead of § 35a, Bauantrag almost always, Sondernutzung on public
+ground, wind class/liability and the Passivraucherschutz "fully enclosed room"
+question. Blending would dilute both pages. SERP check: the query is dominated by
+manufacturer product pages; none offers a calculator or an interactive payback
+— that's the differentiator. Triggered by the first real lead for a
+Terrassenüberdachung.
+
+**Alternatives considered:** A "Für Gastronomie" section on the private page —
+cheaper, but can't rank for the gastro queries and forces one CostTable onto two
+price levels (private 3–20 k€ gross vs. gastro 15–130 k€ net).
+
+**Consequences:** Gastro per-m² prices sit deliberately above the private
+calculator (public-traffic statics, higher WWK, planning flat fee). The payback
+figure is a rough contribution-margin estimate and is labelled as such — not a
+business plan. Real search volumes were not pulled (no Keyword Planner export
+yet); add one to `research/seo/keywords/` when available.
