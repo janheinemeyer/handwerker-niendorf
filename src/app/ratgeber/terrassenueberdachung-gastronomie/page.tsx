@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was kostet eine Terrassenüberdachung für die Gastronomie?",
-    a: "Eine gewerbliche Terrassenüberdachung kostet 2026 meist zwischen 15.000 € und 80.000 € netto. Eine kleine Café-Terrasse mit Glasdach (ca. 15 m²) beginnt bei rund 12.000 €, ein Glasdach für 30–40 m² liegt bei etwa 25.000–40.000 €. Lamellendächer mit Glas-Schiebeelementen für 60 m² erreichen 80.000 € und mehr.",
+    a: "Eine gewerbliche Terrassenüberdachung kostet 2026 meist zwischen 15.000 € und 80.000 € netto (ohne Vorsteuerabzug, etwa bei der Kleinunternehmerregelung, kommen 19 % MwSt. obendrauf). Eine kleine Café-Terrasse mit Glasdach (ca. 15 m²) beginnt bei rund 12.000 €, ein Glasdach für 30–40 m² liegt bei etwa 25.000–40.000 €. Lamellendächer mit Glas-Schiebeelementen für 60 m² erreichen 80.000 € und mehr.",
   },
   {
     q: "Was kostet eine Gastro-Überdachung pro Quadratmeter?",
@@ -38,7 +38,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Braucht eine Terrassenüberdachung für ein Restaurant eine Baugenehmigung?",
-    a: "In der Regel ja. Gastro-Terrassen überschreiten die Hamburger Grenzen für verfahrensfreie Überdachungen (bis 30 m² Grundfläche und 3 m Tiefe) meist deutlich; bei gewerblicher Nutzung kommen Stellplatz-, Brandschutz- und Nutzungsfragen hinzu, und wer die Gastfläche erweitert, ändert unter Umständen die genehmigte Nutzung. Rechnen Sie mit einem Bauantrag inklusive Statik und 6–12 Wochen Bearbeitungszeit – und klären Sie das Vorhaben vorab mit dem Bezirksamt.",
+    a: "Nicht immer, aber meistens. Bleibt die Überdachung offen, unter 30 m² Grundfläche und 3 m Tiefe und ändert sich an der genehmigten Nutzung nichts, greift auch für Gastro-Betriebe die Hamburger Verfahrensfreiheit. Ein Bauantrag inklusive Statik wird nötig, sobald die Anlage größer ist, mit Seitenelementen geschlossen wird, die Gastfläche erweitert wird (Nutzungsänderung) oder Sonderbau-, Brandschutz- und Rettungsweg-Vorgaben greifen. Für den Bauantrag sollten Sie 6–12 Wochen einplanen; klären Sie den Fall vorab mit dem Bezirksamt.",
   },
   {
     q: "Darf ich eine feste Überdachung auf dem Gehweg bauen?",
@@ -118,8 +118,10 @@ export default function TerrassenueberdachungGastronomiePage() {
         Terrassendächer: Sie sind größer gespannt, müssen bei Publikumsverkehr
         höhere Wind- und Schneelasten sicher tragen und werden fast immer mit
         Statik und Bauantrag geplant. Alle Preise in diesem Ratgeber sind{" "}
-        <strong>netto</strong> – als Betrieb ziehen Sie die Mehrwertsteuer als
-        Vorsteuer ab.
+        <strong>netto</strong> – vorsteuerabzugsberechtigte Betriebe holen sich
+        die Mehrwertsteuer zurück. Wer die Kleinunternehmerregelung nutzt, kann
+        das nicht: Für ihn kommen <strong>19 % obendrauf</strong>, und die
+        Amortisation dauert entsprechend länger.
       </P>
       <CostTable
         head={["Terrassengröße", "Typische Lösung", "Kosten netto"]}
@@ -208,13 +210,33 @@ export default function TerrassenueberdachungGastronomiePage() {
         Genehmigung in Hamburg: Was brauchen Gastronomen?
       </H2>
       <P>
-        Private Terrassenüberdachungen sind in Hamburg bis 30 m² Grundfläche und
-        3 m Tiefe häufig verfahrensfrei. Für Gastronomen ist diese Regel selten
-        der Maßstab: Wer die Außenfläche überdacht, um mehr Tage und mehr Gäste
-        zu bewirten, verändert die Nutzung – dazu kommen Brandschutz,
-        Rettungswege und bei großen Anlagen Sonderbau-Vorschriften. Planen Sie
-        mit einem <strong>Bauantrag inklusive Statik</strong> und 6–12 Wochen
-        Bearbeitungszeit.
+        In Hamburg sind Terrassenüberdachungen bis 30 m² Grundfläche und 3 m
+        Tiefe häufig verfahrensfrei – das gilt auch für einen Gastro-Betrieb,
+        solange das Dach offen bleibt, innerhalb dieser Maße liegt und sich an
+        der genehmigten Nutzung nichts ändert. Ein{" "}
+        <strong>Bauantrag inklusive Statik</strong> wird dagegen typischerweise
+        nötig, wenn mindestens einer dieser Punkte zutrifft:
+      </P>
+      <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
+        <li>Die Überdachung ist größer als 30 m² oder tiefer als 3 m.</li>
+        <li>
+          Sie wird mit Seitenelementen geschlossen – dann entsteht faktisch ein
+          Raum statt einer Überdachung.
+        </li>
+        <li>
+          Die Gastfläche wird erweitert, etwa auf eine bisher nicht gastronomisch
+          genutzte Fläche – das ist eine Nutzungsänderung.
+        </li>
+        <li>
+          Der Betrieb fällt als Sonderbau unter strengere Vorgaben (in Gebäuden
+          ab mehr als 40 Gastplätzen), oder Brandschutz und Rettungswege sind
+          betroffen.
+        </li>
+      </ul>
+      <P>
+        Für den Bauantrag sollten Sie 6–12 Wochen einplanen. Weil die Grenzfälle
+        hier eng beieinander liegen, lohnt vorab ein kurzer Anruf beim
+        Bezirksamt – das kostet nichts und erspart im Zweifel einen Rückbau.
       </P>
       <P>
         <strong>Auf öffentlichem Grund</strong> gilt zusätzlich: Die

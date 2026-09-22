@@ -299,7 +299,11 @@ export function GastroTerrassenCalculator() {
           ))}
         </dl>
 
-        <dl className="mt-6 space-y-2 border-t border-white/10 pt-5 text-sm">
+        <dl
+          className="mt-6 space-y-2 border-t border-white/10 pt-5 text-sm"
+          role="status"
+          aria-live="polite"
+        >
           <div className="flex items-baseline justify-between gap-4">
             <dt className="text-paper/60">Mehrumsatz pro Jahr</dt>
             <dd className="font-medium tabular-nums">{eur(calc.extraRevenue)}</dd>
