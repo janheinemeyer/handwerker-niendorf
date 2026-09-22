@@ -75,6 +75,70 @@ export function Segmented<T extends string>({
   );
 }
 
+/**
+ * Free numeric input for a measurement (metres, m², …). Keeps the raw string
+ * while typing — so the field can be empty or mid-entry ("3,") without the
+ * calculator jumping — and reports a clamped number to the parent. Accepts both
+ * "3.5" and the German "3,5". On blur the field snaps back to the clamped value
+ * so what is shown always matches what was calculated.
+ */
+export function NumberField({
+  label,
+  value,
+  onChange,
+  min,
+  max,
+  step = 0.5,
+  unit,
+  hint,
+}: {
+  label: string;
+  /** Raw input string, owned by the parent. */
+  value: string;
+  onChange: (raw: string) => void;
+  min: number;
+  max: number;
+  step?: number;
+  unit?: string;
+  hint?: string;
+}) {
+  const id = `num-${label.replace(/\W+/g, "-").toLowerCase()}`;
+  return (
+    <div>
+      <label htmlFor={id} className="label text-ink-soft">
+        {label}
+      </label>
+      <div className="mt-2 flex items-center gap-3">
+        <input
+          id={id}
+          type="number"
+          inputMode="decimal"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onBlur={() => onChange(String(clampNumber(value, min, max)))}
+          className="w-32 border border-line-strong bg-paper px-4 py-2.5 text-ink outline-none transition-colors focus:border-accent"
+        />
+        {unit && <span className="text-sm text-ink-soft">{unit}</span>}
+        {hint && <span className="text-xs text-ink-soft/60">{hint}</span>}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Parse a `NumberField`'s raw string into a usable number: German decimal
+ * comma, empty/invalid falls back to `min`, and the result is clamped so a
+ * typo like "400" can't produce an absurd estimate.
+ */
+export function clampNumber(raw: string, min: number, max: number): number {
+  const n = parseFloat(raw.replace(",", "."));
+  if (!Number.isFinite(n)) return min;
+  return Math.min(max, Math.max(min, n));
+}
+
 export function Toggle({
   label,
   hint,

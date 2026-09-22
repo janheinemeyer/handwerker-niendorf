@@ -1,7 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Segmented, Toggle, eur, round100 } from "@/components/calculator-ui";
+import {
+  NumberField,
+  Segmented,
+  Toggle,
+  clampNumber,
+  eur,
+  round100,
+} from "@/components/calculator-ui";
 import { RequestButton } from "@/components/request/request-button";
 
 /*
@@ -14,8 +21,6 @@ import { RequestButton } from "@/components/request/request-button";
   estimate (extra usable days × seats × spend × margin), not a business plan.
 */
 
-type Width = "5" | "8" | "10" | "12";
-type Depth = "3" | "4" | "5";
 type System = "glas" | "faltdach" | "lamelle";
 type Mount = "wand" | "frei";
 type Sides = "offen" | "zip" | "glas";
@@ -64,11 +69,18 @@ const MOUNT_NAME: Record<Mount, string> = {
   frei: "Freistehend",
 };
 
+// Bounds for the free-form measurements: below these a roof isn't a gastro
+// project, above them the per-m² Richtwerte stop being defensible.
+const WIDTH_MIN = 2;
+const WIDTH_MAX = 25;
+const DEPTH_MIN = 2;
+const DEPTH_MAX = 8;
+
 const nf1 = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 });
 
 export function GastroTerrassenCalculator() {
-  const [width, setWidth] = useState<Width>("8");
-  const [depth, setDepth] = useState<Depth>("4");
+  const [width, setWidth] = useState("8");
+  const [depth, setDepth] = useState("4");
   const [system, setSystem] = useState<System>("glas");
   const [mount, setMount] = useState<Mount>("wand");
   const [sides, setSides] = useState<Sides>("offen");
@@ -82,8 +94,8 @@ export function GastroTerrassenCalculator() {
   const [spend, setSpend] = useState<Spend>("25");
 
   const calc = useMemo(() => {
-    const w = parseFloat(width);
-    const d = parseFloat(depth);
+    const w = clampNumber(width, WIDTH_MIN, WIDTH_MAX);
+    const d = clampNumber(depth, DEPTH_MIN, DEPTH_MAX);
     const area = w * d;
     const free = mount === "frei";
 
@@ -124,6 +136,8 @@ export function GastroTerrassenCalculator() {
     const paybackYears = margin > 0 ? total / margin : Infinity;
 
     return {
+      width: w,
+      depth: d,
       area,
       total,
       low: round100(total * 0.9),
@@ -143,7 +157,7 @@ export function GastroTerrassenCalculator() {
       shade && system === "glas" && "Unterglas-Beschattung",
     ].filter(Boolean) as string[];
     const parts = [
-      `${width} × ${depth} m (${nf1.format(calc.area)} m², ca. ${calc.seats} Plätze)`,
+      `${nf1.format(calc.width)} × ${nf1.format(calc.depth)} m (${nf1.format(calc.area)} m², ca. ${calc.seats} Plätze)`,
       SYSTEM_NAME[system],
       MOUNT_NAME[mount],
       SIDES_NAME[sides],
@@ -158,8 +172,8 @@ export function GastroTerrassenCalculator() {
       summary: parts.join(" · "),
       estimate: `${eur(calc.low)} – ${eur(calc.high)} netto`,
       details: {
-        width,
-        depth,
+        width: calc.width,
+        depth: calc.depth,
         system,
         mount,
         sides,
@@ -173,33 +187,32 @@ export function GastroTerrassenCalculator() {
         spend,
       },
     };
-  }, [width, depth, system, mount, sides, heaters, led, shade, foundation, planning, region, days, spend, calc.area, calc.seats, calc.low, calc.high]);
+  }, [system, mount, sides, heaters, led, shade, foundation, planning, region, days, spend, calc.width, calc.depth, calc.area, calc.seats, calc.low, calc.high]);
 
   return (
     <div className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
       {/* Inputs */}
       <div className="space-y-6 bg-paper p-6 sm:p-8">
-        <Segmented<Width>
-          label="Breite (Front)"
-          value={width}
-          onChange={setWidth}
-          options={[
-            { value: "5", label: "5 m" },
-            { value: "8", label: "8 m" },
-            { value: "10", label: "10 m" },
-            { value: "12", label: "12 m" },
-          ]}
-        />
-        <Segmented<Depth>
-          label="Tiefe"
-          value={depth}
-          onChange={setDepth}
-          options={[
-            { value: "3", label: "3 m" },
-            { value: "4", label: "4 m" },
-            { value: "5", label: "5 m" },
-          ]}
-        />
+        <div className="flex flex-wrap gap-x-8 gap-y-6">
+          <NumberField
+            label="Breite (Front)"
+            value={width}
+            onChange={setWidth}
+            min={WIDTH_MIN}
+            max={WIDTH_MAX}
+            unit="m"
+            hint={`${WIDTH_MIN}–${WIDTH_MAX} m`}
+          />
+          <NumberField
+            label="Tiefe"
+            value={depth}
+            onChange={setDepth}
+            min={DEPTH_MIN}
+            max={DEPTH_MAX}
+            unit="m"
+            hint={`${DEPTH_MIN}–${DEPTH_MAX} m`}
+          />
+        </div>
         <Segmented<System>
           label="Dachsystem"
           value={system}
