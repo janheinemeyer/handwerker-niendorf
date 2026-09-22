@@ -253,6 +253,14 @@ export default function TerrassenueberdachungKostenPage() {
         >
           Carport bauen lassen: Kosten
         </Link>
+        . Sie planen eine Überdachung für Restaurant, Café oder Bar? Dann gelten
+        andere Preise und Genehmigungsregeln – mehr dazu im Ratgeber{" "}
+        <Link
+          href="/ratgeber/terrassenueberdachung-gastronomie"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          Terrassenüberdachung für die Gastronomie
+        </Link>
         .
       </P>
 
