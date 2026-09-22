@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was kostet eine Terrassenüberdachung für die Gastronomie?",
-    a: "Eine gewerbliche Terrassenüberdachung kostet 2026 typischerweise zwischen 15.000 € und 60.000 € netto. Eine kleine Café-Terrasse mit Glasdach (ca. 15 m²) beginnt bei rund 12.000 €, ein Glasdach für 30–40 m² liegt bei etwa 25.000–40.000 €. Lamellendächer mit Glas-Schiebeelementen für 60 m² erreichen 80.000 € und mehr.",
+    a: "Eine gewerbliche Terrassenüberdachung kostet 2026 meist zwischen 15.000 € und 80.000 € netto. Eine kleine Café-Terrasse mit Glasdach (ca. 15 m²) beginnt bei rund 12.000 €, ein Glasdach für 30–40 m² liegt bei etwa 25.000–40.000 €. Lamellendächer mit Glas-Schiebeelementen für 60 m² erreichen 80.000 € und mehr.",
   },
   {
     q: "Was kostet eine Gastro-Überdachung pro Quadratmeter?",
@@ -38,11 +38,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Braucht eine Terrassenüberdachung für ein Restaurant eine Baugenehmigung?",
-    a: "In der Regel ja. Die Hamburger Verfahrensfreiheit für Terrassenüberdachungen bis 30 m² ist auf Wohngebäude zugeschnitten; bei gewerblicher Nutzung kommen Stellplatz-, Brandschutz- und Nutzungsfragen hinzu, und wer die Gastfläche erweitert, ändert unter Umständen die genehmigte Nutzung. Rechnen Sie mit einem Bauantrag inklusive Statik und 6–12 Wochen Bearbeitungszeit – und klären Sie das Vorhaben vorab mit dem Bezirksamt.",
+    a: "In der Regel ja. Gastro-Terrassen überschreiten die Hamburger Grenzen für verfahrensfreie Überdachungen (bis 30 m² Grundfläche und 3 m Tiefe) meist deutlich; bei gewerblicher Nutzung kommen Stellplatz-, Brandschutz- und Nutzungsfragen hinzu, und wer die Gastfläche erweitert, ändert unter Umständen die genehmigte Nutzung. Rechnen Sie mit einem Bauantrag inklusive Statik und 6–12 Wochen Bearbeitungszeit – und klären Sie das Vorhaben vorab mit dem Bezirksamt.",
   },
   {
     q: "Darf ich eine feste Überdachung auf dem Gehweg bauen?",
-    a: "Die Sondernutzungserlaubnis für Außengastronomie in Hamburg deckt Tische, Stühle, Schirme und Heizgeräte auf öffentlichem Grund – feste bauliche Anlagen wie verankerte Pergolen oder Pavillons sind davon ausdrücklich nicht erfasst und brauchen zusätzlich eine Genehmigung nach Bauordnung. In der Praxis wird eine feste Überdachung auf dem Gehweg selten genehmigt; realistisch sind Schirme, Markisen an der Fassade oder eine Überdachung auf eigenem Grund.",
+    a: "Die Sondernutzungserlaubnis für Außengastronomie in Hamburg deckt Tische, Stühle, Schirme und Heizgeräte auf öffentlichem Grund – feste bauliche Anlagen wie verankerte Pergolen oder Pavillons sind davon nicht erfasst und brauchen zusätzlich eine Genehmigung nach Bauordnung. In der Praxis wird eine feste Überdachung auf dem Gehweg selten genehmigt; realistisch sind Schirme, Markisen an der Fassade oder eine Überdachung auf eigenem Grund.",
   },
   {
     q: "Ab wann rechnet sich eine Gastro-Überdachung?",
@@ -83,13 +83,14 @@ export default function TerrassenueberdachungGastronomiePage() {
       ]}
     >
       <TlDr>
-        Eine Terrassenüberdachung für die Gastronomie kostet 2026 typischerweise{" "}
-        <strong>15.000–60.000 € netto</strong>. Ein Glasdach für eine 30–40 m²
+        Eine Terrassenüberdachung für die Gastronomie kostet 2026 meist{" "}
+        <strong>15.000–80.000 € netto</strong>. Ein Glasdach für eine 30–40 m²
         große Terrasse liegt bei <strong>25.000–40.000 €</strong>, ein
         Lamellendach mit Glas-Seiten für 60 m² bei <strong>80.000 € und mehr</strong>.
         Anders als beim Privathaus ist fast immer ein Bauantrag mit Statik nötig.
-        Bei rund 60 zusätzlichen Öffnungstagen im Jahr ist das Dach oft nach{" "}
-        <strong>2–4 Jahren</strong> bezahlt.
+        Bei rund 60 zusätzlichen Öffnungstagen im Jahr ist ein Glasdach oft nach{" "}
+        <strong>2–4 Jahren</strong> bezahlt, Lösungen mit Seitenelementen und
+        Heizung nach 4–7 Jahren.
       </TlDr>
 
       {/* Interactive cost + payback calculator */}
@@ -125,7 +126,7 @@ export default function TerrassenueberdachungGastronomiePage() {
         rows={[
           ["Kleine Café-Terrasse (ca. 15 m²)", "Glasdach an der Fassade, Seiten offen", "12.000 – 18.000 €"],
           ["Bistro-Terrasse (30–40 m²)", "Glasdach mit Beleuchtung", "25.000 – 40.000 €"],
-          ["Restaurant-Terrasse (40–50 m²)", "Glas- oder Faltdach mit ZIP-Screens & Heizung", "45.000 – 70.000 €"],
+          ["Restaurant-Terrasse (40–50 m²)", "Glas- oder Faltdach mit ZIP-Screens & Heizung", "45.000 – 80.000 €"],
           ["Große Terrasse (60 m²)", "Lamellendach mit Glas-Schiebeelementen", "80.000 – 130.000 €"],
         ]}
       />
@@ -219,8 +220,7 @@ export default function TerrassenueberdachungGastronomiePage() {
         <strong>Auf öffentlichem Grund</strong> gilt zusätzlich: Die
         Sondernutzungserlaubnis für Außengastronomie deckt Tische, Stühle,
         Schirme und Heizgeräte auf dem Gehweg – feste bauliche Anlagen wie
-        verankerte Pergolen oder Pavillons sind davon ausdrücklich nicht
-        erfasst. Eine feste Überdachung ist realistisch nur auf eigenem oder
+        verankerte Pergolen oder Pavillons sind davon nicht erfasst. Eine feste Überdachung ist realistisch nur auf eigenem oder
         gepachtetem Grund; auf dem Gehweg bleiben meist Schirme oder eine
         Markise an der Fassade.
       </P>

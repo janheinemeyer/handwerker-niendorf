@@ -165,7 +165,7 @@ export function GastroTerrassenCalculator() {
         sides,
         heaters,
         led,
-        shade,
+        shade: shade && system === "glas",
         foundation,
         planning,
         region,
