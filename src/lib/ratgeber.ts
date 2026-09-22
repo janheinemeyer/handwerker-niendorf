@@ -6,6 +6,27 @@ export type Cluster =
   | "energie"
   | "smarthome";
 
+/**
+ * Public German label per cluster, and the order categories are listed in.
+ * Single source for every surface that groups the catalog (currently the
+ * footer) — so a new cluster is named in exactly one place.
+ */
+export const CLUSTER_LABELS: Record<Cluster, string> = {
+  carport: "Carport",
+  aussen: "Terrasse & Außenanlagen",
+  energie: "Energie & Heizung",
+  innen: "Innenausbau",
+  smarthome: "Smart Home",
+};
+
+const CLUSTER_ORDER: Cluster[] = [
+  "carport",
+  "aussen",
+  "energie",
+  "innen",
+  "smarthome",
+];
+
 export type RatgeberPage = {
   href: string;
   title: string;
@@ -279,3 +300,20 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     updated: "2026-06-16",
   },
 ];
+
+/**
+ * The catalog grouped into its clusters, in `CLUSTER_ORDER`. Page order inside
+ * a group follows the catalog. Empty clusters are dropped, so a cluster whose
+ * pages are all gone disappears instead of rendering an empty heading.
+ */
+export function ratgeberByCluster(): {
+  cluster: Cluster;
+  label: string;
+  pages: RatgeberPage[];
+}[] {
+  return CLUSTER_ORDER.map((cluster) => ({
+    cluster,
+    label: CLUSTER_LABELS[cluster],
+    pages: RATGEBER_PAGES.filter((p) => p.cluster === cluster),
+  })).filter((g) => g.pages.length > 0);
+}
