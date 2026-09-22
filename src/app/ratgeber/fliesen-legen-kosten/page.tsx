@@ -166,6 +166,8 @@ export default function FliesenLegenKostenPage() {
           ["Alte Fliesen entfernen & entsorgen (optional)", "450 – 1.050 €"],
           ["Summe (ohne Abriss)", "~2.700 – 5.250 €"],
           ["Summe (mit Abriss alter Fliesen)", "~3.150 – 6.300 €"],
+          ["Summe in Hamburg (+20–30 % auf Arbeit, ohne Abriss)", "~3.100 – 6.300 €"],
+          ["Summe in Hamburg (+20–30 % auf Arbeit, mit Abriss)", "~3.650 – 7.650 €"],
         ]}
       />
       <P>
