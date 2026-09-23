@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/lib/site";
+
 export type Crumb = { name: string; href: string };
 
 /**
@@ -12,7 +14,9 @@ export function Breadcrumb({ items }: { items: Crumb[] }) {
       "@type": "ListItem",
       position: i + 1,
       name: c.name,
-      item: c.href,
+      // Google requires absolute URLs here; relative hrefs trigger
+      // "Invalid URL in field id" in Search Console.
+      item: `${SITE_URL}${c.href}`,
     })),
   };
 
