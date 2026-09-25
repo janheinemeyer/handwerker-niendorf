@@ -408,3 +408,29 @@ calculator (public-traffic statics, higher WWK, planning flat fee). The payback
 figure is a rough contribution-margin estimate and is labelled as such — not a
 business plan. Real search volumes were not pulled (no Keyword Planner export
 yet); add one to `research/seo/keywords/` when available.
+
+## 2026-09-25 — Gastro page targets „Außengastronomie“, URL stays
+
+**Decision:** Re-aim title, H1, description and blurb of
+`terrassenueberdachung-gastronomie` at **„Außengastronomie überdachen“**; keep the
+slug. Add a section on applying for Außengastronomie in Hamburg (Sondernutzung
+vs. Privatgrundstück) and an alternatives table (freistehende Markise,
+Pergola-Markise, Kaltwintergarten).
+
+**Why:** Google Autocomplete (Sept 2026, `seo-research` → `autocomplete.py`)
+returns **zero** suggestions for „terrassenüberdachung gastronomie/restaurant“,
+„lamellendach/pergola gastronomie“. Gastronomen search „außengastronomie
+(hamburg)“ – almost entirely about beantragen / Sondernutzung / Vorschriften –
+plus „markise gastronomie“ (freistehend, elektrisch) and „wintergarten
+gastronomie“. The page was 2 days old and not yet indexed, so retitling costs
+nothing.
+
+**Alternatives considered:** New slug `aussengastronomie-ueberdachen` — rejected;
+URL keywords matter little and the page is already linked/queued for indexing.
+Covering Sperrstunde / Nachtruhe / Wohngebiet — high autocomplete presence but
+off-intent for a roofing page.
+
+**Consequences:** Sondernutzung facts are sourced from hamburg.de (§ 19 HWG,
+Bezirksamt, 4 Wochen–3 Monate, Wertstufe I–IV). Markise prices are manufacturer
+entry prices (net, rounded), labelled as such; Kaltwintergarten range mirrors
+`wintergarten-kosten`. Re-check GSC queries 2–4 weeks after indexing.

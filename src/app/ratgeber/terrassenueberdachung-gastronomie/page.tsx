@@ -13,14 +13,14 @@ import {
 import { GastroTerrassenCalculator } from "@/components/gastro-terrassen-calculator";
 
 export const metadata: Metadata = {
-  title: "Terrassenüberdachung Gastronomie: Kosten 2026 & Rechner",
+  title: "Außengastronomie überdachen: Kosten 2026, Genehmigung & Rechner",
   description:
-    "Was kostet eine Terrassenüberdachung für Restaurant, Café oder Bar? Netto-Preise 2026 für Glas-, Falt- und Lamellendach, Genehmigung in Hamburg, Windlast, Abschreibung – mit Kosten- und Amortisationsrechner.",
+    "Was kostet eine Terrassenüberdachung für Restaurant, Café oder Bar? Netto-Preise 2026 für Glas-, Falt- und Lamellendach, Markise und Pergola-Markise, Außengastronomie in Hamburg beantragen, Windlast, Abschreibung – mit Kosten- und Amortisationsrechner.",
   alternates: { canonical: "/ratgeber/terrassenueberdachung-gastronomie" },
   openGraph: {
-    title: "Terrassenüberdachung für die Gastronomie: Kosten & Amortisation",
+    title: "Außengastronomie überdachen: Kosten & Amortisation",
     description:
-      "Netto-Preise nach Dachsystem und Größe, Genehmigung in Hamburg und ein Rechner, der zeigt, wann sich das Dach bezahlt macht.",
+      "Netto-Preise nach Dachsystem und Größe, Außengastronomie und Genehmigung in Hamburg und ein Rechner, der zeigt, wann sich das Dach bezahlt macht.",
     locale: "de_DE",
     type: "article",
     images: ["/opengraph-image"],
@@ -43,6 +43,18 @@ const faqs: FaqItem[] = [
   {
     q: "Darf ich eine feste Überdachung auf dem Gehweg bauen?",
     a: "Die Sondernutzungserlaubnis für Außengastronomie in Hamburg deckt Tische, Stühle, Schirme und Heizgeräte auf öffentlichem Grund – feste bauliche Anlagen wie verankerte Pergolen oder Pavillons sind davon nicht erfasst und brauchen zusätzlich eine Genehmigung nach Bauordnung. In der Praxis wird eine feste Überdachung auf dem Gehweg selten genehmigt; realistisch sind Schirme, Markisen an der Fassade oder eine Überdachung auf eigenem Grund.",
+  },
+  {
+    q: "Wie beantrage ich Außengastronomie in Hamburg?",
+    a: "Für Tische, Stühle, Schirme und Heizgeräte auf dem Gehweg brauchen Sie eine Sondernutzungserlaubnis nach § 19 Hamburgisches Wegegesetz. Den Antrag stellen Sie beim Bezirksamt, in dem Ihr Betrieb liegt – online über Hamburg Service oder schriftlich – mit maßstabsgerechtem Lageplan, Fotos und Gaststättenerlaubnis bzw. Gewerbeanmeldung. Die Bearbeitung dauert meist 4 Wochen bis 3 Monate; die Gebühr richtet sich nach Fläche, Dauer und Lage der Straße.",
+  },
+  {
+    q: "Brauche ich für Außengastronomie auf dem Privatgrundstück eine Genehmigung?",
+    a: "Eine Sondernutzungserlaubnis nicht – die gilt nur für öffentlichen Grund. Wird auf dem eigenen oder gepachteten Grundstück aber eine bisher nicht gastronomisch genutzte Fläche zur Gastfläche, ist das eine Nutzungsänderung, die in der Regel eine Baugenehmigung braucht. Für eine Überdachung gelten zusätzlich die Hamburger Regeln zu Größe und Verfahrensfreiheit.",
+  },
+  {
+    q: "Was kostet eine Markise oder Pergola-Markise für die Gastronomie?",
+    a: "Freistehende, motorisierte Doppelmarkisen gibt es ab rund 3.300 € netto, wasserdichte Pergola-Markisen ab etwa 4.600 € netto – jeweils für Standardgrößen und zuzüglich Montage (meist 500–2.000 €). Für große Terrassen werden oft mehrere Anlagen kombiniert. Anders als ein festes Dach sind Markisen auch dort möglich, wo keine bauliche Anlage erlaubt ist; achten Sie auf Windwiderstandsklasse 3 und einen Windwächter.",
   },
   {
     q: "Ab wann rechnet sich eine Gastro-Überdachung?",
@@ -69,7 +81,7 @@ export default function TerrassenueberdachungGastronomiePage() {
         <>
           Terrassen&shy;überdachung
           <br />
-          für die Gastronomie
+          für die Außen&shy;gastronomie
         </>
       }
       updated="September 2026"
@@ -83,7 +95,7 @@ export default function TerrassenueberdachungGastronomiePage() {
       ]}
     >
       <TlDr>
-        Eine Terrassenüberdachung für die Gastronomie kostet 2026 meist{" "}
+        Eine Terrassenüberdachung für die Außengastronomie kostet 2026 meist{" "}
         <strong>15.000–80.000 € netto</strong>. Ein Glasdach für eine 30–40 m²
         große Terrasse liegt bei <strong>25.000–40.000 €</strong>, ein
         Lamellendach mit Glas-Seiten für 60 m² bei <strong>80.000 € und mehr</strong>.
@@ -150,6 +162,40 @@ export default function TerrassenueberdachungGastronomiePage() {
           ["Lamellendach (Alu)", "ca. 900 – 1.100 €", "Licht & Luft regelbar, hohe Schneelast, Premium-Optik"],
         ]}
       />
+
+      <H2 id="alternativen">
+        Markise, Pergola-Markise oder Wintergarten – günstigere Alternativen?
+      </H2>
+      <P>
+        Nicht jede Außengastronomie braucht ein festes Dach. Eine motorisierte
+        Markise oder Pergola-Markise ist deutlich günstiger und oft die einzige
+        Lösung, wo keine feste Anlage erlaubt ist. Dafür schützt sie weniger bei
+        Wind und Schlagregen – achten Sie auf die Windwiderstandsklasse und
+        einen Windwächter. Ein Kaltwintergarten ist dagegen ein geschlossener
+        Raum: Er braucht fast immer einen Bauantrag, und drinnen gilt das
+        Rauchverbot.
+      </P>
+      <CostTable
+        head={["Lösung", "Richtpreis", "Wann sinnvoll"]}
+        rows={[
+          ["Freistehende Markise (Doppelmarkise, motorisiert)", "ab ca. 3.300 € zzgl. Montage", "Plätze ohne Fassade, z. B. im Hof oder Garten"],
+          ["Pergola-Markise (wasserdichtes Tuch, Stützen)", "ab ca. 4.600 € zzgl. Montage (500 – 2.000 €)", "Regenschutz zum kleinen Preis, Tuch einfahrbar"],
+          ["Kaltwintergarten (unbeheizt)", "ca. 500 – 1.000 €/m²", "Saison verlängern, wenn eine geschlossene Fläche genehmigt wird"],
+        ]}
+      />
+      <P>
+        Die Markisen-Preise sind Einstiegspreise der Hersteller für
+        Standardgrößen (netto gerundet); für große Gastro-Terrassen werden oft
+        mehrere Anlagen kombiniert. Die Wintergarten-Spanne ist ein Richtwert –
+        Details zu Glasanbauten im Ratgeber{" "}
+        <Link
+          href="/ratgeber/wintergarten-kosten"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          Wintergarten: Kosten
+        </Link>
+        .
+      </P>
 
       <H2 id="zusatzkosten">Welche Zusatzkosten kommen dazu?</H2>
       <P>
@@ -238,13 +284,47 @@ export default function TerrassenueberdachungGastronomiePage() {
         hier eng beieinander liegen, lohnt vorab ein kurzer Anruf beim
         Bezirksamt – das kostet nichts und erspart im Zweifel einen Rückbau.
       </P>
+
+      <H2 id="aussengastronomie-beantragen">
+        Wie beantrage ich Außengastronomie in Hamburg?
+      </H2>
       <P>
-        <strong>Auf öffentlichem Grund</strong> gilt zusätzlich: Die
-        Sondernutzungserlaubnis für Außengastronomie deckt Tische, Stühle,
-        Schirme und Heizgeräte auf dem Gehweg – feste bauliche Anlagen wie
-        verankerte Pergolen oder Pavillons sind davon nicht erfasst. Eine feste Überdachung ist realistisch nur auf eigenem oder
+        Entscheidend ist, wem die Fläche gehört. <strong>Auf dem Gehweg</strong>{" "}
+        und anderem öffentlichem Grund brauchen Sie eine{" "}
+        <strong>Sondernutzungserlaubnis</strong> nach § 19 Hamburgisches
+        Wegegesetz. Sie deckt Tische, Stühle, Schirme, Pflanzkübel und
+        Heizgeräte – feste bauliche Anlagen wie verankerte Pergolen oder
+        Pavillons dagegen nicht, dafür ist zusätzlich eine Baugenehmigung nötig.
+        Eine feste Überdachung ist deshalb realistisch nur auf eigenem oder
         gepachtetem Grund; auf dem Gehweg bleiben meist Schirme oder eine
         Markise an der Fassade.
+      </P>
+      <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
+        <li>
+          <strong>Zuständig:</strong> das Bezirksamt, in dem Ihr Betrieb liegt
+          – Antrag online über Hamburg Service oder schriftlich.
+        </li>
+        <li>
+          <strong>Unterlagen:</strong> maßstabsgerechter Lageplan mit
+          Möblierung, aktuelle Fotos, Gaststättenerlaubnis bzw.
+          Gewerbeanmeldung, bei Heizgeräten Sicherheitsnachweise.
+        </li>
+        <li>
+          <strong>Dauer:</strong> je nach Umfang meist 4 Wochen bis 3 Monate.
+          Erteilt wird die Erlaubnis oft saisonal (März bis Oktober) oder
+          ganzjährig mit jährlicher Verlängerung.
+        </li>
+        <li>
+          <strong>Kosten:</strong> Verwaltungsgebühr plus Nutzungsgebühr nach
+          Fläche, Dauer und Lage der Straße (Wertstufe I–IV).
+        </li>
+      </ul>
+      <P>
+        <strong>Auf dem Privatgrundstück</strong> entfällt die
+        Sondernutzungserlaubnis. Wird dort aber eine bisher nicht
+        gastronomisch genutzte Fläche zur Gastfläche, ist das eine
+        Nutzungsänderung – und die braucht in der Regel eine Baugenehmigung
+        (siehe oben).
       </P>
 
       <H2 id="windlast">Windlast & Sicherheit bei Publikumsverkehr</H2>
@@ -302,6 +382,10 @@ export default function TerrassenueberdachungGastronomiePage() {
         <li>
           <strong>Bauantrag</strong> – 6–12 Wochen einplanen; bei gepachteten
           Flächen die Zustimmung des Eigentümers einholen.
+        </li>
+        <li>
+          <strong>Sondernutzung</strong> – nur für Plätze auf dem Gehweg; beim
+          Bezirksamt 4 Wochen bis 3 Monate einplanen.
         </li>
         <li>
           <strong>Fertigung & Montage</strong> – Lieferzeiten von 4–10 Wochen
