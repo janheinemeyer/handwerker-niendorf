@@ -432,5 +432,8 @@ off-intent for a roofing page.
 
 **Consequences:** Sondernutzung facts are sourced from hamburg.de (§ 19 HWG,
 Bezirksamt, 4 Wochen–3 Monate, Wertstufe I–IV). Markise prices are manufacturer
-entry prices (net, rounded), labelled as such; Kaltwintergarten range mirrors
-`wintergarten-kosten`. Re-check GSC queries 2–4 weeks after indexing.
+entry prices (net, rounded), labelled as such; the Kaltwintergarten range is
+`wintergarten-kosten`'s gross consumer range converted to net (÷ 1,19). Free-
+standing/pergola awnings stand on foundations and may themselves be a bauliche
+Anlage — the page says so instead of presenting them as permit-free.
+Re-check GSC queries 2–4 weeks after indexing.

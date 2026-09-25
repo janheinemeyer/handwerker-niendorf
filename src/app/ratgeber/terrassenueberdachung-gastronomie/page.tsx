@@ -46,7 +46,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Wie beantrage ich Außengastronomie in Hamburg?",
-    a: "Für Tische, Stühle, Schirme und Heizgeräte auf dem Gehweg brauchen Sie eine Sondernutzungserlaubnis nach § 19 Hamburgisches Wegegesetz. Den Antrag stellen Sie beim Bezirksamt, in dem Ihr Betrieb liegt – online über Hamburg Service oder schriftlich – mit maßstabsgerechtem Lageplan, Fotos und Gaststättenerlaubnis bzw. Gewerbeanmeldung. Die Bearbeitung dauert meist 4 Wochen bis 3 Monate; die Gebühr richtet sich nach Fläche, Dauer und Lage der Straße.",
+    a: "Für Tische, Stühle, Schirme und Heizgeräte auf öffentlichem Grund – Gehweg, Platz oder Fußgängerzone – brauchen Sie eine Sondernutzungserlaubnis nach § 19 Hamburgisches Wegegesetz. Den Antrag stellen Sie beim Bezirksamt, in dem Ihr Betrieb liegt – online über Hamburg Service oder schriftlich – mit maßstabsgerechtem Lageplan, Fotos und Gaststättenerlaubnis bzw. Gewerbeanmeldung. Die Bearbeitung dauert meist 4 Wochen bis 3 Monate; die Gebühr richtet sich nach Fläche, Dauer und Lage der Straße.",
   },
   {
     q: "Brauche ich für Außengastronomie auf dem Privatgrundstück eine Genehmigung?",
@@ -54,7 +54,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet eine Markise oder Pergola-Markise für die Gastronomie?",
-    a: "Freistehende, motorisierte Doppelmarkisen gibt es ab rund 3.300 € netto, wasserdichte Pergola-Markisen ab etwa 4.600 € netto – jeweils für Standardgrößen und zuzüglich Montage (meist 500–2.000 €). Für große Terrassen werden oft mehrere Anlagen kombiniert. Anders als ein festes Dach sind Markisen auch dort möglich, wo keine bauliche Anlage erlaubt ist; achten Sie auf Windwiderstandsklasse 3 und einen Windwächter.",
+    a: "Freistehende, motorisierte Doppelmarkisen gibt es ab rund 3.300 € netto, wasserdichte Pergola-Markisen ab etwa 4.600 € netto – jeweils für Standardgrößen und zuzüglich Montage (meist 500–2.000 €). Für große Terrassen werden oft mehrere Anlagen kombiniert. Eine Markise an der Fassade ist oft auch dort möglich, wo kein festes Dach erlaubt ist; freistehende Markisen und Pergola-Markisen stehen dagegen auf Fundamenten und können selbst als bauliche Anlage genehmigungspflichtig sein – klären Sie das vorab mit dem Bezirksamt. Achten Sie auf Windwiderstandsklasse 3 und einen Windwächter.",
   },
   {
     q: "Ab wann rechnet sich eine Gastro-Überdachung?",
@@ -168,26 +168,30 @@ export default function TerrassenueberdachungGastronomiePage() {
       </H2>
       <P>
         Nicht jede Außengastronomie braucht ein festes Dach. Eine motorisierte
-        Markise oder Pergola-Markise ist deutlich günstiger und oft die einzige
-        Lösung, wo keine feste Anlage erlaubt ist. Dafür schützt sie weniger bei
-        Wind und Schlagregen – achten Sie auf die Windwiderstandsklasse und
-        einen Windwächter. Ein Kaltwintergarten ist dagegen ein geschlossener
+        Markise oder Pergola-Markise ist deutlich günstiger. Eine Markise an
+        der Fassade ist oft die einzige Lösung, wo keine feste Anlage erlaubt
+        ist. Freistehende Markisen und Pergola-Markisen stehen dagegen auf
+        Stützen mit Fundamenten und können selbst als bauliche Anlage gelten –
+        klären Sie das wie beim festen Dach vorab mit dem Bezirksamt. Dafür
+        schützen Markisen weniger bei Wind und Schlagregen – achten Sie auf die
+        Windwiderstandsklasse und einen Windwächter. Ein Kaltwintergarten ist dagegen ein geschlossener
         Raum: Er braucht fast immer einen Bauantrag, und drinnen gilt das
         Rauchverbot.
       </P>
       <CostTable
-        head={["Lösung", "Richtpreis", "Wann sinnvoll"]}
+        head={["Lösung", "Richtpreis netto", "Wann sinnvoll"]}
         rows={[
           ["Freistehende Markise (Doppelmarkise, motorisiert)", "ab ca. 3.300 € zzgl. Montage", "Plätze ohne Fassade, z. B. im Hof oder Garten"],
           ["Pergola-Markise (wasserdichtes Tuch, Stützen)", "ab ca. 4.600 € zzgl. Montage (500 – 2.000 €)", "Regenschutz zum kleinen Preis, Tuch einfahrbar"],
-          ["Kaltwintergarten (unbeheizt)", "ca. 500 – 1.000 €/m²", "Saison verlängern, wenn eine geschlossene Fläche genehmigt wird"],
+          ["Kaltwintergarten (unbeheizt)", "ca. 420 – 840 €/m²", "Saison verlängern, wenn eine geschlossene Fläche genehmigt wird"],
         ]}
       />
       <P>
         Die Markisen-Preise sind Einstiegspreise der Hersteller für
         Standardgrößen (netto gerundet); für große Gastro-Terrassen werden oft
-        mehrere Anlagen kombiniert. Die Wintergarten-Spanne ist ein Richtwert –
-        Details zu Glasanbauten im Ratgeber{" "}
+        mehrere Anlagen kombiniert. Die Wintergarten-Spanne ist aus den
+        Brutto-Richtwerten für Privatkunden auf netto umgerechnet – Details zu
+        Glasanbauten im Ratgeber{" "}
         <Link
           href="/ratgeber/wintergarten-kosten"
           className="text-accent underline-offset-2 hover:underline"
@@ -384,7 +388,8 @@ export default function TerrassenueberdachungGastronomiePage() {
           Flächen die Zustimmung des Eigentümers einholen.
         </li>
         <li>
-          <strong>Sondernutzung</strong> – nur für Plätze auf dem Gehweg; beim
+          <strong>Sondernutzung</strong> – nur für Plätze auf öffentlichem Grund
+          (Gehweg, Platz, Fußgängerzone); beim
           Bezirksamt 4 Wochen bis 3 Monate einplanen.
         </li>
         <li>
