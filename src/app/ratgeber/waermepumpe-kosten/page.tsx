@@ -14,12 +14,12 @@ import {
 export const metadata: Metadata = {
   title: "Wärmepumpe: Kosten & Förderung 2026 (Luft-Wasser, Hamburg)",
   description:
-    "Was kostet eine Wärmepumpe mit Einbau? Preise 2026 für Luft-Wasser, Erdwärme & Co., die KfW-Förderung (bis 70 %), Strom- und Betriebskosten und ein ehrlicher Altbau-Check – herstellerneutral, mit Fachbetrieb-Vermittlung für Hamburg.",
+    "Was kostet eine Wärmepumpe mit Einbau? Preise 2026 für Luft-Wasser, Erdwärme & Co., die KfW-Förderung nach den neuen Regeln (bis 70 %, bei niedrigem Einkommen 80 %), Strom- und Betriebskosten und ein ehrlicher Altbau-Check – herstellerneutral, mit Fachbetrieb-Vermittlung für Hamburg.",
   alternates: { canonical: "/ratgeber/waermepumpe-kosten" },
   openGraph: {
     title: "Wärmepumpe: Kosten & Förderung 2026",
     description:
-      "Preise mit Einbau nach Typ, KfW-Förderung bis 70 %, Betriebskosten & ehrlicher Altbau-Check – herstellerneutral.",
+      "Preise mit Einbau nach Typ, KfW-Förderung bis 70 bzw. 80 %, Betriebskosten & ehrlicher Altbau-Check – herstellerneutral.",
     locale: "de_DE",
     type: "article",
     images: ["/opengraph-image"],
@@ -29,11 +29,11 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was kostet eine Wärmepumpe mit Einbau?",
-    a: "Eine Luft-Wasser-Wärmepumpe kostet im Einfamilienhaus 2026 mit Einbau typischerweise 15.000–28.000 €. Erdwärmepumpen (Sole-Wasser) liegen wegen der Bohrung höher bei 24.000–45.000 €. Nach KfW-Förderung (bis 70 %, max. 21.000 € Zuschuss) bleibt oft ein Eigenanteil von rund 9.000–15.000 €.",
+    a: "Eine Luft-Wasser-Wärmepumpe kostet im Einfamilienhaus 2026 mit Einbau typischerweise 15.000–28.000 €. Erdwärmepumpen (Sole-Wasser) liegen wegen der Bohrung höher bei 24.000–45.000 €. Beim typischen Heizungstausch durch Selbstnutzer (46 % KfW-Förderung) bleibt für eine Luft-Wasser-Wärmepumpe ein Eigenanteil von rund 8.000–15.000 €; mit Einkommensbonus sind bis zu 70 bzw. 80 % Förderung möglich.",
   },
   {
     q: "Wie viel Förderung gibt es 2026 für eine Wärmepumpe?",
-    a: "Über die KfW (Programm 458) sind bis zu 70 % Zuschuss möglich, gedeckelt auf 30.000 € förderfähige Kosten (also max. 21.000 €). Sie setzt sich zusammen aus 30 % Grundförderung, 20 % Klimageschwindigkeitsbonus (für Selbstnutzer beim Austausch einer alten fossilen Heizung), 30 % Einkommensbonus (bis 40.000 € zu versteuerndes Haushaltseinkommen) und 5 % Effizienzbonus. Seit 2026 muss das Außengerät zudem mindestens 10 dB leiser als der Grenzwert sein.",
+    a: "Über die KfW (Programm 458) sind bis zu 70 % Zuschuss möglich, bei niedrigem Einkommen bis zu 80 % – auf höchstens 28.000 € förderfähige Kosten (also max. 19.600 € bzw. 22.400 €). Seit dem 21.07.2026 setzt sie sich zusammen aus 30 % Grundförderung, 16 % Klimageschwindigkeitsbonus (Selbstnutzer beim Austausch einer alten Heizung; sinkt ab 02/2027) und einem gestaffelten Einkommensbonus von 40 / 30 / 10 % bis 30.000 / 40.000 / 50.000 € zu versteuerndem Haushaltseinkommen (mit Kind je +10.000 €). Der Effizienzbonus ist entfallen. Seit 2026 muss das Außengerät zudem mindestens 10 dB leiser als der Grenzwert sein.",
   },
   {
     q: "Lohnt sich eine Wärmepumpe im unsanierten Altbau?",
@@ -63,7 +63,7 @@ export default function WaermepumpeKostenPage() {
           &amp; Förderung 2026
         </>
       }
-      updated="Juni 2026"
+      updated="September 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -77,8 +77,9 @@ export default function WaermepumpeKostenPage() {
         Eine <strong>Luft-Wasser-Wärmepumpe</strong> kostet im Einfamilienhaus
         2026 mit Einbau typischerweise <strong>15.000–28.000 €</strong>,
         Erdwärme wegen der Bohrung <strong>24.000–45.000 €</strong>. Über die{" "}
-        <strong>KfW-Förderung (bis 70 %, max. 21.000 €)</strong> sinkt der
-        Eigenanteil oft auf <strong>9.000–15.000 €</strong>. Im Betrieb ist die
+        <strong>KfW-Förderung</strong> (beim typischen Heizungstausch 46 %, mit
+        Einkommensbonus bis zu 70 bzw. 80 %) sinkt der Eigenanteil für
+        Luft-Wasser oft auf <strong>8.000–15.000 €</strong>. Im Betrieb ist die
         Wärmepumpe meist günstiger als Gas – im unsanierten Altbau aber nur bei
         passender Vorlauftemperatur.
       </TlDr>
@@ -136,24 +137,26 @@ export default function WaermepumpeKostenPage() {
       <P>
         Die Wärmepumpe ist die am stärksten geförderte Heizung. Zuständig ist die{" "}
         <strong>KfW</strong> (Programm 458, Heizungsförderung für Wohngebäude).
-        Die Bausteine sind kombinierbar – maximal <strong>70 %</strong> auf
-        gedeckelte <strong>30.000 € förderfähige Kosten</strong>, also bis zu{" "}
-        <strong>21.000 € Zuschuss</strong> für die erste Wohneinheit:
+        Die Bausteine sind kombinierbar – maximal <strong>70 %</strong>, bei
+        niedrigem Einkommen <strong>80 %</strong>, auf gedeckelte{" "}
+        <strong>28.000 € förderfähige Kosten</strong>, also bis zu{" "}
+        <strong>19.600 € bzw. 22.400 € Zuschuss</strong> für die erste
+        Wohneinheit (Regeln seit 21.07.2026):
       </P>
       <CostTable
         head={["Förderbaustein", "Zuschuss", "Bedingung"]}
         rows={[
           ["Grundförderung", "30 %", "für alle"],
-          ["Klimageschwindigkeits-Bonus", "20 %", "Selbstnutzer, Austausch alter fossiler Heizung (bis 2028)"],
-          ["Einkommens-Bonus", "30 %", "bis 40.000 € zu versteuerndes Haushaltseinkommen"],
-          ["Effizienz-Bonus", "5 %", "natürliches Kältemittel / Erdwärme"],
-          ["Maximal kombiniert", "70 %", "Deckel: 30.000 € Kosten → max. 21.000 €"],
+          ["Klimageschwindigkeits-Bonus", "16 %", "Selbstnutzer, Austausch alter Heizung (sinkt ab 02/2027, ab 08/2028 entfallen)"],
+          ["Einkommens-Bonus", "40 % / 30 % / 10 %", "Selbstnutzer, zvE ≤ 30.000 € / 40.000 € / 50.000 € (mit Kind je +10.000 €)"],
+          ["Maximal kombiniert", "70 % (80 %)", "Deckel: 28.000 € Kosten → max. 19.600 € (22.400 €)"],
         ]}
       />
       <P>
-        Ein Rechenbeispiel: Eine Luft-Wasser-Wärmepumpe für 25.000 € mit
-        durchschnittlich 55 % Förderung kostet nach Abzug noch rund{" "}
-        <strong>11.000–14.000 € Eigenanteil</strong>. Neu seit 2026: Gefördert
+        Ein Rechenbeispiel: Eine Luft-Wasser-Wärmepumpe für 25.000 € ersetzt die
+        alte Gasheizung eines Selbstnutzers, ohne Einkommensbonus. Mit 30 %
+        Grundförderung und 16 % Klimabonus (46 %) gibt es 11.500 € Zuschuss –
+        es bleiben <strong>13.500 € Eigenanteil</strong>. Neu seit 2026: Gefördert
         wird nur, wenn das Außengerät mindestens <strong>10 dB unter dem
         gesetzlichen Lärm-Grenzwert</strong> liegt – ein Punkt, der gerade in
         dichter Bebauung ohnehin wichtig ist. Wie Sie die Förderung Schritt für
@@ -278,8 +281,8 @@ export default function WaermepumpeKostenPage() {
         Alle Preisangaben sind unverbindliche Richtwerte (Stand: Juni 2026) und
         ersetzen keine Fachberatung. Tatsächliche Kosten und Wirtschaftlichkeit
         hängen von Wärmepumpen-Typ, Gebäude, Dämmung, Heizlast und individueller
-        Auslegung ab. Für die Förderung gelten die jeweils aktuellen
-        KfW-Bedingungen.
+        Auslegung ab. Förderangaben nach KfW-Merkblatt 458 (gültig ab
+        24.09.2026); maßgeblich sind die jeweils aktuellen KfW-Bedingungen.
       </p>
     </RatgeberArticle>
   );

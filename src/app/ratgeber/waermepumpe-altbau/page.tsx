@@ -161,7 +161,8 @@ export default function WaermepumpeAltbauPage() {
         ]}
       />
       <P>
-        Die KfW-Förderung (bis 70 %, max. 21.000 €) gilt im Altbau wie überall – die
+        Die KfW-Förderung (bis 70 %, bei niedrigem Einkommen 80 %; max. 28.000 €
+        förderfähige Kosten) gilt im Altbau wie überall – die
         vollständige Aufschlüsselung der Preise und Förderbausteine steht im
         Ratgeber{" "}
         <Link
