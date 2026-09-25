@@ -2,8 +2,9 @@
 name: seo-research
 description: Run a structured, free-tools-only SEO research pass BEFORE building or
   reworking a Ratgeber / SEO landing page (src/app/ratgeber/<slug>/). Use whenever the
-  task is "build/plan a new Ratgeber page", "rework an existing one for SEO", or the
-  user asks for keyword/SERP/competitor research for this site. Produces a research
+  task is "build/plan a new Ratgeber page", "rework an existing one for SEO", "sharpen /
+  audit existing content", or the user asks for keyword/SERP/competitor/autocomplete
+  research for this site. Produces a research
   brief that maps directly onto the Ratgeber blocks (TlDr, H2 ids, CostTable, Faq) and
   a catalog entry for src/lib/ratgeber.ts.
 ---
@@ -21,7 +22,7 @@ Some steps need a logged-in account and **cannot** be done from here. Do the par
 can, then explicitly ask the user for the rest and fold their answer back in. Never
 fabricate search volumes or Search Console numbers.
 
-**I do automatically** (via WebSearch / WebFetch):
+**I do automatically** (via WebSearch / WebFetch / the bundled `autocomplete.py`):
 - Phase 1 (seed & intent), Phase 2 discovery (autocomplete-style + question mining),
   Phase 3 (fetch ranking pages, extract structure & content gaps), Phase 4 (full
   on-page mapping), Phase 5a (schema check via the build).
@@ -52,8 +53,24 @@ State the split at the start of each run so expectations are clear.
 
 ## Phase 2 — Keyword & question discovery
 
-- **WebSearch** the seed + variants; harvest autocomplete-style long-tails and
-  "People also ask" / "Ähnliche Fragen" phrasings → these become H2 ids and FAQ items.
+- **Google Autocomplete (always run first)** — the bundled script queries Google's
+  public suggest endpoint (seed, seed + a–z, question/Hamburg prefixes; ~40 queries per
+  seed) and prints top suggestions, recurring modifiers, question phrasings and
+  Hamburg variants. For an existing page, `--page` flags top modifiers the page never
+  mentions:
+  ```bash
+  python3 .claude/skills/seo-research/autocomplete.py "wohnung streichen" "maler kosten" \
+      --page src/app/ratgeber/wohnung-streichen-kosten/page.tsx
+  ```
+  Use 2–3 seeds per topic (head term, "<term> kosten", a synonym). Suggestion order is a
+  *relative popularity proxy, not volume* — never report it as search volume. The
+  `--page` check is a plain substring match: a "missing" word is a lead to verify, not
+  proof of a gap. Patterns seen across this site's topics (Sept 2026 run): quantity
+  pricing ("pro qm/kwp/kwh/stunde", concrete sizes like "70 qm") → `CostTable` rows;
+  "ohne …" variants; a "lohnt sich (nicht)" question on every topic → FAQ; Hamburg
+  queries are almost always Genehmigung / Förderung / Abstand zum Nachbarn.
+- **WebSearch** the seed + variants for "People also ask" / "Ähnliche Fragen"
+  phrasings → these become H2 ids and FAQ items.
 - **WebFetch** German Q&A sources (gutefrage.net, haustechnikdialog.de, relevant
   subreddits) for real user wording → feeds the TlDr tone and FAQ.
 - **Local community demand mining** (highest-intent, hyperlocal signal): real residents
