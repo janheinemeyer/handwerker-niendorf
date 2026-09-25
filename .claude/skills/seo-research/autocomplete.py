@@ -13,7 +13,7 @@ Beispiel:
   python3 .claude/skills/seo-research/autocomplete.py "wohnung streichen" "maler kosten" \
       --page src/app/ratgeber/wohnung-streichen-kosten/page.tsx --raw /tmp/ac.json
 """
-import argparse, collections, json, re, string, time, urllib.parse, urllib.request
+import argparse, collections, json, re, string, sys, time, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 PREFIXES = ["wie viel kostet {s}", "was kostet {s}", "{s} lohnt sich", "{s} hamburg",
@@ -50,16 +50,20 @@ def main():
         results = list(ex.map(lambda j: suggest(j[1]), jobs))
     rows = [{"seed": s, "query": t, "suggestions": r} for (s, t), r in zip(jobs, results)]
     failed = sum(r["suggestions"] is None for r in rows)
+    if failed == len(rows):
+        sys.exit("Keine Antworten von Google (blockiert oder offline) – keine Auswertung möglich.")
     if args.raw:
-        json.dump(rows, open(args.raw, "w"), ensure_ascii=False, indent=0)
+        with open(args.raw, "w", encoding="utf-8") as f:
+            json.dump(rows, f, ensure_ascii=False, indent=0)
 
-    seedwords = {w for s in args.seeds for w in s.split()}
     score, words = collections.Counter(), collections.Counter()
     for r in rows:
+        # Words we typed into the query (seed, prefix) aren't modifiers Google suggested.
+        typed = set(re.findall(r"[a-zäöüß0-9]+", r["query"].lower()))
         for i, x in enumerate(r["suggestions"] or []):
             score[x] += 10 - i
             for w in set(re.findall(r"[a-zäöüß0-9]+", x.lower())):
-                if w not in seedwords and w not in STOP and len(w) > 2:
+                if w not in typed and w not in STOP and len(w) > 2:
                     words[w] += 1
 
     print(f"# Autocomplete: {', '.join(args.seeds)}  ({len(rows)} Abfragen, {failed} fehlgeschlagen)\n")
