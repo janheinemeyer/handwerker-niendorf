@@ -37,7 +37,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Wird eine Klimaanlage gefördert?",
-    a: "Nur, wenn sie als vollwertige Heizung dient. Eine reine Kühl-Klimaanlage wird nicht gefördert. Eine reversible Luft-Luft-Wärmepumpe, die ein fossiles Heizsystem ersetzt und die Effizienz- und Auslegungsvorgaben (u. a. DIN EN 12831, Mindest-ETAs) erfüllt, kann seit 2024 über die KfW gefördert werden – mit bis zu 70 % Zuschuss auf maximal 30.000 € förderfähige Kosten. In der Praxis erfüllt eine typische Split-Klimaanlage zum Kühlen diese Bedingungen nicht.",
+    a: "Nur, wenn sie als vollwertige Heizung dient. Eine reine Kühl-Klimaanlage wird nicht gefördert. Eine reversible Luft-Luft-Wärmepumpe, die ein fossiles Heizsystem ersetzt und die Effizienz- und Auslegungsvorgaben (u. a. DIN EN 12831, Mindest-ETAs) erfüllt, kann seit 2024 über die KfW gefördert werden – mit bis zu 70 % Zuschuss (bei niedrigem Einkommen 80 %) auf maximal 28.000 € förderfähige Kosten. In der Praxis erfüllt eine typische Split-Klimaanlage zum Kühlen diese Bedingungen nicht.",
   },
   {
     q: "Wie viel Strom braucht eine Klimaanlage zum Heizen?",
@@ -182,15 +182,15 @@ export default function KlimaanlageHeizungPage() {
         head={["Förderbaustein", "Zuschuss"]}
         rows={[
           ["Grundförderung", "30 %"],
-          ["Klimageschwindigkeits-Bonus (Heizungstausch)", "20 %"],
-          ["Einkommens-Bonus (bis 40.000 € zu verst. Einkommen)", "30 %"],
-          ["Effizienz-Bonus", "5 %"],
-          ["Maximal kombiniert", "bis 70 %"],
+          ["Klimageschwindigkeits-Bonus (Heizungstausch, sinkt ab 02/2027)", "16 %"],
+          ["Einkommens-Bonus (zvE bis 30.000 / 40.000 / 50.000 €)", "40 / 30 / 10 %"],
+          ["Maximal kombiniert", "bis 70 % (niedriges Einkommen: 80 %)"],
         ]}
       />
       <P>
-        Die förderfähigen Kosten sind auf <strong>30.000 €</strong> (erste
-        Wohneinheit) gedeckelt; maximal also bis zu 70 % davon. In der Praxis
+        Die förderfähigen Kosten sind auf <strong>28.000 €</strong> (erste
+        Wohneinheit) gedeckelt; maximal also bis zu 70 bzw. 80 % davon (Regeln
+        seit 21.07.2026, der frühere Effizienzbonus ist entfallen). In der Praxis
         erfüllt eine Anlage, die primär zum Kühlen gedacht ist, die Bedingungen
         meist nicht. Behandeln Sie eine mögliche Förderung deshalb als Bonus,
         nicht als Grundlage der Entscheidung – und lassen Sie die
