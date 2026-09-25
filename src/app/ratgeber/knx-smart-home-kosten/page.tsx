@@ -14,9 +14,9 @@ import {
 import { KnxKostenRechner } from "@/components/knx-kosten-rechner";
 
 export const metadata: Metadata = {
-  title: "KNX Smart Home: Kosten 2026 (Pakete, Neubau & Nachrüsten)",
+  title: "KNX Kosten 2026: Einfamilienhaus, Rechner & Nachrüsten",
   description:
-    "Was kostet ein KNX-Smart-Home? Einsteiger ab ~3.000–6.000 €, Standard-Einfamilienhaus 8.000–15.000 €, gehoben ab ~20.000 € – inkl. Hardware, Installation und Programmierung. Neubau vs. Nachrüsten, ETS-Kosten und Vergleich.",
+    "Was kostet KNX im Einfamilienhaus? Einsteiger ab ~3.000–6.000 €, Standard-Einfamilienhaus 8.000–15.000 €, gehoben ab ~20.000 € – inkl. Hardware, Installation und Programmierung. Mit KNX-Kostenrechner, Kosten pro Datenpunkt, Verkabelung, Zweifamilienhaus und Nachrüsten.",
   alternates: { canonical: "/ratgeber/knx-smart-home-kosten" },
   openGraph: {
     title: "KNX Smart Home: Kosten 2026 im Überblick",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 const faqs: FaqItem[] = [
   {
-    q: "Was kostet ein KNX-Smart-Home?",
+    q: "Was kostet KNX im Einfamilienhaus?",
     a: "Je nach Ausbaustufe: Eine Einsteiger-Lösung (Licht und Beschattung in einer Wohnung) liegt bei rund 3.000–6.000 €, ein Standard-Einfamilienhaus mit Licht, Beschattung und Einzelraum-Heizungsregelung bei etwa 8.000–15.000 €, ein gehobenes System mit Sicherheit, Multimedia und Visualisierung bei 20.000 € und mehr. Diese Richtwerte verstehen sich inklusive Material, Installation und Programmierung. Maßgeblich sind Hausgröße, Anzahl der Gewerke und ob im Neubau oder Bestand gebaut wird.",
   },
   {
@@ -44,6 +44,18 @@ const faqs: FaqItem[] = [
   {
     q: "Was kostet die KNX-Programmierung (ETS)?",
     a: "Die Inbetriebnahme erfolgt mit der Software ETS und ist ein eigener Kostenposten neben der Hardware. Der Fachbetrieb arbeitet mit einer ETS-Lizenz (für größere Projekte ETS Professional) und rechnet die Programmierung meist nach Aufwand ab. Sie ist je nach Funktionsumfang ein spürbarer Anteil der Gesamtkosten – einfache Schaltfunktionen sind schnell parametriert, komplexe Logiken und Visualisierungen kosten mehr Zeit.",
+  },
+  {
+    q: "Was kostet KNX pro Datenpunkt?",
+    a: "Für die Programmierung werden in Leistungsverzeichnissen grob 4–12 € pro Datenpunkt angesetzt – inklusive Parametrierung, Inbetriebnahme und Test. Ein Datenpunkt ist eine Verknüpfung zwischen Funktion und Gruppenadresse, zum Beispiel ein Aktorkanal oder eine Tasterwippe. Hardware und Installation kommen hinzu. Weil Betriebe Datenpunkte unterschiedlich zählen, lassen sich Angebote nur mit gleicher Definition vergleichen.",
+  },
+  {
+    q: "Was kostet KNX im Zweifamilienhaus?",
+    a: "Einen Festpreis gibt es nicht. Jede Wohneinheit braucht eigene Taster, Sensoren und Aktoren, sodass die Kosten grob mit der Zahl der Einheiten wachsen – die Richtwerte pro Wohnung bzw. Einfamilienhaus aus der Tabelle oben sind ein guter Ausgangspunkt. Etwas sparen lässt sich bei gemeinsam genutzten Komponenten wie Spannungsversorgung, IP-Schnittstelle oder Wetterstation. Klären Sie früh, ob beide Einheiten getrennte Linien und Visualisierungen bekommen sollen.",
+  },
+  {
+    q: "Kann man bei KNX Kosten durch Eigenleistung sparen?",
+    a: "Teilweise. Leerrohre verlegen und Kabel einziehen lässt sich nach Absprache mit dem Fachbetrieb selbst erledigen, und mit einer eigenen ETS-Lizenz können technisch Versierte Teile der Programmierung übernehmen. Anschluss und Prüfung der 230-V-Installation bleiben aber Sache des Elektrofachbetriebs. Klären Sie vorab, wie sich Eigenleistung auf Gewährleistung und Haftung auswirkt.",
   },
   {
     q: "Braucht man für KNX einen Fachbetrieb?",
@@ -61,7 +73,7 @@ export default function KnxSmartHomeKostenPage() {
           Kosten
         </>
       }
-      updated="Juni 2026"
+      updated="September 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -112,11 +124,11 @@ export default function KnxSmartHomeKostenPage() {
         zwischen Neubau und Bestand.
       </P>
 
-      <H3>Kostenrechner: Umfang zusammenstellen</H3>
+      <H2 id="rechner">KNX-Kostenrechner: Was kostet KNX in Ihrem Haus?</H2>
       <P>
         Stellen Sie Bauart, Hausgröße und gewünschte Gewerke zusammen – der
-        Rechner schätzt daraus einen Richtwert inklusive Material, Installation
-        und Programmierung.
+        KNX-Rechner schätzt daraus einen Richtwert inklusive Material,
+        Installation und Programmierung.
       </P>
       <KnxKostenRechner />
 
@@ -152,6 +164,30 @@ export default function KnxSmartHomeKostenPage() {
         im Neubau.
       </P>
 
+      <H2 id="verkabelung-schaltschrank">
+        Was kosten Verkabelung und Schaltschrank bei KNX?
+      </H2>
+      <P>
+        Das grüne KNX-Buskabel selbst ist günstig. Teurer wird die{" "}
+        <strong>Verkabelung</strong>, vor allem bei der im Einfamilienhaus
+        üblichen <strong>zentralen Installation</strong>: Die Aktoren sitzen im
+        Verteiler, und jeder geschaltete Verbraucherkreis bekommt eine eigene
+        230-V-Leitung dorthin. Dazu kommt die Busleitung zu allen Tastern und
+        Sensoren, die in Linie, Baum oder Stern verlegt werden darf. Für eine
+        solche Installation werden als Faustregel rund{" "}
+        <strong>80 % mehr Leitungslänge</strong> angesetzt als bei einer
+        konventionellen Installation – der Kostentreiber ist dabei weniger das
+        Material als die Arbeitszeit. Mit dezentralen Unterputz-Aktoren fällt
+        ein Teil dieser Leitungen weg, dafür sind die Geräte schwerer
+        zugänglich.
+      </P>
+      <P>
+        Sitzen die Aktoren als Reiheneinbaugeräte im Verteiler, braucht KNX
+        außerdem einen <strong>größeren Schaltschrank</strong> als eine
+        klassische Unterverteilung. Planen Sie hier Reserveplätze ein – eine
+        spätere Erweiterung scheitert sonst oft am fehlenden Platz, nicht an KNX.
+      </P>
+
       <H2 id="programmierung">Programmierung und Inbetriebnahme (ETS)</H2>
       <P>
         KNX-Geräte werden mit der Software <strong>ETS</strong> (Engineering Tool
@@ -161,6 +197,16 @@ export default function KnxSmartHomeKostenPage() {
         rechnet sie meist nach Aufwand ab. Sie ist ein <strong>eigener
         Kostenposten</strong>: einfache Schaltlogik ist schnell erledigt, komplexe
         Automationen und Visualisierungen schlagen stärker zu Buche.
+      </P>
+      <P>
+        In Leistungsverzeichnissen wird die Programmierung oft{" "}
+        <strong>pro Datenpunkt</strong> kalkuliert. Ein Datenpunkt ist eine
+        Verknüpfung zwischen einer Funktion und einer Gruppenadresse – etwa ein
+        Aktorkanal oder eine Tasterwippe. Genannt werden dafür grob{" "}
+        <strong>4–12 € pro Datenpunkt</strong> für Parametrierung,
+        Inbetriebnahme und Test. Wie viele Datenpunkte ein Haus hat, hängt stark
+        von der Planung ab – vergleichen Sie Angebote deshalb nur mit gleicher
+        Zähl-Definition.
       </P>
 
       <CtaBand
@@ -205,8 +251,9 @@ export default function KnxSmartHomeKostenPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Preise sind Richtwerte (Stand Juni 2026) und ersetzen kein
-        individuelles Angebot. Die tatsächlichen Kosten hängen von Hausgröße,
+        Alle Preise sind Richtwerte und ersetzen kein individuelles Angebot.
+        Paketpreise und Rechner: Stand Juni 2026; Angaben zu Datenpunkten und
+        Verkabelung: Stand September 2026. Die tatsächlichen Kosten hängen von Hausgröße,
         Funktionsumfang, Neubau oder Bestand und Programmieraufwand ab.
       </p>
     </RatgeberArticle>
