@@ -169,16 +169,21 @@ export default function KnxSmartHomeKostenPage() {
       </H2>
       <P>
         Das grüne KNX-Buskabel selbst ist günstig. Teurer wird die{" "}
-        <strong>Verkabelung</strong>, weil KNX sternförmig verdrahtet wird: Jeder
-        Verbraucher bekommt seine eigene 230-V-Leitung zum Verteiler, dazu kommt
-        die Busleitung zu allen Tastern und Sensoren. Als Faustregel wird rund{" "}
-        <strong>80 % mehr Leitungslänge</strong> verlegt als bei einer
+        <strong>Verkabelung</strong>, vor allem bei der im Einfamilienhaus
+        üblichen <strong>zentralen Installation</strong>: Die Aktoren sitzen im
+        Verteiler, und jeder geschaltete Verbraucherkreis bekommt eine eigene
+        230-V-Leitung dorthin. Dazu kommt die Busleitung zu allen Tastern und
+        Sensoren, die in Linie, Baum oder Stern verlegt werden darf. Für eine
+        solche Installation werden als Faustregel rund{" "}
+        <strong>80 % mehr Leitungslänge</strong> angesetzt als bei einer
         konventionellen Installation – der Kostentreiber ist dabei weniger das
-        Material als die Arbeitszeit.
+        Material als die Arbeitszeit. Mit dezentralen Unterputz-Aktoren fällt
+        ein Teil dieser Leitungen weg, dafür sind die Geräte schwerer
+        zugänglich.
       </P>
       <P>
-        Weil die Aktoren als Reiheneinbaugeräte im Verteiler sitzen, braucht
-        KNX außerdem einen <strong>größeren Schaltschrank</strong> als eine
+        Sitzen die Aktoren als Reiheneinbaugeräte im Verteiler, braucht KNX
+        außerdem einen <strong>größeren Schaltschrank</strong> als eine
         klassische Unterverteilung. Planen Sie hier Reserveplätze ein – eine
         spätere Erweiterung scheitert sonst oft am fehlenden Platz, nicht an KNX.
       </P>
@@ -246,8 +251,9 @@ export default function KnxSmartHomeKostenPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Preise sind Richtwerte (Stand Juni 2026) und ersetzen kein
-        individuelles Angebot. Die tatsächlichen Kosten hängen von Hausgröße,
+        Alle Preise sind Richtwerte und ersetzen kein individuelles Angebot.
+        Paketpreise und Rechner: Stand Juni 2026; Angaben zu Datenpunkten und
+        Verkabelung: Stand September 2026. Die tatsächlichen Kosten hängen von Hausgröße,
         Funktionsumfang, Neubau oder Bestand und Programmieraufwand ab.
       </p>
     </RatgeberArticle>
