@@ -67,7 +67,9 @@ export function articleSchema(page: RatgeberPage) {
     mainEntityOfPage: url,
     inLanguage: "de-DE",
     dateModified: page.updated,
-    about: page.topic,
+    // Site-wide OG card — the same image the page's og:image points to.
+    image: `${SITE_URL}/opengraph-image`,
+    about: { "@type": "Thing", name: page.topic },
     author: organization,
     publisher: organization,
   };

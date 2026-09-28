@@ -364,9 +364,14 @@ abgeleitet. Details in `DECISIONS.md` (2026-09-28).
    GEO nicht steuerbar.
 5. **CTR-Optimierung aus GSC.** Seiten auf Position 5–15 mit niedriger CTR:
    Title/Meta-Description nachschärfen. Braucht die GSC-Leistungsdaten.
-6. **`datePublished` im Article-Schema.** Als Katalogfeld nachrüsten, befüllt
+6. **„Aktualisiert"-Datum aus dem Katalog ableiten.** Heute gibt es zwei
+   Quellen: die Prop `updated` pro Seite (sichtbar) und `updated` im Katalog
+   (Sitemap + `dateModified`). Der Rahmen sollte den Katalogwert als „Monat JJJJ“
+   anzeigen, dann entfällt die Prop auf den 30 Seiten und die beiden Daten
+   können nicht mehr auseinanderlaufen.
+7. **`datePublished` im Article-Schema.** Als Katalogfeld nachrüsten, befüllt
    aus der Git-Historie (erstes Commit der Seite) — nicht schätzen.
-7. **Optional: `llms.txt`.** Geringer Aufwand, Nutzen bisher nicht belegt —
+8. **Optional: `llms.txt`.** Geringer Aufwand, Nutzen bisher nicht belegt —
    nur nebenbei, nicht priorisieren.
 
 ## Wie eine neue Seite entsteht

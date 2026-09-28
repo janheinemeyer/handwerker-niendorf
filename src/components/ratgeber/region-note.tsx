@@ -31,8 +31,8 @@ const REGION_COPY: Record<Cluster, { vermittlung: string; betriebe: string }> = 
 
 /**
  * "Region" — local-relevance block anchoring the page to Hamburg-Niendorf and
- * the neighbouring Stadtteile. Rendered by `RatgeberArticle` for the clusters in
- * `REGION_COPY`, driven by the catalog so it stays in one place rather than
+ * the neighbouring Stadtteile. Rendered by `RatgeberArticle` for every catalog
+ * page, driven by the catalog so it stays in one place rather than
  * copied per page. The named districts mirror `areaServed` in the LocalBusiness
  * schema, so the on-page signal and the structured data agree.
  */
