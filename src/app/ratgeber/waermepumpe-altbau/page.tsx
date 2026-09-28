@@ -49,7 +49,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet eine Wärmepumpe im Altbau?",
-    a: "Die Anlage selbst kostet wie im Bestand üblich 15.000–28.000 € (Luft-Wasser, mit Einbau). Im Altbau können altbau-spezifische Posten dazukommen: hydraulischer Abgleich (500–1.000 €), einzelne neue Heizkörper (300–800 € pro Stück) oder eine Hochtemperatur-Variante. Die KfW-Förderung (bis 70 %) gilt wie sonst auch – Details im Ratgeber Wärmepumpe-Kosten.",
+    a: "Die Anlage selbst kostet wie im Bestand üblich 15.000–28.000 € (Luft-Wasser, mit Einbau). Im Altbau können altbau-spezifische Posten dazukommen: hydraulischer Abgleich (500–1.000 €), einzelne neue Heizkörper (300–800 € pro Stück) oder eine Hochtemperatur-Variante. Die KfW-Förderung (bis 70 %, bei niedrigem Einkommen und Heizungstausch 80 %) gilt wie sonst auch – Details im Ratgeber Wärmepumpe-Kosten.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function WaermepumpeAltbauPage() {
           lohnt sich das?
         </>
       }
-      updated="Juni 2026"
+      updated="September 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -161,8 +161,8 @@ export default function WaermepumpeAltbauPage() {
         ]}
       />
       <P>
-        Die KfW-Förderung (bis 70 %, bei niedrigem Einkommen 80 %; max. 28.000 €
-        förderfähige Kosten) gilt im Altbau wie überall – die
+        Die KfW-Förderung (bis 70 %, bei niedrigem Einkommen und Heizungstausch
+        80 %; max. 28.000 € förderfähige Kosten) gilt im Altbau wie überall – die
         vollständige Aufschlüsselung der Preise und Förderbausteine steht im
         Ratgeber{" "}
         <Link
@@ -236,7 +236,7 @@ export default function WaermepumpeAltbauPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Angaben sind unverbindliche Richtwerte (Stand: Juni 2026) und ersetzen
+        Alle Angaben sind unverbindliche Richtwerte (Stand: September 2026) und ersetzen
         keine Fachberatung. Eignung, Effizienz (Jahresarbeitszahl) und Kosten hängen
         von Gebäudezustand, Heizlast, Heizflächen und individueller Auslegung ab.
         Maßgeblich ist eine Heizlastberechnung durch den Fachbetrieb.

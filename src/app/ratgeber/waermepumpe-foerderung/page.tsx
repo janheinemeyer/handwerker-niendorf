@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Wärmepumpe Förderung 2026: bis zu 80 % – neue KfW-458-Regeln",
   description:
-    "Wärmepumpen-Förderung nach den neuen KfW-458-Regeln (seit 21.07.2026): bis zu 70 %, bei niedrigem Einkommen bis zu 80 % Zuschuss auf max. 28.000 € Kosten. Klimabonus 16 %, gestaffelter Einkommensbonus, Familienzuschlag, Antrag Schritt für Schritt und was sich 2027 ändert.",
+    "Wärmepumpen-Förderung nach den neuen KfW-458-Regeln (seit 21.07.2026): bis zu 70 %, bei niedrigem Einkommen und Heizungstausch bis zu 80 % Zuschuss auf max. 28.000 € Kosten. Klimabonus 16 %, gestaffelter Einkommensbonus, Familienzuschlag, Antrag Schritt für Schritt und was sich 2027 ändert.",
   alternates: { canonical: "/ratgeber/waermepumpe-foerderung" },
   openGraph: {
     title: "Wärmepumpe Förderung 2026: bis zu 80 % (KfW 458)",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Wie viel Förderung gibt es 2026 für eine Wärmepumpe?",
-    a: "Über die KfW (Programm 458) bis zu 70 % Zuschuss – für Selbstnutzer mit einem zu versteuernden Haushaltseinkommen bis 30.000 € (mit Kind bis 40.000 €) sogar bis zu 80 %. Gefördert werden höchstens 28.000 € Kosten für die erste Wohneinheit, also maximal 19.600 € bzw. 22.400 € Zuschuss. Das gilt für Anträge seit dem 21.07.2026.",
+    a: "Über die KfW (Programm 458) bis zu 70 % Zuschuss – für Selbstnutzer mit einem zu versteuernden Haushaltseinkommen bis 30.000 € (mit Kind bis 40.000 €), die zugleich eine alte Heizung austauschen (Klimageschwindigkeitsbonus), sogar bis zu 80 %. Gefördert werden höchstens 28.000 € Kosten für die erste Wohneinheit, also maximal 19.600 € bzw. 22.400 € Zuschuss. Das gilt für Anträge seit dem 21.07.2026.",
   },
   {
     q: "Aus welchen Boni setzt sich die Förderung zusammen?",
@@ -53,7 +53,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "KfW-Zuschuss oder Steuerbonus § 35c – was ist besser?",
-    a: "Beides geht nicht für dieselbe Maßnahme. Die KfW 458 bringt bis zu 70 % (bei niedrigem Einkommen 80 %) als direkten Zuschuss und ist meist deutlich attraktiver. Der Steuerbonus nach § 35c EStG (20 % der Kosten über drei Jahre) gilt nur für selbstgenutztes Wohneigentum und ist die Alternative, wenn der KfW-Weg z. B. aus zeitlichen Gründen nicht mehr möglich ist.",
+    a: "Beides geht nicht für dieselbe Maßnahme. Die KfW 458 bringt bis zu 70 % (bei niedrigem Einkommen und Heizungstausch 80 %) als direkten Zuschuss und ist meist deutlich attraktiver. Der Steuerbonus nach § 35c EStG (20 % der Kosten über drei Jahre) gilt nur für selbstgenutztes Wohneigentum und ist die Alternative, wenn der KfW-Weg z. B. aus zeitlichen Gründen nicht mehr möglich ist.",
   },
 ];
 
@@ -80,7 +80,8 @@ export default function WaermepumpeFoerderungPage() {
       <TlDr>
         Für den Wärmepumpen-Einbau im Bestand gibt es 2026 über die{" "}
         <strong>KfW (Programm 458)</strong> bis zu <strong>70 % Zuschuss</strong>,
-        bei niedrigem Einkommen bis zu <strong>80 %</strong> – auf höchstens
+        bei niedrigem Einkommen und Heizungstausch bis zu <strong>80 %</strong> –
+        auf höchstens
         28.000 € Kosten, also maximal <strong>19.600 € bzw. 22.400 €</strong>.
         Seit dem 21.07.2026 gelten neue Regeln: Klimabonus 16 %, gestaffelter
         Einkommensbonus mit Familienzuschlag, kein Effizienzbonus mehr.
@@ -97,7 +98,8 @@ export default function WaermepumpeFoerderungPage() {
         genutzt oder vermietet, über das <strong>Programm 458</strong>.
         Unternehmen und juristische Personen laufen dagegen über Programm 459.
         Für Privatpersonen beträgt der maximale Zuschuss <strong>70 %</strong>,
-        für Selbstnutzer mit geringem Einkommen <strong>80 %</strong> – bezogen
+        für Selbstnutzer mit geringem Einkommen, die zugleich eine alte Heizung
+        austauschen, <strong>80 %</strong> – bezogen
         auf höchstens <strong>28.000 € förderfähige Kosten</strong> für die
         erste Wohneinheit. Damit sind bis zu <strong>19.600 €</strong> bzw.{" "}
         <strong>22.400 €</strong> drin. Stand: Anträge ab dem 21.07.2026 –
@@ -112,7 +114,7 @@ export default function WaermepumpeFoerderungPage() {
           ["Klimageschwindigkeits-Bonus", "16 %", "Selbstnutzer, Heizungstausch (Gas/Biomasse: ≥ 20 Jahre alt); sinkt ab 02/2027"],
           ["Einkommens-Bonus", "40 % / 30 % / 10 %", "Selbstnutzer, zvE ≤ 30.000 € / 40.000 € / 50.000 € (mit Kind je +10.000 €)"],
           ["Maximal kombiniert", "70 %", "Deckel: 28.000 € Kosten → max. 19.600 €"],
-          ["Maximal bei niedrigem Einkommen", "80 %", "zvE ≤ 30.000 € (mit Kind ≤ 40.000 €) → max. 22.400 €"],
+          ["Maximal bei niedrigem Einkommen", "80 %", "zvE ≤ 30.000 € (mit Kind ≤ 40.000 €) und Klimabonus (Heizungstausch) → max. 22.400 €; ohne Klimabonus 70 %"],
         ]}
       />
       <P>

@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Wärmepumpe: Kosten & Förderung 2026 (Luft-Wasser, Hamburg)",
   description:
-    "Was kostet eine Wärmepumpe mit Einbau? Preise 2026 für Luft-Wasser, Erdwärme & Co., die KfW-Förderung nach den neuen Regeln (bis 70 %, bei niedrigem Einkommen 80 %), Strom- und Betriebskosten und ein ehrlicher Altbau-Check – herstellerneutral, mit Fachbetrieb-Vermittlung für Hamburg.",
+    "Was kostet eine Wärmepumpe mit Einbau? Preise 2026 für Luft-Wasser, Erdwärme & Co., die KfW-Förderung nach den neuen Regeln (bis 70 %, bei niedrigem Einkommen und Heizungstausch 80 %), Strom- und Betriebskosten und ein ehrlicher Altbau-Check – herstellerneutral, mit Fachbetrieb-Vermittlung für Hamburg.",
   alternates: { canonical: "/ratgeber/waermepumpe-kosten" },
   openGraph: {
     title: "Wärmepumpe: Kosten & Förderung 2026",
@@ -33,7 +33,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Wie viel Förderung gibt es 2026 für eine Wärmepumpe?",
-    a: "Über die KfW (Programm 458) sind bis zu 70 % Zuschuss möglich, bei niedrigem Einkommen bis zu 80 % – auf höchstens 28.000 € förderfähige Kosten (also max. 19.600 € bzw. 22.400 €). Seit dem 21.07.2026 setzt sie sich zusammen aus 30 % Grundförderung, 16 % Klimageschwindigkeitsbonus (Selbstnutzer beim Austausch einer alten Heizung; sinkt ab 02/2027) und einem gestaffelten Einkommensbonus von 40 / 30 / 10 % bis 30.000 / 40.000 / 50.000 € zu versteuerndem Haushaltseinkommen (mit Kind je +10.000 €). Der Effizienzbonus ist entfallen. Seit 2026 muss das Außengerät zudem mindestens 10 dB leiser als der Grenzwert sein.",
+    a: "Über die KfW (Programm 458) sind bis zu 70 % Zuschuss möglich, bei niedrigem Einkommen und Heizungstausch bis zu 80 % – auf höchstens 28.000 € förderfähige Kosten (also max. 19.600 € bzw. 22.400 €). Seit dem 21.07.2026 setzt sie sich zusammen aus 30 % Grundförderung, 16 % Klimageschwindigkeitsbonus (Selbstnutzer beim Austausch einer alten Heizung; sinkt ab 02/2027) und einem gestaffelten Einkommensbonus von 40 / 30 / 10 % bis 30.000 / 40.000 / 50.000 € zu versteuerndem Haushaltseinkommen (mit Kind je +10.000 €). Der Effizienzbonus ist entfallen. Seit 2026 muss das Außengerät zudem mindestens 10 dB leiser als der Grenzwert sein.",
   },
   {
     q: "Lohnt sich eine Wärmepumpe im unsanierten Altbau?",
@@ -138,7 +138,8 @@ export default function WaermepumpeKostenPage() {
         Die Wärmepumpe ist die am stärksten geförderte Heizung. Zuständig ist die{" "}
         <strong>KfW</strong> (Programm 458, Heizungsförderung für Wohngebäude).
         Die Bausteine sind kombinierbar – maximal <strong>70 %</strong>, bei
-        niedrigem Einkommen <strong>80 %</strong>, auf gedeckelte{" "}
+        niedrigem Einkommen und Heizungstausch <strong>80 %</strong>, auf
+        gedeckelte{" "}
         <strong>28.000 € förderfähige Kosten</strong>, also bis zu{" "}
         <strong>19.600 € bzw. 22.400 € Zuschuss</strong> für die erste
         Wohneinheit (Regeln seit 21.07.2026):
@@ -149,7 +150,7 @@ export default function WaermepumpeKostenPage() {
           ["Grundförderung", "30 %", "für alle"],
           ["Klimageschwindigkeits-Bonus", "16 %", "Selbstnutzer, Austausch alter Heizung (sinkt ab 02/2027, ab 08/2028 entfallen)"],
           ["Einkommens-Bonus", "40 % / 30 % / 10 %", "Selbstnutzer, zvE ≤ 30.000 € / 40.000 € / 50.000 € (mit Kind je +10.000 €)"],
-          ["Maximal kombiniert", "70 % (80 %)", "Deckel: 28.000 € Kosten → max. 19.600 € (22.400 €)"],
+          ["Maximal kombiniert", "70 % (80 %)", "Deckel: 28.000 € Kosten → max. 19.600 € (22.400 €); 80 % nur mit Einkommens- und Klimabonus"],
         ]}
       />
       <P>
@@ -278,7 +279,7 @@ export default function WaermepumpeKostenPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Preisangaben sind unverbindliche Richtwerte (Stand: Juni 2026) und
+        Alle Preisangaben sind unverbindliche Richtwerte (Stand: September 2026) und
         ersetzen keine Fachberatung. Tatsächliche Kosten und Wirtschaftlichkeit
         hängen von Wärmepumpen-Typ, Gebäude, Dämmung, Heizlast und individueller
         Auslegung ab. Förderangaben nach KfW-Merkblatt 458 (gültig ab
