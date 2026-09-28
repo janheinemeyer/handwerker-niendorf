@@ -286,10 +286,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   {
     href: "/ratgeber/knx-smart-home-kosten",
     title: "KNX Smart Home: Kosten",
-    blurb: "Was ein KNX-Smart-Home kostet – Pakete, Neubau vs. Nachrüsten & Programmierung.",
+    blurb: "Was KNX im Einfamilienhaus kostet – mit Rechner, Kosten pro Datenpunkt, Neubau vs. Nachrüsten.",
     topic: "KNX Smart Home",
     cluster: "smarthome",
-    updated: "2026-06-16",
+    updated: "2026-09-25",
   },
   {
     href: "/ratgeber/knx-oder-loxone",
