@@ -31,9 +31,9 @@ unten genannten Hebel, nicht über den nackten Head-Term.
    Aroundhome/Check24/MyHammer. Dort schlagen wir die *nationalen* Aggregatoren
    durch **hyperlokale Spezifität** (echte Niendorf-/Stadtteil-Bezüge), wo deren
    Templates generisch-bundesweit bleiben. Mechanik: `areaServed`-Schema plus eine
-   Hamburg-Sektion auf der Seite — über den `RegionNote`-Block (rendert derzeit nur
-   für `carport`/`smarthome`) oder, für andere Cluster wie `energie`, als
-   handgeschriebene Hamburg-Sektion, bis `RegionNote` darauf ausgeweitet ist. Ein
+   Hamburg-Sektion auf der Seite — der `RegionNote`-Block (rendert seit
+   2026-09-28 für alle Cluster) liefert den Standort-Anker; der inhaltliche
+   Hamburg-Winkel (Fernwärme, Denkmalschutz, …) bleibt handgeschrieben. Ein
    #1 für ein lokales 200-Suchen-Keyword schlägt #8 für ein 50k-Keyword.
 2. **Topical Authority durch Cluster-Tiefe.** Eine Einzelseite verliert; 8–10 eng
    verlinkte Seiten zu einem Thema signalisieren Google regionale Themen-Autorität.
@@ -52,8 +52,8 @@ unten genannten Hebel, nicht über den nackten Head-Term.
 ## Playbook (Priorität)
 
 1. **Hyperlokale organische Seiten** — „[Leistung] Hamburg/[Stadtteil]"-Framing
-   via `areaServed`-Schema + Hamburg-Sektion (`RegionNote` für `carport`/`smarthome`,
-   sonst handgeschrieben — siehe Front 1), spezifischer als die national-generischen
+   via `areaServed`-Schema + Hamburg-Sektion (`RegionNote` automatisch,
+   inhaltlicher Hamburg-Winkel handgeschrieben — siehe Front 1), spezifischer als die national-generischen
    Aggregatoren. (Kein GBP/Local-Pack — wir sind Aggregator. Ein einzelner
    generischer Unternehmenseintrag ist optional, aber kein Ranking-Hebel für
    einzelne Leistungen.)

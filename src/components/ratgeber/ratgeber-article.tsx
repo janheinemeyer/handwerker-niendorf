@@ -3,11 +3,14 @@ import { SiteFooter } from "@/components/site-footer";
 import { Breadcrumb, type Crumb } from "./breadcrumb";
 import { RelatedRatgeber } from "./related";
 import { RegionNote } from "./region-note";
+import { RATGEBER_PAGES } from "@/lib/ratgeber";
+import { articleSchema } from "@/lib/schema";
 
 /**
  * Page shell for Ratgeber/SEO articles: header, breadcrumb (+ its JSON-LD),
- * H1, "Aktualisiert" date, and footer. A new page only needs metadata, a
- * `faqs` array, and its body — see the authoring guide in CLAUDE.md.
+ * H1, "Aktualisiert" date, and footer. Pages registered in the catalog also get
+ * `Article` JSON-LD. A new page only needs metadata, a `faqs` array, and its
+ * body — see the authoring guide in CLAUDE.md.
  */
 export function RatgeberArticle({
   title,
@@ -23,9 +26,16 @@ export function RatgeberArticle({
   // The current page is the last breadcrumb crumb; used to auto cross-link to
   // sibling Ratgeber pages (excluding this one).
   const currentHref = breadcrumb[breadcrumb.length - 1]?.href;
+  const page = RATGEBER_PAGES.find((p) => p.href === currentHref);
 
   return (
     <>
+      {page && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(page)) }}
+        />
+      )}
       <SiteHeader />
       <main className="relative z-10 flex-1 border-t border-line-strong">
         <article className="mx-auto max-w-[52rem] px-5 py-14 sm:px-8 sm:py-20">

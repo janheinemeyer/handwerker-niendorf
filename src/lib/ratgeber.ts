@@ -37,8 +37,9 @@ export type RatgeberPage = {
   cluster: Cluster;
   /**
    * Last meaningful content change (ISO `YYYY-MM-DD`). Feeds the sitemap's
-   * `lastModified` so it reflects a real date instead of the build timestamp.
-   * Bump it when you substantively update a page.
+   * `lastModified` and the page's Article `dateModified`, so it reflects a real
+   * date instead of the build timestamp. Bump it (and the page's visible
+   * "Aktualisiert" month) when you substantively update a page.
    */
   updated: string;
 };

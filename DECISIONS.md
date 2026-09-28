@@ -437,3 +437,31 @@ entry prices (net, rounded), labelled as such; the Kaltwintergarten range is
 standing/pergola awnings stand on foundations and may themselves be a bauliche
 Anlage — the page says so instead of presenting them as permit-free.
 Re-check GSC queries 2–4 weeks after indexing.
+
+## 2026-09-28 — Article schema on Ratgeber pages; `RegionNote` on every cluster
+
+**Decision:** (1) `RatgeberArticle` emits `Article` JSON-LD for every page in
+`RATGEBER_PAGES` (`articleSchema()` in `src/lib/schema.ts`): `headline`/
+`description`/`about` from the catalog entry, `dateModified` from `updated`,
+`author` + `publisher` → the root entity via `@id` `#organization`.
+(2) `RegionNote` now renders for **all** clusters (`aussen`, `energie`, `innen`
+added; `REGION_COPY` is a full `Record<Cluster, …>`). (3) The sitemap's homepage
+`lastModified` is derived from the newest catalog entry, like `/ratgeber`.
+
+**Why:** (1) Pages carried only `BreadcrumbList` + `FAQPage` — nothing told
+Google/AI answer engines *who* wrote the page and *how fresh* it is, the two
+signals GEO citations lean on most. One change in the shell covers all pages.
+(2) Reverses the 2026-06-16 "carport only" scope: the 2026-06-18 strategy makes
+local intent the #1 front for every cluster and left widening `RegionNote` open;
+`energie` (14 pages, the largest cluster) had no consistent local anchor.
+(3) The homepage renders the catalog (Ratgeber band), so a fixed June date
+understated real changes.
+
+**Alternatives considered:** `datePublished` — omitted: the catalog tracks only
+the last change, and a guessed publish date is a false signal (could be added
+later as a catalog field sourced from git history). `Person` author — no real
+named editor exists; the organisation is the honest author.
+
+**Consequences:** Keep catalog `updated` in sync with the visible
+"Aktualisiert" month — both now feed structured data. A new cluster must get a
+`REGION_COPY` entry (the type enforces it).

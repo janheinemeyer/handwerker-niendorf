@@ -2,13 +2,27 @@ import { RATGEBER_PAGES, type Cluster } from "@/lib/ratgeber";
 import { BUSINESS } from "@/lib/site";
 
 /**
- * Per-cluster wording for the local-relevance block. Only clusters listed here
- * render a `RegionNote` — the ones where local service intent ("… Niendorf",
- * "in der Nähe") is realistically winnable against national aggregators.
- * `vermittlung` fills the heading, `betriebe` the sentence.
+ * Per-cluster wording for the local-relevance block — every cluster has one, so
+ * each catalog page anchors itself to Niendorf and its neighbouring Stadtteile
+ * ("… Niendorf", "in der Nähe"). `vermittlung` fills the heading, `betriebe`
+ * the sentence.
  */
-const REGION_COPY: Partial<Record<Cluster, { vermittlung: string; betriebe: string }>> = {
+const REGION_COPY: Record<Cluster, { vermittlung: string; betriebe: string }> = {
   carport: { vermittlung: "Carport-Vermittlung", betriebe: "Carport-Betriebe" },
+  aussen: {
+    vermittlung: "Vermittlung für Terrasse & Außenanlagen",
+    betriebe:
+      "Fachbetriebe für Terrassenüberdachungen, Wintergärten und Pflasterarbeiten",
+  },
+  energie: {
+    vermittlung: "Vermittlung für Solar, Wärmepumpe & Klima",
+    betriebe:
+      "Fachbetriebe für Photovoltaik, Stromspeicher, Wärmepumpen, Klimaanlagen und Wallboxen",
+  },
+  innen: {
+    vermittlung: "Vermittlung für Renovierung & Innenausbau",
+    betriebe: "Maler-, Fliesen- und Sanitärbetriebe",
+  },
   smarthome: {
     vermittlung: "Smart-Home- & KNX-Vermittlung",
     betriebe: "Smart-Home- und KNX-Fachbetriebe",
@@ -17,8 +31,8 @@ const REGION_COPY: Partial<Record<Cluster, { vermittlung: string; betriebe: stri
 
 /**
  * "Region" — local-relevance block anchoring the page to Hamburg-Niendorf and
- * the neighbouring Stadtteile. Rendered by `RatgeberArticle` for the clusters in
- * `REGION_COPY`, driven by the catalog so it stays in one place rather than
+ * the neighbouring Stadtteile. Rendered by `RatgeberArticle` for every catalog
+ * page, driven by the catalog so it stays in one place rather than
  * copied per page. The named districts mirror `areaServed` in the LocalBusiness
  * schema, so the on-page signal and the structured data agree.
  */
