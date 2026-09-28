@@ -153,7 +153,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Heizen mit der Split-Klimaanlage – Effizienz, Kosten, Förderung 2026 & wann es sich lohnt.",
     topic: "Klimaanlage als Heizung",
     cluster: "energie",
-    updated: "2026-06-18",
+    updated: "2026-09-28",
   },
   {
     href: "/ratgeber/waermepumpe-kosten",
@@ -161,7 +161,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Luft-Wasser, Erdwärme & Co. – Preise mit Einbau, KfW-Förderung 2026 & ehrlicher Altbau-Check.",
     topic: "Wärmepumpe",
     cluster: "energie",
-    updated: "2026-06-18",
+    updated: "2026-09-25",
   },
   {
     href: "/ratgeber/waermepumpe-altbau",
@@ -169,7 +169,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Funktioniert das? Voraussetzungen, Heizkörper ohne Fußbodenheizung, Hochtemperatur & ehrlicher Check.",
     topic: "Wärmepumpe im Altbau",
     cluster: "energie",
-    updated: "2026-06-18",
+    updated: "2026-09-28",
   },
   {
     href: "/ratgeber/waermepumpe-stromverbrauch",
@@ -190,10 +190,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   {
     href: "/ratgeber/waermepumpe-foerderung",
     title: "Wärmepumpe: Förderung 2026",
-    blurb: "Bis zu 70 % über die KfW 458 – Boni, Voraussetzungen, Antrag Schritt für Schritt & der häufigste Fehler.",
+    blurb: "Bis zu 70 % (bei niedrigem Einkommen und Heizungstausch 80 %) über die KfW 458 – neue Regeln seit Juli 2026, Antrag Schritt für Schritt & was sich 2027 ändert.",
     topic: "Wärmepumpen-Förderung",
     cluster: "energie",
-    updated: "2026-06-18",
+    updated: "2026-09-25",
   },
   {
     href: "/ratgeber/bad-renovieren-kosten",
