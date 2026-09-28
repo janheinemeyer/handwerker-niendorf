@@ -335,6 +335,40 @@ opportunistisch dazwischen. Pillar verlinkt jeweils nur bereits gebaute Spokes.
   käme nur in Frage, wenn das Modell zu einem ausführenden Betrieb mit echter
   Adresse/Telefon wechselt.
 
+## Querschnitts-Hebel SEO/GEO (Stand 2026-09-28)
+
+Seitenübergreifende Maßnahmen jenseits einzelner neuer Ratgeber-Seiten.
+
+**Erledigt (PR `feat/seo-article-schema-region`):** `Article`-JSON-LD auf allen
+Katalog-Seiten (`dateModified`, Autor/Herausgeber → `#organization`),
+`RegionNote` für alle Cluster, Sitemap-Datum der Startseite aus dem Katalog
+abgeleitet. Details in `DECISIONS.md` (2026-09-28).
+
+**Offen, nach Hebel sortiert:**
+
+1. **Methodik-/Redaktionsseite + Quellenangaben (E-E-A-T, GEO).** Eine Seite
+   „So entstehen unsere Kostenangaben": Datenbasis der Preisspannen, wer prüft,
+   Aktualisierungsrhythmus. Auf den Seiten sichtbare Quellen (KfW, BAFA, BNetzA,
+   Hamburger Behörden) — KI-Antwortmaschinen zitieren belegte Zahlen deutlich
+   lieber. Vorher prüfen, welche Seiten schon Quellen nennen.
+2. **Dünne Cluster vertiefen (Tiefe vor Breite).** `innen` (3 Seiten) und
+   `smarthome` (2) auf echte Cluster ausbauen, bevor neue Themen öffnen —
+   Kandidaten für `innen`: Boden verlegen (Tier 2 oben), Trockenbau.
+3. **Lokale Erwähnungen/Backlinks.** Stadtteil-Portale, Lokalpresse
+   (Niendorf/Lokstedt/Schnelsen), Verbraucher-Foren. Die ehrlichen
+   „lohnt sich *nicht*"-Abschnitte als Aufhänger nutzen. (Ergänzt die
+   Stichpunkte unter „Über Kostenseiten hinaus".)
+4. **GEO-Sichtbarkeit messen.** Feste Liste von 10–15 Kernfragen (z. B.
+   „Wärmepumpe Altbau Hamburg lohnt sich?") monatlich in ChatGPT, Perplexity und
+   Google AI Mode stellen; festhalten, ob/wie wir zitiert werden. Ohne das ist
+   GEO nicht steuerbar.
+5. **CTR-Optimierung aus GSC.** Seiten auf Position 5–15 mit niedriger CTR:
+   Title/Meta-Description nachschärfen. Braucht die GSC-Leistungsdaten.
+6. **`datePublished` im Article-Schema.** Als Katalogfeld nachrüsten, befüllt
+   aus der Git-Historie (erstes Commit der Seite) — nicht schätzen.
+7. **Optional: `llms.txt`.** Geringer Aufwand, Nutzen bisher nicht belegt —
+   nur nebenbei, nicht priorisieren.
+
 ## Wie eine neue Seite entsteht
 
 1. In `src/lib/ratgeber.ts` (`RATGEBER_PAGES`) eintragen

@@ -89,7 +89,9 @@ blocks**, so structure, styling and structured data stay consistent.
 
 - `RatgeberArticle` — page shell: header, breadcrumb (+ `BreadcrumbList`
   JSON-LD), `<h1>`, "Aktualisiert" date, footer. Props: `title`, `breadcrumb`
-  (`Crumb[]`), `updated`, `children`. It **auto-renders an "Auch interessant"
+  (`Crumb[]`), `updated`, `children`. For catalog pages it also emits `Article`
+  JSON-LD (`dateModified` = catalog `updated`, so keep that in sync with the
+  visible "Aktualisiert" month) and the `RegionNote` local block. It **auto-renders an "Auch interessant"
   cross-link block** (`RelatedRatgeber`) to sibling pages — you don't add it per
   page. The siblings come from the catalog in `src/lib/ratgeber.ts`
   (`RATGEBER_PAGES`); **register every new Ratgeber page there**

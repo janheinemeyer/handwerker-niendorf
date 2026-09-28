@@ -1,5 +1,5 @@
 import { SITE_URL, BUSINESS } from "./site";
-import { RATGEBER_PAGES } from "./ratgeber";
+import { RATGEBER_PAGES, type RatgeberPage } from "./ratgeber";
 
 /**
  * LocalBusiness JSON-LD for the site root — the entity signal AI search engines
@@ -44,5 +44,31 @@ export function organizationSchema() {
       "Handwerker-Vermittlung",
       ...RATGEBER_PAGES.map((p) => p.topic),
     ],
+  };
+}
+
+/**
+ * Article JSON-LD for a Ratgeber page, built from its catalog entry. Gives AI
+ * answer engines and Google the freshness (`dateModified`) and the source
+ * (`author`/`publisher` → the LocalBusiness entity above, linked by `@id`).
+ *
+ * `datePublished` is left out on purpose: the catalog only tracks the last
+ * meaningful change, and a guessed publish date would be a false signal.
+ */
+export function articleSchema(page: RatgeberPage) {
+  const url = `${SITE_URL}${page.href}`;
+  const organization = { "@id": `${SITE_URL}/#organization` };
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.title,
+    description: page.blurb,
+    url,
+    mainEntityOfPage: url,
+    inLanguage: "de-DE",
+    dateModified: page.updated,
+    about: page.topic,
+    author: organization,
+    publisher: organization,
   };
 }
