@@ -78,10 +78,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   {
     href: "/ratgeber/terrassenueberdachung-gastronomie",
     title: "Terrassenüberdachung Gastronomie",
-    blurb: "Netto-Kosten für Restaurant & Café, Genehmigung in Hamburg & Amortisationsrechner.",
+    blurb: "Außengastronomie überdachen: Netto-Kosten, Markise & Pergola, Antrag in Hamburg & Amortisationsrechner.",
     topic: "Terrassenüberdachung für die Gastronomie",
     cluster: "aussen",
-    updated: "2026-09-22",
+    updated: "2026-09-25",
   },
   {
     href: "/ratgeber/wallbox-installieren-kosten",
