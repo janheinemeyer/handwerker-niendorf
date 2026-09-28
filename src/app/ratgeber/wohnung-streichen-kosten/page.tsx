@@ -13,9 +13,9 @@ import {
 import { WohnungStreichenCalculator } from "@/components/wohnung-streichen-calculator";
 
 export const metadata: Metadata = {
-  title: "Wohnung streichen lassen: Kosten pro m² & nach Größe (2026)",
+  title: "Wohnung streichen lassen: Kosten pro m², Zimmer & Auszug",
   description:
-    "Was kostet es, eine Wohnung streichen zu lassen? Maler nehmen 6–12 €/m² (reine Arbeit) bzw. 20–35 €/m² inkl. Material. Preise nach Größe (30–100 m²), Wände vs. Decke, Vorarbeiten und Hamburg-Aufschlag – mit Kostenrechner.",
+    "Was kostet es, eine Wohnung oder ein Zimmer streichen zu lassen? Maler nehmen 6–12 €/m² (reine Arbeit) bzw. 20–35 €/m² inkl. Material. Preise nach Größe (30–100 m²), Streichen beim Auszug (kein neues Gesetz), Kostenvoranschlag und Hamburg-Aufschlag – mit Kostenrechner.",
   alternates: { canonical: "/ratgeber/wohnung-streichen-kosten" },
   openGraph: {
     title: "Wohnung streichen lassen: Kosten pro m² & nach Größe",
@@ -41,6 +41,18 @@ const faqs: FaqItem[] = [
     a: "Eine 80-m²-Wohnung professionell streichen zu lassen kostet je nach Zustand und Qualitätsniveau etwa 2.800–6.000 €. Den größten Unterschied machen Vorarbeiten (alte Tapeten, Risse, Spachteln) und ob Decken mitgestrichen werden.",
   },
   {
+    q: "Was kostet es, ein Zimmer streichen zu lassen?",
+    a: "Für Wände und Decke inklusive Material rechnen Sie grob mit 29–33 € pro m² Grundfläche: ein 12-m²-Kinderzimmer kostet damit rund 350–400 €, ein 20-m²-Schlafzimmer etwa 600–650 € und ein 30-m²-Wohnzimmer ca. 900–1.000 €. Bei einzelnen Zimmern können Anfahrt oder ein Mindestauftrag hinzukommen – mehrere Räume in einem Auftrag sind pro m² meist günstiger.",
+  },
+  {
+    q: "Gibt es ein neues Gesetz zum Streichen beim Auszug?",
+    a: "Nein. Ein neues Gesetz, das Mieter zum Streichen verpflichtet oder davon befreit, gibt es nicht. Maßgeblich sind Ihr Mietvertrag und die Rechtsprechung des Bundesgerichtshofs seit 2004: Starre Fristenpläne und Quotenabgeltungsklauseln sind unwirksam, und wer eine Wohnung unrenoviert ohne angemessenen Ausgleich übernommen hat, muss sie in der Regel nicht renoviert zurückgeben. Im Einzelfall hilft der Mieterverein.",
+  },
+  {
+    q: "Was kostet ein Kostenvoranschlag vom Maler?",
+    a: "In der Regel nichts. Nach § 632 Abs. 3 BGB ist ein Kostenanschlag im Zweifel nicht zu vergüten – kosten darf er nur, wenn das vorher ausdrücklich vereinbart wurde. Fragen Sie deshalb vor dem Termin nach, ob Aufmaß und Angebot kostenlos sind.",
+  },
+  {
     q: "Kostet Decke streichen mehr als Wände?",
     a: "Ja. Überkopfarbeit ist anstrengender und langsamer, deshalb liegen Deckenpreise mit etwa 10–20 €/m² rund 20–30 % über den Wandpreisen (ca. 10–15 €/m²). Wer nur die Wände streichen lässt, spart entsprechend.",
   },
@@ -64,7 +76,7 @@ export default function WohnungStreichenKostenPage() {
           lassen: Kosten
         </>
       }
-      updated="Juni 2026"
+      updated="September 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -135,11 +147,33 @@ export default function WohnungStreichenKostenPage() {
           ["30 m²", "ab ~1.000 €"],
           ["50 m²", "ab ~1.600 €"],
           ["60 m²", "~1.800 – 3.800 €"],
+          ["70 m²", "ab ~2.200 €"],
           ["75 m²", "ab ~2.400 €"],
           ["80 m²", "~2.800 – 6.000 €"],
           ["100 m²", "ab ~3.200 €"],
         ]}
       />
+
+      <H2 id="zimmer">Was kostet es, ein Zimmer streichen zu lassen?</H2>
+      <P>
+        Für einzelne Räume gilt dieselbe Faustregel wie im Rechner: Wände und
+        Decke inklusive Material kosten grob <strong>29–33 € pro m²
+        Grundfläche</strong> (der obere Wert mit Hamburg-Aufschlag). Vorarbeiten
+        wie Tapete entfernen oder Spachteln kommen hinzu.
+      </P>
+      <CostTable
+        head={["Raum", "Wände + Decke inkl. Material"]}
+        rows={[
+          ["Kinderzimmer / Büro (ca. 12 m²)", "~350 – 400 €"],
+          ["Schlafzimmer (ca. 20 m²)", "~600 – 650 €"],
+          ["Wohnzimmer (ca. 30 m²)", "~900 – 1.000 €"],
+        ]}
+      />
+      <P>
+        Bei einem einzelnen Zimmer rechnen manche Betriebe Anfahrt oder einen
+        Mindestauftrag extra. Wer mehrere Räume in einem Auftrag streichen
+        lässt, zahlt pro m² meist weniger.
+      </P>
 
       <H2 id="material">Reine Arbeit oder inkl. Material?</H2>
       <P>
@@ -185,17 +219,38 @@ export default function WohnungStreichenKostenPage() {
         source="wohnung-streichen-page"
       />
 
-      <H2 id="auszug">Beim Auszug streichen: was Mieter wissen sollten</H2>
+      <H2 id="auszug">
+        Wohnung streichen beim Auszug: Pflicht – oder gibt es ein neues Gesetz?
+      </H2>
       <P>
         In einer Mieterstadt wie Hamburg ist das Streichen beim Auszug ein
-        Dauerthema. Ob Sie beim Auszug überhaupt streichen müssen, hängt vom
-        Mietvertrag ab – viele Klauseln zu Schönheitsreparaturen sind nach der
-        Rechtsprechung des Bundesgerichtshofs jedoch unwirksam, etwa starre
-        Fristenpläne oder die Pflicht zur Renovierung, obwohl die Wohnung{" "}
-        <em>unrenoviert</em> übergeben wurde. Das ist eine rechtliche Frage des
-        Einzelfalls – prüfen Sie Ihren Mietvertrag und holen Sie im Zweifel Rat
-        ein. Wird gestrichen, zählt ein fachgerechtes, deckendes Ergebnis in
-        neutralen Tönen; hier lohnt häufig der Profi.
+        Dauerthema – und oft ist von einem „neuen Gesetz“ die Rede. Das gibt es
+        nicht: Eine gesetzliche Pflicht, beim Auszug zu streichen, besteht
+        nicht, und es wurde auch keine neue Regel eingeführt. Ob Sie streichen
+        müssen, hängt vom Mietvertrag ab. Viele Klauseln zu
+        Schönheitsreparaturen sind nach der Rechtsprechung des
+        Bundesgerichtshofs seit 2004 aber unwirksam:
+      </P>
+      <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
+        <li>
+          <strong>Starre Fristenpläne</strong> („alle 3 Jahre Küche und Bad“)
+          ohne Blick auf den tatsächlichen Zustand.
+        </li>
+        <li>
+          <strong>Unrenoviert übernommene Wohnung:</strong> Wer ohne
+          angemessenen Ausgleich eine unrenovierte Wohnung bezogen hat, muss sie
+          in der Regel nicht renoviert zurückgeben.
+        </li>
+        <li>
+          <strong>Quotenabgeltungsklauseln</strong>, nach denen Mieter beim
+          Auszug anteilig für eine künftige Renovierung zahlen sollen.
+        </li>
+      </ul>
+      <P>
+        Das bleibt eine rechtliche Frage des Einzelfalls – prüfen Sie Ihren
+        Mietvertrag und holen Sie im Zweifel Rat beim Mieterverein ein. Wird
+        gestrichen, zählt ein fachgerechtes, deckendes Ergebnis in neutralen
+        Tönen; hier lohnt häufig der Profi.
       </P>
 
       <H2 id="hamburg">Maler in Hamburg: Preise &amp; Aufschlag</H2>

@@ -198,10 +198,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   {
     href: "/ratgeber/bad-renovieren-kosten",
     title: "Bad renovieren: Kosten",
-    blurb: "Kosten nach Größe, Umfang & Ausstattung – inkl. Rechner & Förderung.",
+    blurb: "Kosten nach Größe, Umfang & Ausstattung – auch ohne Fliesen abschlagen, inkl. Rechner & Förderung.",
     topic: "Badsanierung",
     cluster: "innen",
-    updated: "2026-06-13",
+    updated: "2026-09-25",
   },
   {
     href: "/ratgeber/fliesen-legen-kosten",
@@ -209,15 +209,15 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Preise pro m² für Boden, Wand & Bad – mit Abdichtung, Stundenlohn, Beispielrechnung & Spartipps.",
     topic: "Fliesenarbeiten",
     cluster: "innen",
-    updated: "2026-06-24",
+    updated: "2026-09-25",
   },
   {
     href: "/ratgeber/wohnung-streichen-kosten",
     title: "Wohnung streichen lassen: Kosten",
-    blurb: "Maler-Preise pro m² & nach Größe – Wände, Decken, Vorarbeiten & Rechner.",
+    blurb: "Maler-Preise pro m², nach Größe & pro Zimmer – Streichen beim Auszug, Vorarbeiten & Rechner.",
     topic: "Malerarbeiten",
     cluster: "innen",
-    updated: "2026-06-15",
+    updated: "2026-09-25",
   },
   {
     href: "/ratgeber/wintergarten-kosten",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   RatgeberArticle,
   TlDr,
@@ -12,9 +13,9 @@ import {
 import { BadCalculator } from "@/components/bad-calculator";
 
 export const metadata: Metadata = {
-  title: "Bad renovieren: Kosten 2026 (Rechner, Preise & Hamburg)",
+  title: "Bad renovieren: Kosten 2026 – auch ohne Fliesen abschlagen",
   description:
-    "Was kostet es, ein Bad renovieren zu lassen? Aktuelle Preise 2026 pro m², nach Größe und Gewerk – mit Kostenrechner, Förderung (KfW & Pflegekasse) und Angebotsvergleich für Hamburg und Umgebung.",
+    "Was kostet es, ein Bad renovieren zu lassen? Aktuelle Preise 2026 pro m², nach Größe und Gewerk, günstig ohne Fliesen abschlagen (Dekorplatten, Fliese auf Fliese), Eigenleistung und Mieter – mit Kostenrechner, Förderung und Angebotsvergleich für Hamburg.",
   alternates: { canonical: "/ratgeber/bad-renovieren-kosten" },
   openGraph: {
     title: "Bad renovieren: Kosten 2026 im Überblick",
@@ -56,6 +57,18 @@ const faqs: FaqItem[] = [
     a: "Eine Teilrenovierung (neue Fliesen, Sanitärobjekte, Anstrich – ohne Leitungen zu verändern) ist deutlich günstiger und reicht, wenn die Installation intakt ist. Sind Leitungen alt, der Grundriss unpraktisch oder Feuchteschäden vorhanden, lohnt sich die Komplettsanierung – sie ist teurer, aber langfristig wirtschaftlicher.",
   },
   {
+    q: "Kann man ein Bad renovieren, ohne die Fliesen abzuschlagen?",
+    a: "Ja, wenn die alten Fliesen fest und eben sitzen. Günstige Wege sind Dekor- bzw. Duschrückwandplatten über den Fliesen (fertig eingebaut rund 500–1.500 € pro Dusche), neue Fliesen direkt auf die alten mit Haftgrund oder – nur für trockene Bereiche – Fliesenlack. Das spart Abriss und Entsorgung (15–35 €/m²) und Staub. Lose oder hohl klingende Fliesen und Feuchteschäden müssen aber raus.",
+  },
+  {
+    q: "Was kann ich bei der Badsanierung in Eigenleistung machen?",
+    a: "Sinnvoll sind Demontage, Entsorgung, Malerarbeiten und Aufräumen – das spart je nach Bad einige hundert bis über tausend Euro. Abdichtung, Elektro- und Wasserinstallation gehören dagegen in die Hand von Fachbetrieben: Elektroarbeiten dürfen nur Elektrofachkräfte ausführen, und Fehler bei der Abdichtung zeigen sich oft erst Jahre später als Wasserschaden. Sprechen Sie Eigenleistungen vorab mit dem Betrieb ab, damit die Gewährleistung klar geregelt ist.",
+  },
+  {
+    q: "Darf ich als Mieter das Bad renovieren?",
+    a: "Nur mit Zustimmung des Vermieters, wenn Sie baulich etwas verändern – etwa Fliesen, Sanitärobjekte oder Leitungen. Ohne Absprache droht beim Auszug der Rückbau auf eigene Kosten. Die Instandhaltung eines abgenutzten oder defekten Bads ist ohnehin Sache des Vermieters. Für Mieter bieten sich rückbaubare Lösungen an, etwa Duschrückwände oder Klebefolien – auch hier vorher schriftlich zustimmen lassen.",
+  },
+  {
     q: "Was kostet eine Badsanierung in Hamburg?",
     a: "In Hamburg liegen die Handwerkerpreise rund 20 % über dem Bundesdurchschnitt. Da die Arbeitsleistung etwa 60 % der Kosten ausmacht, liegt die Gesamtrechnung rund 10–15 % höher: für ein mittelgroßes Bad (~8 m²) etwa 13.500–27.000 € für eine Komplettsanierung. Über unsere Vermittlung erhalten Sie Angebote geprüfter Betriebe aus Niendorf und Umgebung.",
   },
@@ -71,7 +84,7 @@ export default function BadKostenPage() {
           Kosten 2026
         </>
       }
-      updated="Juni 2026"
+      updated="September 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -187,6 +200,36 @@ export default function BadKostenPage() {
         ]}
       />
 
+      <H2 id="ohne-fliesen-abschlagen">
+        Bad renovieren ohne Fliesen abschlagen – geht das?
+      </H2>
+      <P>
+        Wenn die alten Fliesen fest und eben sitzen, lässt sich ein Bad oft
+        auffrischen, ohne sie abzuschlagen. Das spart den Abriss (15–35 €/m²
+        inklusive Entsorgung), Staub und einige Tage Bauzeit:
+      </P>
+      <CostTable
+        head={["Lösung", "Richtwert", "Geeignet für"]}
+        rows={[
+          ["Dekor- / Duschrückwandplatten (Alu-Verbund, Acryl, Glas)", "Material 50 – 250 €/m²; fertig eingebaut ca. 500 – 1.500 € je Dusche", "Dusche und Wände – fugenlos, schnell montiert"],
+          ["Fliese auf Fliese (mit Haftgrund)", "wie neu verlegen, ohne Abriss", "Boden und Wand bei tragfähigem Altbelag"],
+          ["Fliesen streichen (Fliesenlack)", "Material, oft in Eigenleistung", "nur trockene Bereiche, kein Spritzwasser"],
+        ]}
+      />
+      <P>
+        Die Grenzen: Lose oder hohl klingende Fliesen, Feuchteschäden und alte
+        Leitungen hinter der Wand lassen sich nicht überdecken. Ein neuer Belag
+        baut außerdem auf – das kann an Türen und Übergängen stören. Was Fliese
+        auf Fliese genau kostet, steht im Ratgeber{" "}
+        <Link
+          href="/ratgeber/fliesen-legen-kosten"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          Fliesen legen: Kosten
+        </Link>
+        .
+      </P>
+
       <H2 id="barrierefrei">Barrierefreies Bad: Kosten &amp; Förderung</H2>
       <P>
         Ein altersgerechter, barrierefreier Umbau – schwellenlose Dusche,
@@ -236,7 +279,12 @@ export default function BadKostenPage() {
         <li>Standardformate bei Fliesen wählen; Großformate und Mosaik kosten mehr in der Verlegung.</li>
         <li>Sanitärobjekte aus der Mittelklasse statt Designermarken.</li>
         <li>Förderung früh prüfen (KfW, Pflegekasse) – Antrag vor Auftragsvergabe.</li>
-        <li>Demontage/Entsorgung ggf. selbst übernehmen.</li>
+        <li>
+          Eigenleistung gezielt einsetzen: Demontage, Entsorgung und
+          Malerarbeiten selbst übernehmen – Abdichtung, Elektro und
+          Wasserinstallation dem Fachbetrieb überlassen.
+        </li>
+        <li>Wo die Fliesen fest sitzen: überdecken statt abschlagen (siehe oben).</li>
       </ul>
 
       <H2 id="hamburg">Bad renovieren in Hamburg &amp; Umgebung</H2>

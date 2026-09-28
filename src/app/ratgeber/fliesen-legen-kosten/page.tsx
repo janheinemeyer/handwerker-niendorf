@@ -12,7 +12,7 @@ import {
 } from "@/components/ratgeber";
 
 export const metadata: Metadata = {
-  title: "Fliesen legen lassen: Kosten pro m² & im Bad (2026)",
+  title: "Fliesen legen lassen: Kosten pro m² mit & ohne Material",
   description:
     "Was kostet Fliesen legen? Der Fliesenleger nimmt 30–60 €/m² für die reine Verlegung, im Bad mit Abdichtung 60–90 €/m². Ein komplettes Bad (8–12 m²) liegt bei 3.000–8.000 € inkl. Material. Preise pro m², Stundenlohn, Beispielrechnung & Spartipps für Hamburg.",
   alternates: { canonical: "/ratgeber/fliesen-legen-kosten" },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was kostet Fliesen legen pro m²?",
-    a: "Die reine Verlegung kostet je nach Fliese und Untergrund 30–60 €/m². Standard-Bodenfliesen liegen am unteren Rand (30–55 €/m²), Wandfliesen bei 40–65 €/m². Im Bad mit Abdichtung sind es 60–90 €/m², bei großformatigen Feinsteinzeug-Fliesen 55–120 €/m². Das Material (die Fliesen selbst) kommt mit 10–60 €/m² obendrauf. In Hamburg liegen die Preise eher am oberen Rand der Spanne.",
+    a: "Die reine Verlegung (ohne Material) kostet je nach Fliese und Untergrund 30–60 €/m². Standard-Bodenfliesen liegen am unteren Rand (30–55 €/m²), Wandfliesen bei 40–65 €/m². Im Bad mit Abdichtung sind es 60–90 €/m², bei großformatigen Feinsteinzeug-Fliesen 55–120 €/m². Das Material (die Fliesen selbst) kommt mit 10–60 €/m² obendrauf. In Hamburg liegen die Preise eher am oberen Rand der Spanne.",
   },
   {
     q: "Was kostet ein komplettes Bad zu fliesen?",
@@ -38,6 +38,10 @@ const faqs: FaqItem[] = [
   {
     q: "Was kostet der Fliesenleger pro Stunde?",
     a: "Der Stundensatz liegt 2026 meist bei 40–75 € netto, je nach Region und Qualifikation. Üblich – und für Auftraggeber besser kalkulierbar – ist aber die Abrechnung pro m². Nach Stunden wird eher bei kleinen Ausbesserungen oder schwer kalkulierbaren Altbau-Arbeiten gerechnet.",
+  },
+  {
+    q: "Was kostet es, 10 m² oder 25 m² fliesen zu lassen?",
+    a: "Für einen Standard-Boden rechnen Sie mit 30–55 €/m² Arbeit plus 10–60 €/m² Material: 10 m² kosten damit rund 400–1.150 €, 25 m² etwa 1.000–2.900 €. Im Bad mit Abdichtung und bei Großformaten wird es teurer. Bei sehr kleinen Flächen (1–5 m²) rechnen viele Betriebe nach Stunden oder mit einer Mindestpauschale, weil Anfahrt und Einrichten unabhängig von der Fläche anfallen.",
   },
   {
     q: "Wie lange dauert es, 10 m² zu fliesen?",
@@ -67,7 +71,7 @@ export default function FliesenLegenKostenPage() {
           lassen: Kosten
         </>
       }
-      updated="Juni 2026"
+      updated="September 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -92,8 +96,8 @@ export default function FliesenLegenKostenPage() {
         Fliesenleger rechnen fast immer pro Quadratmeter ab. Die Spanne hängt
         davon ab, ob Boden oder Wand gefliest wird, welches Format verlegt wird
         und ob im Nassbereich abgedichtet werden muss. Die folgenden Werte gelten
-        für die <strong>reine Arbeit</strong> – das Material der Fliesen kommt
-        separat dazu:
+        für die <strong>reine Arbeit ohne Material</strong> – die Fliesen selbst
+        kommen separat dazu:
       </P>
       <CostTable
         head={["Leistung", "Preis pro m²"]}
