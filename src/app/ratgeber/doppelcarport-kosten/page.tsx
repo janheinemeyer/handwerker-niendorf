@@ -12,7 +12,7 @@ import {
 } from "@/components/ratgeber";
 
 export const metadata: Metadata = {
-  title: "Doppelcarport: Kosten, Maße & Preise (2026)",
+  title: "Doppelcarport: Kosten & Preise 2026 (Holz, Alu, Stahl)",
   description:
     "Was kostet ein Doppelcarport? Bauen lassen je nach Material und Größe rund 3.500–15.000 € (Bausatz ab ~2.000 €). Empfohlene Maße (ab ~6,5 × 5,5 m), Kostenfaktoren und Genehmigung in Hamburg – mit Preisübersicht.",
   alternates: { canonical: "/ratgeber/doppelcarport-kosten" },

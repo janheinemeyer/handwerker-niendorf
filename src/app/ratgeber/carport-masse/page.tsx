@@ -22,12 +22,12 @@ import {
 } from "@/lib/carport-masse";
 
 export const metadata: Metadata = {
-  title: "Carport Maße: für 1, 2 & 3 Autos (Tabelle & Rechner 2026)",
+  title: "Carport Maße & Größe: für 1, 2 & 3 Autos (mit Rechner)",
   description:
-    "Wie groß muss ein Carport sein? 1 Auto ca. 3 × 5,5 m, 2 Autos nebeneinander ca. 6–7 × 5,5–6,5 m, hintereinander ca. 3–3,5 × 10–11,5 m. Mit Maße-Rechner, Höhe, Abstellraum und den Hamburger Grenzen ohne Baugenehmigung (50 m², 9 m an der Grenze).",
+    "Welche Maße braucht ein Carport? Doppelcarport für 2 Autos nebeneinander ca. 6–7 × 5,5–6,5 m, hintereinander ca. 3–3,5 × 10–11,5 m, 1 Auto ca. 3 × 5,5 m. Mit Maße-Rechner, Höhe, Abstellraum und den Hamburger Grenzen ohne Baugenehmigung (50 m², 9 m an der Grenze).",
   alternates: { canonical: "/ratgeber/carport-masse" },
   openGraph: {
-    title: "Carport Maße: für 1, 2 & 3 Autos",
+    title: "Carport Maße & Größe: für 1, 2 & 3 Autos",
     description:
       "Empfohlene Breite, Länge und Höhe – mit Maße-Rechner und den Hamburger Grenzen ohne Baugenehmigung.",
     locale: "de_DE",
@@ -61,7 +61,7 @@ const tandemSuv = masse(2, "gross", { anordnung: "hintereinander" });
 
 const faqs: FaqItem[] = [
   {
-    q: "Wie breit muss ein Carport für 2 Autos sein?",
+    q: "Welche Größe braucht ein Doppelcarport für 2 Autos?",
     a: `Für zwei Autos nebeneinander sollten Sie ${formatMeter(masse(2, "kompakt").breite)} (Kleinwagen) bis ${formatMeter(masse(2, "gross").breite)} (SUV/Van) Breite einplanen, für Kombis rund ${formatMeter(doppelKombi.breite)}. Das sind rund 3–3,5 m pro Stellplatz – genug, um die Türen auf beiden Seiten zu öffnen. Stehen die Autos hintereinander, reicht die Breite eines Einzelcarports (${formatMeter(tandemKompakt.breite)}–${formatMeter(tandemSuv.breite)}).`,
   },
   {
@@ -109,7 +109,7 @@ export default function CarportMassePage() {
     <RatgeberArticle
       title={
         <>
-          Carport-Maße:
+          Carport-Maße &amp; Größe:
           <br />
           für 1, 2 &amp; 3 Autos
         </>
@@ -171,7 +171,7 @@ export default function CarportMassePage() {
         größeres Auto kommt.
       </P>
 
-      <H2 id="zwei-autos">Carport für 2 Autos: nebeneinander oder hintereinander?</H2>
+      <H2 id="zwei-autos">Doppelcarport-Maße: 2 Autos nebeneinander oder hintereinander?</H2>
       <P>
         <strong>Nebeneinander</strong> ist die bequemere Lösung: Jedes Auto
         kommt einzeln raus, und mit rund {formatFlaeche(doppelKombi.flaeche)}{" "}

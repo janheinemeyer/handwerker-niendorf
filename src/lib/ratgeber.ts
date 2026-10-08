@@ -278,7 +278,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   },
   {
     href: "/ratgeber/carport-masse",
-    title: "Carport-Maße",
+    title: "Carport-Maße & Größe",
     blurb: "Breite, Länge und Höhe für 1, 2 & 3 Autos – mit Maße-Rechner und Hamburger Grenzen.",
     topic: "Carport-Maße",
     cluster: "carport",
