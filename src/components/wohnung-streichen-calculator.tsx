@@ -61,7 +61,6 @@ export function WohnungStreichenCalculator() {
     const tapeteWeg = tapete ? TAPETE * m2 : 0;
     const untergrund = spachteln ? SPACHTELN * m2 : 0;
 
-    const base = waende + decke + tapeteWeg + untergrund;
     // Ballungsraum-Aufschlag nur auf den Arbeitsanteil – Material wird regional
     // nicht teurer. Arbeitsanteil = Streich- und Vorarbeiten ohne Materialaufschlag,
     // skaliert so korrekt mit der Material-Wahl (ohne Material = alles Arbeit).
