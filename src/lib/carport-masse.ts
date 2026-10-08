@@ -40,8 +40,12 @@ export type MasseErgebnis = {
   wandhoehe: number;
   /** Bis 50 m² und 3 m Wandhöhe (§ 61 HBauO, Innenbereich, je Hauptgebäude). */
   verfahrensfreiMoeglich: boolean;
-  /** Längste Seite ≤ 9 m und Wandhöhe ≤ 3 m → an der Grenze ohne eigene Abstandsfläche möglich. */
-  grenzeMoeglich: boolean;
+  /**
+   * Mit der Längsseite an der Grenze ohne eigene Abstandsfläche möglich
+   * (Längsseite ≤ 9 m, Wandhöhe ≤ 3 m). Die 9 m gelten je Grundstücksgrenze:
+   * Steht nur die Stirnseite an der Grenze, zählt nur deren Breite.
+   */
+  laengsseiteAnGrenzeMoeglich: boolean;
 };
 
 /** Stellplatzbreite je Auto inkl. Platz zum Ein- und Aussteigen, in m. */
@@ -75,7 +79,7 @@ export function berechneCarportMasse(e: MasseEingabe): MasseErgebnis {
   const auto = FAHRZEUG_LAENGE[e.fahrzeug];
   const hintereinander = e.autos === 2 && e.anordnung === "hintereinander";
 
-  const breite = hintereinander ? stellplatz : stellplatz * e.autos;
+  const breite = aufHalbeMeter(hintereinander ? stellplatz : stellplatz * e.autos);
   const laengeAutos = hintereinander
     ? 2 * auto + LAENGE_ZUSCHLAG
     : auto + LAENGE_ZUSCHLAG;
@@ -93,7 +97,7 @@ export function berechneCarportMasse(e: MasseEingabe): MasseErgebnis {
     durchfahrtshoehe,
     wandhoehe,
     verfahrensfreiMoeglich: flaeche <= MAX_FLAECHE && wandhoehe <= MAX_WANDHOEHE,
-    grenzeMoeglich:
+    laengsseiteAnGrenzeMoeglich:
       Math.max(breite, laenge) <= MAX_GRENZE_LAENGE && wandhoehe <= MAX_WANDHOEHE,
   };
 }

@@ -66,7 +66,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Wie lang muss ein Carport für 2 Autos hintereinander sein?",
-    a: `Rund ${formatMeter(tandemKompakt.laenge)} für zwei Kleinwagen bis ${formatMeter(tandemSuv.laenge)} für zwei SUVs – zwei Fahrzeuglängen plus etwa 1 m Spielraum. In Hamburg ist das wichtig: Direkt an der Grundstücksgrenze darf ein Carport ohne eigene Abstandsfläche höchstens 9 m lang sein. Ein Carport für zwei Autos hintereinander braucht dort also Abstand zur Grenze oder eine Abweichung.`,
+    a: `Rund ${formatMeter(tandemKompakt.laenge)} für zwei Kleinwagen bis ${formatMeter(tandemSuv.laenge)} für zwei SUVs – zwei Fahrzeuglängen plus etwa 1 m Spielraum. In Hamburg ist das wichtig: Ohne eigene Abstandsfläche darf ein Carport höchstens 9 m je Grundstücksgrenze einnehmen. Soll ein Tandem-Carport mit der Längsseite an der Grenze stehen, braucht er also Abstand oder eine Abweichung. Zeigt nur die schmale Stirnseite zur Grenze, ist das kein Problem.`,
   },
   {
     q: "Wie groß darf ein Carport ohne Baugenehmigung sein?",
@@ -131,8 +131,8 @@ export default function CarportMassePage() {
         {formatMeter(masse(1, "kompakt").durchfahrtshoehe)}. In Hamburg ist ein
         Carport bis <strong>50 m² und 3 m Wandhöhe</strong> ohne Baugenehmigung
         möglich – direkt an der Grundstücksgrenze aber nur bis{" "}
-        <strong>9 m Länge</strong>. Ein Carport für zwei Autos hintereinander
-        passt dort nicht.
+        <strong>9 m Länge</strong> je Grenze. Ein Carport für zwei Autos
+        hintereinander passt dort nicht mit der Längsseite.
       </TlDr>
 
       <section id="rechner" aria-label="Carport-Maße-Rechner" className="mt-10">
@@ -183,10 +183,12 @@ export default function CarportMassePage() {
         schmale Grundstücke – dafür muss oft umgeparkt werden, und der Carport
         wird {formatMeter(tandemKompakt.laenge)} bis{" "}
         {formatMeter(tandemSuv.laenge)} lang. In Hamburg ist das der Haken:
-        Direkt an der Grundstücksgrenze darf ein Carport ohne eigene
-        Abstandsfläche höchstens 9 m lang sein (§ 6 HBauO). Ein Tandem-Carport
-        muss also von der Grenze abrücken, oder es braucht eine Abweichung vom
-        Bauamt. Die Zustimmung des Nachbarn allein reicht dafür nicht.
+        Ohne eigene Abstandsfläche darf ein Carport höchstens 9 m je
+        Grundstücksgrenze einnehmen (§ 6 HBauO). Auf schmalen Grundstücken steht
+        der Tandem-Carport aber meist mit der Längsseite an der seitlichen
+        Grenze – dann muss er abrücken, oder es braucht eine Abweichung vom
+        Bauamt. Die Zustimmung des Nachbarn allein reicht dafür nicht. Zeigt
+        dagegen nur die Stirnseite zur Grenze, zählt nur deren Breite.
       </P>
       <P>
         Was ein Carport für zwei Autos kostet, zeigt der Ratgeber{" "}
@@ -239,12 +241,12 @@ export default function CarportMassePage() {
         (§ 6 Abs. 8 HBauO). So sehen typische Varianten aus:
       </P>
       <CostTable
-        head={["Variante", "Maße", "Bis 50 m² & 3 m?", "An die Grenze (≤ 9 m & 3 m)?"]}
+        head={["Variante", "Maße", "Bis 50 m² & 3 m?", "Längsseite an die Grenze (≤ 9 m & 3 m)?"]}
         rows={HAMBURG_FAELLE.map(({ label, r }) => [
           label,
           zelle(r),
           jaNein(r.verfahrensfreiMoeglich),
-          jaNein(r.grenzeMoeglich),
+          jaNein(r.laengsseiteAnGrenzeMoeglich),
         ])}
       />
       <P>

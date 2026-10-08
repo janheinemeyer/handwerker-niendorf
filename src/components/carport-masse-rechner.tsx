@@ -45,11 +45,12 @@ export function CarportMasseRechner() {
     ];
     if (abstellraum) parts.push("mit Abstellraum");
     if (hochdach) parts.push("Dachbox / Hochdach");
+    // Dimensions go into the summary: `estimate` is rendered as „Geschätzte Kosten“.
+    parts.push(`Maße ca. ${formatMasse(r)} (${formatFlaeche(r.flaeche)})`);
     return {
       service: "Carport",
       source: "carport-masse-rechner",
       summary: parts.join(" · "),
-      estimate: `${formatMasse(r)} (${formatFlaeche(r.flaeche)})`,
       details: { autos, anordnung, fahrzeug, abstellraum, hochdach },
     };
   }, [autos, anordnung, fahrzeug, abstellraum, hochdach, r]);
@@ -61,7 +62,12 @@ export function CarportMasseRechner() {
         <Segmented<"1" | "2" | "3">
           label="Anzahl Autos"
           value={String(autos) as "1" | "2" | "3"}
-          onChange={(v) => setAutos(Number(v) as Autos)}
+          onChange={(v) => {
+            setAutos(Number(v) as Autos);
+            // The arrangement control only exists for 2 cars; don't let a
+            // hidden "hintereinander" leak into the submitted lead.
+            if (v !== "2") setAnordnung("nebeneinander");
+          }}
           options={[
             { value: "1", label: "1 Auto" },
             { value: "2", label: "2 Autos" },
@@ -131,17 +137,18 @@ export function CarportMasseRechner() {
             </div>
             <div className="flex items-baseline justify-between gap-4">
               <dt className="text-paper/60">
-                An der Grundstücksgrenze: max. 9 m je Seite
+                Mit der Längsseite an der Grenze: max. 9 m
               </dt>
               <dd className="shrink-0 font-medium">
-                {r.grenzeMoeglich ? "✓ passt" : "✗ nur mit Abstand"}
+                {r.laengsseiteAnGrenzeMoeglich ? "✓ passt" : "✗ nur mit Abstand"}
               </dd>
             </div>
           </dl>
         </div>
 
         <p className="mt-4 text-xs leading-relaxed text-paper/50">
-          Vorhandene Stellplätze zählen zu den 50 m² mit. Für Ihr Grundstück
+          Vorhandene Stellplätze zählen zu den 50 m² mit. Steht nur die
+          Stirnseite an der Grenze, zählt nur deren Breite. Für Ihr Grundstück
           prüfen:{" "}
           <Link
             href="/ratgeber/carport-baugenehmigung-hamburg#pruefer"
