@@ -16,7 +16,7 @@ import { BEBAUUNGSPLAN_CHECKLISTE } from "./checkliste-items";
 export const metadata: Metadata = {
   title: "Carport außerhalb des Baufensters? Bebauungsplan & Baugrenze",
   description:
-    "Oft ja: Nach § 23 Abs. 5 BauNVO darf ein Carport außerhalb des Baufensters stehen, wenn der Bebauungsplan nichts anderes festsetzt. Was GRZ, Vorgarten und Befreiung bedeuten – mit Checkliste, Schwerpunkt Hamburg.",
+    "Oft ja: Nach § 23 Abs. 5 BauNVO kann das Bauamt einen Carport außerhalb des Baufensters zulassen, wenn der Bebauungsplan nichts anderes festsetzt. Was GRZ, Vorgarten und Befreiung bedeuten – mit Checkliste, Schwerpunkt Hamburg.",
   alternates: { canonical: "/ratgeber/carport-bebauungsplan" },
   openGraph: {
     title: "Carport & Bebauungsplan: Was ist erlaubt?",

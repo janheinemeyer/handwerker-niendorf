@@ -14,7 +14,7 @@ import { WintergartenCalculator } from "@/components/wintergarten-calculator";
 export const metadata: Metadata = {
   title: "Wintergarten Kosten 2026: Preise in Hamburg pro m² & Rechner",
   description:
-    "Was kostet ein Wintergarten in Hamburg? Kaltwintergarten 500–1.000 €/m², Wohnwintergarten 2.000–5.500 €/m², Baugenehmigung (in Hamburg immer Pflicht) 1.000–2.000 €. Mit Kostenrechner und Angebotsvergleich.",
+    "Was kostet ein Wintergarten in Hamburg? Kaltwintergarten 500–1.000 €/m², Wohnwintergarten 2.000–5.500 €/m², Genehmigung in Hamburg 150–2.000 € (nie verfahrensfrei). Mit Kostenrechner und Angebotsvergleich.",
   alternates: { canonical: "/ratgeber/wintergarten-kosten" },
   openGraph: {
     title: "Wintergarten: Kosten 2026 im Überblick",
@@ -45,11 +45,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet ein Wintergarten mit 20 qm?",
-    a: "Für 20 m² liegt ein Kaltwintergarten bei etwa 10.000–25.000 €, ein Warmwintergarten bei etwa 50.000–90.000 €. Hinzu kommen je nach Vorhaben Fundament, Beschattung und – in Hamburg immer – die Baugenehmigung.",
+    a: "Für 20 m² liegt ein Kaltwintergarten bei etwa 10.000–25.000 €, ein Warmwintergarten bei etwa 50.000–90.000 €. Hinzu kommen je nach Vorhaben Fundament, Beschattung und – in Hamburg immer – das Genehmigungsverfahren.",
   },
   {
     q: "Braucht ein Wintergarten in Hamburg eine Baugenehmigung?",
-    a: "Ja. In Hamburg ist ein Wintergarten unabhängig von der Größe immer genehmigungspflichtig – Ausnahmen gibt es nicht. Den Bauantrag muss ein bauvorlageberechtigter Entwurfsverfasser (z. B. Architekt oder Bauingenieur) erstellen. Die Genehmigung kostet meist 1.000–2.000 € (rund 20,50 € je 1.000 € Baukosten, mindestens 129,40 €), zuzüglich der Planungskosten.",
+    a: "In der Regel ja – verfahrensfrei ist ein Wintergarten in Hamburg unabhängig von der Größe nie. Der Regelfall ist die Baugenehmigung: Sie kostet meist 1.000–2.000 € (rund 20,50 € je 1.000 € Baukosten, mindestens 129,40 €). Bei einem Ein- oder Zweifamilienhaus (Gebäudeklasse 1–2) im Geltungsbereich eines Bebauungsplans, dessen Festsetzungen der Wintergarten einhält, genügt oft die Genehmigungsfreistellung nach § 62 HBauO: 150 € Gebühr, Baubeginn einen Monat nach Einreichung. In beiden Fällen muss ein bauvorlageberechtigter Entwurfsverfasser (z. B. Architekt oder Bauingenieur) die Bauvorlagen erstellen.",
   },
   {
     q: "Lohnt sich ein Wintergarten?",
@@ -57,7 +57,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet ein Wintergarten in Hamburg?",
-    a: "In Hamburg liegen die Handwerkerpreise etwas über dem Bundesdurchschnitt und es ist immer eine Baugenehmigung nötig. Für einen Kaltwintergarten mit ~20 m² sollten Sie mit etwa 13.000–28.000 € rechnen, für einen Warmwintergarten deutlich mehr. Über unsere Vermittlung erhalten Sie Angebote geprüfter Betriebe aus Niendorf und Umgebung.",
+    a: "In Hamburg liegen die Handwerkerpreise etwas über dem Bundesdurchschnitt und ohne Genehmigungsverfahren geht es nie. Für einen Kaltwintergarten mit ~20 m² sollten Sie mit etwa 13.000–28.000 € rechnen, für einen Warmwintergarten deutlich mehr. Über unsere Vermittlung erhalten Sie Angebote geprüfter Betriebe aus Niendorf und Umgebung.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function WintergartenKostenPage() {
           Kosten 2026
         </>
       }
-      updated="Juni 2026"
+      updated="Oktober 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -85,7 +85,8 @@ export default function WintergartenKostenPage() {
         <strong>Kaltwintergarten</strong> liegt bei <strong>500–1.000 €/m²</strong>,
         ein <strong>Warmwintergarten</strong> (Wohnwintergarten) bei{" "}
         <strong>2.000–5.500 €/m²</strong>. In Hamburg ist ein Wintergarten{" "}
-        <strong>immer genehmigungspflichtig</strong> (1.000–2.000 €).
+        <strong>nie verfahrensfrei</strong>: meist Baugenehmigung (1.000–2.000 €),
+        beim Einfamilienhaus im Bebauungsplan-Gebiet oft nur Freistellung (150 €).
       </TlDr>
 
       {/* Interactive cost calculator */}
@@ -165,17 +166,30 @@ export default function WintergartenKostenPage() {
       />
 
       <H2 id="genehmigung">
-        Baugenehmigung Wintergarten: in Hamburg immer Pflicht
+        Baugenehmigung Wintergarten: in Hamburg nie verfahrensfrei
       </H2>
       <P>
-        Anders als bei Carport oder Terrassenüberdachung ist ein Wintergarten in{" "}
-        <strong>Hamburg unabhängig von der Größe immer genehmigungspflichtig</strong>{" "}
-        – Ausnahmen gibt es nicht. Den Bauantrag muss ein{" "}
+        Anders als Carport oder Terrassenüberdachung ist ein Wintergarten in{" "}
+        <strong>Hamburg unabhängig von der Größe nie verfahrensfrei</strong>. Die
+        Bauvorlagen muss immer ein{" "}
         <strong>bauvorlageberechtigter Entwurfsverfasser</strong> (Architekt oder
-        Bauingenieur) erstellen.
+        Bauingenieur) erstellen. Welches Verfahren gilt, hängt vom Grundstück ab:
       </P>
       <P>
-        Die Genehmigungsgebühr richtet sich nach den Baukosten – rund{" "}
+        <strong>Genehmigungsfreistellung (§ 62 HBauO):</strong> Bei einem Ein- oder
+        Zweifamilienhaus (Gebäudeklasse 1–2, ohne Tiefgarage) im Geltungsbereich
+        eines Bebauungsplans, dessen Festsetzungen der Wintergarten einhält, reicht
+        es meist, die Bauvorlagen einzureichen. Die Gebühr beträgt 150 €; einen
+        Monat nach Eingang dürfen Sie bauen, sofern das Bauamt kein
+        Genehmigungsverfahren verlangt.
+      </P>
+      <P>
+        <strong>Baugenehmigung:</strong> In allen anderen Fällen – etwa ohne
+        Bebauungsplan (§ 34 BauGB), bei Abweichungen vom Plan oder bei größeren
+        Gebäuden – brauchen Sie eine reguläre Baugenehmigung.
+      </P>
+      <P>
+        Die Gebühr für die Baugenehmigung richtet sich nach den Baukosten – rund{" "}
         <strong>20,50 € je 1.000 € Baukosten</strong> (mindestens 129,40 €), in der
         Praxis meist <strong>1.000–2.000 €</strong>. Hinzu kommen die Planungskosten
         des Entwurfsverfassers. Planen Sie diese Posten und die Bearbeitungszeit des
@@ -215,7 +229,7 @@ export default function WintergartenKostenPage() {
       <H2 id="hamburg">Wintergarten in Hamburg &amp; Umgebung bauen lassen</H2>
       <P>
         In Hamburg liegen die Handwerkerpreise etwas über dem Bundesdurchschnitt,
-        und die Baugenehmigung ist immer Pflicht. Für einen Kaltwintergarten mit
+        und ohne Genehmigungsverfahren geht es nie. Für einen Kaltwintergarten mit
         ~20 m² sollten Sie mit etwa <strong>13.000–28.000 €</strong> rechnen, für
         einen Warmwintergarten deutlich mehr. Über unsere Vermittlung erhalten Sie
         Angebote geprüfter Betriebe aus Niendorf und Umgebung – so vergleichen Sie
