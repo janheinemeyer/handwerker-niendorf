@@ -74,7 +74,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Was eine Überdachung kostet – Material, Größe und Montage.",
     topic: "Terrassenüberdachung",
     cluster: "aussen",
-    updated: "2026-06-12",
+    updated: "2026-10-08",
   },
   {
     href: "/ratgeber/terrassenueberdachung-gastronomie",
@@ -226,7 +226,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kalt- oder Warmwintergarten – Preise pro m², Genehmigung & Rechner.",
     topic: "Wintergarten",
     cluster: "aussen",
-    updated: "2026-06-13",
+    updated: "2026-10-08",
   },
   {
     href: "/ratgeber/einfahrt-pflastern-kosten",

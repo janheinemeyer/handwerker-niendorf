@@ -4,6 +4,7 @@ import {
   RatgeberArticle,
   TlDr,
   H2,
+  H3,
   P,
   CostTable,
   CtaBand,
@@ -13,9 +14,9 @@ import {
 import { TerrassenCalculator } from "@/components/terrassen-calculator";
 
 export const metadata: Metadata = {
-  title: "Terrassenüberdachung: Kosten 2026 (Preise, Rechner & Tabellen)",
+  title: "Terrassenüberdachung: Kosten 2026 (Alu, Holz, Glas & Rechner)",
   description:
-    "Was kostet eine Terrassenüberdachung? Aktuelle Preise 2026 nach Größe, Material (Alu, Holz, Glas) und Montage – mit Kostenrechner, Tabellen, Baugenehmigung, Steuertipp und Angebotsvergleich für Hamburg.",
+    "Was kostet eine Terrassenüberdachung? Aktuelle Preise 2026 nach Größe, Material (Alu, Holz, Glas) und Montage – inkl. Holz-vs-Alu-Vergleich über 20 Jahre, Kostenrechner, Baugenehmigung, Steuertipp und Angebotsvergleich für Hamburg.",
   alternates: { canonical: "/ratgeber/terrassenueberdachung-kosten" },
   openGraph: {
     title: "Terrassenüberdachung: Kosten 2026 im Überblick",
@@ -39,6 +40,18 @@ const faqs: FaqItem[] = [
   {
     q: "Was kostet eine Terrassenüberdachung aus Aluminium?",
     a: "Aluminium ist das beliebteste Material. Mit Polycarbonat-Eindeckung beginnt ein Alu-Terrassendach bei etwa 3.000 €, mit echtem Glas (VSG) bei rund 4.500–5.000 €. Aluminium ist wartungsarm und langlebig, aber teurer als Holz.",
+  },
+  {
+    q: "Was kostet eine Terrassenüberdachung aus Holz mit Montage?",
+    a: "Für rund 12 m² kostet eine Holz-Terrassenüberdachung mit Polycarbonat als Bausatz mit Montage durch einen Fachbetrieb etwa 2.000–4.500 €. Maßgefertigt vom Zimmermann aus Brettschichtholz liegen Sie bei 3.500–6.000 €, mit Glasdach (VSG) bei 5.000–8.000 €. Ein Bausatz zum Selbstaufbau ist ab etwa 1.000 € zu haben.",
+  },
+  {
+    q: "Was ist besser: Terrassenüberdachung aus Holz oder Aluminium?",
+    a: "Aluminium ist praktisch wartungsfrei, Holz muss alle 3–5 Jahre gestrichen oder lasiert werden (je 300–600 €). Beim günstigen Polycarbonat-Dach spart Holz spürbar Geld; beim Glasdach ist Holz über 20 Jahre gerechnet kaum günstiger als Aluminium. Holz lohnt sich vor allem wegen der Optik oder wenn Sie die Pflege selbst übernehmen.",
+  },
+  {
+    q: "Welches Holz ist am besten für eine Terrassenüberdachung?",
+    a: "Standard ist Brettschichtholz (BSH) aus Fichte: verzugsarm, tragfähig und günstig, braucht aber einen Anstrich. Lärche und Douglasie sind von Natur aus witterungsbeständiger und etwas teurer, Eiche ist sehr dauerhaft, aber teuer. Entscheidender als die Holzart ist konstruktiver Holzschutz: Pfostenschuhe mit Bodenabstand, Dachüberstand und eine funktionierende Rinne.",
   },
   {
     q: "Glas oder Polycarbonat – was ist günstiger?",
@@ -72,7 +85,7 @@ export default function TerrassenueberdachungKostenPage() {
           Kosten 2026
         </>
       }
-      updated="Juni 2026"
+      updated="Oktober 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -140,6 +153,59 @@ export default function TerrassenueberdachungKostenPage() {
           ["Komplett inkl. Montage (Premium)", "800 – 1.600 €/m²", "Glas- oder Lamellendach"],
         ]}
       />
+
+      <H2 id="holz">Was kostet eine Terrassenüberdachung aus Holz?</H2>
+      <P>
+        Eine Terrassenüberdachung aus Holz kostet für ca. 12 m² zwischen{" "}
+        <strong>1.000 € als Bausatz zum Selbstaufbau</strong> und{" "}
+        <strong>8.000 € als maßgefertigtes Glasdach vom Zimmermann</strong>.
+        Entscheidend sind drei Fragen: Bausatz oder Maßanfertigung,
+        Polycarbonat oder Glas – und wer montiert.
+      </P>
+      <CostTable
+        head={["Holz-Ausführung (ca. 12 m²)", "Preis", "Hinweis"]}
+        rows={[
+          ["Bausatz (Fichte/Leimholz) + Polycarbonat, Selbstaufbau", "1.000 – 2.500 €", "nur Material, Fundament extra"],
+          ["Bausatz + Montage durch Fachbetrieb", "2.000 – 4.500 €", "Standardmaße, 1–2 Tage Montage"],
+          ["Zimmerei, maßgefertigt (BSH) + Polycarbonat", "3.500 – 6.000 €", "passgenau, auch an schwierigen Wänden"],
+          ["Zimmerei, BSH lackiert + VSG-Glas", "5.000 – 8.000 €", "hochwertig, deutlich schwerere Statik"],
+        ]}
+      />
+
+      <H3>Welches Holz eignet sich für ein Terrassendach?</H3>
+      <P>
+        Für Pfosten und Sparren hat sich <strong>Brettschichtholz (BSH)</strong>{" "}
+        aus Fichte durchgesetzt: Es ist verzugsarm, tragfähig und günstig, braucht
+        aber einen Anstrich. Lärche und Douglasie halten unbehandelt länger
+        (natürlich vergrauend), kosten etwas mehr. Eiche ist sehr dauerhaft,
+        aber teuer und schwer. Wichtiger als die Holzart ist der{" "}
+        <strong>konstruktive Holzschutz</strong>: Pfostenschuhe mit Abstand zum
+        Boden, ein Dachüberstand und eine funktionierende Rinne – gerade im
+        feuchten Hamburger Klima entscheidet das über die Lebensdauer.
+      </P>
+
+      <H3>Holz oder Aluminium: Was ist auf 20 Jahre günstiger?</H3>
+      <P>
+        Holz ist beim Kauf günstiger – aber nur in der einfachen Variante. Rechnet
+        man die Pflege mit (alle 3–5 Jahre neu streichen oder lasieren, je
+        300–600 €), schrumpft der Vorteil beim Glasdach praktisch auf null:
+      </P>
+      <CostTable
+        head={["Glasdach, ca. 12 m², über 20 Jahre", "Holz (BSH + VSG)", "Aluminium + VSG"]}
+        rows={[
+          ["Anschaffung inkl. Montage", "5.000 – 8.000 €", "5.000 – 11.000 €"],
+          ["Anstrich / Lasur (4–6×)", "1.200 – 3.600 €", "entfällt"],
+          ["Summe nach 20 Jahren", "6.200 – 11.600 €", "5.000 – 11.000 €"],
+        ]}
+      />
+      <P>
+        <strong>Ehrliche Einschätzung:</strong> Wer ein Holzdach nur wegen des
+        Preises wählt, spart beim einfachen Polycarbonat-Bausatz wirklich Geld –
+        beim hochwertigen Glasdach dagegen kaum. Holz lohnt sich, wenn Ihnen die
+        Optik wichtig ist, das Dach zu einem Holzhaus oder Garten passen soll oder
+        Sie den Anstrich selbst übernehmen. Wer keine Pflege will, fährt mit
+        Aluminium besser.
+      </P>
 
       <H2 id="zusatzkosten">Zusätzliche Kosten beim Terrassendach</H2>
       <P>
@@ -275,7 +341,7 @@ export default function TerrassenueberdachungKostenPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Preisangaben sind unverbindliche Richtwerte (Stand: Juni 2026) und
+        Alle Preisangaben sind unverbindliche Richtwerte (Stand: Oktober 2026) und
         ersetzen kein individuelles Angebot. Tatsächliche Kosten hängen von Größe,
         Material, Statik, Untergrund und Region ab.
       </p>

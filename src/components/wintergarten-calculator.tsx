@@ -9,7 +9,8 @@ import { Segmented, Toggle, round100, eur } from "@/components/calculator-ui";
   Richtwerte synthesized from German cost guides (Stand: Juni 2026). The
   defining driver is Kalt- vs. Warmwintergarten (~500–1.000 €/m² vs.
   ~2.000–5.500 €/m²), then material and size, plus glazing, foundation,
-  shading and the (in Hamburg always required) building permit. The Ballungsraum
+  shading and the building permit (Hamburg: never verfahrensfrei; the regular
+  permit is the default, § 62 HBauO Freistellung can be cheaper). The Ballungsraum
   surcharge applies +20 % only to the labour share (~60 %) → ~12 % on the total;
   the permit is a fixed fee and is not regionally scaled. Output is a rounded
   range, not a quote.
@@ -50,7 +51,7 @@ const BASE_PER_M2: Record<Typ, Record<Material, number>> = {
 const GLAZING_PER_M2: Record<Glazing, number> = { zweifach: 0, dreifach: 100 };
 const FUNDAMENT_PER_M2 = 120; // neue Bodenplatte/Fundament
 const BESCHATTUNG = 2500; // Markise/Beschattung
-const PERMIT = 1500; // Baugenehmigung (in Hamburg immer erforderlich)
+const PERMIT = 1500; // reguläre Baugenehmigung (Freistellung nach § 62 HBauO: 150 €)
 const REGION_SURCHARGE = 0.2; // Hamburg premium on labour…
 const LABOUR_SHARE = 0.6; // …which is ~60 % → ~12 % on the total
 
