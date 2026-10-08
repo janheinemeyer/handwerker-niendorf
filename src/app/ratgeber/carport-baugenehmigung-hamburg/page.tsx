@@ -41,6 +41,10 @@ const faqs: FaqItem[] = [
     a: "Ja. Nach § 6 HBauO darf ein Carport ohne eigene Abstandsfläche direkt an die Grenze gebaut werden, wenn die mittlere Wandhöhe 3 m und die Länge entlang einer Grenze 9 m nicht überschreitet. Die Gesamtlänge solcher grenzständigen Bauten darf pro Grundstück 15 m nicht übersteigen.",
   },
   {
+    q: "Ist ein Carport eine Grenzbebauung?",
+    a: "Ja. In Hamburg gilt ein Carport rechtlich als Garage (§ 2 Abs. 7 HBauO: überdachte Stellplätze gelten als Garagen). Deshalb darf er nach § 6 Abs. 8 HBauO ohne eigene Abstandsfläche direkt an der Grundstücksgrenze stehen – mit höchstens 3 m mittlerer Wandhöhe, 9 m Länge je Grenze und 15 m Gesamtlänge aller solcher Bauten auf dem Grundstück.",
+  },
+  {
     q: "Brauche ich für ein grenznahes Carport die Zustimmung des Nachbarn?",
     a: "Wenn Sie die 3-m- und 9-m-Regel des § 6 HBauO einhalten, ist keine Nachbarzustimmung nötig. Unterschreiten Sie dagegen die vorgeschriebenen Abstandsflächen, reicht die Zustimmung des Nachbarn allein nicht aus: Dann muss zusätzlich eine Abweichung beantragt und vom Bauamt genehmigt werden – auch bei sonst verfahrensfreien Vorhaben.",
   },
@@ -68,7 +72,7 @@ export default function CarportGenehmigungHamburgPage() {
           in Hamburg
         </>
       }
-      updated="Juni 2026"
+      updated="Oktober 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },

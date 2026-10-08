@@ -242,7 +242,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Wann ist ein Carport genehmigungsfrei? § 61 HBauO, Grenzabstände & Ablauf.",
     topic: "Baugenehmigung Carport",
     cluster: "carport",
-    updated: "2026-06-15",
+    updated: "2026-10-08",
   },
   {
     href: "/ratgeber/carport-bebauungsplan",
@@ -275,6 +275,14 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     topic: "Doppelcarport",
     cluster: "carport",
     updated: "2026-06-15",
+  },
+  {
+    href: "/ratgeber/carport-masse",
+    title: "Carport-Maße",
+    blurb: "Breite, Länge und Höhe für 1, 2 & 3 Autos – mit Maße-Rechner und Hamburger Grenzen.",
+    topic: "Carport-Maße",
+    cluster: "carport",
+    updated: "2026-10-08",
   },
   {
     href: "/ratgeber/carport-oder-garage",

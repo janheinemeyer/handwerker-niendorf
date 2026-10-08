@@ -138,7 +138,15 @@ export default function DoppelcarportKostenPage() {
       <P>
         Faustregel: zur Breite jedes Fahrzeugs je Seite rund 80 cm zum Ein- und
         Aussteigen einplanen, zur Länge des längsten Autos etwa 1 m. Wer einen
-        Anhänger, Dachboxen oder Fahrräder unterstellt, plant großzügiger.
+        Anhänger, Dachboxen oder Fahrräder unterstellt, plant großzügiger. Maße
+        für Ihre Fahrzeuge, mit Abstellraum oder hintereinander berechnet der{" "}
+        <Link
+          href="/ratgeber/carport-masse"
+          className="font-medium text-accent underline underline-offset-4 hover:text-ink"
+        >
+          Carport-Maße-Rechner
+        </Link>
+        .
       </P>
 
       <H2 id="faktoren">Was treibt den Preis?</H2>
