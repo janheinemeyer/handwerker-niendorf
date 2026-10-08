@@ -54,9 +54,9 @@ export type CarportErgebnis = {
 };
 
 /** Grenzwerte der Verfahrensfreiheit (§ 61 HBauO) bzw. Grenzbebauung (§ 6 HBauO). */
-const MAX_FLAECHE = 50; // m² je zugehörigem Hauptgebäude, inkl. angerechneter Stellplätze
-const MAX_WANDHOEHE = 3; // m
-const MAX_GRENZE_LAENGE = 9; // m entlang einer Grenze
+export const MAX_FLAECHE = 50; // m² je zugehörigem Hauptgebäude, inkl. angerechneter Stellplätze
+export const MAX_WANDHOEHE = 3; // m
+export const MAX_GRENZE_LAENGE = 9; // m entlang einer Grenze
 const MAX_GRENZE_GESAMT = 15; // m Summe aller Bauten ohne eigene Abstandsfläche
 
 const nf = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 });

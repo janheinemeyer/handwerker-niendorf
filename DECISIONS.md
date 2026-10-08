@@ -488,3 +488,28 @@ freistehend, Bausatz, Zimmermann).
 
 **Consequences:** Re-request indexing for the four pages; check CTR on the three
 retitled pages after ~3 weeks.
+
+## 2026-10-08 — Carport-Maße as its own page; numbers generated from one lib function
+
+**Decision:** New `/ratgeber/carport-masse` with a Maße-Rechner. All sizing lives in
+`src/lib/carport-masse.ts` (`berechneCarportMasse`); the calculator, the page's
+tables and the FAQ answers are all generated from it. The Hamburg thresholds
+(50 m², 3 m, 9 m) are imported from `carport-genehmigung.ts` (now exported) rather
+than restated. No separate "Carport an der Grenze" page.
+
+**Why:** „Maße“ is a different intent from „Kosten“ — GSC showed Maße queries landing
+on `doppelcarport-kosten` at pos 44–89, and autocomplete spans 1/2/3 cars,
+hintereinander, Abstellraum and "ohne Baugenehmigung". The SERP is thin (FAQ farms,
+manufacturers, no Hamburg angle). Generating text from the function means a changed
+Richtwert can't leave the FAQ/JSON-LD stale. The Grenze topic is already covered by
+`carport-baugenehmigung-hamburg#grenze`; autocomplete for it is dominated by other
+Bundesländer, so a new page would only cannibalise — it got a "Grenzbebauung" FAQ
+there instead (§ 2 Abs. 7 HBauO: Carports gelten als Garagen).
+
+**Alternatives considered:** Expanding the Maße section on the Doppelcarport page —
+rejected, wrong intent and too narrow (1/3 cars, tandem). Hardcoded tables — rejected,
+drift risk.
+
+**Consequences:** Changing a Stellplatzbreite/Länge in the lib changes the page copy;
+re-read the TlDr wording after such changes. `doppelcarport-kosten#masse` stays as a
+short summary that links to the new page.

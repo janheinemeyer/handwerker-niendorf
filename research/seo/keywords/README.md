@@ -13,6 +13,7 @@ transkodiert** (sonst nicht grep-/diff-bar), sonst unverändert.
 | `klimaanlage-heizung_2026-06-18.csv` | Klimaanlage als Heizung / Wärmepumpe / heizen / Förderung | 874 | 18.06.2026 |
 | `waermepumpe_2026-06-18.csv` | Wärmepumpe Kosten / Förderung / Altbau / Stromverbrauch / Warmwasser / Erdwärme | 5.298 | 18.06.2026 |
 | `photovoltaik_2026-06-18.csv` | Photovoltaik Kosten / Speicher / Förderung / Steuer / Einspeisevergütung / Balkonkraftwerk | 9.035 | 18.06.2026 |
+| `carport-masse_2026-10-08.tsv` | Carport Maße / Größe / Doppelcarport / 1–3 Autos / ohne Baugenehmigung | 13 | 08.10.2026 – **aus der Planner-Oberfläche abgeschrieben**, kein Export; nur Volumen-Bucket, Trend, Wettbewerb, Gebote (Zeitraum Sept 2025 – Aug 2026) |
 
 Die Klima-Exporte speisten die Ratgeber-Seiten `klimaanlage-einbauen-kosten` und
 `klimaanlage-als-heizung`. Der Wärmepumpe-Export ist deutlich breiter und deckt
@@ -56,3 +57,4 @@ Spannen. Lies die Werte als Größenordnung:
   `abluftschlauch` / `fensterabdichtung` (Billig-Monoblock) – andere Zielgruppe.
 - **Wettbewerb „Mittel" < „Hoch"** als Ranking-Hürde: der `förderung`-Cluster war
   deutlich wettbewerbsärmer als die `kosten`-Terms.
+- **„Größe“ ist so stark wie „Maße“** (Carport, Okt 2026): `carport größe` und `doppelcarport größe` liegen im selben Bucket wie `… maße` – beide Wörter gehören in Titel/H1. Die 2-Auto-Varianten tragen das Volumen; 3 Autos und „mit Abstellraum“ ≈ 0.
