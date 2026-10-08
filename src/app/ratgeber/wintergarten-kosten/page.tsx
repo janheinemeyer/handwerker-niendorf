@@ -12,9 +12,9 @@ import {
 import { WintergartenCalculator } from "@/components/wintergarten-calculator";
 
 export const metadata: Metadata = {
-  title: "Wintergarten: Kosten 2026 (Rechner, Preise & Hamburg)",
+  title: "Wintergarten Kosten 2026: Preise in Hamburg pro m² & Rechner",
   description:
-    "Was kostet ein Wintergarten? Aktuelle Preise 2026 für Kalt- und Warmwintergarten pro m², nach Größe und Material – mit Kostenrechner, Baugenehmigung Hamburg und Angebotsvergleich für Hamburg und Umgebung.",
+    "Was kostet ein Wintergarten in Hamburg? Kaltwintergarten 500–1.000 €/m², Wohnwintergarten 2.000–5.500 €/m², Baugenehmigung (in Hamburg immer Pflicht) 1.000–2.000 €. Mit Kostenrechner und Angebotsvergleich.",
   alternates: { canonical: "/ratgeber/wintergarten-kosten" },
   openGraph: {
     title: "Wintergarten: Kosten 2026 im Überblick",

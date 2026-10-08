@@ -14,9 +14,9 @@ import {
 import { KnxKostenRechner } from "@/components/knx-kosten-rechner";
 
 export const metadata: Metadata = {
-  title: "KNX Kosten 2026: Einfamilienhaus, Rechner & Nachrüsten",
+  title: "KNX Kosten 2026: Rechner & Preise fürs Einfamilienhaus",
   description:
-    "Was kostet KNX im Einfamilienhaus? Einsteiger ab ~3.000–6.000 €, Standard-Einfamilienhaus 8.000–15.000 €, gehoben ab ~20.000 € – inkl. Hardware, Installation und Programmierung. Mit KNX-Kostenrechner, Kosten pro Datenpunkt, Verkabelung, Zweifamilienhaus und Nachrüsten.",
+    "Was kostet KNX im Einfamilienhaus? Einsteiger 3.000–6.000 €, Standard 8.000–15.000 €, gehoben ab 20.000 € – inkl. Programmierung. Mit KNX-Kostenrechner, Preisen fürs Zweifamilienhaus und Nachrüsten.",
   alternates: { canonical: "/ratgeber/knx-smart-home-kosten" },
   openGraph: {
     title: "KNX Smart Home: Kosten 2026 im Überblick",

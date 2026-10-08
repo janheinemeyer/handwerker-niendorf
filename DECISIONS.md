@@ -465,3 +465,26 @@ named editor exists; the organisation is the honest author.
 **Consequences:** Keep catalog `updated` in sync with the visible
 "Aktualisiert" month — both now feed structured data. A new cluster must get a
 `REGION_COPY` entry (the type enforces it).
+
+## 2026-10-08 — Holz-Terrassendach as a section, not its own page; GSC-driven title fixes
+
+**Decision:** The wood-roof demand ("beste terrassenüberdachung aus holz kaufen
+2026" pos 8.3 / 56 impr., "holz überdachung am haus kosten" pos 8.4 in GSC) is
+served by a new `#holz` H2 (cost table by build type, wood-species H3, Holz-vs-Alu
+20-year cost comparison, 3 FAQs) inside `terrassenueberdachung-kosten`, not a new
+`terrassenueberdachung-holz` page. Same PR: titles/descriptions of
+`wintergarten-kosten`, `knx-smart-home-kosten` and `carport-bebauungsplan` rewritten
+around the queries they already rank for ("wintergarten hamburg preise" pos 2.1,
+"knx kosten rechner" pos 13.7, "carport außerhalb baufenster" pos 4.3).
+
+**Why:** Google already ranks the existing page for the wood queries — a new page
+would split those signals and start from zero. Same intent (Kosten), only a
+material sub-facet. The 20-year comparison is the honest angle the incumbents
+(Aroundhome) skip: wood is only really cheaper in the simple polycarbonate variant.
+
+**Alternatives considered:** Separate Holz page — revisit if GSC shows the section
+ranking for many Holz-specific queries the main page can't absorb (e.g.
+freistehend, Bausatz, Zimmermann).
+
+**Consequences:** Re-request indexing for the four pages; check CTR on the three
+retitled pages after ~3 weeks.
