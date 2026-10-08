@@ -202,7 +202,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kosten nach Größe, Umfang & Ausstattung – auch ohne Fliesen abschlagen, inkl. Rechner & Förderung.",
     topic: "Badsanierung",
     cluster: "innen",
-    updated: "2026-09-25",
+    updated: "2026-10-08",
   },
   {
     href: "/ratgeber/fliesen-legen-kosten",

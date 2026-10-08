@@ -4,6 +4,7 @@ import {
   RatgeberArticle,
   TlDr,
   H2,
+  H3,
   P,
   CostTable,
   CtaBand,
@@ -15,7 +16,7 @@ import { BadCalculator } from "@/components/bad-calculator";
 export const metadata: Metadata = {
   title: "Bad renovieren: Kosten 2026 – auch ohne Fliesen abschlagen",
   description:
-    "Was kostet es, ein Bad renovieren zu lassen? Aktuelle Preise 2026 pro m², nach Größe und Gewerk, günstig ohne Fliesen abschlagen (Dekorplatten, Fliese auf Fliese), Eigenleistung und Mieter – mit Kostenrechner, Förderung und Angebotsvergleich für Hamburg.",
+    "Was kostet es, ein Bad renovieren zu lassen? Aktuelle Preise 2026 pro m², nach Größe und Gewerk, günstig ohne Fliesen abschlagen (Dekorplatten, Fliese auf Fliese, Vinyl, Paneele), Eigenleistung und Mieter – mit Kostenrechner, Förderung und Angebotsvergleich für Hamburg.",
   alternates: { canonical: "/ratgeber/bad-renovieren-kosten" },
   openGraph: {
     title: "Bad renovieren: Kosten 2026 im Überblick",
@@ -58,7 +59,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Kann man ein Bad renovieren, ohne die Fliesen abzuschlagen?",
-    a: "Ja, wenn die alten Fliesen fest und eben sitzen. Günstige Wege sind Dekor- bzw. Duschrückwandplatten über den Fliesen (fertig eingebaut rund 500–1.500 € pro Dusche), neue Fliesen direkt auf die alten mit Haftgrund oder – nur für trockene Bereiche – Fliesenlack. Das spart Abriss und Entsorgung (15–35 €/m²) und Staub. Lose oder hohl klingende Fliesen und Feuchteschäden müssen aber raus.",
+    a: "Ja, wenn die alten Fliesen fest und eben sitzen. Günstige Wege sind Dekor- bzw. Duschrückwandplatten über den Fliesen (fertig eingebaut rund 500–1.500 € pro Dusche), neue Fliesen direkt auf die alten mit Haftgrund, Vinyl auf den Bodenfliesen (ca. 40–90 €/m² inkl. Verlegung), Wandpaneele oder – nur für trockene Bereiche – Fliesenlack und Klebefolie. Das spart Abriss und Entsorgung (15–35 €/m²) und Staub. Lose oder hohl klingende Fliesen und Feuchteschäden müssen aber raus.",
+  },
+  {
+    q: "Was ist besser: Fliesen überkleben oder streichen?",
+    a: "Im Bad meist überkleben – aber mit dem richtigen Material: Duschrückwandplatten, Fliese auf Fliese oder Vinyl am Boden halten wie ein neuer Belag. Fliesenlack und Klebefolie sind nur eine Übergangslösung für trockene Bereiche: Lack hält auf glasierten Fliesen oft nur wenige Jahre, Folie löst sich bei Feuchtigkeit. In Dusche und Spritzwasserzone sind beide ungeeignet.",
   },
   {
     q: "Was kann ich bei der Badsanierung in Eigenleistung machen?",
@@ -84,7 +89,7 @@ export default function BadKostenPage() {
           Kosten 2026
         </>
       }
-      updated="September 2026"
+      updated="Oktober 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -213,6 +218,9 @@ export default function BadKostenPage() {
         rows={[
           ["Dekor- / Duschrückwandplatten (Alu-Verbund, Acryl, Glas)", "Material 50 – 250 €/m²; fertig eingebaut ca. 500 – 1.500 € je Dusche", "Dusche und Wände – fugenlos, schnell montiert"],
           ["Fliese auf Fliese (mit Haftgrund)", "wie neu verlegen, ohne Abriss", "Boden und Wand bei tragfähigem Altbelag"],
+          ["Vinyl auf Bodenfliesen (Klick- oder Klebevinyl)", "ca. 40 – 90 €/m² inkl. Verlegung", "Boden – baut nur wenige Millimeter auf"],
+          ["Wandpaneele (PVC / SPC, wasserfest)", "ca. 60 – 130 €/m² inkl. Montage", "Wände außerhalb der Dusche"],
+          ["Klebefolie", "ca. 5 – 20 €/m² Material", "kurzfristig, z. B. in der Mietwohnung – kein Spritzwasser"],
           ["Fliesen streichen (Fliesenlack)", "Material, oft in Eigenleistung", "nur trockene Bereiche, kein Spritzwasser"],
         ]}
       />
@@ -228,6 +236,17 @@ export default function BadKostenPage() {
           Fliesen legen: Kosten
         </Link>
         .
+      </P>
+      <H3>Überkleben oder streichen: Was hält im Bad?</H3>
+      <P>
+        Am längsten halten Lösungen, die wie ein neuer Belag funktionieren:
+        Fliese auf Fliese, Duschrückwandplatten und Vinyl am Boden. Fliesenlack
+        und Klebefolie sind dagegen eine <strong>Übergangslösung</strong>: Lack
+        hält auf glasierten Fliesen selbst mit Spezialgrund (2-K-Epoxid) oft nur
+        wenige Jahre und platzt an Kanten ab, Folie löst sich bei Feuchtigkeit
+        und kann darunter Schimmel einschließen. In Dusche und Spritzwasserzone
+        gehört deshalb weder Lack noch Folie – dort sind Platten oder neue
+        Fliesen die ehrliche Wahl.
       </P>
 
       <H2 id="barrierefrei">Barrierefreies Bad: Kosten &amp; Förderung</H2>
