@@ -327,7 +327,8 @@ export default function CarportGenehmigungHamburgPage() {
         HafenCity, Speicherstadt und Kehrwiederspitze, die Neubaugebiete{" "}
         <strong>Mitte Altona</strong> und{" "}
         <strong>Science City Hamburg Bahrenfeld</strong> (beide im Bezirk
-        Altona) sowie <strong>Grasbrook und die nördliche Veddel</strong> (Bezirk
+        Altona; der Innovationspark Altona gehört nicht zum Vorbehaltsgebiet)
+        sowie <strong>Grasbrook und die nördliche Veddel</strong> (Bezirk
         Hamburg-Mitte). Im Hafennutzungsgebiet ist die Hamburg Port Authority
         zuständig. Der Senat richtet solche Gebiete für große
         Stadtentwicklungsprojekte ein, die Liste kann sich also ändern. Sind Sie
