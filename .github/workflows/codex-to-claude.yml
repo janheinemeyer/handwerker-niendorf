@@ -41,6 +41,11 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
+          # The trigger is the Codex bot, and the action rejects non-human
+          # actors unless they are allow-listed. The job-level `if` already
+          # limits this to that one bot, so allow exactly it (not '*').
+          allowed_bots: chatgpt-codex-connector
+
           additional_permissions: |
             actions: read
 
