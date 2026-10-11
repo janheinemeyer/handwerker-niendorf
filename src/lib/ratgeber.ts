@@ -66,7 +66,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Preise nach Größe, Material & Aufbau – inkl. Kostenrechner.",
     topic: "Carport-Bau",
     cluster: "carport",
-    updated: "2026-06-15",
+    updated: "2026-10-11",
   },
   {
     href: "/ratgeber/terrassenueberdachung-kosten",

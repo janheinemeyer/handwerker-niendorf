@@ -97,12 +97,12 @@ export default function CarportOderGaragePage() {
         ]}
       />
       <P>
-        Die volle Carport-Kostenaufstellung mit Rechner steht im{" "}
+        Die volle Kostenaufstellung mit Rechner steht im Ratgeber{" "}
         <Link
           href="/ratgeber/carport-bauen-lassen-kosten"
           className="font-medium text-accent underline underline-offset-4 hover:text-ink"
         >
-          Carport-Kostenratgeber
+          Carport bauen lassen: Kosten
         </Link>
         ; für zwei Autos lohnt der{" "}
         <Link

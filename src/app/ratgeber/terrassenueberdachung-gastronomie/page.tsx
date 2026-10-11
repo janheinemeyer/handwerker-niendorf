@@ -13,12 +13,12 @@ import {
 import { GastroTerrassenCalculator } from "@/components/gastro-terrassen-calculator";
 
 export const metadata: Metadata = {
-  title: "Außengastronomie überdachen: Kosten 2026, Genehmigung & Rechner",
+  title: "Terrassenüberdachung Gastronomie: Kosten 2026 & Genehmigung",
   description:
     "Was kostet eine Terrassenüberdachung für Restaurant, Café oder Bar? Netto-Preise 2026 für Glas-, Falt- und Lamellendach, Markise und Pergola-Markise, Außengastronomie in Hamburg beantragen, Windlast, Abschreibung – mit Kosten- und Amortisationsrechner.",
   alternates: { canonical: "/ratgeber/terrassenueberdachung-gastronomie" },
   openGraph: {
-    title: "Außengastronomie überdachen: Kosten & Amortisation",
+    title: "Terrassenüberdachung Gastronomie: Kosten & Amortisation",
     description:
       "Netto-Preise nach Dachsystem und Größe, Außengastronomie und Genehmigung in Hamburg und ein Rechner, der zeigt, wann sich das Dach bezahlt macht.",
     locale: "de_DE",
