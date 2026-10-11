@@ -53,6 +53,10 @@ const faqs: FaqItem[] = [
     a: "Zuständig ist das Bauamt des jeweiligen Bezirksamts. Für Hamburg-Niendorf ist das Bezirksamt Eimsbüttel zuständig. Bauanträge werden in Hamburg seit 2024 ausschließlich digital eingereicht; Papieranträge werden nicht mehr angenommen.",
   },
   {
+    q: "Welches Bezirksamt ist für meinen Stadtteil zuständig?",
+    a: "Das Bezirksamt, in dessen Gebiet das Grundstück liegt. Beispiele: Niendorf, Lokstedt und Schnelsen gehören zu Eimsbüttel, Langenhorn und Fuhlsbüttel zu Hamburg-Nord, Tonndorf, Rahlstedt und Bramfeld zu Wandsbek, Blankenese und Lurup zu Altona. Hamburg hat sieben Bezirksämter: Hamburg-Mitte, Altona, Eimsbüttel, Hamburg-Nord, Wandsbek, Bergedorf und Harburg.",
+  },
+  {
     q: "Was kostet eine Carport-Baugenehmigung in Hamburg?",
     a: "Ist der Carport verfahrensfrei, fallen keine Genehmigungsgebühren an. Ist eine Baugenehmigung nötig, richten sich die Amtsgebühren nach der Baugebührenordnung (BauGebO) und der Bausumme; es gilt eine Mindestgebühr. Kalkulieren Sie für ein Carport in der Regel mehrere Hundert Euro, hinzu kommen ggf. Kosten für prüffähige Bauvorlagen.",
   },
@@ -249,7 +253,15 @@ export default function CarportGenehmigungHamburgPage() {
       <ul className="mt-4 space-y-2 pl-5 text-ink-soft marker:text-accent [list-style:disc]">
         <li>
           <strong>Zuständig</strong> ist das Bauamt Ihres Bezirksamts. Für
-          Hamburg-Niendorf ist das das <strong>Bezirksamt Eimsbüttel</strong>.
+          Hamburg-Niendorf ist das das <strong>Bezirksamt Eimsbüttel</strong>{" "}
+          – alle anderen Stadtteile stehen in der{" "}
+          <a
+            href="#bezirksamt"
+            className="text-accent underline underline-offset-4 hover:text-ink"
+          >
+            Übersicht unten
+          </a>
+          .
         </li>
         <li>
           <strong>Digital seit 2024:</strong> Bauanträge werden in Hamburg
@@ -266,6 +278,59 @@ export default function CarportGenehmigungHamburgPage() {
           Planer.
         </li>
       </ul>
+
+      <H2 id="bezirksamt">
+        Welches Bezirksamt ist für meinen Stadtteil zuständig?
+      </H2>
+      <P>
+        Hamburg hat sieben Bezirke. Bauanträge und Bauvoranfragen laufen über
+        die Bauprüfung des Bezirksamts, in dessen Gebiet Ihr Grundstück liegt –
+        nicht über Ihren Wohnort. Die Zuordnung aller 104 Stadtteile:
+      </P>
+      <CostTable
+        head={["Bezirksamt", "Stadtteile"]}
+        rows={[
+          [
+            "Hamburg-Mitte",
+            "Hamburg-Altstadt, HafenCity, Neustadt, St. Pauli, St. Georg, Hammerbrook, Borgfelde, Hamm, Horn, Billstedt, Billbrook, Rothenburgsort, Veddel, Wilhelmsburg, Kleiner Grasbrook, Steinwerder, Waltershof, Finkenwerder, Neuwerk",
+          ],
+          [
+            "Altona",
+            "Altona-Altstadt, Sternschanze, Altona-Nord, Ottensen, Bahrenfeld, Groß Flottbek, Othmarschen, Lurup, Osdorf, Nienstedten, Blankenese, Iserbrook, Sülldorf, Rissen",
+          ],
+          [
+            "Eimsbüttel",
+            "Eimsbüttel, Rotherbaum, Harvestehude, Hoheluft-West, Lokstedt, Niendorf, Schnelsen, Eidelstedt, Stellingen",
+          ],
+          [
+            "Hamburg-Nord",
+            "Hoheluft-Ost, Eppendorf, Groß Borstel, Alsterdorf, Winterhude, Uhlenhorst, Hohenfelde, Barmbek-Süd, Dulsberg, Barmbek-Nord, Ohlsdorf, Fuhlsbüttel, Langenhorn",
+          ],
+          [
+            "Wandsbek",
+            "Eilbek, Wandsbek, Marienthal, Jenfeld, Tonndorf, Farmsen-Berne, Bramfeld, Steilshoop, Wellingsbüttel, Sasel, Poppenbüttel, Hummelsbüttel, Lemsahl-Mellingstedt, Duvenstedt, Wohldorf-Ohlstedt, Bergstedt, Volksdorf, Rahlstedt",
+          ],
+          [
+            "Bergedorf",
+            "Lohbrügge, Bergedorf, Curslack, Altengamme, Neuengamme, Kirchwerder, Ochsenwerder, Reitbrook, Allermöhe, Billwerder, Moorfleet, Tatenberg, Spadenland, Neuallermöhe",
+          ],
+          [
+            "Harburg",
+            "Harburg, Neuland, Gut Moor, Wilstorf, Rönneburg, Langenbek, Sinstorf, Marmstorf, Eißendorf, Heimfeld, Moorburg, Altenwerder, Hausbruch, Neugraben-Fischbek, Francop, Neuenfelde, Cranz",
+          ],
+        ]}
+      />
+      <P>
+        <strong>Ausnahmen:</strong> In den Vorbehaltsgebieten des Senats – etwa
+        HafenCity, Speicherstadt, Kehrwiederspitze und dem Neubaugebiet{" "}
+        <strong>Mitte Altona</strong> – entscheidet nicht das Bezirksamt, sondern
+        das Amt für Bauordnung und Hochbau der Behörde für Stadtentwicklung und
+        Wohnen; im Hafennutzungsgebiet ist die Hamburg Port Authority zuständig.
+        Mitte Altona liegt also im Bezirk Altona, gehört bauaufsichtlich aber
+        nicht zum Bezirksamt. Sind Sie unsicher, ob Ihr Grundstück in einem
+        solchen Gebiet liegt, fragen Sie vorab beim Bezirksamt nach. Gleich
+        bleibt überall: Der Bauantrag wird digital gestellt.
+      </P>
 
       <H2 id="kosten">Was kostet die Genehmigung?</H2>
       <P>
