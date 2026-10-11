@@ -13,9 +13,9 @@ import {
 import { CarportCalculator } from "@/components/carport-calculator";
 
 export const metadata: Metadata = {
-  title: "Carport bauen lassen: Kosten 2026 (Preise, Tabellen & Rechner)",
+  title: "Carport bauen lassen: Kosten 2026 mit Montage (Preise & Rechner)",
   description:
-    "Was kostet es, ein Carport bauen zu lassen? Aktuelle Preise 2026 nach Größe, Material und Aufbau – mit Kostentabellen, Spartipps und kostenlosem Angebotsvergleich für Hamburg und Umgebung.",
+    "Was kostet es, ein Carport bauen oder einen Bausatz aufbauen zu lassen? Aktuelle Preise 2026 nach Größe, Material und Montage – mit Kostentabellen, Spartipps und kostenlosem Angebotsvergleich für Hamburg und Umgebung.",
   alternates: { canonical: "/ratgeber/carport-bauen-lassen-kosten" },
   openGraph: {
     title: "Carport bauen lassen: Kosten 2026 im Überblick",
@@ -41,8 +41,12 @@ const faqs: FaqItem[] = [
     a: "Ein Doppelcarport kostet je nach Material und Ausstattung zwischen 3.500 € und 15.000 €. Holzmodelle beginnen bei etwa 3.500 €, Aluminium- und Stahl-/Maßanfertigungen (z. B. mit Geräteraum) liegen am oberen Ende bis ~15.000 €.",
   },
   {
-    q: "Wie viel kostet die Montage eines Carports?",
-    a: "Der professionelle Aufbau eines Carports kostet zwischen 700 € und 2.000 €, abhängig von Größe und Untergrund. Wer in Eigenleistung aufbaut, spart diesen Betrag – verliert dabei aber in der Regel Gewährleistungsansprüche.",
+    q: "Was kostet es, einen Carport aufbauen zu lassen?",
+    a: "Für den Aufbau eines bereits gekauften Carport-Bausatzes berechnet ein Fachbetrieb meist 700–2.000 €: rund 700–1.200 € für ein Einzelcarport aus Holz, 1.000–2.000 € für ein Doppelcarport. Muss noch ein Fundament gesetzt werden (Punktfundamente aus Beton mit einbetonierten H-Ankern), kommen etwa 250–700 € hinzu. Wer in Eigenleistung aufbaut, spart die 700–2.000 € Montagekosten – das Fundament braucht es trotzdem –, verliert dabei aber in der Regel Gewährleistungsansprüche.",
+  },
+  {
+    q: "Baut ein Handwerker auch einen selbst gekauften Carport-Bausatz auf?",
+    a: "Ja, viele Zimmerer und Montagebetriebe übernehmen das – nicht alle, also am besten gleich bei der Anfrage klären. Der Betrieb haftet dann für seine Montage; für Mängel am Bausatz selbst ist in erster Linie Verkäufer bzw. Hersteller zuständig. Erkennbare Mängel am gelieferten Material muss der Betrieb Ihnen allerdings vor dem Aufbau melden – sonst kann er für die Folgen mithaften. Alternativ bieten viele Hersteller einen eigenen Montageservice an; das ist sinnvoll, weil die Herstellergarantie oft an einen fachgerechten Aufbau geknüpft ist.",
   },
   {
     q: "Braucht man für ein Carport eine Baugenehmigung?",
@@ -54,7 +58,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Wie viel spart man durch Eigenleistung?",
-    a: "Durch den Selbstaufbau eines Bausatzes lassen sich rund 800–2.000 € Montagekosten sparen. Zu bedenken sind jedoch Fehlerrisiko, fehlende Gewährleistung und der Zeitaufwand.",
+    a: "Durch den Selbstaufbau eines Bausatzes lassen sich rund 700–2.000 € Montagekosten sparen. Zu bedenken sind jedoch Fehlerrisiko, fehlende Gewährleistung und der Zeitaufwand.",
   },
   {
     q: "Was kostet ein Carport in Hamburg?",
@@ -72,7 +76,7 @@ export default function CarportKostenPage() {
           Kosten 2026
         </>
       }
-      updated="Juni 2026"
+      updated="Oktober 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -252,9 +256,48 @@ export default function CarportKostenPage() {
         ]}
       />
 
+      <H2 id="aufbauen-lassen">
+        Was kostet es, einen Carport aufbauen zu lassen?
+      </H2>
+      <P>
+        Sie haben den Bausatz schon gekauft – im Baumarkt, online oder direkt
+        beim Hersteller – und suchen nur noch jemanden für den Aufbau? Dann
+        zahlen Sie allein die Montage. Ein Fachbetrieb braucht dafür meist ein
+        bis zwei Tage zu zweit; der Preis hängt von Größe und Material ab und
+        davon, ob das Fundament schon steht.
+      </P>
+      <CostTable
+        head={["Leistung", "Typische Kosten", "Hinweis"]}
+        rows={[
+          ["Aufbau Einzelcarport-Bausatz (Holz, ca. 3 × 5 m)", "700 – 1.200 €", "Fundament vorhanden, ca. 1 Tag"],
+          ["Aufbau Doppelcarport-Bausatz (Holz, ca. 6 × 5 m)", "1.000 – 2.000 €", "ca. 1–2 Tage"],
+          ["Aufbau Alu- oder Stahl-Bausatz", "700 – 1.500 €", "vorgefertigte Teile, oft schneller montiert"],
+          ["Punktfundamente inkl. einbetonierter H-Anker", "250 – 700 €", "4–6 Betonpunkte inkl. Aushub, je nach Carport-Größe"],
+        ]}
+      />
+      <P>
+        Im Montagepreis sind in der Regel Aufbau nach Herstelleranleitung,
+        Ausrichten, Verschrauben und Dacheindeckung enthalten. Oft{" "}
+        <strong>nicht</strong> enthalten: Fundament (wenn nicht ausdrücklich
+        vereinbart), Anschluss von Dachrinne und Fallrohr an die Entwässerung,
+        Elektrik und die Entsorgung der Verpackung. Lassen Sie sich die Posten
+        im Angebot einzeln auflisten.
+      </P>
+      <P>
+        <strong>Hersteller-Service oder Handwerker vor Ort?</strong> Viele
+        Carport-Hersteller bieten selbst einen Montageservice an. Das ist oft die
+        sicherste Wahl, denn die Herstellergarantie ist bei vielen Anbietern an
+        einen fachgerechten Aufbau geknüpft. Ein lokaler Zimmerer baut einen
+        fremd gekauften Bausatz ebenfalls auf und haftet für seine Montage; für
+        Mängel am Bausatz selbst ist in erster Linie Verkäufer bzw. Hersteller
+        zuständig. Erkennbare Mängel am gelieferten Material muss der Betrieb
+        Ihnen allerdings vor dem Aufbau melden. Nicht jeder Betrieb übernimmt
+        solche Aufträge; klären Sie das gleich bei der Anfrage.
+      </P>
+
       <H2 id="eigenleistung">Selbst aufbauen oder bauen lassen?</H2>
       <P>
-        Wer einen Bausatz selbst aufbaut, spart rund 800–2.000 € Montagekosten.
+        Wer einen Bausatz selbst aufbaut, spart rund 700–2.000 € Montagekosten.
         Dem stehen Zeitaufwand, Werkzeugbedarf, Fehlerrisiko und der Verlust von
         Gewährleistungsansprüchen gegenüber. Bei Fundament, Statik und
         Genehmigung lohnt sich der Fachbetrieb fast immer.
@@ -299,7 +342,8 @@ export default function CarportKostenPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Preisangaben sind unverbindliche Richtwerte (Stand: Juni 2026) und
+        Alle Preisangaben sind unverbindliche Richtwerte (Stand: Juni 2026,
+        Montagekosten: Oktober 2026) und
         ersetzen kein individuelles Angebot. Tatsächliche Kosten hängen von Größe,
         Material, Untergrund und Region ab.
       </p>
