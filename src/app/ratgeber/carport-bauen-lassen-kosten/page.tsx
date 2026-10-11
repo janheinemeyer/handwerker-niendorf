@@ -42,11 +42,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet es, einen Carport aufbauen zu lassen?",
-    a: "Für den Aufbau eines bereits gekauften Carport-Bausatzes berechnet ein Fachbetrieb meist 700–2.000 €: rund 700–1.200 € für ein Einzelcarport aus Holz, 1.000–2.000 € für ein Doppelcarport. Muss noch ein Fundament (Punktfundamente oder H-Anker) gesetzt werden, kommen etwa 250–700 € hinzu. Wer in Eigenleistung aufbaut, spart diesen Betrag – verliert dabei aber in der Regel Gewährleistungsansprüche.",
+    a: "Für den Aufbau eines bereits gekauften Carport-Bausatzes berechnet ein Fachbetrieb meist 700–2.000 €: rund 700–1.200 € für ein Einzelcarport aus Holz, 1.000–2.000 € für ein Doppelcarport. Muss noch ein Fundament gesetzt werden (Punktfundamente aus Beton mit einbetonierten H-Ankern), kommen etwa 250–700 € hinzu. Wer in Eigenleistung aufbaut, spart die 700–2.000 € Montagekosten – das Fundament braucht es trotzdem –, verliert dabei aber in der Regel Gewährleistungsansprüche.",
   },
   {
     q: "Baut ein Handwerker auch einen selbst gekauften Carport-Bausatz auf?",
-    a: "Ja, viele Zimmerer und Montagebetriebe übernehmen das – nicht alle, also am besten gleich bei der Anfrage klären. Der Betrieb haftet dann für seine Montage, nicht für Mängel am Material. Alternativ bieten viele Hersteller einen eigenen Montageservice an; das ist sinnvoll, weil die Herstellergarantie oft an einen fachgerechten Aufbau geknüpft ist.",
+    a: "Ja, viele Zimmerer und Montagebetriebe übernehmen das – nicht alle, also am besten gleich bei der Anfrage klären. Der Betrieb haftet dann für seine Montage; für Mängel am Bausatz selbst ist in erster Linie Verkäufer bzw. Hersteller zuständig. Erkennbare Mängel am gelieferten Material muss der Betrieb Ihnen allerdings vor dem Aufbau melden – sonst kann er für die Folgen mithaften. Alternativ bieten viele Hersteller einen eigenen Montageservice an; das ist sinnvoll, weil die Herstellergarantie oft an einen fachgerechten Aufbau geknüpft ist.",
   },
   {
     q: "Braucht man für ein Carport eine Baugenehmigung?",
@@ -272,7 +272,7 @@ export default function CarportKostenPage() {
           ["Aufbau Einzelcarport-Bausatz (Holz, ca. 3 × 5 m)", "700 – 1.200 €", "Fundament vorhanden, ca. 1 Tag"],
           ["Aufbau Doppelcarport-Bausatz (Holz, ca. 6 × 5 m)", "1.000 – 2.000 €", "ca. 1–2 Tage"],
           ["Aufbau Alu- oder Stahl-Bausatz", "700 – 1.500 €", "vorgefertigte Teile, oft schneller montiert"],
-          ["Punktfundamente oder H-Anker dazu", "250 – 700 €", "4–6 Punkte, je nach Carport-Größe"],
+          ["Punktfundamente inkl. einbetonierter H-Anker", "250 – 700 €", "4–6 Betonpunkte inkl. Aushub, je nach Carport-Größe"],
         ]}
       />
       <P>
@@ -288,8 +288,10 @@ export default function CarportKostenPage() {
         Carport-Hersteller bieten selbst einen Montageservice an. Das ist oft die
         sicherste Wahl, denn die Herstellergarantie ist bei vielen Anbietern an
         einen fachgerechten Aufbau geknüpft. Ein lokaler Zimmerer baut einen
-        fremd gekauften Bausatz ebenfalls auf, haftet dann aber nur für seine
-        Montage – nicht für Mängel am Material. Nicht jeder Betrieb übernimmt
+        fremd gekauften Bausatz ebenfalls auf und haftet für seine Montage; für
+        Mängel am Bausatz selbst ist in erster Linie Verkäufer bzw. Hersteller
+        zuständig. Erkennbare Mängel am gelieferten Material muss der Betrieb
+        Ihnen allerdings vor dem Aufbau melden. Nicht jeder Betrieb übernimmt
         solche Aufträge; klären Sie das gleich bei der Anfrage.
       </P>
 
