@@ -328,9 +328,10 @@ export default function CarportGenehmigungHamburgPage() {
         <strong>Mitte Altona</strong> und{" "}
         <strong>Science City Hamburg Bahrenfeld</strong> (beide im Bezirk
         Altona; der Innovationspark Altona gehört nicht zum Vorbehaltsgebiet)
-        sowie <strong>Grasbrook und die nördliche Veddel</strong> (Bezirk
-        Hamburg-Mitte). Im Hafennutzungsgebiet ist die Hamburg Port Authority
-        zuständig. Der Senat richtet solche Gebiete für große
+        sowie <strong>ein Teil des Kleinen Grasbrooks und die nördliche
+        Veddel</strong> (Bezirk Hamburg-Mitte). Im Hafennutzungsgebiet –
+        dazu zählt auch das Hafentorquartier auf dem Grasbrook – ist die
+        Hamburg Port Authority zuständig. Der Senat richtet solche Gebiete für große
         Stadtentwicklungsprojekte ein, die Liste kann sich also ändern. Sind Sie
         unsicher, ob Ihr Grundstück in einem solchen Gebiet liegt, fragen Sie
         vorab beim Bezirksamt nach. Gleich bleibt überall: Der Bauantrag wird
