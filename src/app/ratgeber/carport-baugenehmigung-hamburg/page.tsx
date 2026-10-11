@@ -321,15 +321,19 @@ export default function CarportGenehmigungHamburgPage() {
         ]}
       />
       <P>
-        <strong>Ausnahmen:</strong> In den Vorbehaltsgebieten des Senats – etwa
-        HafenCity, Speicherstadt, Kehrwiederspitze und dem Neubaugebiet{" "}
-        <strong>Mitte Altona</strong> – entscheidet nicht das Bezirksamt, sondern
-        das Amt für Bauordnung und Hochbau der Behörde für Stadtentwicklung und
-        Wohnen; im Hafennutzungsgebiet ist die Hamburg Port Authority zuständig.
-        Mitte Altona liegt also im Bezirk Altona, gehört bauaufsichtlich aber
-        nicht zum Bezirksamt. Sind Sie unsicher, ob Ihr Grundstück in einem
-        solchen Gebiet liegt, fragen Sie vorab beim Bezirksamt nach. Gleich
-        bleibt überall: Der Bauantrag wird digital gestellt.
+        <strong>Ausnahmen:</strong> In den Vorbehaltsgebieten des Senats
+        entscheidet nicht das Bezirksamt, sondern das Amt für Bauordnung und
+        Hochbau der Behörde für Stadtentwicklung und Wohnen. Dazu gehören
+        HafenCity, Speicherstadt und Kehrwiederspitze, die Neubaugebiete{" "}
+        <strong>Mitte Altona</strong> und{" "}
+        <strong>Science City Hamburg Bahrenfeld</strong> (beide im Bezirk
+        Altona) sowie <strong>Grasbrook und die nördliche Veddel</strong> (Bezirk
+        Hamburg-Mitte). Im Hafennutzungsgebiet ist die Hamburg Port Authority
+        zuständig. Der Senat richtet solche Gebiete für große
+        Stadtentwicklungsprojekte ein, die Liste kann sich also ändern. Sind Sie
+        unsicher, ob Ihr Grundstück in einem solchen Gebiet liegt, fragen Sie
+        vorab beim Bezirksamt nach. Gleich bleibt überall: Der Bauantrag wird
+        digital gestellt.
       </P>
 
       <H2 id="kosten">Was kostet die Genehmigung?</H2>
