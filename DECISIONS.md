@@ -513,3 +513,17 @@ drift risk.
 **Consequences:** Changing a Stellplatzbreite/Länge in the lib changes the page copy;
 re-read the TlDr wording after such changes. `doppelcarport-kosten#masse` stays as a
 short summary that links to the new page.
+
+## 2026-10-14 — "Beste Holz-Terrassenüberdachung" answered as a checklist, title unchanged
+**Decision:** `terrassenueberdachung-kosten` gets an H2 `#beste-holz` with a buying
+checklist (Kriterium | gute Ausführung | Warnsignal), a Hamburg note on two-leaf clinker
+walls, "Bausatz oder Zimmerei?" and a matching FAQ. The page title stays as it is.
+
+**Why:** "beste terrassenüberdachung aus holz kaufen 2026" is the site's top query by
+impressions (97 in 28 days, pos 8.2, 0 clicks). The SERP has shops, an affiliate
+ranking list and Aroundhome, but no independent test, so an honest "there is no test
+winner, here is how to spot a good one" fills the gap and fits the neutral-advice
+strategy. The title was left alone so the 2026-11-01 CTR check of the 2026-10-08
+changes stays readable. Snow and wind zones are not named on purpose: they could not be
+verified from a primary source, so the page asks for load figures "passend zum
+Standort" instead.
