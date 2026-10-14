@@ -303,7 +303,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   {
     href: "/ratgeber/knx-oder-loxone",
     title: "KNX oder Loxone?",
-    blurb: "Offener Standard vs. Komplettsystem – Kosten, Vor- & Nachteile im Vergleich.",
+    blurb: "Offener Standard vs. Komplettsystem – Vor- & Nachteile im Vergleich.",
     topic: "KNX oder Loxone",
     cluster: "smarthome",
     updated: "2026-06-16",
