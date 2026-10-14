@@ -74,7 +74,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Was eine Überdachung kostet – Material, Größe und Montage.",
     topic: "Terrassenüberdachung",
     cluster: "aussen",
-    updated: "2026-10-08",
+    updated: "2026-10-14",
   },
   {
     href: "/ratgeber/terrassenueberdachung-gastronomie",
