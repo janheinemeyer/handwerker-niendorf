@@ -16,7 +16,7 @@ import { TerrassenCalculator } from "@/components/terrassen-calculator";
 export const metadata: Metadata = {
   title: "Terrassenüberdachung: Kosten 2026 (Alu, Holz, Glas & Rechner)",
   description:
-    "Was kostet eine Terrassenüberdachung? Aktuelle Preise 2026 nach Größe, Material (Alu, Holz, Glas) und Montage – inkl. Holz-vs-Alu-Vergleich über 20 Jahre, Kostenrechner, Baugenehmigung, Steuertipp und Angebotsvergleich für Hamburg.",
+    "Was kostet eine Terrassenüberdachung? Aktuelle Preise 2026 nach Größe, Material (Alu, Holz, Glas) und Montage – inkl. Holz-Kaufcheckliste, Holz-vs-Alu-Vergleich über 20 Jahre, Kostenrechner, Baugenehmigung, Steuertipp und Angebotsvergleich für Hamburg.",
   alternates: { canonical: "/ratgeber/terrassenueberdachung-kosten" },
   openGraph: {
     title: "Terrassenüberdachung: Kosten 2026 im Überblick",
@@ -52,6 +52,10 @@ const faqs: FaqItem[] = [
   {
     q: "Welches Holz ist am besten für eine Terrassenüberdachung?",
     a: "Standard ist Brettschichtholz (BSH) aus Fichte: verzugsarm, tragfähig und günstig, braucht aber einen Anstrich. Lärche und Douglasie sind von Natur aus witterungsbeständiger und etwas teurer, Eiche ist sehr dauerhaft, aber teuer. Entscheidender als die Holzart ist konstruktiver Holzschutz: Pfostenschuhe mit Bodenabstand, Dachüberstand und eine funktionierende Rinne.",
+  },
+  {
+    q: "Welche Terrassenüberdachung aus Holz ist die beste?",
+    a: "Einen unabhängigen Testsieger gibt es nicht. Eine gute Holz-Überdachung erkennen Sie an technisch getrocknetem Brettschichtholz, Lastangaben für Schnee und Wind, Pfostenträgern mit Bodenabstand, einer Rinne mit Gefälle und einer Befestigung im tragenden Mauerwerk – bei Hamburger Klinkerhäusern also nicht in der äußeren Klinkerschale. Bei Standardmaßen reicht ein guter Bausatz, bei Glasdach, krummen Maßen oder Klinkerfassade ist die Zimmerei die sicherere Wahl.",
   },
   {
     q: "Glas oder Polycarbonat – was ist günstiger?",
@@ -205,6 +209,45 @@ export default function TerrassenueberdachungKostenPage() {
         Optik wichtig ist, das Dach zu einem Holzhaus oder Garten passen soll oder
         Sie den Anstrich selbst übernehmen. Wer keine Pflege will, fährt mit
         Aluminium besser.
+      </P>
+
+      <H2 id="beste-holz">Welche Terrassenüberdachung aus Holz ist die beste?</H2>
+      <P>
+        Einen belastbaren Testsieger gibt es nicht: Bestenlisten vergleichen
+        Bausätze meist nach Produktdaten und Preis, nicht danach, ob Statik,
+        Holzschutz und Befestigung zu Ihrem Haus passen. Die beste Holz-Überdachung
+        ist deshalb die, die an Ihrem Standort sicher trägt und dicht bleibt. Daran
+        erkennen Sie sie – beim Bausatz genauso wie beim Angebot einer Zimmerei:
+      </P>
+      <CostTable
+        head={["Kriterium", "Gute Ausführung", "Warnsignal"]}
+        rows={[
+          ["Holz", "Brettschichtholz (BSH) aus Fichte, Lärche oder Douglasie, technisch getrocknet", "frisches Massivholz, tiefe Risse oder offene Leimfugen, keine Holzart angegeben"],
+          ["Statik", "Lastangaben für Schnee und Wind in kN/m², passend zum Standort", "keine Angaben zur Belastbarkeit, nur „stabil“"],
+          ["Querschnitte", "Pfosten, Sparren und Verbindungen für Ihre Maße und Lasten bemessen (Typenstatik oder Statiker)", "Standardquerschnitte für jede Größe, kein Nachweis"],
+          ["Holzschutz", "Pfostenträger mit Bodenabstand, Dachüberstand, werkseitige Grundierung", "Pfosten direkt einbetoniert oder im Erdreich"],
+          ["Eindeckung", "Stegplatten mit UV-Schutzschicht; Glas nur als nachgewiesenes Überkopf-System (DIN 18008)", "dünne Platten ohne UV-Schutz, „VSG“ ohne Nachweis für Überkopfverglasung"],
+          ["Entwässerung", "spürbares Gefälle, Rinne mit Fallrohr", "flaches Dach, Rinne ohne Ablauf"],
+          ["Wandanschluss", "Befestigung im tragenden Mauerwerk mit passendem Anker", "Schrauben nur in Klinker-Vorsatzschale oder Dämmung"],
+        ]}
+      />
+      <P>
+        <strong>Hamburger Besonderheit:</strong> Viele Häuser hier haben
+        zweischaliges Klinkermauerwerk. Die äußere Klinkerschale ist nicht dafür
+        gebaut, ein Dach zu tragen – die Wandpfette muss in die tragende
+        Innenschale verankert werden, oder die Überdachung steht mit einer zweiten
+        Pfostenreihe frei. Das ist einer der häufigsten Gründe, warum ein
+        günstiger Bausatz am Ende doch einen Fachbetrieb braucht.
+      </P>
+      <H3>Bausatz kaufen oder vom Zimmermann?</H3>
+      <P>
+        Ein <strong>Bausatz</strong> lohnt sich bei Standardmaßen, ebener
+        Terrasse, Polycarbonat-Dach und eigenem handwerklichen Geschick. Die{" "}
+        <strong>Zimmerei</strong> ist die bessere Wahl bei krummen Maßen, einem
+        Glasdach, großer Tiefe oder einer Klinkerfassade – sie bemisst
+        Querschnitte und Befestigung für Ihr Haus und haftet dafür. Preislich
+        liegen beide Wege mit Montage oft näher beieinander als gedacht (siehe
+        Tabelle oben).
       </P>
 
       <H2 id="zusatzkosten">Zusätzliche Kosten beim Terrassendach</H2>
