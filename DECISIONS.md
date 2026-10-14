@@ -513,3 +513,17 @@ drift risk.
 **Consequences:** Changing a Stellplatzbreite/Länge in the lib changes the page copy;
 re-read the TlDr wording after such changes. `doppelcarport-kosten#masse` stays as a
 short summary that links to the new page.
+
+## 2026-10-14 — `knx-oder-loxone` gives up the "KNX Kosten" queries
+**Decision:** The comparison page drops "Kosten" from its title, catalog blurb and cost
+H2 ("KNX oder Loxone: Was ist günstiger?"); its link to `knx-smart-home-kosten` now uses
+the anchor "KNX-Kosten mit Rechner".
+
+**Why:** GSC (14.09.–12.10.2026) showed both KNX pages ranking for the same cost
+queries ("knx kosten", "knx kosten rechner", "knx system kosten", "knx installation
+kosten"), each at pos 13–60, while KNX impressions fell 47 %. One intent per page: cost
+→ `knx-smart-home-kosten`, comparison → `knx-oder-loxone`. The comparative price
+paragraph stays, because "loxone vs knx kosten" is genuinely comparison intent.
+
+**Consequences:** At the 2026-11-01 check, the cost queries should consolidate on
+`knx-smart-home-kosten`.

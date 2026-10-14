@@ -13,9 +13,9 @@ import {
 import { KnxLoxoneEntscheidung } from "@/components/knx-loxone-entscheidung";
 
 export const metadata: Metadata = {
-  title: "KNX oder Loxone? Vergleich & Kosten (2026)",
+  title: "KNX oder Loxone? Vergleich, Vor- & Nachteile (2026)",
   description:
-    "KNX oder Loxone – welches Smart-Home-System ist besser? KNX ist der offene, herstellerunabhängige Standard (zukunftssicher, tendenziell teurer), Loxone ein proprietäres Komplettsystem (günstiger, schneller, an einen Hersteller gebunden). Kosten, Vor- und Nachteile und eine klare Entscheidungshilfe.",
+    "KNX oder Loxone – welches Smart-Home-System ist besser? KNX ist der offene, herstellerunabhängige Standard (zukunftssicher, tendenziell teurer), Loxone ein proprietäres Komplettsystem (günstiger, schneller, an einen Hersteller gebunden). Vor- und Nachteile, Preisunterschied und eine klare Entscheidungshilfe.",
   alternates: { canonical: "/ratgeber/knx-oder-loxone" },
   openGraph: {
     title: "KNX oder Loxone? Der Vergleich",
@@ -96,7 +96,7 @@ export default function KnxOderLoxonePage() {
         ]}
       />
 
-      <H2 id="kosten">Was kostet KNX, was Loxone?</H2>
+      <H2 id="kosten">KNX oder Loxone: Was ist günstiger?</H2>
       <P>
         Im Einfamilienhaus ist Loxone meist günstiger: Ein komplettes System liegt
         oft bei rund <strong>8.000–17.000 €</strong> (Hardware ~3.000–15.000 € plus
@@ -104,12 +104,12 @@ export default function KnxOderLoxonePage() {
         Funktionen im Miniserver vordefiniert sind und keine kostenpflichtige
         Programmiersoftware nötig ist. Vergleichbare <strong>KNX</strong>-Projekte
         liegen tendenziell darüber – kein Faktor zwei, aber spürbar, vor allem bei
-        hohem Funktionsumfang. Die volle Kostenaufstellung mit Rechner steht im{" "}
+        hohem Funktionsumfang. Die volle Kostenaufstellung steht im Ratgeber{" "}
         <Link
           href="/ratgeber/knx-smart-home-kosten"
           className="font-medium text-accent underline underline-offset-4 hover:text-ink"
         >
-          KNX-Kostenratgeber
+          KNX-Kosten mit Rechner
         </Link>
         .
       </P>
