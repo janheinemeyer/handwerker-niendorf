@@ -222,11 +222,11 @@ export default function TerrassenueberdachungKostenPage() {
       <CostTable
         head={["Kriterium", "Gute Ausführung", "Warnsignal"]}
         rows={[
-          ["Holz", "Brettschichtholz (BSH) aus Fichte, Lärche oder Douglasie, technisch getrocknet", "frisches Massivholz, breite Trockenrisse, keine Holzart angegeben"],
+          ["Holz", "Brettschichtholz (BSH) aus Fichte, Lärche oder Douglasie, technisch getrocknet", "frisches Massivholz, tiefe Risse oder offene Leimfugen, keine Holzart angegeben"],
           ["Statik", "Lastangaben für Schnee und Wind in kN/m², passend zum Standort", "keine Angaben zur Belastbarkeit, nur „stabil“"],
-          ["Querschnitte", "Pfosten meist ab 12 × 12 cm, Sparren nach Spannweite bemessen", "schlanke Sparren über 4 m Tiefe ohne Nachweis"],
+          ["Querschnitte", "Pfosten, Sparren und Verbindungen für Ihre Maße und Lasten bemessen (Typenstatik oder Statiker)", "Standardquerschnitte für jede Größe, kein Nachweis"],
           ["Holzschutz", "Pfostenträger mit Bodenabstand, Dachüberstand, werkseitige Grundierung", "Pfosten direkt einbetoniert oder im Erdreich"],
-          ["Eindeckung", "Stegplatten mit UV-Schutzschicht oder VSG-Glas", "dünne Platten ohne UV-Schutz"],
+          ["Eindeckung", "Stegplatten mit UV-Schutzschicht; Glas nur als nachgewiesenes Überkopf-System (DIN 18008)", "dünne Platten ohne UV-Schutz, „VSG“ ohne Nachweis für Überkopfverglasung"],
           ["Entwässerung", "spürbares Gefälle, Rinne mit Fallrohr", "flaches Dach, Rinne ohne Ablauf"],
           ["Wandanschluss", "Befestigung im tragenden Mauerwerk mit passendem Anker", "Schrauben nur in Klinker-Vorsatzschale oder Dämmung"],
         ]}
