@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ratgeberByCluster } from "@/lib/ratgeber";
+import { PREFERRED_SOURCE_URL } from "@/lib/site";
 
 export function SiteFooter() {
   const groups = ratgeberByCluster();
@@ -61,7 +62,15 @@ export function SiteFooter() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-paper/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Handwerk Niendorf. Alle Rechte vorbehalten.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <a
+              href={PREFERRED_SOURCE_URL}
+              target="_blank"
+              rel="noopener"
+              className="hover:text-paper"
+            >
+              Bei Google als bevorzugte Quelle ↗
+            </a>
             <Link href="/impressum" className="hover:text-paper">
               Impressum
             </Link>
