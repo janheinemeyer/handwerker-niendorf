@@ -541,3 +541,17 @@ paragraph stays, because "loxone vs knx kosten" is genuinely comparison intent.
 
 **Consequences:** At the 2026-11-01 check, the cost queries should consolidate on
 `knx-smart-home-kosten`.
+
+## 2026-10-16 — Google "Preferred Source" as a plain link, not Google's button script
+**Decision:** Every Ratgeber page (via `RatgeberArticle`) and the footer link to
+`google.com/preferences/source?q=handwerker-niendorf.de` (`PREFERRED_SOURCE_URL` in
+`src/lib/site.ts`). It is a plain `<a>` in our own design, not Google's
+`publisher.js` button.
+
+**Why:** Google's button loads `news.google.com/swg/js/v1/publisher.js` for every
+visitor, which sends their IP to Google before any click and would need consent and
+a Datenschutz entry. The deeplink does the same thing and only contacts Google when
+someone clicks. Google explicitly allows custom promotion badges. The domain was
+checked on 2026-10-16 and is listed in the source-preferences tool. Effect is mainly
+the "preferred" badge in AI Overviews / AI Mode for readers who opt in; Top Stories
+rarely shows for our queries.

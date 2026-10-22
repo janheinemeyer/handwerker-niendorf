@@ -2,6 +2,14 @@
 export const SITE_URL = "https://handwerker-niendorf.de";
 
 /**
+ * Google "Preferred Sources" deeplink: opens Google's source-preferences tool
+ * with this domain pre-filled, so a reader can add us with one tick. A plain
+ * link on purpose — Google's button script would load third-party JS for every
+ * visitor (see DECISIONS.md).
+ */
+export const PREFERRED_SOURCE_URL = `https://www.google.com/preferences/source?q=${new URL(SITE_URL).host}`;
+
+/**
  * Real NAP for the business — the single source for the LocalBusiness schema,
  * the Impressum/Datenschutz pages and the on-page local-relevance block.
  */

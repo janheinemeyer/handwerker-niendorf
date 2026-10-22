@@ -3,6 +3,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { Breadcrumb, type Crumb } from "./breadcrumb";
 import { RelatedRatgeber } from "./related";
 import { RegionNote } from "./region-note";
+import { PreferredSource } from "./preferred-source";
 import { RATGEBER_PAGES } from "@/lib/ratgeber";
 import { articleSchema } from "@/lib/schema";
 
@@ -48,6 +49,7 @@ export function RatgeberArticle({
           )}
           {children}
           <RegionNote currentHref={currentHref} />
+          <PreferredSource />
           <RelatedRatgeber currentHref={currentHref} />
         </article>
       </main>
