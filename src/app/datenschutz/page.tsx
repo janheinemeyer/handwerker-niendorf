@@ -38,7 +38,7 @@ export default function DatenschutzPage() {
           <h1 className="mt-4 font-display text-[clamp(2.2rem,6vw,3.4rem)] font-extrabold uppercase leading-[0.95]">
             Datenschutz&shy;erklärung
           </h1>
-          <p className="mt-5 text-sm text-ink-soft">Stand: Juni 2026</p>
+          <p className="mt-5 text-sm text-ink-soft">Stand: November 2026</p>
 
           <H2>1. Datenschutz auf einen Blick</H2>
 
@@ -349,6 +349,27 @@ export default function DatenschutzPage() {
             geschlossen. Soweit Daten an den Anbieter in einem Drittland (USA)
             verarbeitet werden, wird die Übermittlung auf Standardvertragsklauseln
             gestützt.
+          </P>
+
+          <H3>Anonyme Nutzungsstatistik der Kostenrechner</H3>
+          <P>
+            Um unsere Kostenrechner und Ratgeber zu verbessern, zählen wir
+            anonym, wie sie genutzt werden: ob ein Rechner angezeigt wurde, ob
+            eine Eingabe geändert wurde, ob der Anfrage-Button geklickt wurde,
+            und welche Einstellungen im Rechner gewählt wurden (z. B. Material
+            oder Größe) samt der angezeigten Kostenschätzung. Gespeichert werden
+            dazu nur die aufgerufene Seite, der Zeitpunkt und diese Angaben.
+          </P>
+          <P>
+            Dabei werden <strong>keine Cookies</strong> gesetzt, keine
+            Informationen auf Ihrem Endgerät gespeichert, keine IP-Adressen
+            gespeichert und keine Nutzer- oder Sitzungskennungen vergeben. Die
+            Daten lassen sich keiner Person zuordnen und werden nicht mit
+            Anfragen über das Kontaktformular verknüpft. Sie werden wie die
+            Anfragen bei Supabase in der EU (Irland) gespeichert. Soweit
+            überhaupt personenbezogene Daten betroffen sein sollten, erfolgt die
+            Verarbeitung auf Grundlage unseres berechtigten Interesses an der
+            Verbesserung unseres Angebots (Art. 6 Abs. 1 lit. f DSGVO).
           </P>
 
           <H2>5. Google Search Console</H2>

@@ -626,3 +626,29 @@ The daily and monthly figures are a stated model rather than measurements:
 - The meter swap may not be invoiced (Clearingstelle EEG).
 - The price cap for the moderne Messeinrichtung is 25 €/yr gross. It does not apply to a Smart Meter (iMSys), which has higher caps; the page says so, since heat-pump households get one anyway. This comes from BNetzA/Verbraucherzentrale as quoted on 2026-11-27; older pages say 20 €.
 - Hamburg needs only the MaStR, with no Netzbetreiber notice unless you want Einspeisevergütung (hamburg.de).
+
+## 2026-11-27: Anonymous first-party usage tracking for calculators and CTAs
+**Decision:** We record the funnel per `source` in a new Supabase table `usage_events` (migration `0003`):
+- `view`: the tool scrolled into view, at a 30 % IntersectionObserver threshold.
+- `start`: the first changed input.
+- `result`: on pagehide, unmount or a hidden tab, only after use; it carries the tool's `details`/`summary` and `estimate`.
+- `cta`: any `RequestButton` click, including `CtaBand`.
+
+The plumbing:
+- One client hook, `useCalculatorTracking(request)`, used by all 12 tools.
+- A route handler, `POST /api/track`, that validates with Zod.
+- A server module, `src/lib/usage-events.ts`.
+- A funnel table in `/admin` covering the last 30 days, built from the view `usage_event_counts_30d` plus leads from `contact_submissions.source`.
+
+**Why:** Leads (2 so far) were the only signal, so we couldn't tell which tools are seen, used or abandoned, or what people calculate. The user chose this over Vercel Web Analytics. It is first-party and stored in the EU, and joinable to leads by `source`. It also stores the chosen tool configuration, and custom events don't need a paid plan.
+
+**Privacy:**
+- Nothing is read from or written to the device (no cookies, no storage, no ids), and no IP is stored, so no consent banner is needed.
+- The Datenschutz page has a new section, "Anonyme Nutzungsstatistik der Kostenrechner".
+- Only `VERCEL_ENV=production` records, so dev and preview traffic stay out.
+- Bot user agents (bot, crawl, spider, headless, lighthouse) are dropped, because Googlebot renders JS.
+- Bodies over 4 KB get 413, invalid ones 400.
+
+**Scope vs. CLAUDE.md "no analytics dashboards yet":** The admin view is deliberately one plain table, not a dashboard. The user asked for the data in order to optimise.
+
+**Consequences:** Every new tool must call the hook, which is documented in CLAUDE.md. The raw `config` JSON can be queried later (e.g. "most-calculated carport material") without schema changes. There is no retention job yet; at our scale the table stays small, so revisit at ~100k rows.

@@ -134,6 +134,12 @@ SEO/GEO conventions: open with a `TlDr` direct answer (keyword + number), use
 question-shaped `H2` ids, include machine-readable `CostTable`s, and always a
 `Faq`. A page-specific interactive widget (e.g. the carport
 `CarportCalculator`) is a separate Client Component dropped into the body.
+**Every calculator/tool must be tracked:** build its `request` object
+(`source`, `details`/`summary`, `estimate`) as the existing tools do, call
+`const trackRef = useCalculatorTracking(request)` (`src/lib/use-usage-tracking.ts`)
+and put `ref={trackRef}` on its root element. That sends the anonymous
+`view`/`start`/`result` events; `RequestButton` sends `cta` by itself. The data
+lands in `usage_events` (migration `0003`) and shows up as the funnel in `/admin`.
 
 ## Workflow
 

@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { RequestButton } from "@/components/request/request-button";
+import { useCalculatorTracking } from "@/lib/use-usage-tracking";
 
 /*
   Carport-Kostenrechner — parametric estimate.
@@ -301,8 +302,10 @@ export function CarportCalculator() {
     calc.high,
   ]);
 
+  const trackRef = useCalculatorTracking(request);
+
   return (
-    <div className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
+    <div ref={trackRef} className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
       {/* Inputs */}
       <div className="space-y-6 bg-paper p-6 sm:p-8">
         <Segmented<Type>

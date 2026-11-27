@@ -10,6 +10,7 @@ import {
   round100,
 } from "@/components/calculator-ui";
 import { RequestButton } from "@/components/request/request-button";
+import { useCalculatorTracking } from "@/lib/use-usage-tracking";
 
 /*
   Gastro-Terrassenüberdachung — Kosten- & Amortisationsrechner.
@@ -189,8 +190,10 @@ export function GastroTerrassenCalculator() {
     };
   }, [system, mount, sides, heaters, led, shade, foundation, planning, region, days, spend, calc.width, calc.depth, calc.area, calc.seats, calc.low, calc.high]);
 
+  const trackRef = useCalculatorTracking(request);
+
   return (
-    <div className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
+    <div ref={trackRef} className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
       {/* Inputs */}
       <div className="space-y-6 bg-paper p-6 sm:p-8">
         <div className="flex flex-wrap gap-x-8 gap-y-6">
