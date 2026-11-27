@@ -59,7 +59,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Kann man ein Bad renovieren, ohne die Fliesen abzuschlagen?",
-    a: "Ja, wenn die alten Fliesen fest und eben sitzen. Günstige Wege sind Dekor- bzw. Duschrückwandplatten über den Fliesen (fertig eingebaut rund 500–1.500 € pro Dusche), neue Fliesen direkt auf die alten mit Haftgrund, bad-geeignetes Vinyl auf den Bodenfliesen (ca. 40–90 €/m² inkl. Verlegung, Fugen und Ränder abgedichtet), Wandpaneele oder Fliesenlack und Klebefolie für trockene Bereiche (im Nassbereich nur dafür freigegebener 2-K-Lack). Das spart Abriss und Entsorgung (15–35 €/m²) und Staub. Lose oder hohl klingende Fliesen und Feuchteschäden müssen aber raus.",
+    a: "Ja, wenn die alten Fliesen fest und eben sitzen. Günstige Wege sind Dekor- bzw. Duschrückwandplatten über den Fliesen (fertig eingebaut rund 500–1.500 € pro Dusche), neue Fliesen direkt auf die alten mit Haftgrund, bad-geeignetes Vinyl auf den Bodenfliesen (ca. 40–90 €/m² inkl. Verlegung, Fugen und Ränder abgedichtet), Wandpaneele oder Fliesenlack und Klebefolie für trockene Bereiche (im Nassbereich nur dafür freigegebener 2-K-Lack). Das spart Abriss und Entsorgung (15–35 €/m²) und Staub. Ein 6-m²-Bad kostet so vom Fachbetrieb bundesweit oft nur 1.700–4.300 € (mit neuen Sanitärobjekten rund 3.200–7.800 €, in Hamburg etwa 10–15 % mehr) statt 8.000–18.000 € für eine Komplettsanierung – günstiger als eine Teilrenovierung mit neuen Fliesen. Lose oder hohl klingende Fliesen und Feuchteschäden müssen aber raus.",
   },
   {
     q: "Was ist besser: Fliesen überkleben oder streichen?",
@@ -89,7 +89,7 @@ export default function BadKostenPage() {
           Kosten 2026
         </>
       }
-      updated="Oktober 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -103,7 +103,12 @@ export default function BadKostenPage() {
         Komplettsanierung rechnen Sie mit{" "}
         <strong>1.500–3.500 € pro m²</strong>; ein mittelgroßes Bad (~8 m²) liegt
         bei <strong>12.000–24.000 €</strong>. Eine reine Teilrenovierung ist ab
-        etwa <strong>700 €/m²</strong> möglich. In Hamburg liegen vor allem die
+        etwa <strong>700 €/m²</strong> möglich (neue Fliesen und Objekte,
+        Leitungen bleiben). Noch günstiger: <strong>Fliesen nicht abschlagen,
+        sondern überdecken</strong> (Rückwandplatten, Paneele, Vinyl) – ein
+        6-m²-Bad kostet so bundesweit oft nur{" "}
+        <strong>1.700–4.300 €</strong>, mit neuen Sanitärobjekten rund
+        3.200–7.800 €. In Hamburg liegen vor allem die
         Handwerkerpreise höher (rund +20 %), was die Gesamtrechnung um etwa
         10–15 % erhöht.
       </TlDr>
@@ -236,6 +241,35 @@ export default function BadKostenPage() {
           Fliesen legen: Kosten
         </Link>
         .
+      </P>
+      <H3>Was kostet ein ganzes Bad ohne Fliesen abschlagen?</H3>
+      <P>
+        Ein Rechenbeispiel für ein <strong>6-m²-Bad</strong> mit rund 5 m²
+        Boden und gefliesten Wänden, alle Arbeiten vom Fachbetrieb, mit den
+        Richtwerten aus der Tabelle oben:
+      </P>
+      <CostTable
+        head={["Posten (6-m²-Bad)", "Richtwert"]}
+        rows={[
+          ["Dusche: Rückwandplatten, fertig eingebaut", "500 – 1.500 €"],
+          ["Übrige Wände: Wandpaneele (ca. 10 m²)", "600 – 1.300 €"],
+          ["Boden: bad-geeignetes Vinyl (ca. 5 m²)", "200 – 450 €"],
+          ["Silikonfugen, Anschlüsse, Malerarbeiten", "400 – 1.000 €"],
+          ["Summe nur Oberflächen", "ca. 1.700 – 4.300 €"],
+          ["Optional: neues WC, Waschtisch, Armaturen inkl. Montage", "1.500 – 3.500 €"],
+          ["Summe mit neuen Sanitärobjekten", "ca. 3.200 – 7.800 €"],
+          ["Zum Vergleich: Teilrenovierung mit neuen Fliesen (ab ~700 €/m²)", "ab ca. 4.200 €"],
+          ["Zum Vergleich: Komplettsanierung 6 m²", "8.000 – 18.000 €"],
+        ]}
+      />
+      <P>
+        Das sind bundesweite Richtwerte; in Hamburg rechnen Sie mit etwa
+        10–15 % mehr, also rund 1.900–4.900 € bzw. 3.500–9.000 €. Überdecken
+        ist damit eine eigene, günstigere Stufe unterhalb der
+        Teilrenovierung: Es fallen weder Fliesen- noch Installationsarbeiten
+        an, und das Bad ist in wenigen Tagen statt Wochen fertig. <strong>Ehrlich gesagt:</strong> Das lohnt sich nur,
+        wenn Leitungen und Abdichtung in Ordnung sind. Wer ohnehin in fünf
+        Jahren Rohre tauschen muss, zahlt beim Überkleben doppelt.
       </P>
       <H3>Überkleben oder streichen: Was hält im Bad?</H3>
       <P>

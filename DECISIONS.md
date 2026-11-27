@@ -608,3 +608,21 @@ The daily and monthly figures are a stated model rather than measurements:
 - The heating-only result of ~4,600 kWh/yr matches the page's existing "teilsaniert" row.
 
 **Consequences:** The deadline copy must be removed or re-dated on 2027-02-01. Reminder routine trig_01AidL8AgAUwXYfdY5DYS1ff emails about it.
+
+## 2026-11-27: Direct-answer totals for two queries just off page 1
+**Decision:**
+- `bad-renovieren-kosten#ohne-fliesen-abschlagen` gets a whole-bathroom worked example (6 m², without removing tiles: about 1,700–4,300 € for surfaces only, about 3,200–7,800 € with new fixtures, national figures with Hamburg at +10–15 %, vs. Teilrenovierung from ~4,200 € and 8,000–18,000 € for a full renovation). The same total also goes into the TlDr and FAQ. Covering is presented as its own tier **below** Teilrenovierung (no tiling or installation work), so the page's "Teilrenovierung ab 700 €/m²" floor stays consistent.
+- `balkonkraftwerk#anmeldung` gets an itemised "what registration costs" table, a 1-month deadline note and a paragraph on registering in Hamburg.
+- `einfahrt-pflastern-kosten` was deliberately **not** touched.
+
+**Why:** GSC (28.10.–25.11.2026) data per page:
+- "bad renovieren ohne fliesen abschlagen kosten" sat at pos 12.9 with 58 impressions, the site's top-impression query. The page listed per-solution prices but never answered the whole-bathroom total.
+- "balkonkraftwerk anmelden kosten" sat at pos 11.6 with 30 impressions. The page only said "kostenlos" in passing. Autocomplete added "anmelden hamburg", "pflicht", "zähler" and "marktstammdatenregister".
+- Pflaster's 299 impressions come mostly from the national head term at pos 40. Only "…kosten rechner" (4 impressions) was within reach, so it wasn't worth the work.
+
+**Sources:**
+- Bathroom figures are sums of the page's own existing unit prices. Only "Silikon/Anschlüsse/Maler 400–1,000 €" (scaled from the page's 8 m² "Maler- & Restarbeiten 500–1,500 €") and "Sanitärobjekte ohne Dusche/Wanne 1,500–3,500 €" are new estimates.
+- Balkonkraftwerk facts: the MaStR deadline is one month (§ 95 EnWG).
+- The meter swap may not be invoiced (Clearingstelle EEG).
+- The price cap for the moderne Messeinrichtung is 25 €/yr gross. It does not apply to a Smart Meter (iMSys), which has higher caps; the page says so, since heat-pump households get one anyway. This comes from BNetzA/Verbraucherzentrale as quoted on 2026-11-27; older pages say 20 €.
+- Hamburg needs only the MaStR, with no Netzbetreiber notice unless you want Einspeisevergütung (hamburg.de).
