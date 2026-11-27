@@ -4,6 +4,7 @@ import {
   RatgeberArticle,
   TlDr,
   H2,
+  H3,
   P,
   CostTable,
   CtaBand,
@@ -22,9 +23,9 @@ import {
 } from "@/lib/carport-masse";
 
 export const metadata: Metadata = {
-  title: "Carport Maße & Größe: für 1, 2 & 3 Autos (mit Rechner)",
+  title: "Carport Maße, Breite & Größe für 1, 2 & 3 Autos (Rechner)",
   description:
-    "Welche Maße braucht ein Carport? Doppelcarport für 2 Autos nebeneinander ca. 6–7 × 5,5–6,5 m, hintereinander ca. 3–3,5 × 10–11,5 m, 1 Auto ca. 3 × 5,5 m. Mit Maße-Rechner, Höhe, Abstellraum und den Hamburger Grenzen ohne Baugenehmigung (50 m², 9 m an der Grenze).",
+    "Wie breit und wie groß muss ein Carport sein? Breite: 1 Auto ca. 3–3,5 m, 2 Autos nebeneinander ca. 6–7 m, 3 Autos ca. 9–10,5 m, Länge 5,5–6,5 m. Mit Maße-Rechner, Durchfahrtsbreite, Höhe, Abstellraum und den Hamburger Grenzen ohne Baugenehmigung (50 m², 9 m an der Grenze).",
   alternates: { canonical: "/ratgeber/carport-masse" },
   openGraph: {
     title: "Carport Maße & Größe: für 1, 2 & 3 Autos",
@@ -65,6 +66,10 @@ const faqs: FaqItem[] = [
     a: `Für zwei Autos nebeneinander sollten Sie ${formatMeter(masse(2, "kompakt").breite)} (Kleinwagen) bis ${formatMeter(masse(2, "gross").breite)} (SUV/Van) Breite einplanen, für Kombis rund ${formatMeter(doppelKombi.breite)}. Das sind rund 3–3,5 m pro Stellplatz – genug, um die Türen auf beiden Seiten zu öffnen. Stehen die Autos hintereinander, reicht die Breite eines Einzelcarports (${formatMeter(tandemKompakt.breite)}–${formatMeter(tandemSuv.breite)}).`,
   },
   {
+    q: "Wie breit muss ein Carport sein?",
+    a: `Rechnen Sie rund 3–3,5 m Außenbreite pro Auto: ein Einzelcarport ${formatMeter(masse(1, "kompakt").breite)} (Kleinwagen) bis ${formatMeter(masse(1, "gross").breite)} (SUV/Van), ein Carport für 2 Autos nebeneinander ${formatMeter(masse(2, "kompakt").breite)}–${formatMeter(masse(2, "gross").breite)} und für 3 Autos ${formatMeter(masse(3, "kompakt").breite)}–${formatMeter(masse(3, "gross").breite)}. Achten Sie bei Bausätzen auf die Durchfahrtsbreite zwischen den Pfosten – sie liegt je nach Pfosten und Dachüberstand spürbar unter dem Außenmaß.`,
+  },
+  {
     q: "Wie lang muss ein Carport für 2 Autos hintereinander sein?",
     a: `Rund ${formatMeter(tandemKompakt.laenge)} für zwei Kleinwagen bis ${formatMeter(tandemSuv.laenge)} für zwei SUVs – zwei Fahrzeuglängen plus etwa 1 m Spielraum. In Hamburg ist das wichtig: Ohne eigene Abstandsfläche darf ein Carport höchstens 9 m je Grundstücksgrenze einnehmen. Soll ein Tandem-Carport mit der Längsseite an der Grenze stehen, braucht er also Abstand oder eine Abweichung. Zeigt nur die schmale Stirnseite zur Grenze, ist das kein Problem.`,
   },
@@ -93,6 +98,13 @@ const zeile = (
   opts: { anordnung?: Anordnung } = {},
 ) => [label, ...FAHRZEUGE.map((f) => zelle(masse(autos, f, opts)))];
 
+const BREITE_ZEILEN: { label: string; autos: Autos; anordnung?: Anordnung }[] = [
+  { label: "1 Auto", autos: 1 },
+  { label: "2 Autos nebeneinander", autos: 2 },
+  { label: "2 Autos hintereinander", autos: 2, anordnung: "hintereinander" },
+  { label: "3 Autos nebeneinander", autos: 3 },
+];
+
 const HAMBURG_FAELLE: { label: string; r: ReturnType<typeof masse> }[] = [
   { label: "1 Auto (SUV) + Abstellraum", r: masse(1, "gross", { abstellraum: true }) },
   { label: "2 Autos nebeneinander (Kombi)", r: doppelKombi },
@@ -114,7 +126,7 @@ export default function CarportMassePage() {
           für 1, 2 &amp; 3 Autos
         </>
       }
-      updated="Oktober 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -169,6 +181,31 @@ export default function CarportMassePage() {
         inklusive Außenspiegel nach und planen Sie großzügiger, wenn Kinder ein-
         und aussteigen, Fahrräder mit unter das Dach sollen oder später ein
         größeres Auto kommt.
+      </P>
+
+      <H2 id="breite">Wie breit muss ein Carport sein?</H2>
+      <P>
+        Pro Stellplatz brauchen Sie rund <strong>3 m (Kleinwagen) bis 3,5 m
+        (SUV/Van) Außenbreite</strong>. Ein Auto ist mit Außenspiegeln etwa
+        2–2,2 m breit; der Rest ist Platz, um die Türen zu öffnen und am Pfosten
+        vorbei auszusteigen. Unter etwa 2,5 m pro Auto wird das spürbar eng.
+      </P>
+      <CostTable
+        head={["Carport", "Kleinwagen / Kompakt", "Kombi / Mittelklasse", "SUV / Van"]}
+        rows={BREITE_ZEILEN.map(({ label, autos, anordnung }) => [
+          label,
+          ...FAHRZEUGE.map((f) => formatMeter(masse(autos, f, { anordnung }).breite)),
+        ])}
+      />
+      <H3>Außenmaß oder Durchfahrtsbreite?</H3>
+      <P>
+        Bausatz-Anbieter nennen meist das Außen- oder Dachmaß. Für Sie zählt die{" "}
+        <strong>Durchfahrtsbreite</strong>, also die lichte Weite zwischen den
+        Pfosten. Je nach Pfostenstärke (Holz meist 9–12 cm) und Dachüberstand
+        ist sie schnell 20–50 cm schmaler. Hat ein Doppelcarport einen
+        Mittelpfosten, zählt die Durchfahrt je Stellplatz – das ist enger, als
+        die Gesamtbreite vermuten lässt. Ohne Mittelpfosten braucht er dafür
+        eine kräftigere Pfette über die volle Breite und kostet etwas mehr.
       </P>
 
       <H2 id="zwei-autos">Doppelcarport-Maße: 2 Autos nebeneinander oder hintereinander?</H2>

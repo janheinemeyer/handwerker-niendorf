@@ -74,7 +74,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Was eine Überdachung kostet – Material, Größe und Montage.",
     topic: "Terrassenüberdachung",
     cluster: "aussen",
-    updated: "2026-10-14",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/terrassenueberdachung-gastronomie",
@@ -274,7 +274,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Carport für zwei Autos – Preise nach Material, empfohlene Maße & Kostenfaktoren.",
     topic: "Doppelcarport",
     cluster: "carport",
-    updated: "2026-06-15",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/carport-masse",
@@ -282,7 +282,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Breite, Länge und Höhe für 1, 2 & 3 Autos – mit Maße-Rechner und Hamburger Grenzen.",
     topic: "Carport-Maße",
     cluster: "carport",
-    updated: "2026-10-08",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/carport-oder-garage",
@@ -290,7 +290,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kosten, Vor- & Nachteile und Genehmigung im direkten Vergleich.",
     topic: "Carport oder Garage",
     cluster: "carport",
-    updated: "2026-06-16",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/knx-smart-home-kosten",
@@ -298,7 +298,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Was KNX im Einfamilienhaus kostet – mit Rechner, Kosten pro Datenpunkt, Neubau vs. Nachrüsten.",
     topic: "KNX Smart Home",
     cluster: "smarthome",
-    updated: "2026-09-25",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/knx-oder-loxone",

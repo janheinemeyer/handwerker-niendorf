@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Doppelcarport: Kosten & Preise 2026 (Holz, Alu, Stahl)",
   description:
-    "Was kostet ein Doppelcarport? Bauen lassen je nach Material und Größe rund 3.500–15.000 € (Bausatz ab ~2.000 €). Empfohlene Maße (ab ~6,5 × 5,5 m), Kostenfaktoren und Genehmigung in Hamburg – mit Preisübersicht.",
+    "Was kostet ein Doppelcarport? Mit Montage je nach Material und Größe rund 3.500–15.000 € (Bausatz ab ~2.000 €). Empfohlene Maße (ab ~6,5 × 5,5 m), Kostenfaktoren und Genehmigung in Hamburg – mit Preisübersicht.",
   alternates: { canonical: "/ratgeber/doppelcarport-kosten" },
   openGraph: {
     title: "Doppelcarport: Kosten, Maße & Preise",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was kostet ein Doppelcarport?",
-    a: "Bauen lassen kostet ein Doppelcarport je nach Material, Größe und Ausstattung rund 3.500–15.000 €: Holz ab etwa 3.500–9.000 €, Aluminium ca. 6.000–12.000 €, Stahl-Maßanfertigungen am oberen Ende. Als Bausatz zum Selbstaufbau gibt es Doppelcarports ab etwa 2.000–9.000 € – ohne Fundament und Montage.",
+    a: "Mit Montage kostet ein Doppelcarport je nach Material, Größe und Ausstattung rund 3.500–15.000 €: Holz ab etwa 3.500–9.000 €, Aluminium ca. 6.000–12.000 €, Stahl-Maßanfertigungen am oberen Ende. Als Bausatz zum Selbstaufbau gibt es Doppelcarports ab etwa 2.000–9.000 € – ohne Fundament und Montage.",
   },
   {
     q: "Wie groß muss ein Doppelcarport sein?",
@@ -59,7 +59,7 @@ export default function DoppelcarportKostenPage() {
           Kosten &amp; Maße
         </>
       }
-      updated="Juni 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -71,7 +71,7 @@ export default function DoppelcarportKostenPage() {
     >
       <TlDr>
         Ein <strong>Doppelcarport</strong> (zwei Autos nebeneinander, ~6 × 6 m,
-        rund 36 m²) kostet beim Bauen-lassen je nach Material und Ausstattung
+        rund 36 m²) kostet mit Montage je nach Material und Ausstattung
         etwa <strong>3.500–15.000 €</strong> – Holz am unteren, Aluminium und
         Stahl am oberen Ende; Bausätze zum Selbstaufbau ab ~2.000 €. Pro
         Stellplatz ist er
@@ -83,7 +83,7 @@ export default function DoppelcarportKostenPage() {
           href="/ratgeber/carport-bauen-lassen-kosten"
           className="font-medium text-accent underline underline-offset-4 hover:text-ink"
         >
-          Carport-Kostenratgeber
+          Ratgeber „Carport bauen lassen: Kosten“
         </Link>
         .
       </TlDr>
@@ -91,11 +91,11 @@ export default function DoppelcarportKostenPage() {
       <H2 id="kosten">Was kostet ein Doppelcarport?</H2>
       <P>
         Wie beim Einzelcarport ist das Material der größte Preistreiber, dazu
-        kommen Dachform, Ausstattung und Fundament. Richtwerte fürs Bauen-lassen
-        (inkl. Montage):
+        kommen Dachform, Ausstattung und Fundament. Richtwerte inklusive
+        Montage:
       </P>
       <CostTable
-        head={["Variante", "Richtwert (bauen lassen)"]}
+        head={["Variante", "Richtwert inkl. Montage"]}
         rows={[
           ["Holz", "3.500 – 9.000 €"],
           ["Aluminium", "6.000 – 12.000 €"],

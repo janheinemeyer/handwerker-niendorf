@@ -16,7 +16,7 @@ import { TerrassenCalculator } from "@/components/terrassen-calculator";
 export const metadata: Metadata = {
   title: "Terrassenüberdachung: Kosten 2026 (Alu, Holz, Glas & Rechner)",
   description:
-    "Was kostet eine Terrassenüberdachung? Aktuelle Preise 2026 nach Größe, Material (Alu, Holz, Glas) und Montage – inkl. Holz-Kaufcheckliste, Holz-vs-Alu-Vergleich über 20 Jahre, Kostenrechner, Baugenehmigung, Steuertipp und Angebotsvergleich für Hamburg.",
+    "Was kostet eine Terrassenüberdachung? 2026 mit Montage meist 3.000–20.000 €: Alu mit Glas (12 m²) 5.000–11.000 €, Holz-Überdachung am Haus ab ca. 2.000 €. Mit Kostenrechner, Holz-vs-Alu-Vergleich über 20 Jahre, Baugenehmigung, Steuertipp und Preisen für Hamburg.",
   alternates: { canonical: "/ratgeber/terrassenueberdachung-kosten" },
   openGraph: {
     title: "Terrassenüberdachung: Kosten 2026 im Überblick",
@@ -44,6 +44,10 @@ const faqs: FaqItem[] = [
   {
     q: "Was kostet eine Terrassenüberdachung aus Holz mit Montage?",
     a: "Für rund 12 m² kostet eine Holz-Terrassenüberdachung mit Polycarbonat als Bausatz mit Montage durch einen Fachbetrieb etwa 2.000–4.500 €. Maßgefertigt vom Zimmermann aus Brettschichtholz liegen Sie bei 3.500–6.000 €, mit Glasdach (VSG) bei 5.000–8.000 €. Ein Bausatz zum Selbstaufbau ist ab etwa 1.000 € zu haben.",
+  },
+  {
+    q: "Was kostet eine Holz-Überdachung am Haus?",
+    a: "An der Hauswand montiert ist Holz die günstigste Art, die Terrasse zu überdachen: Für rund 12 m² mit Polycarbonat und Montage zahlen Sie etwa 2.000–4.500 €, maßgefertigt vom Zimmermann 3.500–6.000 €, mit Glasdach 5.000–8.000 €. Freistehend kostet dieselbe Fläche grob 15–30 % mehr. Bei gedämmter Fassade (WDVS) oder Klinker-Vorsatzschale kommen einige Hundert Euro für eine Befestigung im tragenden Mauerwerk hinzu.",
   },
   {
     q: "Was ist besser: Terrassenüberdachung aus Holz oder Aluminium?",
@@ -89,7 +93,7 @@ export default function TerrassenueberdachungKostenPage() {
           Kosten 2026
         </>
       }
-      updated="Oktober 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -175,6 +179,21 @@ export default function TerrassenueberdachungKostenPage() {
           ["Zimmerei, BSH lackiert + VSG-Glas", "5.000 – 8.000 €", "hochwertig, deutlich schwerere Statik"],
         ]}
       />
+
+      <H3>Holz-Überdachung am Haus oder freistehend?</H3>
+      <P>
+        Die Preise oben gelten für die übliche <strong>Montage am Haus</strong>:
+        Hinten liegt das Dach auf einem Wandbalken an der Hauswand, vorn reichen
+        zwei bis drei Pfosten. Das ist die günstigste Variante, weil Pfosten,
+        Fundamente und Aussteifung für eine Seite entfallen.{" "}
+        <strong>Freistehend</strong> braucht das Dach eine zweite Pfostenreihe,
+        mehr Fundamente und Kopfbänder gegen Wind – rechnen Sie grob mit 15–30 %
+        Aufpreis. Am Haus wird es teurer, wenn die Außenwand nicht trägt: Bei
+        gedämmter Fassade (WDVS) oder der in Hamburg verbreiteten
+        Klinker-Vorsatzschale muss die Befestigung bis ins tragende Mauerwerk
+        reichen, mit Spezialkonsolen oder Abstandsmontage. Das kostet einige
+        Hundert Euro mehr und gehört in die Hand eines Fachbetriebs.
+      </P>
 
       <H3>Welches Holz eignet sich für ein Terrassendach?</H3>
       <P>

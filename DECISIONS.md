@@ -555,3 +555,22 @@ someone clicks. Google explicitly allows custom promotion badges. The domain was
 checked on 2026-10-16 and is listed in the source-preferences tool. Effect is mainly
 the "preferred" badge in AI Overviews / AI Mode for readers who opt in; Top Stories
 rarely shows for our queries.
+
+## 2026-11-27 — "Carport bauen lassen" belongs to `carport-bauen-lassen-kosten` only
+**Decision:** `carport-oder-garage` and `doppelcarport-kosten` drop the phrase
+"bauen lassen" from their price copy, table headers and meta description ("inkl.
+Montage" instead), and both link to the cost page with the anchor "Carport bauen
+lassen: Kosten". The Doppelcarport CTAs ("Doppelcarport … bauen lassen") stay, since
+that is the page's own intent.
+
+**Why:** GSC (28.10.–24.11.2026) showed "carport bauen lassen kosten" (80 impr.)
+split across three pages, and the comparison page ranked better (pos 16.8) than the
+page built for it (23.8). This is the same one-intent-per-page fix as KNX/Loxone
+(2026-10-14).
+
+**Consequences:** In the same PR, carport-masse gets "Breite" in its title plus a
+`#breite` section, terrassenueberdachung-kosten gets a "Holz am Haus vs.
+freistehend" part, and knx-smart-home-kosten gets a Zweifamilienhaus row, all
+aimed at page-1 queries that had no clicks. The freistehend surcharge (15–30 %) and
+the Zweifamilienhaus range (12,000–22,000 €) are estimates derived from the pages'
+existing price tables, not quotes we collected. Re-check in GSC around 2026-12-27.
