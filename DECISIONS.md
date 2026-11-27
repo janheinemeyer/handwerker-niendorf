@@ -559,8 +559,8 @@ rarely shows for our queries.
 ## 2026-11-27 — "Carport bauen lassen" belongs to `carport-bauen-lassen-kosten` only
 **Decision:** `carport-oder-garage` and `doppelcarport-kosten` drop the phrase
 "bauen lassen" from their price copy, table headers and meta description ("inkl.
-Montage" instead), and both link to the cost page with the anchor "Carport bauen
-lassen: Kosten". The Doppelcarport CTAs ("Doppelcarport … bauen lassen") stay, since
+Montage" instead). The Doppelcarport page's link to the cost page now uses the same
+anchor that carport-oder-garage already had: "Carport bauen lassen: Kosten". The Doppelcarport CTAs ("Doppelcarport … bauen lassen") stay, since
 that is the page's own intent.
 
 **Why:** GSC (28.10.–24.11.2026) showed "carport bauen lassen kosten" (80 impr.)

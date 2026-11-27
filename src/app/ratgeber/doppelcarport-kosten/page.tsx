@@ -83,7 +83,7 @@ export default function DoppelcarportKostenPage() {
           href="/ratgeber/carport-bauen-lassen-kosten"
           className="font-medium text-accent underline underline-offset-4 hover:text-ink"
         >
-          Ratgeber „Carport bauen lassen: Kosten“
+          Carport bauen lassen: Kosten
         </Link>
         .
       </TlDr>

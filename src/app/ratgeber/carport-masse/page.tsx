@@ -25,10 +25,10 @@ import {
 export const metadata: Metadata = {
   title: "Carport Maße, Breite & Größe für 1, 2 & 3 Autos (Rechner)",
   description:
-    "Wie breit und wie groß muss ein Carport sein? Breite: 1 Auto ca. 3–3,5 m, 2 Autos nebeneinander ca. 6–7 m, 3 Autos ca. 9–10,5 m, Länge 5,5–6,5 m. Mit Maße-Rechner, Durchfahrtsbreite, Höhe, Abstellraum und den Hamburger Grenzen ohne Baugenehmigung (50 m², 9 m an der Grenze).",
+    "Wie breit und wie groß muss ein Carport sein? Breite: 1 Auto ca. 3–3,5 m, 2 Autos nebeneinander ca. 6–7 m, 3 Autos ca. 9–10,5 m; Länge 5,5–6,5 m (2 Autos hintereinander 10–11,5 m). Mit Maße-Rechner, Durchfahrtsbreite, Höhe, Abstellraum und den Hamburger Grenzen ohne Baugenehmigung (50 m², 9 m an der Grenze).",
   alternates: { canonical: "/ratgeber/carport-masse" },
   openGraph: {
-    title: "Carport Maße & Größe: für 1, 2 & 3 Autos",
+    title: "Carport Maße, Breite & Größe für 1, 2 & 3 Autos",
     description:
       "Empfohlene Breite, Länge und Höhe – mit Maße-Rechner und den Hamburger Grenzen ohne Baugenehmigung.",
     locale: "de_DE",
@@ -185,8 +185,12 @@ export default function CarportMassePage() {
 
       <H2 id="breite">Wie breit muss ein Carport sein?</H2>
       <P>
-        Pro Stellplatz brauchen Sie rund <strong>3 m (Kleinwagen) bis 3,5 m
-        (SUV/Van) Außenbreite</strong>. Ein Auto ist mit Außenspiegeln etwa
+        Pro Stellplatz brauchen Sie rund{" "}
+        <strong>
+          {formatMeter(masse(1, "kompakt").breite)} (Kleinwagen) bis{" "}
+          {formatMeter(masse(1, "gross").breite)} (SUV/Van) Außenbreite
+        </strong>
+        . Ein Auto ist mit Außenspiegeln etwa
         2–2,2 m breit; der Rest ist Platz, um die Türen zu öffnen und am Pfosten
         vorbei auszusteigen. Unter etwa 2,5 m pro Auto wird das spürbar eng.
       </P>
