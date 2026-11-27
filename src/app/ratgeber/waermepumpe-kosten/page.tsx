@@ -63,7 +63,7 @@ export default function WaermepumpeKostenPage() {
           &amp; Förderung 2026
         </>
       }
-      updated="September 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -157,7 +157,17 @@ export default function WaermepumpeKostenPage() {
         Ein Rechenbeispiel: Eine Luft-Wasser-Wärmepumpe für 25.000 € ersetzt die
         alte Gasheizung eines Selbstnutzers, ohne Einkommensbonus. Mit 30 %
         Grundförderung und 16 % Klimabonus (46 %) gibt es 11.500 € Zuschuss –
-        es bleiben <strong>13.500 € Eigenanteil</strong>. Neu seit 2026: Gefördert
+        es bleiben <strong>13.500 € Eigenanteil</strong>. Wird derselbe Antrag
+        erst ab dem 01.02.2027 gestellt, sinkt der Klimabonus auf 12 %: dann sind
+        es 10.500 € Zuschuss, also 1.000 € weniger. Es zählt das Antragsdatum,
+        nicht der Einbau (siehe{" "}
+        <Link
+          href="/ratgeber/waermepumpe-foerderung#2027"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          was es kostet, später zu beantragen
+        </Link>
+        ). Neu seit 2026: Gefördert
         wird nur, wenn das Außengerät mindestens <strong>10 dB unter dem
         gesetzlichen Lärm-Grenzwert</strong> liegt – ein Punkt, der gerade in
         dichter Bebauung ohnehin wichtig ist. Wie Sie die Förderung Schritt für
@@ -279,7 +289,7 @@ export default function WaermepumpeKostenPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Preisangaben sind unverbindliche Richtwerte (Stand: September 2026) und
+        Alle Preisangaben sind unverbindliche Richtwerte (Stand: November 2026) und
         ersetzen keine Fachberatung. Tatsächliche Kosten und Wirtschaftlichkeit
         hängen von Wärmepumpen-Typ, Gebäude, Dämmung, Heizlast und individueller
         Auslegung ab. Förderangaben nach KfW-Merkblatt 458 (gültig ab

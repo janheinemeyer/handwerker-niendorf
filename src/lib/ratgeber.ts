@@ -162,7 +162,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Luft-Wasser, Erdwärme & Co. – Preise mit Einbau, KfW-Förderung 2026 & ehrlicher Altbau-Check.",
     topic: "Wärmepumpe",
     cluster: "energie",
-    updated: "2026-09-25",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/waermepumpe-altbau",
@@ -175,10 +175,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   {
     href: "/ratgeber/waermepumpe-stromverbrauch",
     title: "Wärmepumpe: Stromverbrauch",
-    blurb: "Wie viel Strom braucht sie? Verbrauch berechnen, Stromkosten pro Jahr & mit Tarif/PV senken.",
+    blurb: "Wie viel Strom braucht sie – pro Jahr, Monat und Wintertag? Verbrauch berechnen & mit Tarif/PV senken.",
     topic: "Wärmepumpen-Stromverbrauch",
     cluster: "energie",
-    updated: "2026-06-18",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/warmwasser-waermepumpe",
@@ -190,11 +190,11 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   },
   {
     href: "/ratgeber/waermepumpe-foerderung",
-    title: "Wärmepumpe: Förderung 2026",
-    blurb: "Bis zu 70 % (bei niedrigem Einkommen und Heizungstausch 80 %) über die KfW 458 – neue Regeln seit Juli 2026, Antrag Schritt für Schritt & was sich 2027 ändert.",
+    title: "Wärmepumpe: Förderung 2026/2027",
+    blurb: "Bis zu 70 % (bei niedrigem Einkommen und Heizungstausch 80 %) über die KfW 458 – Antrag bis 31.01.2027 sichert 16 % Klimabonus, Antrag Schritt für Schritt.",
     topic: "Wärmepumpen-Förderung",
     cluster: "energie",
-    updated: "2026-09-25",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/bad-renovieren-kosten",

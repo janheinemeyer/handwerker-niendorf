@@ -12,9 +12,9 @@ import {
 } from "@/components/ratgeber";
 
 export const metadata: Metadata = {
-  title: "Wärmepumpe Stromverbrauch: So viel Strom braucht sie (2026)",
+  title: "Wärmepumpe Stromverbrauch pro Jahr, Monat & Tag im Winter",
   description:
-    "Wie viel Strom verbraucht eine Wärmepumpe? Verbrauch pro Jahr berechnen (Heizbedarf ÷ JAZ), realistische kWh- und Kostenbeispiele für das Einfamilienhaus, und wie Sie mit Wärmepumpentarif (§14a), eigenem Strom und PV die Kosten senken.",
+    "Einfamilienhaus: 3.000–6.000 kWh Strom pro Jahr, im Januar rund 1.000 kWh, an einem Wintertag um 0 °C 35–40 kWh. Mit Formel, Kosten und Spartipps (§14a, PV).",
   alternates: { canonical: "/ratgeber/waermepumpe-stromverbrauch" },
   openGraph: {
     title: "Wärmepumpe Stromverbrauch: So viel Strom braucht sie",
@@ -30,6 +30,14 @@ const faqs: FaqItem[] = [
   {
     q: "Wie viel Strom braucht eine Wärmepumpe im Jahr?",
     a: "Für ein durchschnittliches Einfamilienhaus (rund 150 m²) sind 3.000–6.000 kWh pro Jahr typisch. In gut gedämmten Häusern können es 2.500–3.000 kWh sein, im unsanierten Altbau 8.000–10.000 kWh. Der genaue Wert ergibt sich aus dem Heizwärmebedarf geteilt durch die Jahresarbeitszahl (JAZ).",
+  },
+  {
+    q: "Wie viel Strom braucht eine Wärmepumpe pro Tag im Winter?",
+    a: "In einem teilsanierten Einfamilienhaus mit rund 150 m² sind es bei 0 °C Außentemperatur etwa 35–40 kWh pro Tag (rund 10,50–12 € bei 30 ct/kWh), bei −5 °C etwa 55–60 kWh und bei −10 °C etwa 85–90 kWh. An milden Tagen um +5 °C reichen rund 20–25 kWh. Je kälter es ist, desto mehr Wärme braucht das Haus und desto schlechter arbeitet die Wärmepumpe – beides zusammen lässt den Tagesverbrauch an Frosttagen stark steigen.",
+  },
+  {
+    q: "Wie viel Strom braucht eine Wärmepumpe im Monat?",
+    a: "Das schwankt stark mit der Jahreszeit. Im teilsanierten Einfamilienhaus (150 m²) sind es im Januar rund 1.000 kWh (etwa 300 €), im November rund 650 kWh und im Sommer nur rund 80 kWh für das Warmwasser. Rund die Hälfte des Jahresverbrauchs fällt in die Monate Dezember bis Februar.",
   },
   {
     q: "Wie berechne ich den Stromverbrauch einer Wärmepumpe?",
@@ -63,7 +71,7 @@ export default function WaermepumpeStromverbrauchPage() {
           Strom braucht sie?
         </>
       }
-      updated="Juni 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -101,6 +109,43 @@ export default function WaermepumpeStromverbrauchPage() {
         Hinzu kommt die Warmwasserbereitung: Sie arbeitet mit einer niedrigeren
         Effizienz (JAZ ~2,8) und schlägt bei einem 4-Personen-Haushalt mit rund{" "}
         <strong>1.000 kWh pro Jahr</strong> extra zu Buche.
+      </P>
+
+      <H2 id="pro-tag">Wie viel Strom braucht eine Wärmepumpe pro Tag im Winter?</H2>
+      <P>
+        Der Jahreswert verteilt sich sehr ungleich. An kalten Tagen braucht das
+        Haus mehr Wärme, und gleichzeitig sinkt die Effizienz der
+        Luft-Wasser-Wärmepumpe. Richtwerte für ein{" "}
+        <strong>teilsaniertes Einfamilienhaus mit rund 150 m²</strong>{" "}
+        (Heizlast ca. 8 kW, Heizkörper mit rund 45 °C Vorlauf), inklusive
+        Warmwasser:
+      </P>
+      <CostTable
+        head={["Außentemperatur (Tagesmittel)", "Strom pro Tag", "Kosten pro Tag (~30 ct/kWh)"]}
+        rows={[
+          ["+10 °C (Übergangszeit)", "ca. 10 – 15 kWh", "~3 – 4,50 €"],
+          ["+5 °C", "ca. 20 – 25 kWh", "~6 – 7,50 €"],
+          ["0 °C", "ca. 35 – 40 kWh", "~10,50 – 12 €"],
+          ["−5 °C", "ca. 55 – 60 kWh", "~16,50 – 18 €"],
+          ["−10 °C", "ca. 85 – 90 kWh", "~25,50 – 27 €"],
+        ]}
+      />
+      <P>
+        Aufs Jahr gesehen heißt das: Im <strong>Januar</strong> verbraucht
+        dasselbe Haus rund <strong>1.000 kWh</strong> (etwa 300 €), im November
+        rund 650 kWh, im Sommer nur rund 80 kWh für das Warmwasser.{" "}
+        <strong>Rund die Hälfte des Jahresverbrauchs</strong> fällt in die Monate
+        Dezember bis Februar. Ein hoher Zählerstand im Januar ist also normal
+        und kein Zeichen für eine schlechte Anlage.
+      </P>
+      <P>
+        <strong>Ein Warnsignal</strong> ist dagegen, wenn der Verbrauch schon um
+        0 °C weit über diesen Werten liegt. Dann läuft oft der elektrische
+        Heizstab mit, der aus 1 kWh Strom nur 1 kWh Wärme macht. Die Ursache ist
+        meist eine zu hoch eingestellte Heizkurve oder ein ungünstig gesetzter
+        Bivalenzpunkt. Lassen Sie die Einstellungen vom Fachbetrieb prüfen. Im
+        unsanierten Altbau liegen alle Werte etwa doppelt so hoch, im gut
+        gedämmten Neubau bei etwa der Hälfte.
       </P>
 
       <H2 id="berechnen">Stromverbrauch berechnen: die Formel</H2>
@@ -228,7 +273,11 @@ export default function WaermepumpeStromverbrauchPage() {
         Alle Angaben sind unverbindliche Richtwerte (Stand: Juni 2026) und ersetzen
         keine Fachberatung. Der tatsächliche Stromverbrauch hängt von Gebäude,
         Dämmung, Heizlast, Jahresarbeitszahl, Warmwasserbedarf und Nutzerverhalten
-        ab. Strompreise sind beispielhaft angenommen.
+        ab. Strompreise sind beispielhaft angenommen. Die Tages- und Monatswerte
+        (Stand: November 2026) sind eine Modellrechnung: Heizlast 8 kW bei
+        −10 °C, Heizgrenze 15 °C, Leistungszahl der Luft-Wasser-Wärmepumpe je
+        nach Außentemperatur 2,3 (−10 °C) bis 4,0 (+10 °C), Warmwasser
+        1.000 kWh pro Jahr, Hamburger Monatsmitteltemperaturen.
       </p>
     </RatgeberArticle>
   );
