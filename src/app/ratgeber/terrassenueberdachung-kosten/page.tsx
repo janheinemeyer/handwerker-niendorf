@@ -47,7 +47,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet eine Holz-Überdachung am Haus?",
-    a: "An der Hauswand montiert ist Holz die günstigste Art, die Terrasse zu überdachen – die Holz-Preise oben (ab ca. 2.000 € für 12 m² mit Montage) gelten für diese Variante. Freistehend kostet dieselbe Fläche grob 15–30 % mehr, weil eine zweite Pfostenreihe, mehr Fundamente und Aussteifung nötig sind. Bei gedämmter Fassade (WDVS) oder Klinker-Vorsatzschale kommen einige Hundert Euro für eine Befestigung im tragenden Mauerwerk hinzu.",
+    a: "An der Hauswand montiert ist Holz die günstigste Art, die Terrasse zu überdachen – die Holz-Preise oben (ab ca. 2.000 € für 12 m² mit Montage) gelten für diese Variante. Freistehend kostet dieselbe Fläche grob 15–25 % mehr, weil eine zweite Pfostenreihe, mehr Fundamente und Aussteifung nötig sind. Bei gedämmter Fassade (WDVS) oder Klinker-Vorsatzschale kommen einige Hundert Euro für eine Befestigung im tragenden Mauerwerk hinzu.",
   },
   {
     q: "Was ist besser: Terrassenüberdachung aus Holz oder Aluminium?",
@@ -187,7 +187,7 @@ export default function TerrassenueberdachungKostenPage() {
         zwei bis drei Pfosten. Das ist die günstigste Variante, weil Pfosten,
         Fundamente und Aussteifung für eine Seite entfallen.{" "}
         <strong>Freistehend</strong> braucht das Dach eine zweite Pfostenreihe,
-        mehr Fundamente und Kopfbänder gegen Wind – rechnen Sie grob mit 15–30 %
+        mehr Fundamente und Kopfbänder gegen Wind – rechnen Sie grob mit 15–25 %
         Aufpreis. Am Haus wird es teurer, wenn die Außenwand nicht trägt: Bei
         gedämmter Fassade (WDVS) oder der in Hamburg verbreiteten
         Klinker-Vorsatzschale muss die Befestigung bis ins tragende Mauerwerk

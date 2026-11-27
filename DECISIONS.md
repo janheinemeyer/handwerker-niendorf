@@ -571,6 +571,16 @@ page built for it (23.8). This is the same one-intent-per-page fix as KNX/Loxone
 **Consequences:** In the same PR, carport-masse gets "Breite" in its title plus a
 `#breite` section, terrassenueberdachung-kosten gets a "Holz am Haus vs.
 freistehend" part, and knx-smart-home-kosten gets a Zweifamilienhaus row, all
-aimed at page-1 queries that had no clicks. The freistehend surcharge (15–30 %) and
-the Zweifamilienhaus range (12,000–22,000 €) are estimates derived from the pages'
-existing price tables, not quotes we collected. Re-check in GSC around 2026-12-27.
+aimed at page-1 queries that had no clicks. Both new figures were checked against
+web sources on 2026-11-27 and are still estimates, not quotes we collected:
+- **Freistehend surcharge, 15–25 %.** Several terrace-roof guides (mcterrasse,
+  zitberg, mein-terrassendach24) give the same 15–25 %, because a free-standing roof
+  needs four posts and foundations instead of two.
+- **Zweifamilienhaus range, 15,000–30,000 €.** No source gives a total for this case,
+  so the range is extrapolated. elektriker.org (10/2026) gives 60–150 €/m² for a
+  single-family house; on 200–250 m² that is about 12,000–37,000 €. A 2017
+  knx-user-forum thread (290 m² two-family house) had quotes of 34–50 k€ net
+  without programming, which is why the FAQ names "40,000 € and more" for comfort
+  setups.
+
+Re-check in GSC around 2026-12-27.

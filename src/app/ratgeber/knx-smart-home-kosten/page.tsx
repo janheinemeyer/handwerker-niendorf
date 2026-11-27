@@ -51,7 +51,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet KNX im Zweifamilienhaus?",
-    a: "Als grober Richtwert rund 12.000–22.000 € für zwei Wohneinheiten im Standardausbau (Licht, Beschattung, Heizung) – inklusive Material, Installation und Programmierung. Jede Einheit braucht eigene Taster, Sensoren und Aktoren. Unter dem Doppelten eines Einfamilienhauses bleibt es, weil die Wohnungen meist kleiner sind und sich Komponenten wie Spannungsversorgung, IP-Schnittstelle oder Wetterstation teilen lassen. Ist die zweite Einheit nur eine kleine Einliegerwohnung, liegen Sie näher am unteren Ende. Klären Sie früh, ob beide Einheiten getrennte Linien und Visualisierungen bekommen sollen.",
+    a: "Als grober Richtwert rund 15.000–30.000 € für zwei Wohneinheiten im Standardausbau (Licht, Beschattung, Heizung) – inklusive Material, Installation und Programmierung. Jede Einheit braucht eigene Taster, Sensoren und Aktoren, oft auch eine eigene Unterverteilung. Etwas unter dem Doppelten eines Einfamilienhauses bleibt es, weil die Wohnungen meist kleiner sind und sich Komponenten wie Spannungsversorgung, IP-Schnittstelle oder Wetterstation teilen lassen. Ist die zweite Einheit nur eine kleine Einliegerwohnung, liegen Sie näher am unteren Ende; bei großen Häusern mit Komfortausstattung (Präsenzmelder, Einzelraumregelung, Visualisierung) sind auch 40.000 € und mehr realistisch. Klären Sie früh, ob beide Einheiten getrennte Linien und Visualisierungen bekommen sollen.",
   },
   {
     q: "Kann man bei KNX Kosten durch Eigenleistung sparen?",
@@ -114,7 +114,7 @@ export default function KnxSmartHomeKostenPage() {
           ],
           [
             "Zweifamilienhaus (2 Wohneinheiten im Standardausbau)",
-            "12.000 – 22.000 €",
+            "15.000 – 30.000 €",
           ],
         ]}
       />
