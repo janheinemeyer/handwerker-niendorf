@@ -289,7 +289,7 @@ export default function WaermepumpeKostenPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Preisangaben sind unverbindliche Richtwerte (Stand: September 2026) und
+        Alle Preisangaben sind unverbindliche Richtwerte (Stand: November 2026) und
         ersetzen keine Fachberatung. Tatsächliche Kosten und Wirtschaftlichkeit
         hängen von Wärmepumpen-Typ, Gebäude, Dämmung, Heizlast und individueller
         Auslegung ab. Förderangaben nach KfW-Merkblatt 458 (gültig ab

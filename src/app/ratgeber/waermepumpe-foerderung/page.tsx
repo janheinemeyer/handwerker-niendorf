@@ -14,10 +14,10 @@ import {
 export const metadata: Metadata = {
   title: "Wärmepumpe Förderung 2026/2027: bis zu 80 % (KfW 458)",
   description:
-    "KfW 458: bis zu 70 %, bei niedrigem Einkommen und Heizungstausch bis zu 80 % Zuschuss auf max. 28.000 € Kosten. Wer bis 31.01.2027 beantragt, sichert 16 % Klimabonus – danach 12 % und 750 € weniger förderfähige Kosten (bis zu 1.435 € weniger Zuschuss). Nur der Antrag zählt, nicht der Einbau. Boni, Familienzuschlag und Antrag Schritt für Schritt.",
+    "Antrag bis 31.01.2027 sichert 16 % Klimabonus, danach 12 % – nur der Antrag zählt, nicht der Einbau. KfW 458: bis zu 70 % (80 %) Zuschuss, Boni und Antrag Schritt für Schritt.",
   alternates: { canonical: "/ratgeber/waermepumpe-foerderung" },
   openGraph: {
-    title: "Wärmepumpe Förderung 2026: bis zu 80 % (KfW 458)",
+    title: "Wärmepumpe Förderung 2026/2027: bis zu 80 % (KfW 458)",
     description:
       "Boni, Voraussetzungen, Antrag Schritt für Schritt & der häufigste Fehler – herstellerneutral.",
     locale: "de_DE",
@@ -68,7 +68,7 @@ export default function WaermepumpeFoerderungPage() {
         <>
           Wärmepumpe-Förderung
           <br />
-          2026: bis zu 80 %
+          2026/2027: bis zu 80 %
         </>
       }
       updated="November 2026"
@@ -93,7 +93,9 @@ export default function WaermepumpeFoerderungPage() {
         aufschiebender Bedingung, dann Antrag, dann Förderzusage abwarten – und{" "}
         <strong>erst danach</strong> bauen. Wer vorher startet, verliert die
         komplette Förderung. <strong>Frist:</strong> Für Anträge ab dem
-        01.02.2027 sinkt der Klimabonus auf 12 % – im häufigsten Fall sind das{" "}
+        01.02.2027 sinkt der Klimabonus auf 12 % und der Höchstbetrag auf
+        27.250 € – für Selbstnutzer ohne Einkommensbonus sind das bei 25.000 €
+        Kosten <strong>1.000 € weniger</strong>, ab 28.000 € Kosten{" "}
         <strong>1.435 € weniger</strong>. Es zählt nur das Antragsdatum, nicht
         der Einbau.
       </TlDr>
@@ -187,10 +189,12 @@ export default function WaermepumpeFoerderungPage() {
         ]}
       />
       <P>
-        Liegen Ihre Kosten unter dem Höchstbetrag, zählt nur der Bonus: Bei
-        25.000 € sind 4 Prozentpunkte weniger genau 1.000 € weniger Zuschuss.
-        Wer bis August 2027 wartet, verliert im häufigsten Fall (Selbstnutzer
-        ohne Einkommensbonus) schon rund 2.800 €.
+        Liegen Ihre Kosten unter 27.250 €, zählt nur der Bonus: Ohne
+        Einkommensbonus sind 4 Prozentpunkte bei 25.000 € genau 1.000 € weniger
+        Zuschuss. Wer mit Einkommensbonus ohnehin am 70- bzw. 80-%-Deckel liegt,
+        verliert unterhalb des Höchstbetrags nichts. Wer bis August 2027 wartet
+        (8 %), verliert ohne Einkommensbonus bei 25.000 € schon 2.000 €, ab
+        28.000 € Kosten rund 2.800 €.
       </P>
       <P>
         Die gute Nachricht: <strong>Bis zum 31.01.2027 muss nur der Antrag

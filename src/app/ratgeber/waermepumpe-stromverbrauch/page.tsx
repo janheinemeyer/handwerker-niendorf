@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Wärmepumpe Stromverbrauch pro Jahr, Monat & Tag im Winter",
   description:
-    "Wie viel Strom verbraucht eine Wärmepumpe? Im Einfamilienhaus 3.000–6.000 kWh pro Jahr, an einem Wintertag um 0 °C rund 35–40 kWh, im Januar rund 1.000 kWh. Verbrauch berechnen (Heizbedarf ÷ JAZ), Kostenbeispiele und wie Sie mit Wärmepumpentarif (§14a) und PV sparen.",
+    "Einfamilienhaus: 3.000–6.000 kWh Strom pro Jahr, im Januar rund 1.000 kWh, an einem Wintertag um 0 °C 35–40 kWh. Mit Formel, Kosten und Spartipps (§14a, PV).",
   alternates: { canonical: "/ratgeber/waermepumpe-stromverbrauch" },
   openGraph: {
     title: "Wärmepumpe Stromverbrauch: So viel Strom braucht sie",
@@ -33,7 +33,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Wie viel Strom braucht eine Wärmepumpe pro Tag im Winter?",
-    a: "In einem teilsanierten Einfamilienhaus mit rund 150 m² sind es bei 0 °C Außentemperatur etwa 35–40 kWh pro Tag (rund 11–12 € bei 30 ct/kWh), bei −5 °C etwa 55–60 kWh und bei −10 °C etwa 85–90 kWh. An milden Tagen um +5 °C reichen rund 20–25 kWh. Je kälter es ist, desto mehr Wärme braucht das Haus und desto schlechter arbeitet die Wärmepumpe – beides zusammen lässt den Tagesverbrauch an Frosttagen stark steigen.",
+    a: "In einem teilsanierten Einfamilienhaus mit rund 150 m² sind es bei 0 °C Außentemperatur etwa 35–40 kWh pro Tag (rund 10,50–12 € bei 30 ct/kWh), bei −5 °C etwa 55–60 kWh und bei −10 °C etwa 85–90 kWh. An milden Tagen um +5 °C reichen rund 20–25 kWh. Je kälter es ist, desto mehr Wärme braucht das Haus und desto schlechter arbeitet die Wärmepumpe – beides zusammen lässt den Tagesverbrauch an Frosttagen stark steigen.",
   },
   {
     q: "Wie viel Strom braucht eine Wärmepumpe im Monat?",
@@ -125,9 +125,9 @@ export default function WaermepumpeStromverbrauchPage() {
         rows={[
           ["+10 °C (Übergangszeit)", "ca. 10 – 15 kWh", "~3 – 4,50 €"],
           ["+5 °C", "ca. 20 – 25 kWh", "~6 – 7,50 €"],
-          ["0 °C", "ca. 35 – 40 kWh", "~11 – 12 €"],
-          ["−5 °C", "ca. 55 – 60 kWh", "~17 – 18 €"],
-          ["−10 °C", "ca. 85 – 90 kWh", "~26 – 27 €"],
+          ["0 °C", "ca. 35 – 40 kWh", "~10,50 – 12 €"],
+          ["−5 °C", "ca. 55 – 60 kWh", "~16,50 – 18 €"],
+          ["−10 °C", "ca. 85 – 90 kWh", "~25,50 – 27 €"],
         ]}
       />
       <P>
