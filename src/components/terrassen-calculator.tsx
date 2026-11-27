@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Segmented, Toggle, eur, round100 } from "@/components/calculator-ui";
 import { RequestButton } from "@/components/request/request-button";
+import { useCalculatorTracking } from "@/lib/use-usage-tracking";
 
 /*
   Terrassenüberdachung-Kostenrechner — parametric estimate.
@@ -165,8 +166,10 @@ export function TerrassenCalculator() {
     calc.high,
   ]);
 
+  const trackRef = useCalculatorTracking(request);
+
   return (
-    <div className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
+    <div ref={trackRef} className="mt-6 grid gap-px overflow-hidden border border-line-strong bg-line lg:grid-cols-[1.3fr_1fr]">
       {/* Inputs */}
       <div className="space-y-6 bg-paper p-6 sm:p-8">
         <Segmented<Width>

@@ -2,6 +2,7 @@ import { createAdminClient } from "@/lib/supabase";
 import { logout } from "./actions";
 import { LeadRow } from "./lead-row";
 import type { Lead } from "./types";
+import { UsageFunnel } from "./usage-funnel";
 
 // Reads live data and is auth-gated — never cache/prerender.
 export const dynamic = "force-dynamic";
@@ -112,6 +113,8 @@ export default async function AdminPage() {
             </p>
           )}
         </div>
+
+        <UsageFunnel />
       </main>
     </>
   );
