@@ -111,10 +111,10 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
   {
     href: "/ratgeber/balkonkraftwerk",
     title: "Balkonkraftwerk 2026",
-    blurb: "Kosten, Anmeldung (nur MaStR), 800-Watt-Regel, Mieterrecht & was es im Jahr bringt.",
+    blurb: "Kosten, Anmeldung (kostenlos, nur MaStR), 800-Watt-Regel, Mieterrecht & was es im Jahr bringt.",
     topic: "Balkonkraftwerk",
     cluster: "energie",
-    updated: "2026-06-19",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/einspeiseverguetung-2026",
@@ -202,7 +202,7 @@ export const RATGEBER_PAGES: RatgeberPage[] = [
     blurb: "Kosten nach Größe, Umfang & Ausstattung – auch ohne Fliesen abschlagen, inkl. Rechner & Förderung.",
     topic: "Badsanierung",
     cluster: "innen",
-    updated: "2026-10-08",
+    updated: "2026-11-27",
   },
   {
     href: "/ratgeber/fliesen-legen-kosten",

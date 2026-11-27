@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Balkonkraftwerk 2026: Kosten, Anmeldung & was erlaubt ist",
   description:
-    "Balkonkraftwerk 2026: Was ein Steckersolar-Set kostet (ab ~300 €, 0 % MwSt), die vereinfachte Anmeldung (nur Marktstammdatenregister), die 800-Watt-Regel, das neue Mieterrecht (§ 554 BGB) und was die Mini-PV-Anlage im Jahr bringt. Herstellerneutral, mit Hamburg-Bezug.",
+    "Balkonkraftwerk 2026: Set ab ~300 € (0 % MwSt), Anmeldung kostenlos nur im Marktstammdatenregister, Zählertausch meist gratis. 800-Watt-Regel, Mieterrecht und Ertrag – mit Hamburg-Bezug.",
   alternates: { canonical: "/ratgeber/balkonkraftwerk" },
   openGraph: {
     title: "Balkonkraftwerk 2026: Kosten, Anmeldung & was erlaubt ist",
@@ -33,7 +33,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Muss ich ein Balkonkraftwerk anmelden?",
-    a: "Im Regelfall nur an einer Stelle: im Marktstammdatenregister der Bundesnetzagentur (kostenlos, online, ca. 5–10 Minuten). Seit dem Solarpaket I (16. Mai 2024) entfällt die separate Anmeldung beim Netzbetreiber – allerdings nur, wenn Sie auf eine Einspeisevergütung verzichten (Normalfall beim Balkonkraftwerk). Wer Geld für eingespeisten Strom möchte, meldet die Anlage zusätzlich beim Netzbetreiber an. Einen alten, rückwärtslaufenden Zähler tauscht der Netzbetreiber bei Gelegenheit gegen einen Zweirichtungszähler.",
+    a: "Ja, aber nur an einer Stelle: im Marktstammdatenregister der Bundesnetzagentur (kostenlos, online, ca. 5–10 Minuten), spätestens einen Monat nach Inbetriebnahme. Seit dem Solarpaket I (16. Mai 2024) entfällt die separate Anmeldung beim Netzbetreiber – allerdings nur, wenn Sie auf eine Einspeisevergütung verzichten (Normalfall beim Balkonkraftwerk). Wer Geld für eingespeisten Strom möchte, meldet die Anlage zusätzlich beim Netzbetreiber an. Einen alten, rückwärtslaufenden Zähler tauscht der Netzbetreiber bei Gelegenheit gegen einen Zweirichtungszähler.",
+  },
+  {
+    q: "Was kostet es, ein Balkonkraftwerk anzumelden?",
+    a: "Nichts. Die Registrierung im Marktstammdatenregister ist kostenlos, eine Meldung beim Netzbetreiber entfällt im Regelfall. Auch der Tausch eines alten Zählers gegen einen Zweirichtungszähler ist in der Regel kostenlos. Laufend kostet der neue Zähler (moderne Messeinrichtung) höchstens 25 € im Jahr – oft kaum mehr als der alte. Kostenpflichtige Anmeldeservices von Händlern brauchen Sie nicht; die Registrierung dauert 5–10 Minuten.",
   },
   {
     q: "Wie viel Watt sind erlaubt – 600 oder 800?",
@@ -63,7 +67,7 @@ export default function BalkonkraftwerkPage() {
           Kosten &amp; Regeln
         </>
       }
-      updated="Juni 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -79,7 +83,8 @@ export default function BalkonkraftwerkPage() {
         <strong>800–1.500 €</strong>. Erlaubt sind seit dem Solarpaket I{" "}
         <strong>800 Watt</strong> Wechselrichterleistung; angemeldet wird{" "}
         <strong>nur noch im Marktstammdatenregister</strong> (nicht mehr beim
-        Netzbetreiber). Ein 800-W-Set bringt ~600–800 kWh und spart ~150–250 € im
+        Netzbetreiber) – das ist <strong>kostenlos</strong>, ebenso der
+        Zählertausch. Ein 800-W-Set bringt ~600–800 kWh und spart ~150–250 € im
         Jahr. Mieter haben seit 2024 einen <strong>Anspruch</strong> auf Zustimmung.
       </TlDr>
 
@@ -99,7 +104,7 @@ export default function BalkonkraftwerkPage() {
         ]}
       />
 
-      <H2 id="anmeldung">Anmeldung: nur noch das Marktstammdatenregister</H2>
+      <H2 id="anmeldung">Balkonkraftwerk anmelden: Was ist zu tun – und was kostet es?</H2>
       <P>
         Das hat sich stark vereinfacht. Seit dem <strong>Solarpaket I</strong>{" "}
         (16. Mai 2024) müssen Sie das Balkonkraftwerk nur noch an einer Stelle
@@ -111,7 +116,26 @@ export default function BalkonkraftwerkPage() {
         Anlage zusätzlich beim Netzbetreiber anmelden. Haben Sie
         noch einen alten, rückwärtslaufenden Stromzähler, tauscht ihn der
         Netzbetreiber bei Gelegenheit gegen einen Zweirichtungszähler; bis dahin
-        wird der Betrieb geduldet.
+        wird der Betrieb geduldet. Wichtig ist die Frist: Melden Sie die Anlage{" "}
+        <strong>innerhalb eines Monats</strong> nach Inbetriebnahme an, sonst
+        ist es eine Ordnungswidrigkeit.
+      </P>
+      <P>Was rund um die Anmeldung wirklich anfällt:</P>
+      <CostTable
+        head={["Posten", "Kosten", "Hinweis"]}
+        rows={[
+          ["Registrierung im Marktstammdatenregister", "0 €", "online, 5–10 Minuten, Zählernummer bereithalten"],
+          ["Anmeldung beim Netzbetreiber", "0 € / entfällt", "nur nötig, wenn Sie Einspeisevergütung wollen"],
+          ["Zählertausch (Zweirichtungszähler)", "in der Regel 0 €", "macht der Messstellenbetreiber, der Tausch darf nicht berechnet werden"],
+          ["Laufende Kosten des neuen Zählers", "max. 25 € / Jahr", "Preisobergrenze für die moderne Messeinrichtung"],
+          ["Speicher", "0 €", "eigener Eintrag im Marktstammdatenregister"],
+          ["Elektriker (Einspeisesteckdose, eigener Stromkreis)", "optional, nach Aufwand", "für Schuko-Sets kein Muss"],
+        ]}
+      />
+      <P>
+        <strong>Ehrlicher Tipp:</strong> Manche Händler bieten einen
+        kostenpflichtigen Anmeldeservice an. Den brauchen Sie nicht – die
+        Registrierung ist ein kurzes Online-Formular, das Sie selbst ausfüllen.
       </P>
 
       <H2 id="regeln">800 Watt, Schuko &amp; Co.: die Regeln 2026</H2>
@@ -220,6 +244,16 @@ export default function BalkonkraftwerkPage() {
         wir herstellerneutral geprüfte Betriebe aus Niendorf und Umgebung – wir
         verkaufen selbst nichts.
       </P>
+      <P>
+        <strong>Balkonkraftwerk in Hamburg anmelden:</strong> Auch hier reicht
+        das Marktstammdatenregister; eine Meldung bei den Hamburger
+        Energienetzen (früher Stromnetz Hamburg) ist im Regelfall nicht nötig.
+        Der Netzbetreiber erfährt über das Register von Ihrer Anlage und tauscht
+        einen alten Zähler bei Bedarf gegen einen Zweirichtungszähler. Nur wer
+        eine Einspeisevergütung möchte, meldet die Anlage zusätzlich über das
+        Hausanschluss-Portal des Netzbetreibers an. Kostenlose Beratung bieten
+        die Verbraucherzentrale Hamburg und die Hamburger Energielotsen.
+      </P>
 
       <Faq items={faqs} heading="Häufige Fragen zum Balkonkraftwerk" />
 
@@ -232,7 +266,7 @@ export default function BalkonkraftwerkPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Angaben sind unverbindliche Richtwerte (Stand: Juni 2026) und ersetzen
+        Alle Angaben sind unverbindliche Richtwerte (Stand: November 2026) und ersetzen
         keine individuelle Beratung. Erträge hängen von Ausrichtung, Verschattung
         und Eigenverbrauch ab; Regeln (Leistungsgrenzen, Normen, Förderprogramme)
         können sich ändern.
