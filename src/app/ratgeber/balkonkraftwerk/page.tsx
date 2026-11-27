@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Balkonkraftwerk 2026: Kosten, Anmeldung & was erlaubt ist",
   description:
-    "Balkonkraftwerk 2026: Set ab ~300 € (0 % MwSt), Anmeldung kostenlos nur im Marktstammdatenregister, Zählertausch meist gratis. 800-Watt-Regel, Mieterrecht und Ertrag – mit Hamburg-Bezug.",
+    "Balkonkraftwerk 2026: Set ab ~300 € (0 % MwSt), Anmeldung kostenlos nur im Marktstammdatenregister, Zählertausch kostenlos. 800-Watt-Regel, Mieterrecht und Ertrag – mit Hamburg-Bezug.",
   alternates: { canonical: "/ratgeber/balkonkraftwerk" },
   openGraph: {
     title: "Balkonkraftwerk 2026: Kosten, Anmeldung & was erlaubt ist",
@@ -33,11 +33,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Muss ich ein Balkonkraftwerk anmelden?",
-    a: "Ja, aber nur an einer Stelle: im Marktstammdatenregister der Bundesnetzagentur (kostenlos, online, ca. 5–10 Minuten), spätestens einen Monat nach Inbetriebnahme. Seit dem Solarpaket I (16. Mai 2024) entfällt die separate Anmeldung beim Netzbetreiber – allerdings nur, wenn Sie auf eine Einspeisevergütung verzichten (Normalfall beim Balkonkraftwerk). Wer Geld für eingespeisten Strom möchte, meldet die Anlage zusätzlich beim Netzbetreiber an. Einen alten, rückwärtslaufenden Zähler tauscht der Netzbetreiber bei Gelegenheit gegen einen Zweirichtungszähler.",
+    a: "Ja, im Regelfall aber nur an einer Stelle: im Marktstammdatenregister der Bundesnetzagentur (kostenlos, online, ca. 5–10 Minuten), spätestens einen Monat nach Inbetriebnahme. Seit dem Solarpaket I (16. Mai 2024) entfällt die separate Anmeldung beim Netzbetreiber – allerdings nur, wenn Sie auf eine Einspeisevergütung verzichten (Normalfall beim Balkonkraftwerk). Wer Geld für eingespeisten Strom möchte, meldet die Anlage zusätzlich beim Netzbetreiber an. Einen alten, rückwärtslaufenden Zähler tauscht der Netzbetreiber bei Gelegenheit gegen einen Zweirichtungszähler.",
   },
   {
     q: "Was kostet es, ein Balkonkraftwerk anzumelden?",
-    a: "Nichts. Die Registrierung im Marktstammdatenregister ist kostenlos, eine Meldung beim Netzbetreiber entfällt im Regelfall. Auch der Tausch eines alten Zählers gegen einen Zweirichtungszähler ist in der Regel kostenlos. Laufend kostet der neue Zähler (moderne Messeinrichtung) höchstens 25 € im Jahr – oft kaum mehr als der alte. Kostenpflichtige Anmeldeservices von Händlern brauchen Sie nicht; die Registrierung dauert 5–10 Minuten.",
+    a: "Die Anmeldung selbst ist kostenlos: Die Registrierung im Marktstammdatenregister kostet nichts, eine Meldung beim Netzbetreiber entfällt im Regelfall. Auch der Tausch eines alten Zählers gegen einen Zweirichtungszähler ist kostenlos – er darf nicht in Rechnung gestellt werden. Laufend kostet eine moderne Messeinrichtung höchstens 25 € im Jahr, oft kaum mehr als der alte Zähler. Wer ohnehin ein Smart Meter bekommt (etwa wegen Wärmepumpe oder über 6.000 kWh Verbrauch), zahlt dessen höhere Obergrenze – unabhängig vom Balkonkraftwerk. Kostenpflichtige Anmeldeservices von Händlern brauchen Sie nicht; die Registrierung dauert 5–10 Minuten.",
   },
   {
     q: "Wie viel Watt sind erlaubt – 600 oder 800?",
@@ -126,9 +126,9 @@ export default function BalkonkraftwerkPage() {
         rows={[
           ["Registrierung im Marktstammdatenregister", "0 €", "online, 5–10 Minuten, Zählernummer bereithalten"],
           ["Anmeldung beim Netzbetreiber", "0 € / entfällt", "nur nötig, wenn Sie Einspeisevergütung wollen"],
-          ["Zählertausch (Zweirichtungszähler)", "in der Regel 0 €", "macht der Messstellenbetreiber, der Tausch darf nicht berechnet werden"],
-          ["Laufende Kosten des neuen Zählers", "max. 25 € / Jahr", "Preisobergrenze für die moderne Messeinrichtung"],
-          ["Speicher", "0 €", "eigener Eintrag im Marktstammdatenregister"],
+          ["Zählertausch (Zweirichtungszähler)", "0 €", "macht der Messstellenbetreiber (meist der Netzbetreiber); der Tausch darf nicht berechnet werden"],
+          ["Laufende Kosten des neuen Zählers", "max. 25 € / Jahr", "Obergrenze für die moderne Messeinrichtung; bei einem Smart Meter (z. B. wegen Wärmepumpe) gelten höhere Grenzen"],
+          ["Speicher registrieren (falls vorhanden)", "0 €", "eigener Eintrag im Marktstammdatenregister"],
           ["Elektriker (Einspeisesteckdose, eigener Stromkreis)", "optional, nach Aufwand", "für Schuko-Sets kein Muss"],
         ]}
       />
