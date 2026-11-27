@@ -555,3 +555,32 @@ someone clicks. Google explicitly allows custom promotion badges. The domain was
 checked on 2026-10-16 and is listed in the source-preferences tool. Effect is mainly
 the "preferred" badge in AI Overviews / AI Mode for readers who opt in; Top Stories
 rarely shows for our queries.
+
+## 2026-11-27 — "Carport bauen lassen" belongs to `carport-bauen-lassen-kosten` only
+**Decision:** `carport-oder-garage` and `doppelcarport-kosten` drop the phrase
+"bauen lassen" from their price copy, table headers and meta description ("inkl.
+Montage" instead). The Doppelcarport page's link to the cost page now uses the same
+anchor that carport-oder-garage already had: "Carport bauen lassen: Kosten". The Doppelcarport CTAs ("Doppelcarport … bauen lassen") stay, since
+that is the page's own intent.
+
+**Why:** GSC (28.10.–24.11.2026) showed "carport bauen lassen kosten" (80 impr.)
+split across three pages, and the comparison page ranked better (pos 16.8) than the
+page built for it (23.8). This is the same one-intent-per-page fix as KNX/Loxone
+(2026-10-14).
+
+**Consequences:** In the same PR, carport-masse gets "Breite" in its title plus a
+`#breite` section, terrassenueberdachung-kosten gets a "Holz am Haus vs.
+freistehend" part, and knx-smart-home-kosten gets a Zweifamilienhaus row, all
+aimed at page-1 queries that had no clicks. Both new figures were checked against
+web sources on 2026-11-27 and are still estimates, not quotes we collected:
+- **Freistehend surcharge, 15–25 %.** Several terrace-roof guides (mcterrasse,
+  zitberg, mein-terrassendach24) give the same 15–25 %, because a free-standing roof
+  needs four posts and foundations instead of two.
+- **Zweifamilienhaus range, 15,000–30,000 €.** No source gives a total for this case,
+  so the range is extrapolated. elektriker.org (10/2026) gives 60–150 €/m² for a
+  single-family house; on 200–250 m² that is about 12,000–37,000 €. A 2017
+  knx-user-forum thread (290 m² two-family house) had quotes of 34–50 k€ net
+  without programming, which is why the FAQ names "40,000 € and more" for comfort
+  setups.
+
+Re-check in GSC around 2026-12-27.

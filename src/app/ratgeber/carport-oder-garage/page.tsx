@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const faqs: FaqItem[] = [
   {
     q: "Was ist günstiger – Carport oder Garage?",
-    a: "Der Carport, mit deutlichem Abstand. Ein Einzelcarport kostet bauen lassen rund 1.800–5.500 €, eine Fertig-Einzelgarage 7.000–12.000 € und eine gemauerte Einzelgarage ab ~18.000 €. Bei zwei Stellplätzen wird der Abstand noch größer. Hauptgrund: Der Carport ist offen, braucht weniger Material und oft kein massives Fundament.",
+    a: "Der Carport, mit deutlichem Abstand. Ein Einzelcarport kostet inklusive Montage rund 1.800–5.500 €, eine Fertig-Einzelgarage 7.000–12.000 € und eine gemauerte Einzelgarage ab ~18.000 €. Bei zwei Stellplätzen wird der Abstand noch größer. Hauptgrund: Der Carport ist offen, braucht weniger Material und oft kein massives Fundament.",
   },
   {
     q: "Carport oder Garage – was ist besser?",
@@ -59,7 +59,7 @@ export default function CarportOderGaragePage() {
           Garage?
         </>
       }
-      updated="Juni 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -82,11 +82,11 @@ export default function CarportOderGaragePage() {
 
       <H2 id="kosten">Kostenvergleich: Carport vs. Garage</H2>
       <P>
-        Der größte Unterschied ist der Preis. Richtwerte fürs Bauen-lassen
-        (inkl. Montage), Fundament je nach Variante teils zusätzlich:
+        Der größte Unterschied ist der Preis. Richtwerte inklusive Montage,
+        Fundament je nach Variante teils zusätzlich:
       </P>
       <CostTable
-        head={["Variante", "Richtwert (bauen lassen)"]}
+        head={["Variante", "Richtwert inkl. Montage"]}
         rows={[
           ["Einzelcarport", "1.800 – 5.500 €"],
           ["Doppelcarport", "3.500 – 15.000 €"],
@@ -210,7 +210,7 @@ export default function CarportOderGaragePage() {
       <Faq items={faqs} heading="Häufige Fragen zu Carport oder Garage" />
 
       <CtaBand
-        headline="Carport in Hamburg bauen lassen"
+        headline="Carport oder Garage in Hamburg planen"
         text="Schildern Sie kurz Ihr Vorhaben – wir bringen Sie kostenlos und unverbindlich mit passenden Carport-Betrieben aus Hamburg und Umgebung zusammen."
         ctaLabel="Carport-Angebote anfragen"
         service="Carport"

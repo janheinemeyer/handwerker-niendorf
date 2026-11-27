@@ -51,7 +51,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Was kostet KNX im Zweifamilienhaus?",
-    a: "Einen Festpreis gibt es nicht. Jede Wohneinheit braucht eigene Taster, Sensoren und Aktoren, sodass die Kosten grob mit der Zahl der Einheiten wachsen – die Richtwerte pro Wohnung bzw. Einfamilienhaus aus der Tabelle oben sind ein guter Ausgangspunkt. Etwas sparen lässt sich bei gemeinsam genutzten Komponenten wie Spannungsversorgung, IP-Schnittstelle oder Wetterstation. Klären Sie früh, ob beide Einheiten getrennte Linien und Visualisierungen bekommen sollen.",
+    a: "Als grober Richtwert rund 15.000–30.000 € für zwei Wohneinheiten im Standardausbau (Licht, Beschattung, Heizung) – inklusive Material, Installation und Programmierung. Jede Einheit braucht eigene Taster, Sensoren und Aktoren, oft auch eine eigene Unterverteilung. Etwas unter dem Doppelten eines Einfamilienhauses bleibt es, weil die Wohnungen meist kleiner sind und sich Komponenten wie Spannungsversorgung, IP-Schnittstelle oder Wetterstation teilen lassen. Ist die zweite Einheit nur eine kleine Einliegerwohnung, liegen Sie näher am unteren Ende; bei großen Häusern mit Komfortausstattung (Präsenzmelder, Einzelraumregelung, Visualisierung) sind auch 40.000 € und mehr realistisch. Klären Sie früh, ob beide Einheiten getrennte Linien und Visualisierungen bekommen sollen.",
   },
   {
     q: "Kann man bei KNX Kosten durch Eigenleistung sparen?",
@@ -73,7 +73,7 @@ export default function KnxSmartHomeKostenPage() {
           Kosten
         </>
       }
-      updated="September 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -111,6 +111,10 @@ export default function KnxSmartHomeKostenPage() {
           [
             "Gehoben (zusätzl. Sicherheit, Multimedia, Visualisierung)",
             "ab ~20.000 €",
+          ],
+          [
+            "Zweifamilienhaus (2 Wohneinheiten im Standardausbau)",
+            "15.000 – 30.000 €",
           ],
         ]}
       />
@@ -253,7 +257,8 @@ export default function KnxSmartHomeKostenPage() {
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
         Alle Preise sind Richtwerte und ersetzen kein individuelles Angebot.
         Paketpreise und Rechner: Stand Juni 2026; Angaben zu Datenpunkten und
-        Verkabelung: Stand September 2026. Die tatsächlichen Kosten hängen von Hausgröße,
+        Verkabelung: Stand September 2026; Zweifamilienhaus: Stand November
+        2026. Die tatsächlichen Kosten hängen von Hausgröße,
         Funktionsumfang, Neubau oder Bestand und Programmieraufwand ab.
       </p>
     </RatgeberArticle>
