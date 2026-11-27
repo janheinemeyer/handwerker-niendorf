@@ -584,3 +584,27 @@ web sources on 2026-11-27 and are still estimates, not quotes we collected:
   setups.
 
 Re-check in GSC around 2026-12-27.
+
+## 2026-11-27: Heat-pump winter package (KfW deadline + daily consumption)
+**Decision:**
+- `waermepumpe-foerderung#2027` gets a "what does applying later cost" table, with five cases at full eligible costs, before vs. from 01.02.2027.
+- The TlDr, a new FAQ and the meta copy say that only the **application date** counts, not installation. `waermepumpe-kosten` repeats this with its own 25,000 € example (1,000 € less).
+- `waermepumpe-stromverbrauch` gets a `#pro-tag` section (consumption by outdoor temperature, plus monthly values) and two FAQs. Autocomplete showed "pro tag" (34×), "winter" (25×) and "monat" (9×) as top modifiers the page didn't cover.
+
+**Why:** GSC (28.10.–25.11.2026) shows the heat-pump head terms ("wärmepumpe kosten", "förderung 2026") at pos 40–90, which is national-player turf we don't chase (see the local-dominance strategy). The defensible angles are a dated, honest deadline that portals selling installations frame as "hurry" and we frame as "only the application counts, don't sign a bad offer for it", and the seasonal winter questions.
+
+All KfW figures were checked against the official Merkblatt 458 (valid from 24.09.2026, Stand 09/2026), read as PDF on 2026-11-27:
+- Klimabonus 16 %, −4 pp each 01.02./01.08. from 2027.
+- First-unit cap 28,000 €, −750 € on the same dates.
+- Both keyed to the Antragstellung date.
+- 36-month Bewilligungszeitraum.
+
+A Grundförderung cut to 15 % and an "EU bonus", reported by secondary sites, are **not** in the Merkblatt and were left out.
+
+The daily and monthly figures are a stated model rather than measurements:
+- Heizlast 8 kW at −10 °C, Heizgrenze 15 °C.
+- COP 2.3 to 4.0 linear over −10 to +10 °C.
+- Warmwasser 1,000 kWh/yr, Hamburg monthly mean temperatures.
+- The heating-only result of ~4,600 kWh/yr matches the page's existing "teilsaniert" row.
+
+**Consequences:** The deadline copy must be removed or re-dated on 2027-02-01. Reminder routine trig_01AidL8AgAUwXYfdY5DYS1ff emails about it.

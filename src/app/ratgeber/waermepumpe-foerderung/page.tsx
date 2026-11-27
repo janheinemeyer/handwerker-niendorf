@@ -12,9 +12,9 @@ import {
 } from "@/components/ratgeber";
 
 export const metadata: Metadata = {
-  title: "Wärmepumpe Förderung 2026: bis zu 80 % – neue KfW-458-Regeln",
+  title: "Wärmepumpe Förderung 2026/2027: bis zu 80 % (KfW 458)",
   description:
-    "Wärmepumpen-Förderung nach den neuen KfW-458-Regeln (seit 21.07.2026): bis zu 70 %, bei niedrigem Einkommen und Heizungstausch bis zu 80 % Zuschuss auf max. 28.000 € Kosten. Klimabonus 16 %, gestaffelter Einkommensbonus, Familienzuschlag, Antrag Schritt für Schritt und was sich 2027 ändert.",
+    "KfW 458: bis zu 70 %, bei niedrigem Einkommen und Heizungstausch bis zu 80 % Zuschuss auf max. 28.000 € Kosten. Wer bis 31.01.2027 beantragt, sichert 16 % Klimabonus – danach 12 % und 750 € weniger förderfähige Kosten (bis zu 1.435 € weniger Zuschuss). Nur der Antrag zählt, nicht der Einbau. Boni, Familienzuschlag und Antrag Schritt für Schritt.",
   alternates: { canonical: "/ratgeber/waermepumpe-foerderung" },
   openGraph: {
     title: "Wärmepumpe Förderung 2026: bis zu 80 % (KfW 458)",
@@ -38,6 +38,10 @@ const faqs: FaqItem[] = [
   {
     q: "Wie lange gibt es die Wärmepumpen-Förderung noch?",
     a: "Die Grundförderung von 30 % hat kein angekündigtes Enddatum. Der Klimageschwindigkeitsbonus sinkt aber ab dem 01.02.2027 jedes halbe Jahr um 4 Prozentpunkte und entfällt für Anträge ab dem 01.08.2028. Auch der Höchstbetrag der förderfähigen Kosten sinkt ab 01.02.2027 halbjährlich um 750 €. Maßgeblich ist jeweils das Datum der Antragstellung – früh beantragen lohnt sich.",
+  },
+  {
+    q: "Muss die Wärmepumpe bis zum 31.01.2027 eingebaut sein?",
+    a: "Nein. Für den Klimageschwindigkeitsbonus von 16 % und den Höchstbetrag von 28.000 € zählt nur das Datum der Antragstellung. Der Einbau darf ohnehin erst nach der KfW-Zusage beginnen und muss innerhalb von 36 Monaten abgeschlossen sein. Bis zum 31.01.2027 brauchen Sie also: ein Angebot, einen Liefer- oder Leistungsvertrag mit aufschiebender oder auflösender Bedingung, die Bestätigung zum Antrag (BzA) vom Fachbetrieb oder Energieberater und den Antrag im Portal „Meine KfW“. Ab dem 01.02.2027 gibt es 12 % Klimabonus auf höchstens 27.250 €.",
   },
   {
     q: "Wer bekommt die Wärmepumpen-Förderung?",
@@ -67,7 +71,7 @@ export default function WaermepumpeFoerderungPage() {
           2026: bis zu 80 %
         </>
       }
-      updated="September 2026"
+      updated="November 2026"
       breadcrumb={[
         { name: "Start", href: "/" },
         { name: "Ratgeber", href: "/ratgeber" },
@@ -88,7 +92,10 @@ export default function WaermepumpeFoerderungPage() {
         Entscheidend ist die <strong>Reihenfolge</strong>: erst Vertrag mit
         aufschiebender Bedingung, dann Antrag, dann Förderzusage abwarten – und{" "}
         <strong>erst danach</strong> bauen. Wer vorher startet, verliert die
-        komplette Förderung.
+        komplette Förderung. <strong>Frist:</strong> Für Anträge ab dem
+        01.02.2027 sinkt der Klimabonus auf 12 % – im häufigsten Fall sind das{" "}
+        <strong>1.435 € weniger</strong>. Es zählt nur das Antragsdatum, nicht
+        der Einbau.
       </TlDr>
 
       <H2 id="wie-viel">Wie viel Förderung gibt es 2026?</H2>
@@ -154,7 +161,7 @@ export default function WaermepumpeFoerderungPage() {
         gibt es nicht mehr.
       </P>
 
-      <H2 id="2027">Was ändert sich 2027 bei der Förderung?</H2>
+      <H2 id="2027">Was ändert sich 2027 – und was kostet es, später zu beantragen?</H2>
       <P>
         Zwei Werte sinken ab dem <strong>01.02.2027</strong> jedes halbe Jahr
         (zum 01.02. und 01.08.): Der Klimageschwindigkeitsbonus verliert jeweils{" "}
@@ -163,8 +170,37 @@ export default function WaermepumpeFoerderungPage() {
         <strong>01.08.2028</strong>. Der Höchstbetrag der förderfähigen Kosten
         für die erste Wohneinheit sinkt jeweils um <strong>750 €</strong>.
         Maßgeblich ist immer das Datum der Antragstellung, nicht der Einbau.
-        Wer ohnehin tauschen will, sollte den Antrag also nicht auf die lange
-        Bank schieben.
+      </P>
+      <P>
+        Was das in Euro bedeutet, für die erste Wohneinheit mit förderfähigen
+        Kosten von mindestens 28.000 € (Antrag bis 31.01.2027 gegenüber ab
+        01.02.2027):
+      </P>
+      <CostTable
+        head={["Fall (Heizungstausch)", "Antrag bis 31.01.2027", "Antrag ab 01.02.2027", "Unterschied"]}
+        rows={[
+          ["Selbstnutzer, ohne Einkommensbonus", "46 % → 12.880 €", "42 % → 11.445 €", "−1.435 €"],
+          ["Selbstnutzer, zvE ≤ 50.000 € (+10 %)", "56 % → 15.680 €", "52 % → 14.170 €", "−1.510 €"],
+          ["Selbstnutzer, zvE ≤ 40.000 € (+30 %)", "70 % (Deckel) → 19.600 €", "70 % (Deckel) → 19.075 €", "−525 €"],
+          ["Selbstnutzer, zvE ≤ 30.000 € (+40 %)", "80 % (Deckel) → 22.400 €", "80 % (Deckel) → 21.800 €", "−600 €"],
+          ["Vermieter (nur Grundförderung)", "30 % → 8.400 €", "30 % → 8.175 €", "−225 €"],
+        ]}
+      />
+      <P>
+        Liegen Ihre Kosten unter dem Höchstbetrag, zählt nur der Bonus: Bei
+        25.000 € sind 4 Prozentpunkte weniger genau 1.000 € weniger Zuschuss.
+        Wer bis August 2027 wartet, verliert im häufigsten Fall (Selbstnutzer
+        ohne Einkommensbonus) schon rund 2.800 €.
+      </P>
+      <P>
+        Die gute Nachricht: <strong>Bis zum 31.01.2027 muss nur der Antrag
+        gestellt sein, nicht die Wärmepumpe eingebaut.</strong> Nach der Zusage
+        haben Sie 36 Monate Zeit für den Einbau. Für den Antrag brauchen Sie ein
+        konkretes Angebot, einen Vertrag mit aufschiebender oder auflösender
+        Bedingung und die BzA vom Fachbetrieb. Rechnen Sie dafür mit einigen
+        Wochen Vorlauf. <strong>Ehrlich gesagt:</strong> Unterschreiben Sie
+        nicht wegen der Frist ein schlechtes Angebot. Ein um 2.000 € zu teurer
+        Vertrag frisst den Bonusvorteil komplett auf.
       </P>
 
       <H2 id="ablauf">So beantragen Sie die Förderung – Schritt für Schritt</H2>
@@ -242,7 +278,7 @@ export default function WaermepumpeFoerderungPage() {
       />
 
       <p className="mt-10 text-xs leading-relaxed text-ink-soft/70">
-        Alle Angaben sind unverbindliche Richtwerte (Stand: September 2026,
+        Alle Angaben sind unverbindliche Richtwerte (Stand: November 2026,
         KfW-Merkblatt 458 gültig ab 24.09.2026) und ersetzen keine
         Förderberatung. Maßgeblich sind die jeweils aktuellen Bedingungen der
         KfW (Programm 458) und die individuelle Situation. Boni,
