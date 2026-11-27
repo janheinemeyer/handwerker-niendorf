@@ -138,8 +138,11 @@ question-shaped `H2` ids, include machine-readable `CostTable`s, and always a
 (`source`, `details`/`summary`, `estimate`) as the existing tools do, call
 `const trackRef = useCalculatorTracking(request)` (`src/lib/use-usage-tracking.ts`)
 and put `ref={trackRef}` on its root element. That sends the anonymous
-`view`/`start`/`result` events; `RequestButton` sends `cta` by itself. The data
-lands in `usage_events` (migration `0003`) and shows up as the funnel in `/admin`.
+`view`/`start`/`result` events; `RequestButton` sends `cta` by itself. Also add
+the tool's `source` to `KNOWN_SOURCES` in `src/lib/usage-events.ts`; the
+`/api/track` route drops unknown sources (CtaBand sources ending in `-page` pass
+automatically). The data lands in `usage_events` (migration `0003`) and shows up
+as the funnel in `/admin`.
 
 ## Workflow
 

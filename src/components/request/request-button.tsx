@@ -19,14 +19,9 @@ export function RequestButton({
 }) {
   const { openRequest } = useRequest();
   const onClick = () => {
-    if (context.source) {
-      sendUsageEvent({
-        source: context.source,
-        event: "cta",
-        estimate: context.estimate,
-        config: context.details,
-      });
-    }
+    // Deliberately without config/estimate: the request form stores those
+    // next to the contact data, and the event must not be matchable to it.
+    if (context.source) sendUsageEvent({ source: context.source, event: "cta" });
     openRequest(context);
   };
   return (

@@ -34,7 +34,8 @@ export async function UsageFunnel() {
       </div>
       <p className="mt-2 max-w-2xl text-sm text-ink-soft">
         Gesehen = Rechner im Bild · Benutzt = erste Eingabe geändert · Ergebnis
-        = Seite nach Nutzung verlassen · Anfrage geklickt = Anfrage-Button
+        = Konfiguration beim Verlassen (nach erneuter Änderung auch mehrfach) ·
+        Anfrage geklickt = Anfrage-Button
         (Rechner und CTA-Bänder) · Anfragen = abgesendete Formulare.
       </p>
 

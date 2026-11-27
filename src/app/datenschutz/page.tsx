@@ -358,14 +358,16 @@ export default function DatenschutzPage() {
             eine Eingabe geändert wurde, ob der Anfrage-Button geklickt wurde,
             und welche Einstellungen im Rechner gewählt wurden (z. B. Material
             oder Größe) samt der angezeigten Kostenschätzung. Gespeichert werden
-            dazu nur die aufgerufene Seite, der Zeitpunkt und diese Angaben.
+            dazu nur die aufgerufene Seite, das Datum (ohne Uhrzeit) und diese
+            Angaben.
           </P>
           <P>
             Dabei werden <strong>keine Cookies</strong> gesetzt, keine
             Informationen auf Ihrem Endgerät gespeichert, keine IP-Adressen
-            gespeichert und keine Nutzer- oder Sitzungskennungen vergeben. Die
-            Daten lassen sich keiner Person zuordnen und werden nicht mit
-            Anfragen über das Kontaktformular verknüpft. Sie werden wie die
+            gespeichert und keine Nutzer- oder Sitzungskennungen vergeben. Wir
+            speichern keine Angaben, die Sie identifizieren, und führen diese
+            Nutzungsdaten nicht mit Anfragen über das Kontaktformular zusammen;
+            ausgewertet werden nur Summen je Rechner. Die Daten werden wie die
             Anfragen bei Supabase in der EU (Irland) gespeichert. Soweit
             überhaupt personenbezogene Daten betroffen sein sollten, erfolgt die
             Verarbeitung auf Grundlage unseres berechtigten Interesses an der
